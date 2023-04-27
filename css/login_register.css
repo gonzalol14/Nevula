@@ -89,6 +89,19 @@ a:hover {
     border-color: #FFF;
 }
 
+.container__full-name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container__name {
+    width: 48%;
+}
+
+.container__surname {
+    width: 48%;
+}
+
 .remember-forgot {
     display: flex;
     flex-direction: row;
@@ -100,13 +113,14 @@ a:hover {
 
 /************** CHECKBOX *******************/
 .label__remember {
-    display: block;
+    display: flex;
+    align-items: center;
     position: relative;
     padding-left: 30px;
     cursor: pointer;
-    height: 20px;
     user-select: none;
     font-weight: 600;
+    font-size: 14px;
 }
 
 .label__remember input {
@@ -119,7 +133,7 @@ a:hover {
 
 .checkmark {
     position: absolute;
-    top: 0;
+    /*top: 0;*/
     left: 0;
     height: 18px;
     width: 18px;
@@ -164,6 +178,7 @@ a:hover {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);    
 }
+
 /************** FIN CHECKBOX *******************/
 
 .container__forgot {
@@ -207,14 +222,16 @@ a:hover {
     color: #FFF;
 }
 
-.text-of-terms {
-    text-align: center;
+.terms-conditions {
     font-size: 14px;
+    font-weight: 400;
 }
 
 .links{
     font-weight: 600;
+    color: #FFF;
 }
+
 
 
 .container__password {
