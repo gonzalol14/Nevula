@@ -47,5 +47,6 @@ if (!empty($_POST)) {
         
     
 }
+$title = "Inicia sesion";
 $view = "login";
 require_once('../views/layout.php');
