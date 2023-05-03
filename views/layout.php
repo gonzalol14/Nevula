@@ -8,7 +8,7 @@
     <!-- JQUERY -->
     <script src="../js/jquery.min.js"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/main.css">
     <?php
     if ($view == "login" || $view == "register") { ?>
         <link rel="stylesheet" href="../css/login_register.css">
