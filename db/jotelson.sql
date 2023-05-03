@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-04-2023 a las 04:05:10
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Tiempo de generación: 03-05-2023 a las 03:59:44
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,10 +59,20 @@ CREATE TABLE `publicaciones` (
 CREATE TABLE `usuarios` (
   `id` int(20) NOT NULL,
   `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(20) NOT NULL,
+  `nombre_usuario` varchar(30) NOT NULL,
+  `email` varchar(40) NOT NULL,
   `clave` varchar(128) NOT NULL,
-  `created_at` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `nombre_usuario`, `email`, `clave`, `created_at`, `deleted_at`) VALUES
+(1, 'gaston', 'amenta', 'homero', 'test@gmail.com', '0f3fde0103dd44077c040215a2fabd09a097aecc', '2023-05-03 00:23:29', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -106,7 +116,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
