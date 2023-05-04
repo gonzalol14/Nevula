@@ -3,24 +3,33 @@
         <div class="container__logo">
             <img src="../img/logo_empresa_jotelson.png" alt="Logo empresa" width="65px">
         </div>
-        
+
         <div class="container__list-buttons">
             <div>
-                <button>INICIO</button>
+                <a href="">INICIO</a>
             </div>
             <div>
-                <button>NOVEDADES</button>
+                <a href="">NOVEDADES</a>
             </div>
             <div>
-                <button>COMUNIDAD</button>
+                <a href="">COMUNIDAD</a>
             </div>
             <div>
-                <button>AYUDA</button>
+                <a href="">AYUDA</a>
             </div>
         </div>
     </div>
 
-    <div class="container__download">
-        <button>DESCARGAR</button>
+    <div class="container__right">
+        <div>
+            <button class="btn-profile">
+                <i class="bi bi-person-circle"></i>
+            </button>
+
+        </div>
+
+        <div class="container__download">
+            <button class="btn-download">DESCARGAR</button>
+        </div>
     </div>
 </nav>

@@ -12,7 +12,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden;
 }
 
 .container__left {
@@ -28,7 +27,10 @@ nav {
     display: flex;
 }
 
-.container__list-buttons button {
+.container__list-buttons a {
+    display: flex;
+    align-items: center;
+    
     background: transparent;
     height: 3.2rem;
     padding: 10px 20px;
@@ -37,27 +39,56 @@ nav {
     font-weight: 600;
     border-top: 3.5px solid transparent;
     border-bottom: 3.5px solid transparent;
+    transition: 200ms;
 }
 
-.container__list-buttons button:hover {
+.container__list-buttons a:hover {
     border-bottom-color: #ffa01b;
     background: #263B50;
 }
 
 
-.container__download {
+.container__right {
+    display: flex;
+    align-items: center;
     height: 100%;
 }
 
-.container__download button {
-    height: 100%;
-    background: #ffa01b;
+.btn-profile {
+    background-color: transparent;
     color: #FFF;
+    font-size: 23px;
+    padding: 0;
+}
+
+.btn-profile i {
+    opacity: 0.7;
+}
+
+.btn-profile i:hover {
+    opacity: 1;
+}
+
+
+.container__download {
+    height: 100%;
+    margin-left: 35px;
+}
+
+.btn-download {
+    height: 100%;
     padding: 0 30px;
     font-size: 15px;
     font-weight: 700;
+    
+    color: #FFF;
+    letter-spacing: 3px;
+    background-color: #FFA425;
+    transition: 200ms;
+    text-align: center;
 }
 
-.container__download button:hover {
-    background: #FF9706;
+.btn-download:hover {
+    background-color: #ffa01b;
+    box-shadow: 0 0 10px #ffa01b, 0 0 40px #ffa01b, 0 0 80px #ffa01b;
 }
