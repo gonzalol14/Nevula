@@ -16,7 +16,10 @@
     } elseif ($view == "home") { ?>
         <link rel="stylesheet" href="../css/home.css">
     <?php
-    } ?>
+    } elseif ($view == "comunidad") { ?>
+        <link rel="stylesheet" href="../css/comunidad.css">
+    <?php
+    }?>
     <title><?php echo $title ?> - Jotelson</title>
 </head>
 

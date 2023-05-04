@@ -16,7 +16,7 @@
                 <a href="">NOVEDADES</a>
             </div>
             <div>
-                <a href="">COMUNIDAD</a>
+                <a href="../controllers/comunidad.php">COMUNIDAD</a>
             </div>
             <div>
                 <a href="">AYUDA</a>

@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #1b2b3b;
+    width: 100%;
+    height: 3.2rem;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container__left {
+    display: flex;
+    align-items: center;
+}
+
+.container__logo img {
+    margin: 3px 15px 0 7px;
+}
+
+.container__list-buttons {
+    display: flex;
+}
+
+.container__list-buttons a {
+    display: flex;
+    align-items: center;
+    
+    background: transparent;
+    height: 3.2rem;
+    padding: 10px 15px;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 600;
+    border-top: 3.5px solid transparent;
+    border-bottom: 3.5px solid transparent;
+    transition: 200ms;
+}
+
+.container__list-buttons a:hover {
+    border-bottom-color: #ffa01b;
+    background: #263B50;
+}
+
+.list-menu-profile {
+    display: none;
+
+}
+
+.list_menu {
+    display: none;
+    background: transparent;
+    color: #FFF;
+    font-size: 24px;
+}
+
+@media (max-width: 803px) {
+    .container__profile {
+        display: none;
+    }
+
+    .list_menu {
+        display: block;
+    }
+
+    .container__list-buttons {
+        display: block;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        transition: all .5s ease;
+        max-width: 420px;
+        position: absolute;
+        flex-direction: column;
+        background: #1b2b3b;
+        top: 3.2rem;    
+        z-index: 9999;
+    }
+    .container__list-buttons.activo {
+        left: 0%;
+    }
+
+    .list-menu-profile {
+        display: block;
+    }
+    
+    .container__btn-home{
+        border-top: 1px solid grey;
+    }
+
+    .container__list-buttons.activo a{
+        display: flex;
+        border-bottom: 1px solid grey;
+    }
+
+    .container__list-buttons.activo a:hover{
+        border-bottom: 1px solid grey;
+    }
+    
+    
+
+}
+
+@media (max-width: 350px) {
+    .container__download {
+        margin-left: 0px !important;
+    }
+
+    .container__download button{
+        padding: 15px !important;
+    }
+
+    .container__logo img {
+       margin-right: 7px;
+    }
+}
+
+
+.container__right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.btn-profile {
+    background-color: transparent;
+    color: #FFF;
+    font-size: 23px;
+    padding: 0;
+}
+
+.btn-profile i {
+    opacity: 0.7;
+}
+
+.btn-profile i:hover {
+    opacity: 1;
+}
+
+
+.container__download {
+    height: 100%;
+    margin-left: 35px;
+}
+
+.btn-download {
+    height: 100%;
+    padding: 0 30px;
+    font-size: 15px;
+    font-weight: 700;
+    
+    color: #FFF;
+    letter-spacing: 3px;
+    background-color: #FFA425;
+    transition: 200ms;
+    text-align: center;
+}
+
+.btn-download:hover {
+    background-color: #ffa01b;
+    box-shadow: 0 0 10px #ffa01b, 0 0 40px #ffa01b, 0 0 80px #ffa01b;
+}
+
+/* Estilo general */
+.container__post {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 15px;
+    position: relative; /* Agregamos posición relativa */
+    top: 60px;
+}
+
+/* Icono de perfil */
+.bi-person-circle {
+    font-size: 2rem;
+    margin-left: 15px;
+}
+
+/* Nombre de usuario */
+.name a {
+    color: #1da1f2;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Botón de más opciones */
+.container__functions img {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+/* Contenido del post */
+.container__characters {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Agrega separador a cada post excepto al último */
+.container__post:not(:last-child) {
+    border-bottom: 1px solid #e6ecf0;
+}
+
+/* Agregamos estilos para posicionar elementos */
+.container__icon {
+    position: absolute; /* posición absoluta */
+    top: 50%; /* centramos verticalmente */
+    left: 0; /* lo dejamos en la izquierda */
+    transform: translateY(-50%); /* lo ajustamos verticalmente */
+}
+
+.container__data {
+    margin-left: 50px; /* nos aseguramos de dejar espacio para el icono */
+}
+
+.container__functions {
+    position: absolute; /* posición absoluta */
+    top: 50%; /* centramos verticalmente */
+    right: 0; /* lo dejamos en la derecha */
+    transform: translateY(-50%); /* lo ajustamos verticalmente */
+}
+
+.container__feedback img{
+    margin-top: 2px;
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
