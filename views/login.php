@@ -1,7 +1,7 @@
     <div class="container__all">
         <div class="container__data">
             <div class="container__logo">
-                <img src="../img/NASA_logo.svg.webp" alt="Logo Jotelson" width="200px">
+                <img src="../img/logo_empresa_jotelson.png" alt="Logo Jotelson" width="300px">
             </div>
     
             <div class="container__title">
@@ -23,9 +23,9 @@
                             <span class="icon"><i class="bi bi-eye-fill"></i></span>
                         </button>
                     </div>
-                </div>
-                <div class="form-group">
-                            <?php echo (isset($error) ? $error : ''); ?>
+                    <div class="msj_error">
+                        <?php echo (isset($error) ? $error : ''); ?>
+                    </div>
                 </div>
     
                 <div class="form-group remember-forgot">

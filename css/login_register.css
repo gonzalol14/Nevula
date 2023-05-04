@@ -56,7 +56,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .form-group .input-title {
@@ -212,6 +212,7 @@ a:hover {
 .text-create-account {
     text-align: center;
     font-size: 0.875rem;
+    margin-bottom: 5px;
 }
 
 .text-create-account a {
