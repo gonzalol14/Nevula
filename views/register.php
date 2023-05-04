@@ -13,7 +13,7 @@
                 <div class="container__full-name">
                     <div class="form-group container__name">
                         <label for="name" class="input-title">Nombre</label>
-                        <input type="text" name="name" class="">
+                        <input type="text" name="name" class="<?php echo (isset($message['name']) ? 'input_error' : ''); ?>">
                         <div class="msj_error">
                             <?php echo (isset($message['name']) ? $message['name'] : ''); ?>
                         </div>
@@ -21,7 +21,7 @@
 
                     <div class="form-group container__surname">
                         <label for="surname" class="input-title">Apellido</label>
-                        <input type="text" name="surname" class="">
+                        <input type="text" name="surname" class="<?php echo (isset($message['surname']) ? 'input_error' : ''); ?>">
                         <div class="msj_error">
                             <?php echo (isset($message['surname']) ? $message['surname'] : ''); ?>
                         </div>
@@ -31,7 +31,7 @@
 
                 <div class="form-group">
                     <label for="username" class="input-title">Nombre de usuario</label>
-                    <input type="text" name="username" class="">
+                    <input type="text" name="username" class="<?php echo (isset($message['username']) ? 'input_error' : ''); ?>">
                     <div class="msj_error">
                         <?php echo (isset($message['username']) ? $message['username'] : ''); ?>
                     </div>
@@ -39,7 +39,7 @@
 
                 <div class="form-group">
                     <label for="email" class="input-title">Dirección de correo</label>
-                    <input type="email" name="email" class="">
+                    <input type="email" name="email" class="<?php echo (isset($message['email']) ? 'input_error' : ''); ?>">
                     <div class="msj_error">
                         <?php echo (isset($message['email']) ? $message['email'] : ''); ?>
                     </div>
@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <label for="password" class="input-title">Contraseña</label>
                     <div class="container__password">
-                        <input class="pass" id="password" type="password" name="password">
+                        <input class="pass <?php echo (isset($message['password']) ? 'input_error' : ''); ?>" id="password" type="password" name="password">
                         <button type="button" class="btn-view-password toggle-password" toggle="#password">
                             <span class="icon"><i class="bi bi-eye-fill"></i></span>
                         </button>

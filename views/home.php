@@ -21,9 +21,6 @@
             <div>
                 <a href="">AYUDA</a>
             </div>
-            <div>
-                <a href="">AYUDA</a>
-            </div>
             <div class="list-menu-profile">
                 <a href="">PERFIL</a>
             </div>

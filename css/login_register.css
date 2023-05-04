@@ -76,9 +76,10 @@ a:hover {
     background-color: #4E525D;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.container__password:has(#password:focus) {
     outline: none;
-    border-color: #FFF;
+    border-color: #FFF !important;
 }
 
 .container__full-name {
@@ -271,4 +272,14 @@ a:hover {
 
 .icon i {
     font-size: 15px;
+}
+
+
+.msj_error {
+    font-size: 14px;
+    color: red;
+}
+
+.input_error {
+    border-color: red !important;
 }
