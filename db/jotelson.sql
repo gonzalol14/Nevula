@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2023 a las 03:59:44
+-- Tiempo de generación: 04-05-2023 a las 04:22:12
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -59,9 +59,9 @@ CREATE TABLE `publicaciones` (
 CREATE TABLE `usuarios` (
   `id` int(20) NOT NULL,
   `nombre` varchar(20) NOT NULL,
-  `apellido` varchar(20) NOT NULL,
+  `apellido` varchar(30) NOT NULL,
   `nombre_usuario` varchar(30) NOT NULL,
-  `email` varchar(40) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `clave` varchar(128) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `deleted_at` datetime DEFAULT NULL
@@ -94,7 +94,8 @@ ALTER TABLE `publicaciones`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nombre_usuario` (`nombre_usuario`,`email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -116,7 +117,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

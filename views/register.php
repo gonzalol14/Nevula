@@ -8,17 +8,23 @@
                 <p>Crea tu cuenta en Jotelson</p>
             </div>
 
-            <form method="POST" action="" id="form" class="register__form">
+            <form method="POST" action="../controllers/register.php" id="form" class="register__form">
 
                 <div class="container__full-name">
                     <div class="form-group container__name">
                         <label for="name" class="input-title">Nombre</label>
                         <input type="text" name="name" class="">
+                        <div class="form-group">
+                            <?php echo (isset($message['name']) ? $message['name'] : ''); ?>
+                        </div>
                     </div>
 
                     <div class="form-group container__surname">
                         <label for="surname" class="input-title">Apellido</label>
                         <input type="text" name="surname" class="">
+                        <div class="form-group">
+                            <?php echo (isset($message['surname']) ? $message['surname'] : ''); ?>
+                        </div>
                     </div>
                 </div>
 
@@ -26,12 +32,19 @@
                 <div class="form-group">
                     <label for="username" class="input-title">Nombre de usuario</label>
                     <input type="text" name="username" class="">
+                    <div class="form-group">
+                            <?php echo (isset($message['username']) ? $message['username'] : ''); ?>
+                        </div>
                 </div>
 
                 <div class="form-group">
                     <label for="email" class="input-title">Dirección de correo</label>
                     <input type="email" name="email" class="">
+                    <div class="form-group">
+                            <?php echo (isset($message['email']) ? $message['email'] : ''); ?>
+                        </div>
                 </div>
+                
 
                 <div class="form-group">
                     <label for="password" class="input-title">Contraseña</label>
@@ -41,7 +54,11 @@
                             <span class="icon"><i class="bi bi-eye-fill"></i></span>
                         </button>
                     </div>
+                    <div class="form-group">
+                            <?php echo (isset($message['password']) ? $message['password'] : ''); ?>
+                        </div>
                 </div>
+                
 
                 <div class="form-group">
                     <label class="label__remember">
@@ -49,8 +66,9 @@
                         <input type="checkbox" id="remember" name="remember" value="1" >
                         <span class="checkmark"></span>
                     </label>
+                    
                 </div>
-
+            
                 <div class="form-group">
                     <button type="submit" class="" id="register-submit">Registrarse</button>
                 </div>
