@@ -70,5 +70,6 @@ if (!empty($_POST)) {
     //    if ($checkbox === null) $message['remember'] = "Debe ser mayor de 13 años y aceptar nuestros terminos y condiciones";
     }
 }
+$title = "Registrate";
 $view = "register";
 require_once('../views/layout.php');
