@@ -92,3 +92,5 @@
 
         </div>
     </div>
+
+    <script src="../js/password.js" type="text/javascript"></script>
