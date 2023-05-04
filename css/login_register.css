@@ -1,8 +1,4 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-
 * {
-    font-family: 'Open Sans', sans-serif;
     color: #D6D7D9;
 }
 
@@ -11,10 +7,6 @@ body {
     margin: 0;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
 
 a:hover {
     text-decoration: underline;
@@ -60,7 +52,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .form-group .input-title {
@@ -84,9 +76,10 @@ a:hover {
     background-color: #4E525D;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.container__password:has(#password:focus) {
     outline: none;
-    border-color: #FFF;
+    border-color: #FFF !important;
 }
 
 .container__full-name {
@@ -216,6 +209,7 @@ a:hover {
 .text-create-account {
     text-align: center;
     font-size: 0.875rem;
+    margin-bottom: 5px;
 }
 
 .text-create-account a {
@@ -278,4 +272,14 @@ a:hover {
 
 .icon i {
     font-size: 15px;
+}
+
+
+.msj_error {
+    font-size: 14px;
+    color: red;
+}
+
+.input_error {
+    border-color: red !important;
 }
