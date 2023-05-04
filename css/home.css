@@ -162,6 +162,6 @@ header {
 }
 
 .btn-download:hover {
-    background-color: #ffa01b;
-    box-shadow: 0 0 10px #ffa01b, 0 0 40px #ffa01b, 0 0 80px #ffa01b;
+    background-color: #FF990B;
+    box-shadow: 0 0 10px #FF990B, 0 0 40px #FF990B, 0 0 80px #FF990B;
 }

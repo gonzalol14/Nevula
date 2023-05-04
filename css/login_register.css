@@ -79,7 +79,7 @@ a:hover {
 .form-group input:focus,
 .container__password:has(#password:focus) {
     outline: none;
-    border-color: #FFF !important;
+    border-color: #FFF;
 }
 
 .container__full-name {
@@ -87,10 +87,7 @@ a:hover {
     justify-content: space-between;
 }
 
-.container__name {
-    width: 48%;
-}
-
+.container__name,
 .container__surname {
     width: 48%;
 }
