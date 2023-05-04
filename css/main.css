@@ -4,3 +4,9 @@
 * {
     font-family: 'Open Sans', sans-serif;
 }
+
+button {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
