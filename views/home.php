@@ -8,24 +8,24 @@
             <button class="list_menu"><i class="bi bi-list" id="icon-list"></i></button>
         </div>
 
-        <div class="container__list-buttons">
-            <div class="container__btn-home">
+        <ul class="container__list-buttons">
+            <li class="container__btn-home">
                 <a href="">INICIO</a>
-            </div>
-            <div>
+            </li>
+            <li>
                 <a href="">NOVEDADES</a>
-            </div>
-            <div>
+            </li>
+            <li>
                 <a href="../controllers/comunidad.php">COMUNIDAD</a>
-            </div>
-            <div>
+            </li>
+            <li>
                 <a href="">AYUDA</a>
-            </div>
-            <div class="list-menu-profile">
+            </li>
+            <li class="list-menu-profile">
                 <a href="">PERFIL</a>
-            </div>
+            </li>
 
-        </div>
+        </ul>
     </div>
 
     <div class="container__right">

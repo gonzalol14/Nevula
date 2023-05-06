@@ -25,6 +25,7 @@ header {
 
 .container__list-buttons {
     display: flex;
+    list-style: none;
 }
 
 .container__list-buttons a {
