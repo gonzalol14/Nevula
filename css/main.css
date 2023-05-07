@@ -8,6 +8,20 @@
     box-sizing: border-box;
 }
 
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(150, 150, 150);
+    border-radius: 0.25rem;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: rgb(172, 172, 172);
+}
+
+
 button {
     border: none;
     padding: 10px;
