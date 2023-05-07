@@ -43,11 +43,29 @@
 
 <main class="container">
 
+    <article class="menu__comunnity">
+        <a href="" class="btn__create-post-text">
+            <span>Crear publicación</span>
+        </a>
+        <a href="" class="btn__create-post-icon" title="Crear publicación">
+            <i class="bi bi-plus-square"></i>
+        </a>
+
+        <div class="container__search-bar">
+            <input type="search" placeholder="Buscar...">
+            <button type="submit">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </article>
+
     <article class="article__post">
 
         <div class="container__info">
             <div class="container__profile-pic">
-                <img src="../img/foto_perfil.jpg" alt="">
+                <a href="#">
+                    <img src="../img/foto_perfil.jpg" alt="">
+                </a>
             </div>
 
             <div class="container__username">
@@ -81,6 +99,7 @@
         </div>
 
     </article>
+
 </main>
 
 <script src="../js/main.js" type="text/javascript"></script>
