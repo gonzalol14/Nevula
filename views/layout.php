@@ -8,18 +8,19 @@
     <!-- JQUERY -->
     <script src="../js/jquery.min.js"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/main.css">
     <?php
     if ($view == "login" || $view == "register") { ?>
         <link rel="stylesheet" href="../css/login_register.css">
-    <?php
+        <?php
     } elseif ($view == "home") { ?>
         <link rel="stylesheet" href="../css/home.css">
-    <?php
+        <?php
     } elseif ($view == "comunidad") { ?>
         <link rel="stylesheet" href="../css/comunidad.css">
-    <?php
-    }?>
+        <?php
+    } ?>
+    <link rel="stylesheet" href="../css/main.css">
+
     <title><?php echo $title ?> - Jotelson</title>
 </head>
 
@@ -28,7 +29,7 @@
     <?php
     require_once($view . ".php");
     ?>
-    
+
 </body>
 
 </html>

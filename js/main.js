@@ -7,4 +7,3 @@ btn_list.addEventListener('click', () => {
 
     $('#icon-list').toggleClass("bi-list bi-x-lg");
 })
-    

@@ -42,4 +42,4 @@
     </div>
 </header>
 
-<script src="../js/home.js" type="text/javascript"></script>
+<script src="../js/main.js" type="text/javascript"></script>

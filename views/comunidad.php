@@ -1,5 +1,5 @@
 <header>
-<div class="container__left">
+    <div class="container__left">
         <div class="container__logo">
             <img src="../img/logo_empresa_jotelson.png" alt="Logo empresa" width="65px">
         </div>
@@ -10,7 +10,7 @@
 
         <div class="container__list-buttons">
             <div class="container__btn-home">
-                <a href="">INICIO</a>
+                <a href="../controllers/home.php">INICIO</a>
             </div>
             <div>
                 <a href="">NOVEDADES</a>
@@ -41,33 +41,47 @@
     </div>
 </header>
 
-<body>
-    <div class="container__post">
-        <article>
-            <div class="container__content">
-                <div class="container__icon">
-                <i class="bi bi-person-circle"></i>
-                </div>
-                <div class="container__contentV2">
-                    <div class="container__data">
-                        <div class="container_name">
-                            <div class="name">
-                                <a href="#">juanito 1h</a>
-                            </div>
-                            <div class="container__functions">
-                                <a href=""> <img src="../img/opcion.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="container__characters">
-                            <p>El mejor juego que he jugado en toda mi vida :D</p>
-                        </div>
-                        <div class="container__feedback">
-                            <a><img src="../img/me-gusta.png" alt=""></a>
-                            <a href="#"><img src="../img/comentario.png" alt="" style="width: 30px; height: 30px;"></a>
-                        </div>
-                    </div>
-                </div>
+<main class="container">
+
+    <article class="article__post">
+
+        <div class="container__info">
+            <div class="container__profile-pic">
+                <img src="../img/foto_perfil.jpg" alt="">
             </div>
-        </article>
-    </div>
-</body>
+
+            <div class="container__username">
+                <a href="#">masi_cabj</a>
+            </div>
+
+            <!-- Esto depende si esta o no verificado -->
+            <div class="container__verify" id="container__verify-1">
+                <span class="verify">VERIFICADO</span>
+                <span class="small-verify">V</span>
+                <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Jotelson</span>
+            </div>
+
+            <span class="separator__info">·</span>
+
+            <div class="container__date">
+                <span>hace 7h</span>
+            </div>
+        </div>
+
+        <div class="container__content-post">
+            <h2 class="title--post">Problema en la instalación</h2>
+            <p class="content--post">Hola, necesito ayuda con la instalación del juego, cuando intento instalarlo, luego de su descarga, me tira un error el windows defender, busque en google y no encuentro ninguna solucion, tampoco vi que en foro lo hayan comentado. Si alguien puede decirme la solucion o ayudarme estaria muy agradecido. Saludos</p>
+            <div class="container__imgs"></div>
+        </div>
+
+        <div class="container__feedback">
+            <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
+            <a href="#" class="feedback__comments"><i class="bi bi-chat"></i> 54</a>
+            <a href="#" class="feedback__share"><i class="bi bi-share"></i> Compartir</a>
+        </div>
+
+    </article>
+</main>
+
+<script src="../js/main.js" type="text/javascript"></script>
+<script src="../js/comunidad.js" type="text/javascript"></script>

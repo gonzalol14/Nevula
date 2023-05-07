@@ -3,6 +3,6 @@ require_once("../server/config.php");
 
 
 
-$title = "comunidad";
+$title = "Comunidad";
 $view = "comunidad";
 require_once('../views/layout.php');
