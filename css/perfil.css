@@ -1,0 +1,126 @@
+body{
+    background: #ECECEC;
+}
+
+.container__perfil{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #D5D5D5;
+    background: #FFF;
+}
+.container_info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.container__profile-pic img{
+    width: 70px;
+    height: 70px;
+    display: block;
+}
+
+.container_name{
+    font-weight: 700;
+    margin: 0 2.5rem;
+    font-size: 20px;
+}
+
+.container_verify{
+    border: 1px solid #09a814;
+    border-radius: 1.25rem;
+    padding: 5px 10px;
+    font-size: 13px;
+    color: #FFF;
+    background-color: #09a814;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: default;
+    position: relative;
+    display: inline-block;
+}
+.popup-verify{
+    scale: 0;
+    background-color: #555;
+    color: #FFF;
+    /*border: 1px solid #D5D5D5;*/
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: -55%;
+    /*margin-left: -110px;*/
+    letter-spacing: normal;
+    width: 250px;
+    user-select: none;
+}
+
+.popup-verify.show {
+    transition-delay: 300ms;
+    scale: 1;
+}
+
+.small-verify{
+    display: none;
+}
+
+.container__posts{
+    margin: 0 4.5rem;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.container__followers{
+    margin: 0 4.5rem;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.container__following{
+    margin: 0 4.5rem;
+    font-weight: 700;
+    font-size: 20px;
+}
+.container__description{
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.container__interaction{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.container_follow button{
+    border: 1px solid #FFA425;
+    border-radius: 1.25rem;
+    padding: 5px 10px;
+    font-size: 15px;
+    color: #FFF;
+    background-color: #FFA425;
+    letter-spacing: 2px;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.container__change-profile{
+    border: 1px solid #FFA425;
+    border-radius: 1.25rem;
+    padding: 5px 10px;
+    font-size: 15px;
+    color: #FFF;
+    background-color: #FFA425;
+    letter-spacing: 2px;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    margin: 0.5rem 0 0.5rem 1rem;
+}
+

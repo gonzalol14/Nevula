@@ -18,6 +18,9 @@
     } elseif ($view == "comunidad") { ?>
         <link rel="stylesheet" href="../css/comunidad.css">
         <?php
+    } elseif($view == "perfil") {?>
+        <link rel="stylesheet" href="../css/perfil.css">
+        <?php 
     } ?>
     <link rel="stylesheet" href="../css/main.css">
 
