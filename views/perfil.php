@@ -59,10 +59,6 @@
                 <span class="small-verify">V</span>
                 <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Jotelson</span>
             </div>
-            <div class="container__posts">
-            <span id="posts-id=1"> 1 </span>
-                <a href="#" class="posts"> publicaciones </a>
-            </div>
             <div class="container__change-profile">
                 <a href="#">
                     <span>CAMBIAR PERFIL</span>
@@ -74,8 +70,20 @@
                 Soy desarrollador en el juego de linea B y administrador de esta pagina.
             </span>
         </div>
+        <!-- depende si es otra cuenta se tiene que mostrar seguir o cambiar perfil -->
         <div class="container__interaction">
-            
+            <div class="container__posts">
+                <span id="posts-id=1"> 1   </span>
+                <a href="#" class="posts"> publicaciones </a>
+            </div>
+            <div class="container__followers">
+                <span id="posts-id=1"> 5M </span>
+                <a href="#" class="posts"> seguidores </a>
+            </div>
+            <div class="container__following">
+                <span id="posts-id=1"> 6 </span>
+                <a href="#" class="posts"> seguidos </a>
+            </div>
         </div>
     </article>
 

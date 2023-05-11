@@ -30,9 +30,9 @@
 
     <div class="container__right">
         <div class="container__profile">
-            <button href="../controllers/perfil.php" class="btn-profile">
+            <a href="../controllers/perfil.php" class="btn-profile">
                 <i class="bi bi-person-circle"></i>
-            </button>
+            </a>
 
         </div>
 
