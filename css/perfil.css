@@ -17,15 +17,17 @@ body{
     margin-bottom: 5px;
 }
 
-.container__profile-pic img{
+.container__profile-picture img{
     width: 70px;
     height: 70px;
-    display: block;
+    border-radius: 50%;
+    object-fit: cover;
 }
+
 
 .container_name{
     font-weight: 700;
-    margin: 0 2.5rem;
+    margin: 0 0.5rem;
     font-size: 20px;
 }
 
@@ -70,9 +72,16 @@ body{
 }
 
 .container__posts{
-    margin: 0 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 1.7rem 20rem;
     font-weight: 700;
     font-size: 20px;
+}
+
+.container__posts a{
+    font-weight: 450;
 }
 
 .container__followers{
@@ -96,20 +105,6 @@ body{
     margin-bottom: 5px;
 }
 
-.container_follow button{
-    border: 1px solid #FFA425;
-    border-radius: 1.25rem;
-    padding: 5px 10px;
-    font-size: 15px;
-    color: #FFF;
-    background-color: #FFA425;
-    letter-spacing: 2px;
-    font-weight: 500;
-    position: relative;
-    display: inline-block;
-    margin: 0.5rem 0 0.5rem 0;
-}
-
 .container__change-profile{
     border: 1px solid #FFA425;
     border-radius: 1.25rem;
@@ -121,6 +116,6 @@ body{
     font-weight: 500;
     position: relative;
     display: inline-block;
-    margin: 0.5rem 0 0.5rem 1rem;
+    margin: 0.5rem 0 1.7rem 19.9rem;
 }
 

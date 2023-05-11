@@ -48,7 +48,7 @@
 <main class="container">
     <article class="container__perfil">
         <div class="container_info">
-            <div class="container__profile-pic">
+            <div class="container__profile-picture">
                 <img src="../img/foto_perfil.jpg" alt="">
             </div>
             <div class="container_name">
@@ -60,16 +60,13 @@
                 <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Jotelson</span>
             </div>
             <div class="container__posts">
-                <a href="#" class="posts"> publicaciones: </a>
-                <span id="posts-id=1"> 8 </span>
+            <span id="posts-id=1"> 1 </span>
+                <a href="#" class="posts"> publicaciones </a>
             </div>
-            <div class="container__followers">
-                <a href="#" class="followers">seguidores:</a>
-                <span id="followers-id=1">5M</span>
-            </div>
-            <div class="container__following">
-                <a href="#" class="following"> siguiendo:</a>
-                <span id="following-id=1">6</span>
+            <div class="container__change-profile">
+                <a href="#">
+                    <span>CAMBIAR PERFIL</span>
+                </a>
             </div>
         </div>
         <div class="container__description">    
@@ -78,15 +75,7 @@
             </span>
         </div>
         <div class="container__interaction">
-            <!-- esto depende si es otro perfil el que mira la pagina -->
-            <div class="container_follow">
-                <button>seguir</button>
-            </div>
-            <div class="container__change-profile">
-                <a href="#">
-                    <span>cambiar perfil</span>
-                </a>
-            </div>
+            
         </div>
     </article>
 
@@ -104,11 +93,6 @@
     </div>
 
     <!-- Esto depende si esta o no verificado -->
-    <div class="container__verify" id="container__verify-1">
-        <span class="verify">VERIFICADO</span>
-        <span class="small-verify">V</span>
-        <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Jotelson</span>
-    </div>
 
     <span class="separator__info">·</span>
 
