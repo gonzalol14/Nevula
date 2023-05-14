@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- JQUERY -->
     <script src="../js/jquery.min.js"></script>
+    <script src="../js/descarga.js"></script>
     <!-- CSS -->
     <?php
     if ($view == "login" || $view == "register") { ?>

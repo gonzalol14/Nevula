@@ -37,7 +37,7 @@
         </div>
 
         <div class="container__download">
-            <button class="btn-download">DESCARGAR</button>
+            <button id="btnDescarga" class="btn-download" onclick="descargarArchivo()" >DESCARGAR</button>
         </div>
     </div>
 </header>
