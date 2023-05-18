@@ -12,16 +12,17 @@
     <?php
     if ($view == "login" || $view == "register") { ?>
         <link rel="stylesheet" href="../css/login_register.css">
-        <?php
+    <?php
     } elseif ($view == "home") { ?>
         <link rel="stylesheet" href="../css/home.css">
-        <?php
-    } elseif ($view == "comunidad") { ?>
+    <?php
+    } elseif ($view == "comunidad" || $view == "post_publication") { ?>
         <link rel="stylesheet" href="../css/comunidad.css">
-        <?php
-    } elseif($view == "perfil") {?>
+        <link rel="stylesheet" href="../css/post_publication.css">
+    <?php
+    } elseif ($view == "perfil") { ?>
         <link rel="stylesheet" href="../css/perfil.css">
-        <?php 
+    <?php
     } ?>
     <link rel="stylesheet" href="../css/main.css">
 
