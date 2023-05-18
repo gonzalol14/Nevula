@@ -55,12 +55,12 @@
 
             <div class="container__input-title">
                 <h3>Título</h3>
-                <textarea name="title" id="" placeholder="Introduce un título"></textarea>
+                <textarea class="post_textarea" name="title" id="" placeholder="Introduce un título" maxlength="250"></textarea>
             </div>
 
             <div class="container__input-content">
                 <h3>Contenido</h3>
-                <textarea name="content" id="" placeholder="Introduce texto"></textarea>
+                <textarea class="post_textarea" name="content" id="" placeholder="Introduce texto" maxlength="1750"></textarea>
             </div>
 
             <div class="container__inputs-finally">

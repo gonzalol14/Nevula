@@ -7,3 +7,12 @@ btn_list.addEventListener('click', () => {
 
     $('#icon-list').toggleClass("bi-list bi-x-lg");
 })
+
+
+// Auto-resize de textareas
+$("textarea").each(function () {
+    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;");
+}).on("input", function () {
+    this.style.height = 0;
+    this.style.height = (this.scrollHeight) + "px";
+});
