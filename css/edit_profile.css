@@ -11,7 +11,10 @@
 .aside__menu-edit {
     width: 200px;
     margin-right: 1.2rem;
-    padding: 1.25rem 0;
+    padding: 0; /* 1.25rem 0 */
+
+    overflow: hidden;
+    height: fit-content;
 }
 
 .article__edit {
@@ -31,9 +34,13 @@
     font-size: 15px;
     font-weight: 600;
     /*border-left: 3px solid transparent;*/
-    
+
     transition: 75ms;
     color: grey;
+}
+
+.submenu__edit-profile li:not(:last-child) {
+    margin-bottom: 5px;
 }
 
 .submenu__edit-profile a.active,
@@ -157,7 +164,7 @@ button[type=reset] {
     cursor: pointer;
 
     letter-spacing: 2px;
-    width: 30%;
+    width: fit-content;
 }
 
 button[type=submit] {
@@ -194,6 +201,10 @@ button[type=reset] {
     .submenu__edit-profile {
         display: flex;
         justify-content: space-around;
+    }
+
+    .submenu__edit-profile li:not(:last-child){
+        margin-bottom: 0;
     }
 
     .submenu__edit-profile a {
