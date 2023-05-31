@@ -66,10 +66,6 @@ a {
     .container {
         width: 100%;
     }
-
-    .article__post {
-        border: none;
-    }
 }
 
 /**** HEADER ******/
@@ -240,3 +236,43 @@ header {
 }
 
 /**** HEADER ******/
+
+textarea {
+    width: 100%;
+    overflow-x: hidden !important;
+    overflow-wrap: break-word;
+    border: 1px solid #D5D5D5;
+    border-radius: 0.25rem;
+    padding: 11px;
+    font-size: 15px;
+
+    height: 46px;
+}
+
+textarea:hover {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #B7B7B7;
+}
+
+/**** COMUNIDAD *****/
+
+.main__containers-community {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #D5D5D5;
+    background: #FFF;
+    /*box-shadow: var(--shadow-elevation-medium);*/
+}
+
+@media (max-width: 576px) {
+    .main__containers-community {
+        border: none;
+    }
+}

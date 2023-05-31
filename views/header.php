@@ -10,19 +10,32 @@
 
         <ul class="container__list-buttons">
             <li class="container__btn-home">
-                <a href="">INICIO</a>
+                <a href="home.php">INICIO</a>
             </li>
             <li>
                 <a href="">NOVEDADES</a>
             </li>
             <li>
-                <a href="../controllers/comunidad.php">COMUNIDAD</a>
+                <a href="comunidad.php">COMUNIDAD</a>
+                <!-- Proximamente...
+                <ul>
+                    <li>Foro</li>
+                    <li>Crear publicación</li>
+                </ul>
+                -->
             </li>
             <li>
                 <a href="">AYUDA</a>
             </li>
             <li class="list-menu-profile">
-                <a href="">PERFIL</a>
+                <a href="profile.php">PERFIL</a>
+                <!-- Proximamente...
+                <ul>
+                    <li>Ver perfil</li>
+                    <li>Editar perfil</li>
+                    <li>Cerrar sesión</li>
+                </ul>
+                -->
             </li>
 
         </ul>
@@ -30,14 +43,14 @@
 
     <div class="container__right">
         <div class="container__profile">
-            <a href="../controllers/perfil.php" class="btn-profile">
+            <a href="../controllers/profile.php" class="btn-profile">
                 <i class="bi bi-person-circle"></i>
             </a>
 
         </div>
 
         <div class="container__download">
-            <button id="btnDescarga" class="btn-download" onclick="descargarArchivo()" >DESCARGAR</button>
+            <button id="btnDescarga" class="btn-download" onclick="descargarArchivo()">DESCARGAR</button>
         </div>
     </div>
 </header>

@@ -3,6 +3,6 @@ require_once("../server/config.php");
 
 
 
-$title = "perfil";
-$view = "perfil";
+$title = "Perfil";
+$view = "profile";
 require_once('../views/layout.php');

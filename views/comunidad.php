@@ -18,7 +18,7 @@
         </div>
     </article>
 
-    <article class="article__post">
+    <article class="main__containers-community">
 
         <div class="container__info">
             <div class="container__profile-pic">
@@ -54,7 +54,7 @@
         <div class="container__feedback">
             <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
             <a href="#" class="feedback__comments"><i class="bi bi-chat"></i> 54</a>
-            <a href="#" class="feedback__share"><i class="bi bi-share"></i> Compartir</a>
+            <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
         </div>
 
     </article>

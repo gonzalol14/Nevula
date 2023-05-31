@@ -1,6 +1,6 @@
 <main class="container">
 
-    <article class="article__post">
+    <article class="main__containers-community">
         <form action="" method="POST">
             <div class="container__title">
                 <a href="javascript:history.back()" class="button_back"><i class="bi bi-arrow-left-short"></i></a>

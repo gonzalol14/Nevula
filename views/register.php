@@ -5,7 +5,7 @@
             </div>
 
             <div class="container__title">
-                <p>Crea tu cuenta en Jotelson</p>
+                <p>Crea tu cuenta en Nevula</p>
             </div>
 
             <form method="POST" action="../controllers/register.php" id="form" class="register__form">

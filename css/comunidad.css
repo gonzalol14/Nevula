@@ -124,17 +124,6 @@ body {
     background: #FF990B;
 }
 
-.article__post {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1.5rem;
-    padding: 1.25rem;
-    border-radius: 0.5rem;
-    border: 1px solid #D5D5D5;
-    background: #FFF;
-    /*box-shadow: var(--shadow-elevation-medium);*/
-}
-
 .container__info {
     display: flex;
     align-items: center;

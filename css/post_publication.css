@@ -45,27 +45,6 @@ h3 {
     font-weight: 600;
 }
 
-textarea {
-    width: 100%;
-    overflow-x: hidden !important;
-    overflow-wrap: break-word;
-    border: 1px solid #D5D5D5;
-    border-radius: 0.25rem;
-    padding: 11px;
-    font-size: 15px;
-    
-    height: 46px;
-}
-
-textarea:hover {
-    outline: none;
-}
-
-textarea:focus {
-    outline: none;
-    border-color: #B7B7B7;
-}
-
 .container__input-title textarea {
     min-height: 0;
     max-height: 110px;
@@ -76,7 +55,8 @@ textarea:focus {
 .container__input-content textarea {
     min-height: 10rem;
     max-height: 30rem;
-    resize: vertical;
+    resize: none;
+    overflow: hidden;
 }
 
 .container__inputs-finally {

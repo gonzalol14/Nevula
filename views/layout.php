@@ -9,6 +9,8 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../js/descarga.js"></script>
     <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
     <?php
     if ($view == "login" || $view == "register") { ?>
         <link rel="stylesheet" href="../css/login_register.css">
@@ -20,12 +22,15 @@
         <link rel="stylesheet" href="../css/comunidad.css">
         <link rel="stylesheet" href="../css/post_publication.css">
     <?php
-    } elseif ($view == "perfil") { ?>
+    } elseif ($view == "profile") { ?>
         <link rel="stylesheet" href="../css/comunidad.css">
-        <link rel="stylesheet" href="../css/perfil.css">
+        <link rel="stylesheet" href="../css/profile.css">
+    <?php
+    } elseif ($view == "edit_profile") { ?>
+        <link rel="stylesheet" href="../css/comunidad.css">
+        <link rel="stylesheet" href="../css/edit_profile.css">
     <?php
     } ?>
-    <link rel="stylesheet" href="../css/main.css">
 
     <title><?php echo $title ?> - Jotelson</title>
 </head>

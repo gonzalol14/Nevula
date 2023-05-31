@@ -5,7 +5,7 @@
             </div>
 
             <div class="container__title">
-                <p>Inicia sesión en Jotelson</p>
+                <p>Inicia sesión en Nevula</p>
             </div>
 
             <form method="POST" action="../controllers/login.php" id="form" class="login__form">
