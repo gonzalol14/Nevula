@@ -96,7 +96,7 @@ header {
     list-style: none;
 }
 
-.container__list-buttons a {
+.container__list-buttons > li > a {
     display: flex;
     align-items: center;
 
@@ -111,7 +111,7 @@ header {
     transition: 200ms;
 }
 
-.container__list-buttons a:hover {
+.container__list-buttons > li > a:hover {
     border-bottom-color: #ffa01b;
     background: #263B50;
 }
@@ -162,16 +162,14 @@ header {
         border-top: 1px solid grey;
     }
 
-    .container__list-buttons.activo a {
+    .container__list-buttons.activo > li > a {
         display: flex;
         border-bottom: 1px solid grey;
     }
 
-    .container__list-buttons.activo a:hover {
+    .container__list-buttons.activo > li > a:hover {
         border-bottom: 1px solid grey;
     }
-
-
 
 }
 
@@ -200,7 +198,7 @@ header {
     background-color: transparent;
     color: #FFF;
     font-size: 23px;
-    padding: 0;
+    padding: 10px 15px;
 }
 
 .btn-profile i {
@@ -214,7 +212,7 @@ header {
 
 .container__download {
     height: 100%;
-    margin-left: 35px;
+    margin-left: 20px;
 }
 
 .btn-download {
@@ -277,6 +275,46 @@ textarea:focus {
     }
 }
 
+.container__dropdown--header {
+    background-color: #1b2b3b;
+    color: #FFF;
+    position: absolute;
+    list-style: none;
+
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+
+    top: 51px;
+    min-width: 150px;
+}
+
+.container__dropdown--header > li > a{
+    display: flex;
+    align-items: center;
+
+    height: 2.8rem;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.container__dropdown--header > li > a:hover {
+    background: rgb(31, 56, 79);
+}
+
+@media (max-width: 1140px) {
+    .container__dropdown--header {
+        top: 0;
+        width: 100%;
+        position: relative;
+        background: rgb(31, 56, 79);
+    }
+
+    .container__dropdown--header > li > a:hover {
+        background: #263B50;
+    }
+}
 
 
 /********* BARRA DE BUSQUEDA *************/
