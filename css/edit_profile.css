@@ -152,8 +152,8 @@
     justify-content: end;
 }
 
-button[type=submit],
-button[type=reset] {
+.btn_edit-submit,
+.btn_edit-reset {
     border: none;
     border-radius: 0.25rem;
     padding: 10px;
@@ -163,17 +163,18 @@ button[type=reset] {
     color: #FFF;
     cursor: pointer;
 
-    letter-spacing: 2px;
     width: fit-content;
 }
 
-button[type=submit] {
+.btn_edit-submit {
     margin-left: 10px;
 }
 
-button[type=reset] {
-    background-color: grey;
-    
+.btn_edit-reset {
+    background-color: #BBB;
+}
+.btn_edit-reset:hover {
+    background-color: #929292;
 }
 
 .container__imgs-avatar {

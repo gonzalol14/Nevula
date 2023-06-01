@@ -35,8 +35,8 @@
         </div>
 
         <div class="form-submit">
-            <button type="reset" class="" id="edit_general-reset">DESCARTAR</button>
-            <button type="submit" class="" id="edit_general-submit">GUARDAR CAMBIOS</button>
+            <button type="reset" class="btn_edit-reset" id="edit_general-reset">Descartar</button>
+            <button type="submit" class="btn_edit-submit" id="edit_general-submit">Guardar cambios</button>
         </div>
     </form>
 
