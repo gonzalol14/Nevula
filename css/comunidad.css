@@ -64,65 +64,6 @@ body {
     font-size: 26px;
 }
 
-.container__search-bar {
-    position: relative;
-}
-
-.container__search-bar input {
-    padding: 10px;
-    padding-right: 35px;
-    border-radius: 1.25rem;
-    border: none;
-    outline: none;
-    background: #ECECEC;
-    width: 500px;
-    font-size: 14px;
-}
-
-@media (max-width: 768px) {
-    .container__search-bar input {
-        width: 400px;
-        
-    }
-    .btn__create-post-icon {
-        display: inline-block;
-    }
-    .btn__create-post-text {
-        display: none;
-    }
-}
-
-@media (max-width: 576px) {
-    .container__search-bar input {
-        width: 300px;
-    }
-}
-
-@media (max-width: 400px) {
-    .container__search-bar input {
-        width: 190px;
-    }
-}
-
-.container__search-bar button {
-    background: #FFA425;
-    padding: 10px;
-    position: absolute;
-    border: none;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 0 1.25rem 1.25rem 0;
-    width: 50px;
-    color: #FFF;
-    z-index: 999;
-    text-align: center  ;
-}
-
-.container__search-bar button:hover {
-    background: #FF990B;
-}
 
 .container__info {
     display: flex;

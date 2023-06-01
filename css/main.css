@@ -128,7 +128,7 @@ header {
     font-size: 24px;
 }
 
-@media (max-width: 803px) {
+@media (max-width: 1140px) {
     .container__profile {
         display: none;
     }
@@ -275,4 +275,69 @@ textarea:focus {
     .main__containers-community {
         border: none;
     }
+}
+
+
+
+/********* BARRA DE BUSQUEDA *************/
+
+.list-menu-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+}
+
+.container__search-bar {
+    position: relative;
+}
+
+.container__search-bar input {
+    padding: 7px;
+    padding-right: 35px;
+    border-radius: 1.25rem;
+    border: none;
+    outline: none;
+    background: #ECECEC;
+    width: 500px; 
+    font-size: 13px;
+}
+
+@media (max-width: 1260px) {
+    .container__search-bar input {
+        width: 375px;
+        
+    }   
+}
+
+@media (max-width: 405px) {
+    .container__search-bar input {
+        width: 300px;
+    }
+}
+
+@media (max-width: 335px) {
+    .container__search-bar input {
+        width: 260px;
+    }
+}
+
+.container__search-bar button {
+    background: #FFA425;
+    padding: 7px;
+    position: absolute;
+    border: none;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0 1.25rem 1.25rem 0;
+    width: 50px;
+    color: #FFF;
+    z-index: 999;
+    text-align: center  ;
+}
+
+.container__search-bar button:hover {
+    background: #FF990B;
 }

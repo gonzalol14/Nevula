@@ -37,6 +37,14 @@
                 </ul>
                 -->
             </li>
+            <li class="list-menu-search">
+                <div class="container__search-bar">
+                    <input type="search" placeholder="Buscar...">
+                    <button type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </li>
 
         </ul>
     </div>

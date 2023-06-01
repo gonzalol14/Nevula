@@ -1,21 +1,13 @@
 <main class="container">
 
     <article class="menu__comunnity">
-        <!-- Pantalla +768px -->
         <a href="../controllers/post_publication.php" class="btn__create-post-text">
             <span>Crear publicación</span>
         </a>
-        <!-- Pantalla -768px -->
+        <!-- Pantalla -768px 
         <a href="../controllers/post_publication.php" class="btn__create-post-icon" title="Crear publicación">
             <i class="bi bi-plus-square"></i>
-        </a>
-
-        <div class="container__search-bar">
-            <input type="search" placeholder="Buscar...">
-            <button type="submit">
-                <i class="bi bi-search"></i>
-            </button>
-        </div>
+        </a>-->
     </article>
 
     <article class="main__containers-community">
