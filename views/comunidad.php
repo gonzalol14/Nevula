@@ -1,14 +1,10 @@
 <main class="container">
 
-    <article class="menu__comunnity">
+    <!--<article class="menu__comunnity">
         <a href="../controllers/post_publication.php" class="btn__create-post-text">
             <span>Crear publicación</span>
         </a>
-        <!-- Pantalla -768px 
-        <a href="../controllers/post_publication.php" class="btn__create-post-icon" title="Crear publicación">
-            <i class="bi bi-plus-square"></i>
-        </a>-->
-    </article>
+    </article>-->
 
     <article class="main__containers-community">
 
