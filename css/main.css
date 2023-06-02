@@ -171,6 +171,11 @@ header {
         border-bottom: 3.5px solid #ffa01b;
     }
 
+    /*.container__list-buttons.activo > li > a:focus {
+        border-bottom: 3.5px solid #ffa01b;
+        background: rgb(31, 56, 79);
+    }*/
+
 }
 
 @media (max-width: 350px) {

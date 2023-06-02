@@ -18,7 +18,7 @@
             <li class="btn_dropdown" id="btn_dropdown-community">
                 <a href="comunidad.php">COMUNIDAD</a>
                 <!-- Proximamente... -->
-                <ul class="container__dropdown--header dropdown-community" >
+                <ul class="container__dropdown--header dropdown dropdown-community" >
                     <li><a href="comunidad.php">FORO</a></li>
                     <li><a href="post_publication.php">CREAR PUBLICACIÓN</a></li>
                 </ul>
@@ -30,7 +30,7 @@
             <li class="list-menu-profile btn_dropdown" id="btn_dropdown-profile1">
                 <a href="profile.php">PERFIL</a>
                 <!-- Proximamente... -->
-                <ul class="container__dropdown--header dropdown-profile1" >
+                <ul class="container__dropdown--header dropdown dropdown-profile1" >
                     <li><a href="profile.php">VER PERFIL</a></li>
                     <li><a href="edit_general.php">EDITAR PERFIL</a></li>
                     <li><a href="">CERRAR SESIÓN</a></li>
@@ -55,7 +55,7 @@
                 <i class="bi bi-person-circle"></i>
             </a>
             <!-- Proximamente... -->
-            <ul class="container__dropdown--header dropdown-profile2" >
+            <ul class="container__dropdown--header dropdown dropdown-profile2" >
                 <li><a href="profile.php">VER PERFIL</a></li>
                 <li><a href="edit_general.php">EDITAR PERFIL</a></li>
                 <li><a href="">CERRAR SESIÓN</a></li>

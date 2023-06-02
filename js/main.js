@@ -19,11 +19,31 @@ $("textarea").each(function () {
 
 
 // Dropdowns header
-$( ".btn_dropdown" ).hover(
-    function() {
+
+if($("#btn_dropdown-profile1").css("display") == "none"){
+    $( ".btn_dropdown" ).hover(
+        function() {
+            id = this.id.split("-")[1]
+            $(".dropdown-" + id).stop(true).delay(300).slideDown(250);
+        }, function() {
+            $(".dropdown-" + id).stop(true).delay(0).slideUp(250);
+        }
+    );
+} else {
+    $( ".btn_dropdown" ).click(function(e){
         id = this.id.split("-")[1]
-        $(".dropdown-" + id).stop(true).delay(300).slideDown(250);
-    }, function() {
-        $(".dropdown-" + id).stop(true).delay(0).slideUp(250);
-    }
-);
+        $(this).children().first().attr("href", "#");
+
+        //Todos los dropdowns
+        dropdowns = $(".dropdown")
+        for(i = 0; i < dropdowns.length; i ++) {
+            if(dropdowns[i] != $(".dropdown-" + id)[0]) {
+                // Cerrar los dropdowns abiertos, si es que hay
+                $(dropdowns[i]).slideUp(250);
+            } else {
+                // Abrir el dropdown seleccionado
+                $(".dropdown-" + id).slideToggle(250);
+            }
+        }
+    });
+}
