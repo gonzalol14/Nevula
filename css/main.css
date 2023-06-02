@@ -291,6 +291,9 @@ textarea:focus {
     position: absolute;
     list-style: none;
 
+    border-radius: 0 0 .5rem .5rem;
+    overflow: hidden;
+
     display: none;
     justify-content: center;
     flex-direction: column;

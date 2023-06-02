@@ -50,7 +50,9 @@ if ($("#container_dropdown-profile1").css("display") == "none") {
             } else {
                 // Abrir el dropdown seleccionado
                 $(".dropdown-" + id).slideToggle(250);
-                btn_dropdown.toggleClass("btn_dropdown");
+                if (id != "profile2") {
+                    btn_dropdown.toggleClass("btn_dropdown");
+                }
             }
         }
     });
