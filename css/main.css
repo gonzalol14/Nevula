@@ -178,6 +178,11 @@ header {
 
 }
 
+.btn_dropdown {
+    border-bottom: 3.5px solid #ffa01b !important;
+    background: rgb(31, 56, 79) !important;
+}
+
 @media (max-width: 350px) {
     .container__download {
         margin-left: 0px !important;
@@ -206,7 +211,7 @@ header {
     padding: 10px 15px;
 }
 
-.btn-profile i {
+.btn-profile:hover {
     opacity: 0.7;
 }
 

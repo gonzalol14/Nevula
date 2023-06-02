@@ -15,27 +15,27 @@
             <li>
                 <a href="">NOVEDADES</a>
             </li>
-            <li class="btn_dropdown" id="btn_dropdown-community">
-                <a href="comunidad.php">COMUNIDAD</a>
+            <li class="container_dropdown" id="container_dropdown-community">
+                <a href="comunidad.php" class="">COMUNIDAD</a>
                 <!-- Proximamente... -->
-                <ul class="container__dropdown--header dropdown dropdown-community" >
+                <ul class="container__dropdown--header dropdown dropdown-community">
                     <li><a href="comunidad.php">FORO</a></li>
                     <li><a href="post_publication.php">CREAR PUBLICACIÓN</a></li>
                 </ul>
-                
+
             </li>
             <li>
                 <a href="../controllers/ayuda.php">AYUDA</a>
             </li>
-            <li class="list-menu-profile btn_dropdown" id="btn_dropdown-profile1">
-                <a href="profile.php">PERFIL</a>
+            <li class="list-menu-profile container_dropdown" id="container_dropdown-profile1">
+                <a href="profile.php" class="">PERFIL</a>
                 <!-- Proximamente... -->
-                <ul class="container__dropdown--header dropdown dropdown-profile1" >
+                <ul class="container__dropdown--header dropdown dropdown-profile1">
                     <li><a href="profile.php">VER PERFIL</a></li>
                     <li><a href="edit_general.php">EDITAR PERFIL</a></li>
                     <li><a href="">CERRAR SESIÓN</a></li>
                 </ul>
-                
+
             </li>
             <li class="list-menu-search">
                 <div class="container__search-bar">
@@ -50,12 +50,12 @@
     </div>
 
     <div class="container__right">
-        <div class="container__profile btn_dropdown" id="btn_dropdown-profile2">
+        <div class="container__profile container_dropdown" id="container_dropdown-profile2">
             <a href="../controllers/profile.php" class="btn-profile">
                 <i class="bi bi-person-circle"></i>
             </a>
             <!-- Proximamente... -->
-            <ul class="container__dropdown--header dropdown dropdown-profile2" >
+            <ul class="container__dropdown--header dropdown dropdown-profile2">
                 <li><a href="profile.php">VER PERFIL</a></li>
                 <li><a href="edit_general.php">EDITAR PERFIL</a></li>
                 <li><a href="">CERRAR SESIÓN</a></li>

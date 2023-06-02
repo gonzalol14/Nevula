@@ -23,8 +23,8 @@
         <link rel="stylesheet" href="../css/post_publication.css">
     <?php
     } elseif ($view == "profile") { ?>
-        <link rel="stylesheet" href="../css/comunidad.css">
         <link rel="stylesheet" href="../css/profile.css">
+        <link rel="stylesheet" href="../css/comunidad.css">
     <?php
     } elseif ($view == "edit_profile") { ?>
         <link rel="stylesheet" href="../css/comunidad.css">
