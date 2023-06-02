@@ -25,7 +25,7 @@
                 
             </li>
             <li>
-                <a href="">AYUDA</a>
+                <a href="../controllers/ayuda.php">AYUDA</a>
             </li>
             <li class="list-menu-profile btn_dropdown" id="btn_dropdown-profile1">
                 <a href="profile.php">PERFIL</a>

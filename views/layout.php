@@ -30,6 +30,9 @@
         <link rel="stylesheet" href="../css/comunidad.css">
         <link rel="stylesheet" href="../css/edit_profile.css">
     <?php
+    } elseif ($view == "ayuda") { ?>
+        <link rel="stylesheet" href="../css/ayuda.css">
+    <?php
     } ?>
 
     <title><?php echo $title ?> - Jotelson</title>
