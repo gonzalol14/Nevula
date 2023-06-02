@@ -22,12 +22,8 @@ $("textarea").each(function () {
 $( ".btn_dropdown" ).hover(
     function() {
         id = this.id.split("-")[1]
-        //$(".dropdown-" + id).css('display', 'flex');
-        $(".dropdown-" + id).slideToggle('fast');
-        
+        $(".dropdown-" + id).stop(true).delay(300).slideDown(250);
     }, function() {
-        //$(".dropdown-" + id).css('display', 'none');
-        $(".dropdown-" + id).slideToggle('fast');
-
+        $(".dropdown-" + id).stop(true).delay(0).slideUp(250);
     }
 );
