@@ -168,7 +168,7 @@ header {
     }
 
     .container__list-buttons.activo > li > a:hover {
-        border-bottom: 1px solid grey;
+        border-bottom: 3.5px solid #ffa01b;
     }
 
 }
