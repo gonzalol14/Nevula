@@ -1,7 +1,7 @@
     <div class="container__all">
         <div class="container__data">
             <div class="container__logo">
-                <img src="../img/logo_empresa_jotelson.png" alt="Logo Jotelson" width="300px">
+                <img src="../img/logo_empresa_jotelson.png" alt="Logo Nevula" width="300px">
             </div>
 
             <div class="container__title">

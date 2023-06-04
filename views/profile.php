@@ -10,7 +10,7 @@
             <div class="container_verify" id="container__verify-1">
                 <span class="verify">VERIFICADO</span>
                 <span class="small-verify">V</span>
-                <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Jotelson</span>
+                <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
             </div>
             <div class="container__change-profile">
                 <a href="edit_general.php">

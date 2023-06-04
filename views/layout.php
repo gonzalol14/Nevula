@@ -35,7 +35,7 @@
     <?php
     } ?>
 
-    <title><?php echo $title ?> - Jotelson</title>
+    <title><?php echo $title ?> - Nevula</title>
 </head>
 
 <body>
