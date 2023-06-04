@@ -62,4 +62,4 @@
     </div>
 </main>
 <script src="../js/ayuda.js"></script>
-<script src="../js/main.js"></script>
+<script src=""></script>

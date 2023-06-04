@@ -128,6 +128,16 @@ header {
     font-size: 24px;
 }
 
+.btn_dropdown-active {
+    border-bottom: 3.5px solid #ffa01b !important;
+    background: rgb(31, 56, 79) !important;
+}
+
+.btn_dropdown-disabled {
+    border-bottom: 1px solid grey !important;
+    background: #1b2b3b !important;
+}
+
 @media (max-width: 1140px) {
     .container__profile {
         display: none;
@@ -170,18 +180,8 @@ header {
     .container__list-buttons.activo > li > a:hover {
         border-bottom: 3.5px solid #ffa01b;
     }
-
-    /*.container__list-buttons.activo > li > a:focus {
-        border-bottom: 3.5px solid #ffa01b;
-        background: rgb(31, 56, 79);
-    }*/
-
 }
 
-.btn_dropdown {
-    border-bottom: 3.5px solid #ffa01b !important;
-    background: rgb(31, 56, 79) !important;
-}
 
 @media (max-width: 350px) {
     .container__download {
@@ -271,7 +271,7 @@ textarea:focus {
 .main__containers-community {
     display: flex;
     flex-direction: column;
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
     padding: 1.25rem;
     border-radius: 0.5rem;
     border: 1px solid #D5D5D5;
