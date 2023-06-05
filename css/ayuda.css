@@ -155,14 +155,14 @@ body {
     margin: 20px 0 0 0;
     font-size: 16px;
     font-weight: 600;
-    background-color: #DADADA;
+    background-color: #FFF;
 
     cursor: pointer;
     border-radius: 0.35rem 0.35rem 0.35rem 0.35rem;
 }
 
 .container-question:hover{
-  background-color: #D1D1D1;
+  background-color: #fcfcfc;
   transition: 0.2s;
 }
 
@@ -185,7 +185,7 @@ body {
 }
 
 .container-answer.activo{
-  background-color: #E1E1E1;
+  background-color: #F7F7F7;
   overflow: visible;
   display: flex;
   padding: 10px;
