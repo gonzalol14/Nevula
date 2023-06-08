@@ -1,7 +1,7 @@
 <header>
     <div class="container__left">
         <div class="container__logo">
-            <img src="../img/logo_empresa_jotelson.png" alt="Logo empresa" width="65px">
+            <img src="../img/logo sin letras.png" alt="Logo empresa" width="65px">
         </div>
 
         <div>
