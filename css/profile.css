@@ -1,141 +1,240 @@
-body{
-    background: #ECECEC;
-}
-
-.container__perfil{
-    display: flex;
-    flex-direction: column;
-    margin-top: 1.5rem;
-    padding: 1.25rem;
-    border-radius: 0.5rem;
-    border: 1px solid #D5D5D5;
-    background: #FFF;
-}
-.container_info{
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.container__profile-picture img{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-
-.container_name{
-    font-weight: 700;
-    margin: 0 0.5rem;
-    font-size: 20px;
-}
-
-.container_verify{
-    border: 1px solid #09a814;
-    border-radius: 1.25rem;
-    padding: 5px 10px;
-    font-size: 13px;
-    color: #FFF;
-    background-color: #09a814;
-    letter-spacing: 2px;
-    font-weight: 600;
-    cursor: default;
-    position: relative;
-    display: inline-block;
-}
-.popup-verify{
-    scale: 0;
-    background-color: #555;
-    color: #FFF;
-    /*border: 1px solid #D5D5D5;*/
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 100;
-    bottom: 125%;
-    left: -55%;
-    /*margin-left: -110px;*/
-    letter-spacing: normal;
-    width: 250px;
-    user-select: none;
-}
-
-.popup-verify.show {
-    transition-delay: 300ms;
-    scale: 1;
-}
-
-.small-verify{
-    display: none;
-}
-
-.container__posts{
-    display: flex;
-    font-weight: 600;
-    font-size: 18px;
-    margin: 0.5rem 0 0 0;
-}
-
-.container__posts a{
-    font-weight: 450;
-    font-size: 18px;
-    margin: 0 0 0 0.5rem;
-}
-
-.container__followers a{
-    font-weight: 450;
-    font-size: 18px;
-    margin: 0 0 0 0.5rem;
-}
-
-.container__following a{
-    font-weight: 450;
-    font-size: 18px;
-    margin: 0 0 0 0.5rem;
-}
-.container__followers{
-    display: flex;
-    margin: 0.5rem 0 0 3rem;
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.container__following{
-    display: flex;
-    margin: 0.5rem 0 0 3rem;
-    font-weight: 600;
-    font-size: 18px;
-}
-.container__description{
-    margin: 0.5rem 0 0.5rem 0;
-}
-
-.container__interaction{
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.container__change-profile{
-    border: 1px solid #FFA425;
-    border-radius: 1.25rem;
-    padding: 5px 10px;
-    font-size: 17px;
-    color: #FFF;
-    background-color: #FFA425;
-    letter-spacing: 2px;
-    font-weight: 500;
-    position: relative;
-    display: inline-block;
-    margin: 0.5rem 0 0.5rem 50rem;
-}
-
-@media (max-width: 1440px){
-    .container__change-profile{
-        margin: auto;
+    body{
+        background: #ECECEC;
     }
-}
+
+    .container__perfil{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.5rem;
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+        border: 1px solid #D5D5D5;
+        background: #FFF;
+    }
+    .container_info{
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .container__profile-picture img{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 
 
+    .container_name{
+        font-weight: 700;
+        margin: 0 0.5rem;
+        font-size: 20px;
+    }
+
+    .container_verify{
+        border: 1px solid #09a814;
+        border-radius: 1.25rem;
+        padding: 5px 10px;
+        font-size: 13px;
+        color: #FFF;
+        background-color: #09a814;
+        letter-spacing: 2px;
+        font-weight: 600;
+        cursor: default;
+        position: relative;
+        display: inline-block;
+    }
+    .popup-verify{
+        scale: 0;
+        background-color: #555;
+        color: #FFF;
+        /*border: 1px solid #D5D5D5;*/
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 100;
+        bottom: 125%;
+        left: -55%;
+        /*margin-left: -110px;*/
+        letter-spacing: normal;
+        width: 250px;
+        user-select: none;
+    }
+
+    .popup-verify.show {
+        transition-delay: 300ms;
+        scale: 1;
+    }
+
+    .small-verify{
+        display: none;
+    }
+
+    .container__posts{
+        display: flex;
+        font-weight: 600;
+        font-size: 18px;
+        margin: 0.5rem 0 0 0;
+    }
+
+    .container__posts a{
+        font-weight: 450;
+        font-size: 18px;
+        margin: 0 0 0 0.5rem;
+    }
+
+    .container__followers a{
+        font-weight: 450;
+        font-size: 18px;
+        margin: 0 0 0 0.5rem;
+    }
+
+    .container__following a{
+        font-weight: 450;
+        font-size: 18px;
+        margin: 0 0 0 0.5rem;
+    }
+    .container__followers{
+        display: flex;
+        margin: 0.5rem 0 0 3rem;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .container__following{
+        display: flex;
+        margin: 0.5rem 0 0 3rem;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .container__description{
+        margin: 0.5rem 0 0.5rem 0;
+    }
+
+    .container__interaction{
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .container__change-profile{
+        border: 1px solid #FFA425;
+        border-radius: 1.25rem;
+        padding: 5px 10px;
+        font-size: 17px;
+        color: #FFF;
+        background-color: #FFA425;
+        letter-spacing: 2px;
+        font-weight: 500;
+        position: relative;
+        display: inline-block;
+        margin: 0.5rem 0 0.5rem 50rem;
+    }
+
+    @media (max-width: 1400px){
+        .container__change-profile{
+            margin: 0.5rem 0 0.5rem 37rem;
+        }
+    }
+
+    @media (max-width: 1200px){
+        .container__change-profile{
+            margin: 0.5rem 0 0.5rem 27rem;
+        }
+    }
+
+    @media (max-width: 990px){
+        .container__change-profile{
+            margin: 0.5rem 0 0.5rem 13rem;
+        }
+    }
+
+    @media (max-width: 769px){
+        .container__change-profile{
+            margin: 0.5rem 0 0.5rem 2rem;
+        }
+    }
+
+    @media (max-width: 468px){
+        .container__following{
+            font-size: 17px !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin: 0.5rem 0 0 0.5rem;
+        } 
+        .container__followers{
+            font-size: 17px !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin: 0.5rem 0 0 0.5rem;
+        }
+        .container__posts{
+            font-size: 17px !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin: none !important;
+        } 
+        .container__followers a{
+            font-size: 17px !important;
+        }
+        .container__following a{
+            font-size: 17px !important;
+        }
+        .container__posts a{
+            font-size: 17px !important;
+        }
+    }
+
+
+    @media (max-width: 412px){
+        .container__change-profile{
+            margin: 0.5rem 0 0.5rem 0.5rem;
+            padding: 3px 5px;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 328px){
+        .container__profile-picture img{
+            height: 60px;
+            width: 60px;
+        }
+        .container_info{
+            flex-direction: column;
+        }
+        .container__following{
+            font-size: 13.5px !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin: 0.5rem 0 0 0.5rem;
+        } 
+        .container__followers{
+            font-size: 13.5px !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin: 0.5rem 0 0 0.5rem;
+        }
+        .container__posts{
+            font-size: 13.5px !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin: 0.5rem 0 0 0.5rem !important;
+        } 
+        .container__followers a{
+            font-size: 13.5px !important;
+        }
+        .container__following a{
+            font-size: 13.5px !important;
+        }
+        .container__posts a{
+            font-size: 13.5px !important;
+        }
+        
+    }
+
+    @media  (max-width: 281px) {
+        .container__posts{
+            margin: 0.5rem 0 0 -1rem !important;
+        }
+    }
