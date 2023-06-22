@@ -41,7 +41,7 @@
 
         <div class="container__feedback">
             <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-            <a href="#" class="feedback__comments"><i class="bi bi-chat"></i> 54</a>
+            <a href="publication.php" class="feedback__comments"><i class="bi bi-chat"></i> 54</a>
             <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
         </div>
 

@@ -176,7 +176,7 @@ body {
 .container__content-post {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
 }
 
 .title--post {
