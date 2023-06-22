@@ -1,0 +1,29 @@
+.form__post-comment {
+    display: flex;
+    align-items: center;
+}
+
+.container__input-content {
+    width: 100%;
+    margin: 0 1rem;
+    display: flex;
+}
+
+.post_textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+.container__inputs-finally button {
+    border-radius: 0.25rem;
+    font-size: 15px;
+    font-weight: 600;
+    color: #FFF;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #FFA425;
+}
+
+.container__inputs-finally button:hover {
+    background-color: #FF990B;
+}

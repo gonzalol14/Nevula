@@ -43,8 +43,8 @@
 
 
     <article class="main__containers-community">
-        <form action="" style="display: flex;">
-            <!-- Formulario para publicar comentarios -->
+        <!-- Formulario para publicar comentarios -->
+        <form action="" class="form__post-comment">
             <div class="container__profile-pic">
                 <a href="#">
                     <img src="../img/foto_perfil.jpg" alt="">
