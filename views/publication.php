@@ -45,27 +45,32 @@
     <article class="main__containers-community">
         <!-- Formulario para publicar comentarios -->
         <form action="" class="form__post-comment">
-            <div class="container__profile-pic">
-                <a href="#">
-                    <img src="../img/foto_perfil.jpg" alt="">
-                </a>
+            <div class="container__profile-pic" id="form_comment-pic">
+                <img src="../img/foto_perfil.jpg" alt="">
             </div>
-
-            <div class="container__input-content">
-                <textarea class="post_textarea" name="content" id="" placeholder="Escribe una respuesta" maxlength="1750"></textarea>
+            <div class="container__profile-text">
+                <p>Responder desde <span class="span_username">pepe23</span></p>
             </div>
+            
+            <div class="container__inputs-form">
+                <div class="container__input-content">
+                    <textarea class="post_textarea" name="content" id="" placeholder="Escribe una respuesta" maxlength="1750"></textarea>
+                </div>
+    
+                <div class="container__inputs-finally">
+                    <button class="button_submit" type="submit">Publicar</button>
+                </div>
 
-            <div class="container__inputs-finally">
-                <button class="button_submit" type="submit">Publicar</button>
             </div>
         </form>
     </article>
 
     <article class="main__containers-community">
-        <div>
+        <h3 class="title_answer">Respuestas</h3>
+        <div class="container__comment">
             <!-- Comentarios -->
             <div class="container__info">
-                <div class="container__profile-pic">
+                <div class="comment__profile-pic">
                     <a href="#">
                         <img src="../img/foto_perfil.jpg" alt="">
                     </a>
@@ -76,10 +81,10 @@
                 </div>
 
                 <!-- Esto depende si esta o no verificado -->
-                <div class="container__verify" id="container__verify-1">
+                <div class="container__verify" id="container__verify-2">
                     <span class="verify">VERIFICADO</span>
                     <span class="small-verify">V</span>
-                    <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+                    <span class="popup-verify" id="popup-verify-2">Esta persona forma parte de Nevula</span>
                 </div>
 
                 <span class="separator__info">·</span>
@@ -103,10 +108,10 @@
 
         <hr style="margin: 20px 0;">
 
-        <div>
+        <div class="container__comment">
             <!-- Comentarios -->
             <div class="container__info">
-                <div class="container__profile-pic">
+                <div class="comment__profile-pic">
                     <a href="#">
                         <img src="../img/foto_perfil.jpg" alt="">
                     </a>
