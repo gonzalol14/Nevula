@@ -6,17 +6,19 @@
         </a>
     </article>-->
 
+    <?php foreach($rowPublications as $valores){ ?>
+
     <article class="main__containers-community">
 
         <div class="container__info">
             <div class="container__profile-pic">
-                <a href="#">
+                <a href="profile.php?id=<?php echo ($valores['usuario_id']) ?>">
                     <img src="../img/foto_perfil.jpg" alt="">
                 </a>
             </div>
 
             <div class="container__username">
-                <a href="#">masi_cabj</a>
+                <a href="profile.php?id=<?php echo ($valores['usuario_id']) ?>"><?php echo $valores['nombre_usuario'] ?></a>
             </div>
 
             <!-- Esto depende si esta o no verificado -->
@@ -29,13 +31,13 @@
             <span class="separator__info">·</span>
 
             <div class="container__date">
-                <span>hace 7h</span>
+                <span><?php echo $valores['fecha'] ?></span>
             </div>
         </div>
 
         <div class="container__content-post">
-            <h2 class="title--post">Problema en la instalación</h2>
-            <p class="content--post">Hola, necesito ayuda con la instalación del juego, cuando intento instalarlo, luego de su descarga, me tira un error el windows defender, busque en google y no encuentro ninguna solucion, tampoco vi que en foro lo hayan comentado. Si alguien puede decirme la solucion o ayudarme estaria muy agradecido. Saludos</p>
+            <h2 class="title--post"><?php echo $valores['titulo'] ?></h2>
+            <p class="content--post"><?php echo $valores['contenido'] ?></p>
             <div class="container__imgs"></div>
         </div>
 
@@ -46,6 +48,7 @@
         </div>
 
     </article>
+    <?php } ?>
 
 </main>
 

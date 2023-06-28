@@ -33,7 +33,7 @@
                 <ul class="container__dropdown--header dropdown dropdown-profile1">
                     <li><a href="profile.php">VER PERFIL</a></li>
                     <li><a href="edit_general.php">EDITAR PERFIL</a></li>
-                    <li><a href="">CERRAR SESIÓN</a></li>
+                    <li><a href="../controllers/logout.php">CERRAR SESIÓN</a></li>
                 </ul>
 
             </li>
@@ -58,7 +58,7 @@
             <ul class="container__dropdown--header dropdown dropdown-profile2">
                 <li><a href="profile.php">VER PERFIL</a></li>
                 <li><a href="edit_general.php">EDITAR PERFIL</a></li>
-                <li><a href="">CERRAR SESIÓN</a></li>
+                <li><a href="../controllers/logout.php">CERRAR SESIÓN</a></li>
             </ul>
         </div>
 

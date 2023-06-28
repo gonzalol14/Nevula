@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2023 a las 04:22:12
+-- Tiempo de generación: 29-06-2023 a las 00:19:54
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -46,9 +46,19 @@ CREATE TABLE `publicaciones` (
   `id` int(100) NOT NULL,
   `usuario_id` int(50) NOT NULL,
   `fecha` datetime NOT NULL,
-  `contenido` varchar(200) NOT NULL,
-  `deleted_at` datetime NOT NULL
+  `titulo` varchar(250) NOT NULL,
+  `contenido` varchar(1750) NOT NULL,
+  `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `publicaciones`
+--
+
+INSERT INTO `publicaciones` (`id`, `usuario_id`, `fecha`, `titulo`, `contenido`, `deleted_at`) VALUES
+(1, 0, '2023-06-27 19:09:08', 'test 1', 'test2', '0000-00-00 00:00:00'),
+(2, 1, '2023-06-27 19:26:24', 'test', 'reqwrwer', NULL),
+(3, 1, '2023-06-27 19:28:37', 'Problema en la instalación', 'Hola, necesito ayuda con la instalación del juego, cuando intento instalarlo, luego de su descarga, me tira un error el windows defender, busque en google y no encuentro ninguna solucion, tampoco vi que en foro lo hayan comentado. Si alguien puede decirme la solucion o ayudarme estaria muy agradecido. Saludos', NULL);
 
 -- --------------------------------------------------------
 
@@ -111,7 +121,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
