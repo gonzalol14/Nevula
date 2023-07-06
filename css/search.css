@@ -1,0 +1,33 @@
+.main-search{
+    flex-direction: row;
+    border: none;
+    background-color: #ECECEC;
+    padding: 0;
+}
+
+.container__type-search a{
+    border: 1px solid inherit;
+    border-radius: 1.25rem;
+    padding: 7.5px 15px;
+    font-size: 15px;
+    color: #000;
+    background-color: inherit;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: default;
+    position: relative;
+    display: inline-block;
+    
+    margin-right: 20px;
+}
+
+.container__type-search a:hover{
+    background-color: #c7c7c7;
+    border-color: #c7c7c7;
+    cursor: pointer;
+}
+
+.active a{
+    background-color: #B8B8B8;
+    border-color: #B8B8B8;
+}

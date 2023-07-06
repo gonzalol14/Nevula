@@ -33,7 +33,11 @@
     } elseif ($view == "ayuda") { ?>
         <link rel="stylesheet" href="../css/ayuda.css">
     <?php
-    } ?>
+    } elseif ($view == "search") { ?>
+    <link rel="stylesheet" href="../css/comunidad.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <?php
+    }?>
 
     <title><?php echo $title ?> - Nevula</title>
 </head>

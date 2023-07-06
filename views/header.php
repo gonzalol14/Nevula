@@ -41,7 +41,7 @@
                 <div class="container__search-bar">
                     <input type="search" placeholder="Buscar...">
                     <button type="submit">
-                        <i class="bi bi-search"></i>
+                        <a class="bi bi-search" href="../controllers/search.php"></a>
                     </button>
                 </div>
             </li>
