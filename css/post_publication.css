@@ -89,3 +89,7 @@ h3 {
 .button_submit:hover {
     background-color: #FF990B;
 }
+.msj_error {
+    font-size: 14px;
+    color: red;
+}

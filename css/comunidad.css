@@ -79,9 +79,6 @@ body {
     
 }
 
-.container__info div:nth-child(2) {
-    margin: 0 .5rem;
-}
 
 .separator__info {
     margin: 0 .5rem;
@@ -91,6 +88,7 @@ body {
 
 .container__username {
     font-weight: 700;
+    margin-left: .5rem;
 }
 
 .container__username a:hover {
@@ -114,6 +112,8 @@ body {
     
     position: relative;
     display: inline-block;
+
+    margin-left: .5rem;
 }
 
 .popup-verify {
@@ -176,7 +176,7 @@ body {
 .container__content-post {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
 }
 
 .title--post {

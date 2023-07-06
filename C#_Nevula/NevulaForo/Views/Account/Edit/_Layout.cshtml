@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/community.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/edit_account.css" asp-append-version="true" />
+}
+
+<div class="container__edit">
+    <aside class="aside__menu-edit main__containers-community">
+        <ul class="submenu__edit-profile ">
+            <li>
+                <a class="btn_edit-general type-edit " asp-area="" asp-controller="Account" asp-action="Edit" asp-route-type="General">GENERAL</a>
+            </li>
+            <li>
+                <a class="btn_edit-avatar type-edit " asp-area="" asp-controller="Account" asp-action="Edit" asp-route-type="Avatar">AVATAR</a>
+            </li>
+            <li>
+                <a class="btn_edit-pass type-edit " asp-area="" asp-controller="Account" asp-action="Edit" asp-route-type="Password">CONTRASEÑA</a>
+            </li>
+        </ul>
+    </aside>
+    <article class="article__edit main__containers-community">
+        @RenderBody()
+    </article>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/main.js" asp-append-version="true"></script>
+<script src="~/js/edit_account.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)

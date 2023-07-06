@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewData["Title"] = "Ayuda";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/help.css" asp-append-version="true" />
+}
+
+<div class="chat-toggle" title="Soporte">
+    <button id="chat-toggle-button"><i class="bi bi-headset"></i></button>
+</div>
+<div class="chat-container">
+    <div class="chat-tag">
+        <p class="chat-tag-name">Soporte técnico</p>
+        <button id="close-button"><i class="bi bi-x-lg" id="icon-list"></i></button>
+    </div>
+
+    <div class="chat-messages">
+    </div>
+
+    <div class="chat-input">
+        <input id="message-input" type="text" placeholder="Escribe un mensaje...">
+        <button id="send-button">Enviar</button>
+    </div>
+</div>
+
+
+    <article>
+        <div class="container-question" id="question-1">
+            <a href="#">¿Qué es "Línea B"?</a>
+        </div>
+        <div class="container-answer" id="answer-1">
+            <p>Línea B es un juego hack and slash que consiste en pasar diferentes niveles con una estetica psicodelica ambientado en un subte.</p>
+        </div>
+    </article>
+
+
+    <article>
+        <div class="container-question" id="question-2">
+            <a href="#">¿En qué plataformas está disponible "Línea B"?</a>
+        </div>
+        <div class="container-answer" id="answer-2">
+            <p>Por el momento "Linea B" solo esta disponible para PC.</p>
+        </div>
+    </article>
+
+
+    <article>
+        <div class="container-question" id="question-3">
+            <a href="#">¿Existe un foro en línea para discutir sobre el juego o buscar más ayuda?</a>
+        </div>
+        <div class="container-answer" id="answer-3">
+            <p>Sí, en la pagina en el apartado de "Comunidad" hay un foro donde podes consultar tus dudas y hablar con otros jugadores.</p>
+        </div>
+    </article>
+
+
+    <article>
+        <div class="container-question" id="question-4">
+            <a href="#">¿Es necesario tener una conexión a internet para jugar?</a>
+        </div>
+        <div class="container-answer" id="answer-4">
+            <p>No es necesario tener una conexión a internet para jugar, pero si es necesario para descargarlo o si quieres consultar la tabla de puntajes.</p>
+        </div>
+    </article>
+
+
+    <article>
+        <div class="container-question" id="question-5">
+            <a href="#">¿Dónde puedo obtener soporte técnico si tengo problemas con el juego?</a>
+        </div>
+        <div class="container-answer" id="answer-5">
+            <p>En la parte inferior derecha se puede abrir un chat donde podes hablar con alguien del equipo de Nevula.</p>
+        </div>
+    </article>
+
+
+    <article>
+        <div class="container-question" id="question-6">
+            <a href="#">¿El juego ofrece actualizaciones o contenido adicional?</a>
+        </div>
+        <div class="container-answer" id="answer-6">
+            <p>El juego se irá actualizando periodicamente, agregando nuevo contenido para los jugadores.</p>
+        </div>
+    </article>
+
+    <article>
+        <div class="container-question" id="question-7">
+            <a href="#">¿Hay algún requisito de edad para jugar "Línea B"?</a>
+        </div>
+        <div class="container-answer" id="answer-7">
+            <p>El juego cuenta con restricción de edad +13.</p>
+        </div>
+    </article>
+
+    <article>
+        <div class="container-question" id="question-8">
+            <a href="#">¿Cuál es el objetivo principal del juego?</a>
+        </div>
+        <div class="container-answer" id="answer-8">
+            <p>El objetivo principal del juego es pasar los diferentes niveles superando a los enemigos que se te impongan.</p>
+        </div>
+    </article>
+
+
+@section Scripts {
+    <script src="~/js/help.js" asp-append-version="true"></script>
+}
+

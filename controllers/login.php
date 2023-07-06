@@ -15,11 +15,12 @@ if (!empty($_POST)) {
         die("Error de consulta: " . mysqli_error($conn));
     }
     if (mysqli_num_rows($resultLogin) === 1) {
-       /* No funciona
+       
        $rowLogin = mysqli_fetch_assoc($resultLogin);
         session_start();
         
-        $_SESSION['usuario'] = $rowLogin; */
+        $_SESSION['usuario'] = $rowLogin;
+         
         if (isset($_POST['remember']) && $_POST['remember']) {
             
             setcookie('email', $email);

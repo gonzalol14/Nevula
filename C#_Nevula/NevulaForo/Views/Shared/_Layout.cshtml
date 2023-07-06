@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NevulaForo</title>
+    <!-- <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+    <link rel="stylesheet" href="~/NevulaForo.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- HEADER ORIGINAL -->
+    <header>
+        <div class="container__left">
+            <div class="container__logo">
+                <img src="~/images/logo sin letras.png" alt="Logo Nevula" width="65px">
+            </div>
+
+            <div>
+                <button class="list_menu"><i class="bi bi-list" id="icon-list"></i></button>
+            </div>
+
+            <ul class="container__list-buttons">
+                <li class="container__btn-home">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">INICIO</a>
+                </li>
+                <li>
+                    <a href="">NOVEDADES</a>
+                </li>
+                <li class="container_dropdown" id="container_dropdown-community">
+                    <a asp-area="" asp-controller="Home" asp-action="Community">COMUNIDAD</a>
+                    <ul class="container__dropdown--header dropdown dropdown-community">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Community">FORO</a></li>
+                        <li><a asp-area="" asp-controller="Publication" asp-action="Create">CREAR PUBLICACIÓN</a></li>
+                    </ul>
+
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Help">AYUDA</a>
+                </li>
+                <li class="list-menu-profile container_dropdown" id="container_dropdown-profile1">
+                    <a asp-area="" asp-controller="Account" asp-action="Index">PERFIL</a>
+                    <ul class="container__dropdown--header dropdown dropdown-profile1">
+                        <li><a asp-area="" asp-controller="Account" asp-action="Index">VER PERFIL</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Edit" asp-route-type="General">EDITAR PERFIL</a></li>
+
+                        <li><a asp-area="" asp-controller="Access" asp-action="Logout">CERRAR SESIÓN</a></li>
+                    </ul>
+
+                </li>
+                <li class="list-menu-search">
+                    <div class="container__search-bar">
+                        <input type="search" placeholder="Buscar...">
+                        <button type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="container__right">
+            <div class="container__profile container_dropdown" id="container_dropdown-profile2">
+                <a class="btn-profile" asp-area="" asp-controller="Account" asp-action="Index">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+                <ul class="container__dropdown--header dropdown dropdown-profile2">
+                    <li><a asp-area="" asp-controller="Account" asp-action="Index">VER PERFIL</a></li>
+                    <li><a asp-area="" asp-controller="Account" asp-action="Edit" asp-route-type="General" >EDITAR PERFIL</a></li>
+
+                    <li><a asp-area="" asp-controller="Access" asp-action="Logout">CERRAR SESIÓN</a></li>
+                </ul>
+            </div>
+
+            <div class="container__download">
+                <button id="btnDescarga" class="btn-download" onclick="descargarArchivo()">DESCARGAR</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container" role="main">
+        @RenderBody()
+    </main>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
