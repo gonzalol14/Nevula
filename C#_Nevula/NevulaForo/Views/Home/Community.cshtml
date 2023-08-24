@@ -1,4 +1,4 @@
-﻿
+﻿@model List<NevulaForo.Models.DB.Publication>
 @{
     ViewData["Title"] = "Foro";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,47 +8,51 @@
     <link rel="stylesheet" href="~/css/community.css" asp-append-version="true" />
 }
 
-<article class="main__containers-community">
 
-    <div class="container__info">
-        <div class="container__profile-pic">
-            <a asp-area="" asp-controller="Account" asp-action="Index">
-                <img src="~/images/foto_perfil.jpg" alt="">
-            </a>
+@foreach(var publication in Model)
+{
+
+    <article class="main__containers-community">
+
+        <div class="container__info">
+            <div class="container__profile-pic">
+                <a asp-area="" asp-controller="Account" asp-action="Index">
+                    <img src="~/images/foto_perfil.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="container__username">
+                <a asp-area="" asp-controller="Account" asp-action="Index">masi_cabj</a>
+            </div>
+
+            <!-- Esto depende si esta o no verificado -->
+            <div class="container__verify" id="container__verify-1">
+                <span class="verify">VERIFICADO</span>
+                <span class="small-verify">V</span>
+                <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+            </div>
+
+            <span class="separator__info">·</span>
+
+            <div class="container__date">
+                <span>@publication.CreatedAt.ToShortDateString()</span>
+            </div>
         </div>
 
-        <div class="container__username">
-            <a asp-area="" asp-controller="Account" asp-action="Index">masi_cabj</a>
+        <div class="container__content-post">
+            <h2 class="title--post">@publication.Title</h2>
+            <p class="content--post">@publication.Description</p>
+            <div class="container__imgs"></div>
         </div>
 
-        <!-- Esto depende si esta o no verificado -->
-        <div class="container__verify" id="container__verify-1">
-            <span class="verify">VERIFICADO</span>
-            <span class="small-verify">V</span>
-            <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+        <div class="container__feedback">
+            <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
+            <a class="feedback__comments" asp-area="" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> 54</a>
+            <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
         </div>
 
-        <span class="separator__info">·</span>
-
-        <div class="container__date">
-            <span>hace 7h</span>
-        </div>
-    </div>
-
-    <div class="container__content-post">
-        <h2 class="title--post">Problema en la instalación</h2>
-        <p class="content--post">Hola, necesito ayuda con la instalación del juego, cuando intento instalarlo, luego de su descarga, me tira un error el windows defender, busque en google y no encuentro ninguna solucion, tampoco vi que en foro lo hayan comentado. Si alguien puede decirme la solucion o ayudarme estaria muy agradecido. Saludos</p>
-        <div class="container__imgs"></div>
-    </div>
-
-    <div class="container__feedback">
-        <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-        <a class="feedback__comments" asp-area="" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> 54</a>
-        <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
-    </div>
-
-</article>
-
+    </article>
+}
 
 @section Scripts {
 <script src="~/js/community.js" asp-append-version="true"></script>

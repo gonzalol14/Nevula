@@ -18,11 +18,18 @@
             <p>Inicia sesión en Nevula</p>
         </div>
 
-        <form method="POST" action="../controllers/login.php" id="form" class="login__form">
+        <form asp-controller="Access" asp-action="Login" method="POST" class="login__form" id="form">
+            
+            @if (ViewData["Message"] != null)
+            {
+                <div class="form-group">
+                    <p class="msj_error">@ViewData["Message"]</p>
+                </div> 
+            }
 
             <div class="form-group">
                 <label for="email" class="input-title">Dirección de correo</label>
-                <input type="email" name="email" class="">
+                <input type="email" name="email">
             </div>
 
             <div class="form-group">
@@ -67,7 +74,7 @@
             </div>
         </div>
 
-        <p class="text-create-account">¿No tenés cuenta? <a class="links" asp-area="" asp-controller="Access" asp-action="Register">Registrarse</a></p>
+        <p class="text-create-account">¿No tenés cuenta? <a href="@Url.Action("Register", "Access")" class="links" >Registrarse</a></p>
 
 
     </div>

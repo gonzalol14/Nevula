@@ -1,4 +1,4 @@
-﻿
+﻿@model NevulaForo.Models.DB.User;
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,18 +18,25 @@
             <p>Crea una cuenta en Nevula</p>
         </div>
 
-        <form method="POST" action="../controllers/register.php" id="form" class="register__form">
+        <form asp-controller="Access" asp-action="Register" method="POST" class="register__form" id="form">
+
+            @if (ViewData["Message"] != null)
+            {
+                <div class="form-group">
+                    <p class="msj_error">@ViewData["Message"]</p>
+                </div>
+            }
 
             <div class="container__full-name">
                 <div class="form-group container__name">
                     <label for="name" class="input-title">Nombre</label>
-                    <input type="text" name="name" class="">
+                    <input type="text" name="name" class="" asp-for="Name">
                     <div class="msj_error"></div>
                 </div>
 
                 <div class="form-group container__surname">
                     <label for="surname" class="input-title">Apellido</label>
-                    <input type="text" name="surname" class="">
+                    <input type="text" name="surname" class="" asp-for="Surname">
                     <div class="msj_error"></div>
                 </div>
             </div>
@@ -37,13 +44,13 @@
 
             <div class="form-group">
                 <label for="username" class="input-title">Nombre de usuario</label>
-                <input type="text" name="username" class="">
+                <input type="text" name="username" class="" asp-for="Username">
                 <div class="msj_error"></div>
             </div>
 
             <div class="form-group">
                 <label for="email" class="input-title">Dirección de correo</label>
-                <input type="email" name="email" class="">
+                <input type="email" name="email" class="" asp-for="Email">
                 <div class="msj_error"></div>
             </div>
 
@@ -51,7 +58,7 @@
             <div class="form-group">
                 <label for="password" class="input-title">Contraseña</label>
                 <div class="container__password">
-                    <input class="pass " id="password" type="password" name="password">
+                    <input class="pass " id="password" type="password" name="password" asp-for="Password">
                     <button type="button" class="btn-view-password toggle-password" toggle="#password">
                         <span class="icon"><i class="bi bi-eye-fill"></i></span>
                     </button>
@@ -87,10 +94,12 @@
             </div>
         </div>
 
-        <p class="text-create-account">¿Ya tenés cuenta? <a class="links" asp-area="" asp-controller="Access" asp-action="Login">Iniciar sesión</a></p>
+        <p class="text-create-account">¿Ya tenés cuenta? <a href="@Url.Action("Login", "Access")" class="links">Iniciar sesión</a></p>
 
 
     </div>
+
+    @Html.ValidationSummary()
 </div>
 
 @section Scripts {

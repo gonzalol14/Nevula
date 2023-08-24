@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NevulaForo.Models;
+using NevulaForo.Models.DB;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace NevulaForo.Controllers
 {
@@ -15,11 +17,32 @@ namespace NevulaForo.Controllers
 
         public IActionResult Index()
         {
+            ClaimsPrincipal claimUser = HttpContext.User;
+            string username = "";
+
+            if (claimUser.Identity.IsAuthenticated)
+            {
+                username = claimUser.Claims.Where(c => c.Type == ClaimTypes.Name)
+                    .Select(c => c.Value).SingleOrDefault();
+            }
+
+            ViewData["username"] = username;
+
             return View();
         }
 
         public IActionResult Community()
         {
+            // TIENE UN ERROR, ARREGLARLO URGENTEMENTE
+            /*List<Publication> lst = new List<Publication>();
+
+            using(var db = new NevulaContext())
+            {
+                lst = (from d in db.Publications
+                       where d.DeletedAt == null
+                       select d).ToList();
+            }
+            return View(lst);*/
             return View();
         }
 

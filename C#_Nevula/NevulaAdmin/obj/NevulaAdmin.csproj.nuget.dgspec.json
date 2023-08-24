@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\23k\\Downloads\\Nevula\\NevulaAdmin\\NevulaAdmin.csproj": {}
+    "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaAdmin\\NevulaAdmin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\23k\\Downloads\\Nevula\\NevulaAdmin\\NevulaAdmin.csproj": {
+    "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaAdmin\\NevulaAdmin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaAdmin\\NevulaAdmin.csproj",
+        "projectUniqueName": "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaAdmin\\NevulaAdmin.csproj",
         "projectName": "NevulaAdmin",
-        "projectPath": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaAdmin\\NevulaAdmin.csproj",
+        "projectPath": "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaAdmin\\NevulaAdmin.csproj",
         "packagesPath": "C:\\Users\\23k\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaAdmin\\obj\\",
+        "outputPath": "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaAdmin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\23k\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
