@@ -1,6 +1,9 @@
 <?php
 session_start();
 require_once("../server/config.php");
+if ($_SESSION['usuario']['id'] != $_GET['id']){
+    header("Location:home.php");
+}
 
 
 
