@@ -15,7 +15,7 @@
                 </div>
             <?php } ?>
             <div class="container__change-profile">
-                <a href="edit_general.php">
+                <a href="edit_general.php?id=<?php echo $_SESSION['usuario']['id']; ?>">
                     <span>EDITAR PERFIL</span>
                 </a>
             </div>

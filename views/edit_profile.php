@@ -2,13 +2,13 @@
     <aside class="aside__menu-edit main__containers-community">
         <ul class="submenu__edit-profile ">
             <li>
-                <a href="edit_general.php" class="<?php echo ($title == "Ajustes generales") ? "active" : null; ?>">GENERAL</a>
+                <a href="edit_general.php?id=<?php echo $_SESSION['usuario']['id']; ?>" class="<?php echo ($title == "Ajustes generales") ? "active" : null; ?>">GENERAL</a>
             </li>
             <li>
-                <a href="edit_avatar.php" class="<?php echo ($title == "Cambiar avatar") ? "active" : null; ?>">AVATAR</a>
+                <a href="edit_avatar.php?id=<?php echo $_SESSION['usuario']['id']; ?>" class="<?php echo ($title == "Cambiar avatar") ? "active" : null; ?>">AVATAR</a>
             </li>
             <li>
-                <a href="edit_password.php" class="<?php echo ($title == "Cambiar contraseña") ? "active" : null; ?>">CONTRASEÑA</a>
+                <a href="edit_password.php?id=<?php echo $_SESSION['usuario']['id']; ?>" class="<?php echo ($title == "Cambiar contraseña") ? "active" : null; ?>">CONTRASEÑA</a>
             </li>
         </ul>
     </aside>

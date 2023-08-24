@@ -30,7 +30,7 @@
             <li class="list-menu-profile container_dropdown" id="container_dropdown-profile1">
                 <a href="profile.php" class="">PERFIL</a>
                 <!-- Proximamente... -->
-                
+
 
             </li>
             <li class="list-menu-search">
@@ -47,15 +47,24 @@
 
     <div class="container__right">
         <div class="container__profile container_dropdown" id="container_dropdown-profile2">
-            <a href="../controllers/profile.php" class="btn-profile">
-                <i class="bi bi-person-circle"></i>
-            </a>
-            <!-- Proximamente... -->
-            <ul class="container__dropdown--header dropdown dropdown-profile2">
-                <li><a href="profile.php">VER PERFIL</a></li>
-                <li><a href="edit_general.php">EDITAR PERFIL</a></li>
-                <li><a href="../controllers/logout.php">CERRAR SESIÓN</a></li>
-            </ul>
+            <?php if (isset($_SESSION['usuario'])) { ?>
+                <a href="profile.php?id=<?php echo $_SESSION['usuario']['id']; ?>" class="btn-profile">
+                <?php } else { ?>
+                    <a href="login.php" class="btn-profile">
+                    <?php } ?>
+                    <i class="bi bi-person-circle"></i>
+                    </a>
+                    <!-- Proximamente... -->
+                    <ul class="container__dropdown--header dropdown dropdown-profile2">
+                        <?php if (isset($_SESSION['usuario'])) { ?>
+                            <li><a href="profile.php?id=<?php echo $_SESSION['usuario']['id']; ?>">VER PERFIL</a></li>
+                            <li><a href="edit_general.php?id=<?php echo $_SESSION['usuario']['id']; ?>">EDITAR PERFIL</a></li>
+                            <li><a href="../controllers/logout.php">CERRAR SESIÓN</a></li>
+                        <?php } else { ?>
+                            <li><a href="login.php">INICIAR SESION</a></li>
+                            <li><a href="register.php">REGISTRARSE</a></li>
+                        <?php } ?>
+                    </ul>
         </div>
 
         <div class="container__download">
