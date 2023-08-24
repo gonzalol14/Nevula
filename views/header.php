@@ -30,11 +30,7 @@
             <li class="list-menu-profile container_dropdown" id="container_dropdown-profile1">
                 <a href="profile.php" class="">PERFIL</a>
                 <!-- Proximamente... -->
-                <ul class="container__dropdown--header dropdown dropdown-profile1">
-                    <li><a href="profile.php">VER PERFIL</a></li>
-                    <li><a href="edit_general.php">EDITAR PERFIL</a></li>
-                    <li><a href="../controllers/logout.php">CERRAR SESIÓN</a></li>
-                </ul>
+                
 
             </li>
             <li class="list-menu-search">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-06-2023 a las 00:19:54
+-- Tiempo de generación: 24-08-2023 a las 05:04:45
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -73,6 +73,8 @@ CREATE TABLE `usuarios` (
   `nombre_usuario` varchar(30) NOT NULL,
   `email` varchar(100) NOT NULL,
   `clave` varchar(128) NOT NULL,
+  `descripcion` varchar(250) DEFAULT NULL,
+  `verificado` varchar(2) NOT NULL DEFAULT 'No',
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -81,8 +83,8 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `nombre_usuario`, `email`, `clave`, `created_at`, `deleted_at`) VALUES
-(1, 'gaston', 'amenta', 'homero', 'test@gmail.com', '0f3fde0103dd44077c040215a2fabd09a097aecc', '2023-05-03 00:23:29', NULL);
+INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `nombre_usuario`, `email`, `clave`, `descripcion`, `verificado`, `created_at`, `deleted_at`) VALUES
+(1, 'gaston', 'amenta', 'homero', 'test@gmail.com', '0f3fde0103dd44077c040215a2fabd09a097aecc', NULL, 'No', '2023-05-03 00:23:29', NULL);
 
 --
 -- Índices para tablas volcadas
