@@ -1,6 +1,6 @@
 <section class="container__section">
     <h2 class="title__edit">Cambiar contraseña</h2>
-    <form action="" method="post">
+    <form action="../controllers/edit_password.php?id=<?php echo $_SESSION['usuario']['id'] ?>" method="post">
         <div class="form-group">
             <label for="password" class="input-title">Contraseña actual</label>
             <div class="container__password">
@@ -8,6 +8,10 @@
                 <button type="button" class="btn-view-password toggle-password" toggle="#password">
                     <span class="icon"><i class="bi bi-eye-fill"></i></span>
                 </button>
+
+            </div>
+            <div class="msj_error">
+                <?php echo (isset($message['error_oldpass']) ? $message['error_oldpass'] : ''); ?>
             </div>
         </div>
 
@@ -18,6 +22,9 @@
                 <button type="button" class="btn-view-password toggle-password" toggle="#newpassword">
                     <span class="icon"><i class="bi bi-eye-fill"></i></span>
                 </button>
+            </div>
+            <div class="msj_error">
+                <?php echo (isset($message['error_newpass']) ? $message['error_newpass'] : ''); ?>
             </div>
         </div>
 

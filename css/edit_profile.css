@@ -231,3 +231,7 @@
         padding: 1.875rem .25rem;
     }
 }
+.msj_error {
+    font-size: 14px;
+    color: red;
+}
