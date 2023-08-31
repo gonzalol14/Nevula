@@ -1,7 +1,8 @@
-﻿
+﻿@model NevulaForo.Models.ViewModels.PublicationDedicatedVM
 @{
     ViewData["Title"] = "Publicación";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
 @section Styles {
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="~/css/publication.css" asp-append-version="true" />
 }
 
+<!-- Publicacion -->
 <article class="main__containers-community">
 
     <div class="container__info">
@@ -19,7 +21,7 @@
         </div>
 
         <div class="container__username">
-            <a asp-area="" asp-controller="Account" asp-action="Index">masi_cabj</a>
+            <a asp-area="" asp-controller="Account" asp-action="Index">@Model.oPublication.IdUserNavigation.Username</a>
         </div>
 
         <!-- Esto depende si esta o no verificado -->
@@ -32,33 +34,33 @@
         <span class="separator__info">·</span>
 
         <div class="container__date">
-            <span>hace 7h</span>
+            <span>@Model.oPublication.CreatedAt.ToShortDateString()</span>
         </div>
     </div>
 
     <div class="container__content-post">
-        <h2 class="title--post">Problema en la instalación</h2>
-        <p class="content--post">Hola, necesito ayuda con la instalación del juego, cuando intento instalarlo, luego de su descarga, me tira un error el windows defender, busque en google y no encuentro ninguna solucion, tampoco vi que en foro lo hayan comentado. Si alguien puede decirme la solucion o ayudarme estaria muy agradecido. Saludos</p>
+        <h2 class="title--post">@Model.oPublication.Title</h2>
+        <p class="content--post">@Model.oPublication.Description</p>
         <div class="container__imgs"></div>
     </div>
 
     <div class="container__feedback">
         <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-        <a href="#" class="feedback__comments"><i class="bi bi-chat"></i> 54</a>
+        <a class="feedback__comments" asp-route-IdPublication="@Model.oPublication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @Model.oPublication.Comments.Count</a>
         <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
     </div>
 
 </article>
 
 
+<!-- Formulario para publicar comentarios -->
 <article class="main__containers-community">
-    <!-- Formulario para publicar comentarios -->
-    <form action="" class="form__post-comment">
+    <form asp-controller="Comment" asp-action="CreateComment" method="POST" class="form__post-comment">
         <div class="container__profile-pic" id="form_comment-pic">
             <img src="~/images/foto_perfil.jpg" alt="">
         </div>
         <div class="container__profile-text">
-            <p>Responder desde <span class="span_username">pepe23</span></p>
+            <p>Responder desde <span class="span_username">@ViewData["username"]</span></p>
         </div>
 
         <div class="container__inputs-form">
@@ -74,84 +76,62 @@
     </form>
 </article>
 
+
+
+<!-- Comentarios -->
 <article class="main__containers-community">
     <h3 class="title_answer">Respuestas</h3>
-    <div class="container__comment">
-        <!-- Comentarios -->
-        <div class="container__info">
-            <div class="comment__profile-pic">
-                <a asp-area="" asp-controller="Account" asp-action="Index">
-                    <img src="~/images/foto_perfil.jpg" alt="">
-                </a>
+
+    @foreach (var comment in Model.oComments)
+    {
+        <div class="container__comment">
+            <div class="container__info">
+                <div class="comment__profile-pic">
+                    <a asp-area="" asp-controller="Account" asp-action="Index">
+                        <img src="~/images/foto_perfil.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="container__username">
+                    <a asp-area="" asp-controller="Account" asp-action="Index">@comment.IdUserNavigation.Username</a>
+                </div>
+
+                <!-- Esto depende si esta o no verificado -->
+                <div class="container__verify" id="container__verify-2">
+                    <span class="verify">VERIFICADO</span>
+                    <span class="small-verify">V</span>
+                    <span class="popup-verify" id="popup-verify-2">Esta persona forma parte de Nevula</span>
+                </div>
+
+                <span class="separator__info">·</span>
+
+                <div class="container__date">
+                    <span>@comment.CreatedAt.ToShortDateString()</span>
+                </div>
             </div>
 
-            <div class="container__username">
-                <a asp-area="" asp-controller="Account" asp-action="Index">elpiberuso</a>
+            <div class="container__content-post">
+                <p class="content--post">@comment.Description</p>
+                <div class="container__imgs"></div>
             </div>
 
-            <!-- Esto depende si esta o no verificado -->
-            <div class="container__verify" id="container__verify-2">
-                <span class="verify">VERIFICADO</span>
-                <span class="small-verify">V</span>
-                <span class="popup-verify" id="popup-verify-2">Esta persona forma parte de Nevula</span>
+            <div class="container__feedback">
+                <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
+                <a href="#" class="feedback__comments">Responder</a>
             </div>
 
-            <span class="separator__info">·</span>
-
-            <div class="container__date">
-                <span>hace 7d</span>
-            </div>
         </div>
 
-        <div class="container__content-post">
-            <p class="content--post">Hola, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum rem aspernatur facilis debitis eum deserunt hic, explicabo aliquid, nesciunt maiores recusandae cupiditate porro officia optio sed magni veritatis quaerat iusto. ayuda con la instalación del juego, cuando intento instalarlo, luego de su descarga, me tira un error el windows defender, busque en google y no encuentro ninguna solucion, tampoco vi que en foro lo hayan comentado. Si alguien puede decirme la solucion o ayudarme estaria muy agradecido. Saludos</p>
-            <div class="container__imgs"></div>
-        </div>
-
-        <div class="container__feedback">
-            <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-            <a href="publication.php" class="feedback__comments">Responder</a>
-        </div>
-
-    </div>
-
-    <hr style="margin: 20px 0;">
-
-    <div class="container__comment">
-        <!-- Comentarios -->
-        <div class="container__info">
-            <div class="comment__profile-pic">
-                <a asp-area="" asp-controller="Account" asp-action="Index">
-                    <img src="~/images/foto_perfil.jpg" alt="">
-                </a>
-            </div>
-
-            <div class="container__username">
-                <a asp-area="" asp-controller="Account" asp-action="Index">gonza</a>
-            </div>
-
-            <span class="separator__info">·</span>
-
-            <div class="container__date">
-                <span>hace 19h</span>
-            </div>
-        </div>
-
-        <div class="container__content-post">
-            <p class="content--post"> instalarlo, luego de su descarga, me tira un error el windows defender, busque en google y no encuentro ninguna solucion, tampoco vi que en foro lo hayan comentado. Si alguien puede decirme la solucion o ayudarme estaria muy agradecido. Saludos</p>
-            <div class="container__imgs"></div>
-        </div>
-
-        <div class="container__feedback">
-            <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-            <a href="publication.php" class="feedback__comments">Responder</a>
-        </div>
-
-    </div>
+        @if (comment != Model.oComments.Last())
+        {
+            <hr style="margin: 20px 0;">
+        }
+    }
 
 </article>
 
 
-
-<script src="../js/comunidad.js" type="text/javascript"></script>
+@section Scripts {
+    <script src="~/js/community.js" asp-append-version="true"></script>
+}
 

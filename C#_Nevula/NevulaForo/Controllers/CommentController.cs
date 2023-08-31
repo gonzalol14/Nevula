@@ -1,29 +1,25 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace NevulaForo.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class CommentController : Controller
     {
-        public IActionResult Index()
+
+        public IActionResult Create()
         {
             return View();
         }
 
-
-        //Deberian ser 3 edits
-        [Authorize]
-        public IActionResult Edit(string type = "General")
+        public IActionResult Edit()
         {
-            return View($"~/Views/Account/Edit/{type}.cshtml");
+            return View();
         }
 
         public IActionResult Delete()
         {
             return View();
         }
-
     }
 }

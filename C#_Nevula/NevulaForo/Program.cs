@@ -7,6 +7,8 @@ using NevulaForo.Services.Implementation;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 
+using Microsoft.AspNetCore.Identity;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,8 +19,10 @@ builder.Services.AddDbContext<NevulaContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("CadenaSQL"));
 });
 
+// Servicios
 builder.Services.AddScoped<IUserService, UserService>();
 
+/* COOKIES */
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -35,6 +39,9 @@ builder.Services.AddControllersWithViews(options =>
             Location = ResponseCacheLocation.None
         });
 });
+/* /COOKIES */
+
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 

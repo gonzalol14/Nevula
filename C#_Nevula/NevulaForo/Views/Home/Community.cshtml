@@ -22,7 +22,7 @@
             </div>
 
             <div class="container__username">
-                <a asp-area="" asp-controller="Account" asp-action="Index">masi_cabj</a>
+                <a asp-area="" asp-controller="Account" asp-action="Index">@publication.IdUserNavigation.Username</a>
             </div>
 
             <!-- Esto depende si esta o no verificado -->
@@ -47,7 +47,7 @@
 
         <div class="container__feedback">
             <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-            <a class="feedback__comments" asp-area="" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> 54</a>
+            <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @publication.Comments.Count</a>
             <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
         </div>
 
@@ -55,5 +55,5 @@
 }
 
 @section Scripts {
-<script src="~/js/community.js" asp-append-version="true"></script>
+    <script src="~/js/community.js" asp-append-version="true"></script>
 }

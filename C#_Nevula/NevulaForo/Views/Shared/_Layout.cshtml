@@ -1,4 +1,11 @@
 ﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor;
+
+@{
+    string? connectionId = HttpContextAccessor?.HttpContext?.Connection.Id;
+    var Claims = HttpContextAccessor.HttpContext.User.Claims;
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +35,7 @@
                     <a asp-area="" asp-controller="Home" asp-action="Index">INICIO</a>
                 </li>
                 <li>
-                    <a href="">NOVEDADES</a>
+                    <a asp-area="" asp-controller="Home" asp-action="News">NOVEDADES</a>
                 </li>
                 <li class="container_dropdown" id="container_dropdown-community">
                     <a asp-area="" asp-controller="Home" asp-action="Community">COMUNIDAD</a>

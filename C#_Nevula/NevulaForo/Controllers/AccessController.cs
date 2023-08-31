@@ -47,28 +47,37 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            ClaimsPrincipal claimUser = HttpContext.User;
+            if (claimUser.Identity != null)
+            {
+                if (claimUser.Identity.IsAuthenticated)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
-            User user_found = null;
-            
-            if(email != null && password != password)
-            {
-                user_found = await _userService.GetUser(email, Utilities.EncryptPassword(password));
-            }
 
-            if(user_found == null)
+            if (email == null || password == null)
             {
                 ViewData["Message"] = "El correo y/o la contraseña es incorrecta. Compruebalo";
                 return View();
             }
 
+            User user_found = await _userService.GetUser(email, Utilities.EncryptPassword(password));
+
             List<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, user_found.Username)
+                new Claim("Id", user_found.Id.ToString()),
+                new Claim(ClaimTypes.NameIdentifier, user_found.Username),
+                new Claim(ClaimTypes.Email, user_found.Email),
+                //new Claim(ClaimTypes.Role, 1.ToString())
+                
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
