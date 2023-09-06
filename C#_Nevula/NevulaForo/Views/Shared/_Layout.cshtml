@@ -49,14 +49,6 @@
                 <li>
                     <a asp-area="" asp-controller="Home" asp-action="Help">AYUDA</a>
                 </li>
-                <li class="list-menu-search">
-                    <div class="container__search-bar">
-                        <input type="search" placeholder="Buscar...">
-                        <button type="submit">
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </div>
-                </li>
                 <li class="list-menu-profile container_dropdown" id="container_dropdown-profile1">
                     @if (IdUser != null)
                     {
@@ -67,12 +59,20 @@
 
                             <li><a asp-controller="Access" asp-action="Logout">CERRAR SESIÓN</a></li>
                         </ul>
-                    } else
+                    }
+                    else
                     {
-                        <a asp-controller="Access" asp-action="Login">Iniciar sesión</a>
+                        <a asp-controller="Access" asp-action="Login">INICIAR SESIÓN</a>
                     }
                 </li>
-                
+                <li class="list-menu-search">
+                    <div class="container__search-bar">
+                        <input type="search" placeholder="Buscar...">
+                        <button type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </li>
 
             </ul>
         </div>
