@@ -8,5 +8,7 @@ namespace NevulaForo.Services.Contract
         Task<User> GetUser(string email, string password);
 
         Task<User> SaveUser(User model);
+
+        Task<UserRole> SaveUserRole(UserRole model);
     }
 }

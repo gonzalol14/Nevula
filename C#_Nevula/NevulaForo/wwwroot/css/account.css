@@ -28,12 +28,12 @@
 
 .container_name {
     font-weight: 700;
-    margin: 0 0.5rem;
+    margin-left: .5rem;
     font-size: 20px;
 }
 
 .container__verify {
-    margin-left: 0;
+    margin-left: .5rem;
 }
 
 .container__posts {

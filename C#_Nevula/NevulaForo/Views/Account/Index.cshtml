@@ -1,5 +1,14 @@
-﻿
+﻿@model NevulaForo.Models.ViewModels.UserProfileVM
+
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor;
+
 @{
+    string? connectionId = HttpContextAccessor?.HttpContext?.Connection.Id;
+    var Claims = HttpContextAccessor.HttpContext.User.Claims;
+    string? IdUser = Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault();
+
     ViewData["Title"] = "Perfil";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -15,18 +24,27 @@
             <img src="~/images/foto_perfil.jpg" alt="">
         </div>
         <div class="container_name">
-            <span> masi_cabj </span>
+            <span>@Model.oUser.Username</span>
         </div>
-        <div class="container__verify" id="container__verify-1">
-            <span class="verify">VERIFICADO</span>
-            <span class="small-verify">V</span>
-            <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
-        </div>
-        <div class="container__change-profile">
-            <a asp-area="" asp-controller="Account" asp-action="Edit" asp-route-typeEdit="General">
+
+        @if(Model.oUser.UserRoles.First().IdRole == 2)
+        {
+            <!-- Esto depende si esta o no verificado -->
+            <div class="container__verify" id="container__verify-1">
+                <span class="verify">VERIFICADO</span>
+                <span class="small-verify">V</span>
+                <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+            </div>
+        }
+
+        @if (IdUser == Model.oUser.Id.ToString())
+        {
+            <div class="container__change-profile">
+                <a asp-controller="Account" asp-action="Edit" asp-route-typeEdit="General">
                 <span>EDITAR PERFIL</span>
-            </a>
-        </div>
+                </a>
+            </div>
+        }
     </div>
 
     <div class="container__description">
@@ -34,10 +52,11 @@
             Soy desarrollador en el juego de linea B y administrador de esta pagina.
         </span>
     </div>
+
     <!-- depende si es otra cuenta se tiene que mostrar seguir o cambiar perfil -->
     <div class="container__interaction">
         <div class="container__posts">
-            <span id="posts-id=1"> 1 </span>
+            <span id="posts-id=1"> @Model.oPublications.Count </span>
             <a href="#" class="posts"> publicaciones </a>
         </div>
         <div class="container__followers">
@@ -51,6 +70,56 @@
     </div>
 </article>
 
+
+@foreach (var publication in Model.oPublications)
+{
+
+    <article class="main__containers-community">
+
+        <div class="container__info">
+            <div class="container__profile-pic">
+                <a asp-route-IdUser="@Model.oUser.Id" asp-controller="Account" asp-action="Index">
+                    <img src="~/images/foto_perfil.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="container__username">
+                <a asp-route-IdUser="@Model.oUser.Id" asp-controller="Account" asp-action="Index">@Model.oUser.Username</a>
+            </div>
+
+            @if(Model.oUser.UserRoles.First().IdRole == 2)
+            {
+                <!-- Esto depende si esta o no verificado -->
+                <div class="container__verify" id="container__verify-1">
+                    <span class="verify">VERIFICADO</span>
+                    <span class="small-verify">V</span>
+                    <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+                </div>
+            }
+
+            <span class="separator__info">·</span>
+
+            <div class="container__date">
+                <span>@publication.CreatedAt.ToShortDateString()</span>
+            </div>
+        </div>
+
+        <div class="container__content-post">
+            <h2 class="title--post">@publication.Title</h2>
+            <p class="content--post">@publication.Description</p>
+            <div class="container__imgs"></div>
+        </div>
+
+        <div class="container__feedback">
+            <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
+            <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @publication.Comments.Count</a>
+            <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
+        </div>
+
+    </article>
+}
+
+<!--
 <article class="main__containers-community">
 
     <div class="container__info">
@@ -64,7 +133,6 @@
             <a href="#">masi_cabj</a>
         </div>
 
-        <!-- Esto depende si esta o no verificado -->
 
         <span class="separator__info">·</span>
 
@@ -85,7 +153,7 @@
         <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
     </div>
 
-</article>
+</article>-->
 
 @section Scripts {
     <script src="~/js/community.js" asp-append-version="true"></script>

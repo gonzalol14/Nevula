@@ -8,6 +8,7 @@ using NevulaForo.Services.Contract;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.EntityFrameworkCore;
 
 namespace NevulaForo.Controllers
 {
@@ -37,7 +38,12 @@ namespace NevulaForo.Controllers
 
             User user_created = await _userService.SaveUser(model);
 
-            if(user_created.Id > 0)
+            UserRole user_role_created = new UserRole();
+            user_role_created.IdUser = user_created.Id;
+            user_role_created.IdRole = 1;
+            user_role_created = await _userService.SaveUserRole(user_role_created);
+
+            if (user_created.Id > 0 && user_role_created.Id > 0)
                 return RedirectToAction("Login", "Access");
 
             ViewData["Message"] = "Error al crear el usuario";
@@ -76,7 +82,7 @@ namespace NevulaForo.Controllers
                 new Claim("Id", user_found.Id.ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user_found.Username),
                 new Claim(ClaimTypes.Email, user_found.Email),
-                //new Claim(ClaimTypes.Role, 1.ToString())
+                new Claim(ClaimTypes.Role, user_found.UserRoles.First().IdRole.ToString())
                 
             };
 

@@ -16,21 +16,24 @@
 
         <div class="container__info">
             <div class="container__profile-pic">
-                <a asp-area="" asp-controller="Account" asp-action="Index">
+                <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">
                     <img src="~/images/foto_perfil.jpg" alt="">
                 </a>
             </div>
 
             <div class="container__username">
-                <a asp-area="" asp-controller="Account" asp-action="Index">@publication.IdUserNavigation.Username</a>
+                <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">@publication.IdUserNavigation.Username</a>
             </div>
 
-            <!-- Esto depende si esta o no verificado -->
-            <div class="container__verify" id="container__verify-1">
-                <span class="verify">VERIFICADO</span>
-                <span class="small-verify">V</span>
-                <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
-            </div>
+            @if(publication.IdUserNavigation.UserRoles.First().IdRole == 2)
+            {
+                <!-- Esto depende si esta o no verificado -->
+                <div class="container__verify" id="container__verify-1">
+                    <span class="verify">VERIFICADO</span>
+                    <span class="small-verify">V</span>
+                    <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+                </div>
+            }
 
             <span class="separator__info">·</span>
 

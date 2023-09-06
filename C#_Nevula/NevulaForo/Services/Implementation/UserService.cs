@@ -15,13 +15,20 @@ namespace NevulaForo.Services.Implementation
 
         public async Task<User> GetUser(string email, string password)
         {
-            User user_found = await _dbContext.Users.Where(u => u.Email == email && u.Password == password)
+            User user_found = await _dbContext.Users.Include(u => u.UserRoles).Where(u => u.Email == email && u.Password == password)
                 .FirstOrDefaultAsync();
 
             return user_found;
         }
 
         public async Task<User> SaveUser(User model)
+        {
+            _dbContext.Add(model);
+            await _dbContext.SaveChangesAsync();
+            return model;
+        }
+
+        public async Task<UserRole> SaveUserRole(UserRole model)
         {
             _dbContext.Add(model);
             await _dbContext.SaveChangesAsync();

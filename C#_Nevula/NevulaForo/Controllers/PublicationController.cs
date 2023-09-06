@@ -28,8 +28,8 @@ namespace NevulaForo.Controllers
             
             PublicationDedicatedVM oPublicationDedicated = new PublicationDedicatedVM()
             {
-                oPublication = _DBContext.Publications.Include(u => u.IdUserNavigation).Where(p => p.DeletedAt == null && p.Id == IdPublication).ToList().First(),
-                oComments = _DBContext.Comments.Include(u => u.IdUserNavigation).Where(c => c.DeletedAt == null && c.IdPublication == IdPublication).ToList()
+                oPublication = _DBContext.Publications.Include(u => u.IdUserNavigation).ThenInclude(u => u.UserRoles).Where(p => p.DeletedAt == null && p.Id == IdPublication).ToList().First(),
+                oComments = _DBContext.Comments.Include(u => u.IdUserNavigation).ThenInclude(u => u.UserRoles).Where(c => c.DeletedAt == null && c.IdPublication == IdPublication).ToList()
             };
 
             ClaimsPrincipal claimUser = HttpContext.User;
@@ -37,7 +37,7 @@ namespace NevulaForo.Controllers
 
             if (claimUser.Identity.IsAuthenticated)
             {
-                username = claimUser.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value).SingleOrDefault();
+                username = claimUser.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier).Select(c => c.Value).SingleOrDefault();
             }
 
             ViewData["username"] = username;
@@ -54,13 +54,16 @@ namespace NevulaForo.Controllers
         [HttpPost, Authorize]
         public async Task<IActionResult> Create(Publication model)
         {
-            //INCOMPLETO
+            //INCOMPLETO, error en el ModelState
 
             ClaimsPrincipal claimUser = HttpContext.User;
             string id = claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault();
-
             model.IdUser = Convert.ToInt32(id);
 
+            User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == model.IdUser).ToList().First();
+            model.IdUserNavigation = user;
+
+            //Error en el model state
             if (!ModelState.IsValid)
             {
                 return View(model);

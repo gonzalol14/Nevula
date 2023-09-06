@@ -152,7 +152,7 @@ public partial class NevulaContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK_users_roles");
 
-            entity.ToTable("user_role");
+            entity.ToTable("UserRole");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.IdRole).HasColumnName("id_role");

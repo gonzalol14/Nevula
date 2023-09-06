@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using NevulaForo.Models.DB;
+using NevulaForo.Models.ViewModels;
 using System.Security.Claims;
 
 namespace NevulaForo.Controllers
@@ -7,9 +10,24 @@ namespace NevulaForo.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        public IActionResult Index()
+
+        private readonly NevulaContext _DBContext;
+
+        public AccountController(NevulaContext dbContext)
         {
-            return View();
+            _DBContext = dbContext;
+        }
+
+        [HttpGet]
+        public IActionResult Index(int IdUser)
+        {
+            UserProfileVM oUserProfile = new UserProfileVM()
+            {
+                oUser = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.DeletedAt == null && u.Id == IdUser).ToList().First(),
+                oPublications = _DBContext.Publications.Where(p => p.DeletedAt == null && p.IdUser == IdUser).ToList()
+            };
+
+            return View(oUserProfile);
         }
 
 

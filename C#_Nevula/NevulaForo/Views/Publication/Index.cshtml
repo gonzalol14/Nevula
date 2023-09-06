@@ -24,12 +24,15 @@
             <a asp-area="" asp-controller="Account" asp-action="Index">@Model.oPublication.IdUserNavigation.Username</a>
         </div>
 
-        <!-- Esto depende si esta o no verificado -->
-        <div class="container__verify" id="container__verify-1">
-            <span class="verify">VERIFICADO</span>
-            <span class="small-verify">V</span>
-            <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
-        </div>
+        @if(Model.oPublication.IdUserNavigation.UserRoles.First().IdRole == 2)
+        {
+            <!-- Esto depende si esta o no verificado -->
+            <div class="container__verify" id="container__verify-1">
+                <span class="verify">VERIFICADO</span>
+                <span class="small-verify">V</span>
+                <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+            </div>
+        }
 
         <span class="separator__info">·</span>
 
@@ -55,7 +58,7 @@
 
 <!-- Formulario para publicar comentarios -->
 <article class="main__containers-community">
-    <form asp-controller="Comment" asp-action="CreateComment" method="POST" class="form__post-comment">
+    <form asp-controller="Comment" asp-action="Create" method="POST" class="form__post-comment">
         <div class="container__profile-pic" id="form_comment-pic">
             <img src="~/images/foto_perfil.jpg" alt="">
         </div>
@@ -96,12 +99,15 @@
                     <a asp-area="" asp-controller="Account" asp-action="Index">@comment.IdUserNavigation.Username</a>
                 </div>
 
-                <!-- Esto depende si esta o no verificado -->
-                <div class="container__verify" id="container__verify-2">
-                    <span class="verify">VERIFICADO</span>
-                    <span class="small-verify">V</span>
-                    <span class="popup-verify" id="popup-verify-2">Esta persona forma parte de Nevula</span>
-                </div>
+                @if(comment.IdUserNavigation.UserRoles.First().IdRole == 2)
+                {
+                    <!-- Esto depende si esta o no verificado -->
+                    <div class="container__verify" id="container__verify-2">
+                        <span class="verify">VERIFICADO</span>
+                        <span class="small-verify">V</span>
+                        <span class="popup-verify" id="popup-verify-2">Esta persona forma parte de Nevula</span>
+                    </div>
+                }
 
                 <span class="separator__info">·</span>
 
