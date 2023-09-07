@@ -66,7 +66,7 @@ namespace NevulaForo.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(string email, string password)
+        public async Task<IActionResult> Login(string email, string password, string remember)
         {
 
             if (email == null || password == null)
@@ -91,6 +91,12 @@ namespace NevulaForo.Controllers
             {
                 AllowRefresh = true
             };
+
+            if (remember != null)
+            {
+                properties.IsPersistent = true;
+                properties.ExpiresUtc = DateTime.Now.AddDays(20);   
+            } 
 
             await HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme,

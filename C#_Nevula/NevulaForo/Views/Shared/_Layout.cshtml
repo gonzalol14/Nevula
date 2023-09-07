@@ -6,6 +6,7 @@
     string? connectionId = HttpContextAccessor?.HttpContext?.Connection.Id;
     var Claims = HttpContextAccessor.HttpContext.User.Claims;
     string? IdUser = Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault();
+    string? Username = Claims.Where(c => c.Type == ClaimTypes.NameIdentifier).Select(c => c.Value).SingleOrDefault();
 }
 
 <!DOCTYPE html>
@@ -32,6 +33,7 @@
             </div>
 
             <ul class="container__list-buttons">
+                
                 <li class="container__btn-home">
                     <a asp-area="" asp-controller="Home" asp-action="Index">INICIO</a>
                 </li>
@@ -49,10 +51,12 @@
                 <li>
                     <a asp-area="" asp-controller="Home" asp-action="Help">AYUDA</a>
                 </li>
+                
+                <!-- Boton perfil responsive -->
                 <li class="list-menu-profile container_dropdown" id="container_dropdown-profile1">
                     @if (IdUser != null)
                     {
-                        <a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">PERFIL</a>
+                        <a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">@Username.ToUpper()</a>
                         <ul class="container__dropdown--header dropdown dropdown-profile1">
                             <li><a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">VER PERFIL</a></li>
                             <li><a asp-controller="Account" asp-action="Edit" asp-route-type="General">EDITAR PERFIL</a></li>
@@ -65,6 +69,7 @@
                         <a asp-controller="Access" asp-action="Login">INICIAR SESIÓN</a>
                     }
                 </li>
+
                 <li class="list-menu-search">
                     <div class="container__search-bar">
                         <input type="search" placeholder="Buscar...">
@@ -73,14 +78,15 @@
                         </button>
                     </div>
                 </li>
-
+                
             </ul>
         </div>
 
         <div class="container__right">
-            <div class="container__profile container_dropdown" id="container_dropdown-profile2">
-                @if (IdUser != null)
-                {
+            @if (IdUser != null)
+            {
+                <div class="container__profile container_dropdown" id="container_dropdown-profile2">
+                
                     <a class="btn-profile" asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">
                         <i class="bi bi-person-circle"></i>
                     </a>
@@ -90,12 +96,12 @@
 
                         <li><a asp-controller="Access" asp-action="Logout">CERRAR SESIÓN</a></li>
                     </ul>
-                } else
-                {
-                    <a class="btn-profile" asp-controller="Access" asp-action="Login">Iniciar sesión</a>
-                }
-            </div>
-
+                
+                </div>
+            } else
+            {
+                <a class="container__profile" asp-controller="Access" asp-action="Login">Iniciar sesión</a>
+            }
             <div class="container__download">
                 <button id="btnDescarga" class="btn-download" onclick="descargarArchivo()">DESCARGAR</button>
             </div>
