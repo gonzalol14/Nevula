@@ -28,26 +28,29 @@ namespace NevulaForo.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(User model)
+        public async Task<IActionResult> Register(User model, string policyAndConditions)
         {
-            if (!ModelState.IsValid)
+            if (policyAndConditions != null)
             {
-                return View(model);
+                if (!ModelState.IsValid)
+                {
+                    return View(model);
+                }
+                model.Password = Utilities.EncryptPassword(model.Password);
+
+                User user_created = await _userService.SaveUser(model);
+
+                UserRole user_role_created = new UserRole();
+                user_role_created.IdUser = user_created.Id;
+                user_role_created.IdRole = 1;
+                user_role_created = await _userService.SaveUserRole(user_role_created);
+
+                if (user_created.Id > 0 && user_role_created.Id > 0) return RedirectToAction("Login", "Access");
             }
-            model.Password = Utilities.EncryptPassword(model.Password);
-
-            User user_created = await _userService.SaveUser(model);
-
-            UserRole user_role_created = new UserRole();
-            user_role_created.IdUser = user_created.Id;
-            user_role_created.IdRole = 1;
-            user_role_created = await _userService.SaveUserRole(user_role_created);
-
-            if (user_created.Id > 0 && user_role_created.Id > 0)
-                return RedirectToAction("Login", "Access");
 
             ViewData["Message"] = "Error al crear el usuario";
             return View();
+            
         }
 
         [HttpGet]
