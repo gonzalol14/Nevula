@@ -113,7 +113,7 @@ namespace NevulaForo.Controllers
             } catch (Exception ex) 
             {
                 //404
-                return RedirectToAction("Community", "Home");
+                return RedirectToAction("Index", "Account");
             }
         }
 
@@ -145,13 +145,29 @@ namespace NevulaForo.Controllers
                 return RedirectToAction("Community", "Home");
             }
 
+            //404
             return RedirectToAction("Index", "Account");
         }
 
-
-        public IActionResult Delete()
+        [HttpGet, Authorize]
+        public async Task<IActionResult> Delete(int IdPublication)
         {
-            return View();
+            ClaimsPrincipal claimUser = HttpContext.User;
+            int idUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+
+            Publication publication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == idUser && p.DeletedAt == null);
+            if (publication != null)
+            {
+                publication.DeletedAt = DateTime.Now;
+
+                _DBContext.Update(publication);
+                await _DBContext.SaveChangesAsync();
+
+                return RedirectToAction("Index", "Account");
+            }
+            
+            //404
+            return RedirectToAction("Index", "Account");
         }
         //Falta like, dislike. Analizar si crear otro controller para comentarios o hacerlo en este.
     }

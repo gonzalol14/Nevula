@@ -21,6 +21,12 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public IActionResult Index(int IdUser)
         {
+            ClaimsPrincipal claimUser = HttpContext.User;
+            if (IdUser == 0 && claimUser.Identity.IsAuthenticated) 
+            {
+                IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+            }
+
             try
             {
                 UserProfileVM oUserProfile = new UserProfileVM()
