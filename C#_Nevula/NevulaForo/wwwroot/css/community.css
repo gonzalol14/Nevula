@@ -159,6 +159,12 @@ body {
     margin-bottom: .5rem;
 }
 
+.content--post {
+    display: inline-block;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
 .container__feedback {
     display: flex;
     align-items: center;

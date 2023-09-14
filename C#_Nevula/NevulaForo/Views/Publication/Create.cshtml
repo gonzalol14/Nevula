@@ -1,4 +1,4 @@
-﻿@model NevulaForo.Models.DB.Publication;
+﻿@model NevulaForo.Models.ViewModels.CreatePublicationVM;
 @{
     ViewData["Title"] = "Crear publicación";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -29,6 +29,9 @@
             <textarea class="post_textarea" name="Description" asp-for="Description" id="" placeholder="Introduce texto" maxlength="1750"></textarea>
             <div class="msj_error"></div>
         </div>
+
+        <!-- VALIDACIONES -->
+        @Html.ValidationSummary()
 
         <div class="container__inputs-finally">
             <button class="button_reset" type="reset">Descartar</button>

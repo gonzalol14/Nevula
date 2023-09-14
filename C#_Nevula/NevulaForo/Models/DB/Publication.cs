@@ -13,7 +13,7 @@ public partial class Publication
     [Required(ErrorMessage = "Debe ingresar un título"), MinLength(5, ErrorMessage = "El título debe tener entre 5 y 250 caracteres"), MaxLength(250, ErrorMessage = "El título debe tener entre 5 y 250 caracteres")]
     public string Title { get; set; } = null!;
 
-    [Required(ErrorMessage = "Debe ingresar una descripción"), MinLength(30, ErrorMessage = "La descripción debe tener entre 30 y 1750 caracteres"), MaxLength(250, ErrorMessage = "La descripción debe tener entre 30 y 1750 caracteres")]
+    [Required(ErrorMessage = "Debe ingresar una descripción"), MinLength(30, ErrorMessage = "La descripción debe tener entre 30 y 1750 caracteres"), MaxLength(1750, ErrorMessage = "La descripción debe tener entre 30 y 1750 caracteres")]
     public string Description { get; set; } = null!;
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;

@@ -56,7 +56,7 @@ h3 {
     min-height: 10rem;
     max-height: 30rem;
     resize: none;
-    overflow: hidden;
+    overflow: overlay;
 }
 
 .container__inputs-finally {

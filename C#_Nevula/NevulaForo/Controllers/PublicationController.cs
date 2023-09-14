@@ -7,6 +7,9 @@ using NevulaForo.Models.DB;
 using NevulaForo.Models.ViewModels;
 using System.Security.Claims;
 using System.Linq;
+using NevulaForo.Services.Contract;
+using System;
+
 
 namespace NevulaForo.Controllers
 {
@@ -24,25 +27,30 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public IActionResult Index(int IdPublication)
         {
-            //Publication PostAndComments = _DBContext.Publications.Include(u => u.IdUserNavigation).Include(c => c.Comments).Where(p => p.DeletedAt == null && p.Id == IdPublication).ToList().First();
-            
-            PublicationDedicatedVM oPublicationDedicated = new PublicationDedicatedVM()
+            try
             {
-                oPublication = _DBContext.Publications.Include(u => u.IdUserNavigation).ThenInclude(u => u.UserRoles).Where(p => p.DeletedAt == null && p.Id == IdPublication).ToList().First(),
-                oComments = _DBContext.Comments.Include(u => u.IdUserNavigation).ThenInclude(u => u.UserRoles).Where(c => c.DeletedAt == null && c.IdPublication == IdPublication).ToList()
-            };
+                PublicationDedicatedVM oPublicationDedicated = new PublicationDedicatedVM()
+                {
+                    oPublication = _DBContext.Publications.Include(u => u.IdUserNavigation).ThenInclude(u => u.UserRoles).Where(p => p.DeletedAt == null && p.Id == IdPublication).ToList().First(),
+                    oComments = _DBContext.Comments.Include(u => u.IdUserNavigation).ThenInclude(u => u.UserRoles).Where(c => c.DeletedAt == null && c.IdPublication == IdPublication).OrderByDescending(c => c.CreatedAt).ToList()
+                };
 
-            ClaimsPrincipal claimUser = HttpContext.User;
-            string username = "";
+                ClaimsPrincipal claimUser = HttpContext.User;
+                string username = "";
 
-            if (claimUser.Identity.IsAuthenticated)
+                if (claimUser.Identity.IsAuthenticated)
+                {
+                    username = claimUser.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier).Select(c => c.Value).SingleOrDefault();
+                }
+
+                ViewData["username"] = username;
+
+                return View(oPublicationDedicated);
+            } catch(InvalidOperationException ex)
             {
-                username = claimUser.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier).Select(c => c.Value).SingleOrDefault();
+                //404
+                return RedirectToAction("Community", "Home");
             }
-
-            ViewData["username"] = username;
-
-            return View(oPublicationDedicated);
         }
 
         [Authorize]
@@ -52,22 +60,30 @@ namespace NevulaForo.Controllers
         }
 
         [HttpPost, Authorize]
-        public async Task<IActionResult> Create(Publication model)
+        public async Task<IActionResult> Create(CreatePublicationVM viewmodel)
         {
-            //INCOMPLETO, error en el ModelState
-
             ClaimsPrincipal claimUser = HttpContext.User;
-            string id = claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault();
-            model.IdUser = Convert.ToInt32(id);
+            viewmodel.IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
 
-            User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == model.IdUser).ToList().First();
-            model.IdUserNavigation = user;
-
-            //Error en el model state
+            // Error en el model state
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return View(viewmodel);
             }
+
+
+            User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == viewmodel.IdUser).ToList().First();
+
+            Publication model = new Publication()
+            {
+                IdUser = viewmodel.IdUser,
+                Title = viewmodel.Title,
+                Description = viewmodel.Description,
+                CreatedAt = DateTime.UtcNow,
+                DeletedAt = null,
+                IdUserNavigation = user
+
+            };
 
             _DBContext.Add(model);
             await _DBContext.SaveChangesAsync();
@@ -75,46 +91,61 @@ namespace NevulaForo.Controllers
             return RedirectToAction("Community", "Home");
         }
 
-        
+
         [HttpGet, Authorize]
         public IActionResult Edit(int IdPublication)
         {
-            if(IdPublication != 0)
+            try
             {
-
                 ClaimsPrincipal claimUser = HttpContext.User;
-                string id = claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault();
+                int idUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
 
-                Publication publication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == Convert.ToInt32(id));
+                Publication publication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == idUser);
                 if (publication != null)
                 {
                     return View(publication);
+
+                } else
+                {
+                    throw new InvalidOperationException("No existe la publicacion o esta eliminada");
                 }
 
-            } 
-
-            return RedirectToAction("Index", "Account");
+            } catch (Exception ex) 
+            {
+                //404
+                return RedirectToAction("Community", "Home");
+            }
         }
 
         [HttpPost, Authorize]
-        public async Task<IActionResult> Edit(Publication model)
+        public async Task<IActionResult> Edit(CreatePublicationVM viewmodel)
         {
-            //INCOMPLETO
-
             ClaimsPrincipal claimUser = HttpContext.User;
-            string id = claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault();
+            viewmodel.IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
 
-            model.IdUser = Convert.ToInt32(id);
+            Publication model = _DBContext.Publications.Where(p => p.Id == viewmodel.Id && p.IdUser == viewmodel.IdUser && p.DeletedAt == null).ToList().First();
 
-            if (!ModelState.IsValid)
+            //SIEMPRE DEBERIA SER VERDADERO POR GET ANTERIOR PEEEEERO POR LAS DUDAS
+            if (model.IdUser == viewmodel.IdUser)
             {
-                return View(model);
-            }
-            
-            _DBContext.Update(model);
-            await _DBContext.SaveChangesAsync();
 
-            return RedirectToAction("Community", "Home");
+                if (!ModelState.IsValid)
+                {
+                    return View(viewmodel);
+                }
+
+                User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == viewmodel.IdUser).ToList().First();
+
+                model.Title = viewmodel.Title;
+                model.Description = viewmodel.Description;
+
+                _DBContext.Update(model);
+                await _DBContext.SaveChangesAsync();
+
+                return RedirectToAction("Community", "Home");
+            }
+
+            return RedirectToAction("Index", "Account");
         }
 
 

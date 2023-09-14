@@ -21,13 +21,20 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public IActionResult Index(int IdUser)
         {
-            UserProfileVM oUserProfile = new UserProfileVM()
+            try
             {
-                oUser = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.DeletedAt == null && u.Id == IdUser).ToList().First(),
-                oPublications = _DBContext.Publications.Where(p => p.DeletedAt == null && p.IdUser == IdUser).ToList()
-            };
+                UserProfileVM oUserProfile = new UserProfileVM()
+                {
+                    oUser = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.DeletedAt == null && u.Id == IdUser).ToList().First(),
+                    oPublications = _DBContext.Publications.Where(p => p.DeletedAt == null && p.IdUser == IdUser).OrderByDescending(p => p.CreatedAt).ToList()
+                };
 
-            return View(oUserProfile);
+                return View(oUserProfile);
+            } catch (InvalidOperationException ex)
+            {
+                //404
+                return RedirectToAction("Community", "Home");
+            }
         }
 
 
