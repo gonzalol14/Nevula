@@ -65,7 +65,6 @@ namespace NevulaForo.Controllers
             ClaimsPrincipal claimUser = HttpContext.User;
             viewmodel.IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
 
-            // Error en el model state
             if (!ModelState.IsValid)
             {
                 return View(viewmodel);
@@ -79,7 +78,7 @@ namespace NevulaForo.Controllers
                 IdUser = viewmodel.IdUser,
                 Title = viewmodel.Title,
                 Description = viewmodel.Description,
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.Now,
                 DeletedAt = null,
                 IdUserNavigation = user
 

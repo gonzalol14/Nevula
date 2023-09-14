@@ -59,6 +59,7 @@
 <!-- Formulario para publicar comentarios -->
 <article class="main__containers-community">
     <form asp-controller="Comment" asp-action="Create" method="POST" class="form__post-comment">
+        <input type="hidden" asp-for="@Model.oPublication.Id" name="IdPublication">
         <div class="container__profile-pic" id="form_comment-pic">
             <img src="~/images/foto_perfil.jpg" alt="">
         </div>
@@ -68,7 +69,7 @@
 
         <div class="container__inputs-form">
             <div class="container__input-content">
-                <textarea class="post_textarea" name="content" id="" placeholder="Escribe una respuesta" maxlength="1750"></textarea>
+                <textarea class="post_textarea" name="Description" id="" placeholder="Escribe una respuesta" maxlength="1750"></textarea>
             </div>
 
             <div class="container__inputs-finally">

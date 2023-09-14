@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace NevulaForo.Models.DB;
 
@@ -11,6 +12,7 @@ public partial class Comment
 
     public int IdUser { get; set; }
 
+    [Required(ErrorMessage = "Debe ingresar una descripción"), MaxLength(300, ErrorMessage = "La descripción debe tener hasta 300 caracteres")]
     public string Description { get; set; } = null!;
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
