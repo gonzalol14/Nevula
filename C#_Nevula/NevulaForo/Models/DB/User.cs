@@ -21,7 +21,7 @@ public partial class User
     [Required(ErrorMessage = "Debe ingresar un correo electrónico"), EmailAddress(ErrorMessage = "Ingrese un corre válido electrónico")]
     public string Email { get; set; } = null!;
 
-    [Required(ErrorMessage = "Debe ingresar una contraseña"), MinLength(3, ErrorMessage = "Debe ingresar una combinación con al menos tres caracteres"), MaxLength(50, ErrorMessage = "Debe ingresar una combinación con al menos tres caracteres")]
+    [Required(ErrorMessage = "Debe ingresar una contraseña"), MinLength(3, ErrorMessage = "Debe ingresar una combinación con al menos 3 caracteres"), MaxLength(50, ErrorMessage = "Debe ingresar una combinación con hasta 50 caracteres")]
     public string Password { get; set; } = null!;
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NevulaForo.Models.DB;
 using NevulaForo.Models.ViewModels;
+using NevulaForo.Resources;
 using System.Security.Claims;
 
 namespace NevulaForo.Controllers
@@ -44,7 +45,6 @@ namespace NevulaForo.Controllers
         }
 
 
-        //Deberian ser 3 edits
         [HttpGet]
         public IActionResult Edit(string type = "General")
         {
@@ -58,9 +58,51 @@ namespace NevulaForo.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditPassword()
+        public async Task<IActionResult> EditPassword(string currentPass, string newPass)
         {
-            return View($"~/Views/Account/Edit/Password.cshtml");
+            try
+            {
+                if (currentPass != null && newPass != null)
+                {
+                    if (newPass.Count() > 2 && newPass.Count() < 51)
+                    {
+                        ClaimsPrincipal claimUser = HttpContext.User;
+                        int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+
+                        User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
+
+                        if (user != null && user.Password == Utilities.EncryptPassword(currentPass))
+                        {
+                            user.Password = Utilities.EncryptPassword(newPass);
+                            user.UpdatedAt = DateTime.Now;
+
+                            _DBContext.Update(user);
+                            await _DBContext.SaveChangesAsync();
+
+                            ViewData["Message"] = "Se actualizo la contraseña";
+                            return View($"~/Views/Account/Edit/Password.cshtml");
+
+                        } else
+                        {
+                            throw new Exception("Error al editar el usuario");
+                        }
+                    } else
+                    {
+                        throw new InvalidDataException("Debe ingresar una combinacion de entre 3 y 50 caracteres");
+                    }
+                } else
+                {
+                    throw new InvalidDataException("Debe ingresar la contraseña actual y una nueva");
+                }
+
+            } catch (Exception ex)
+            {
+                ViewData["Message"] = ex.Message;
+                ViewData["currentPass"] = currentPass;
+                return View($"~/Views/Account/Edit/Password.cshtml");
+
+            }
+
         }
 
         [HttpPost]
@@ -68,6 +110,7 @@ namespace NevulaForo.Controllers
         {
             return View($"~/Views/Account/Edit/Avatar.cshtml");
         }
+
 
         public async Task<IActionResult> Delete()
         {
