@@ -19,7 +19,6 @@ namespace NevulaForo.Controllers
 
         //API
 
-
         [HttpPost, Authorize]
         public async Task<IActionResult> Create(CreateCommentVM viewmodel)
         {

@@ -72,41 +72,55 @@ namespace NevulaForo.Controllers
         public async Task<IActionResult> Login(string email, string password, string remember)
         {
 
-            if (email == null || password == null)
+            try
             {
-                ViewData["Message"] = "El correo y/o la contraseña es incorrecta. Compruebalo";
+                if (email == null || password == null)
+                {
+                    throw new ArgumentNullException("Debe ingresar un email y una contraseña");
+                }
+
+                User user_found = await _userService.GetUser(email, Utilities.EncryptPassword(password));
+
+                if(user_found != null)
+                {
+                    List<Claim> claims = new List<Claim>()
+                    {
+                        new Claim("Id", user_found.Id.ToString()),
+                        new Claim(ClaimTypes.NameIdentifier, user_found.Username),
+                        new Claim(ClaimTypes.Email, user_found.Email),
+                        new Claim(ClaimTypes.Role, user_found.UserRoles.First().IdRole.ToString())
+                
+                    };
+
+                    ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    AuthenticationProperties properties = new AuthenticationProperties()
+                    {
+                        AllowRefresh = true
+                    };
+
+                    if (remember != null)
+                    {
+                        properties.IsPersistent = true;
+                        properties.ExpiresUtc = DateTime.Now.AddDays(20);   
+                    } 
+
+                    await HttpContext.SignInAsync(
+                        CookieAuthenticationDefaults.AuthenticationScheme,
+                        new ClaimsPrincipal(claimsIdentity),
+                        properties);
+
+                    return RedirectToAction("Index", "Home");
+                } else
+                {
+                    throw new InvalidOperationException("El correo y/o la contraseña es incorrecta. Compruebalo");
+                }
+
+            } catch (Exception ex)
+            {
+                //NullReferation
+                ViewData["Message"] = ex.Message;
                 return View();
             }
-
-            User user_found = await _userService.GetUser(email, Utilities.EncryptPassword(password));
-
-            List<Claim> claims = new List<Claim>()
-            {
-                new Claim("Id", user_found.Id.ToString()),
-                new Claim(ClaimTypes.NameIdentifier, user_found.Username),
-                new Claim(ClaimTypes.Email, user_found.Email),
-                new Claim(ClaimTypes.Role, user_found.UserRoles.First().IdRole.ToString())
-                
-            };
-
-            ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            AuthenticationProperties properties = new AuthenticationProperties()
-            {
-                AllowRefresh = true
-            };
-
-            if (remember != null)
-            {
-                properties.IsPersistent = true;
-                properties.ExpiresUtc = DateTime.Now.AddDays(20);   
-            } 
-
-            await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity),
-                properties);
-
-            return RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> Logout()

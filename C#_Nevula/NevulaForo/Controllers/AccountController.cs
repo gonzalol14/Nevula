@@ -45,15 +45,47 @@ namespace NevulaForo.Controllers
 
 
         //Deberian ser 3 edits
-        [Authorize]
+        [HttpGet]
         public IActionResult Edit(string type = "General")
         {
             return View($"~/Views/Account/Edit/{type}.cshtml");
         }
 
-        public IActionResult Delete()
+        [HttpPost]
+        public IActionResult EditGeneral()
         {
-            return View();
+            return View($"~/Views/Account/Edit/General.cshtml");
+        }
+
+        [HttpPost]
+        public IActionResult EditPassword()
+        {
+            return View($"~/Views/Account/Edit/Password.cshtml");
+        }
+
+        [HttpPost]
+        public IActionResult EditAvatar()
+        {
+            return View($"~/Views/Account/Edit/Avatar.cshtml");
+        }
+
+        public async Task<IActionResult> Delete()
+        {
+            ClaimsPrincipal claimUser = HttpContext.User;
+            int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+
+            User user = _DBContext.Users.SingleOrDefault(u => u.Id == IdUser && u.DeletedAt == null);
+
+            if (user != null)
+            {
+                user.DeletedAt = DateTime.Now;
+
+                _DBContext.Update(user);
+                await _DBContext.SaveChangesAsync();
+            }
+
+            //Error no existe la cuenta o ya esta eliminada
+            return RedirectToAction("Logout", "Access");
         }
 
     }
