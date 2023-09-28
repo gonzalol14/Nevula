@@ -120,48 +120,22 @@
         </div>
 
         <div class="container__feedback">
-            <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-            <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @publication.Comments.Count</a>
+            <div>
+                <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
+                <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @publication.Comments.Count</a>
+            </div>
+
+            @if(Model.oUser.Id == publication.IdUser)
+            {
+                <div>
+                    <a class="post__edit" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Edit"><i class="bi bi-pencil-square"></i> </a>
+                    <a class="post__delete" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Delete"><i class="bi bi-trash3"></i> </a>
+                </div>
+            }
         </div>
 
     </article>
 }
-
-<!--
-<article class="main__containers-community">
-
-    <div class="container__info">
-        <div class="container__profile-pic">
-            <a href="#">
-                <img src="~/images/foto_perfil.jpg" alt="">
-            </a>
-        </div>
-
-        <div class="container__username">
-            <a href="#">masi_cabj</a>
-        </div>
-
-
-        <span class="separator__info">·</span>
-
-        <div class="container__date">
-            <span>hace 7h</span>
-        </div>
-    </div>
-
-    <div class="container__content-post">
-        <h2 class="title--post">Problema en la instalación</h2>
-        <p class="content--post">Hola, necesito ayuda con la instalación del juego, cuando intento instalarlo, luego de su descarga, me tira un error el windows defender, busque en google y no encuentro ninguna solucion, tampoco vi que en foro lo hayan comentado. Si alguien puede decirme la solucion o ayudarme estaria muy agradecido. Saludos</p>
-        <div class="container__imgs"></div>
-    </div>
-
-    <div class="container__feedback">
-        <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-        <a asp-area="" asp-controller="Publication" asp-action="Index" class="feedback__comments"><i class="bi bi-chat"></i> 54</a>
-        <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
-    </div>
-
-</article>-->
 
 @section Scripts {
     <script src="~/js/community.js" asp-append-version="true"></script>

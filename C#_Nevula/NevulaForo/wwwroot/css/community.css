@@ -168,17 +168,25 @@ body {
 .container__feedback {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
-
-    .container__feedback a {
+    .container__feedback div {
         display: flex;
         align-items: center;
-        margin-right: 1.5rem;
-        font-size: 14px;
-        font-weight: 600;
     }
-
-        .container__feedback a i {
-            margin-right: .4rem;
-            font-size: 1.2rem;
+        .container__feedback div a {
+            display: flex;
+            align-items: center;
+            margin-right: 1.5rem;
+            font-size: 14px;
+            font-weight: 600;
         }
+
+            .container__feedback div a i {
+                margin-right: .4rem;
+                font-size: 1.2rem;
+            }
+
+.post__delete {
+    color: red;
+}

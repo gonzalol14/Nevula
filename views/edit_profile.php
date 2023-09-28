@@ -12,7 +12,7 @@
             </li>
         </ul>
     </aside>
-    <article class="article__edit main__containers-community">
+    <article class="article__edit main__containers-community <?php echo ($title == "Cambiar avatar") ? "article_for_avatar" : null; ?>">
         <?php
         if ($title == "Ajustes generales") {
             require_once("../views/edit/general.php");
@@ -24,5 +24,3 @@
         ?>
     </article>
 </main>
-
-

@@ -153,7 +153,8 @@
 }
 
 .btn_edit-submit,
-.btn_edit-reset {
+.btn_edit-reset,
+.btn_edit-img {
     border: none;
     border-radius: 0.25rem;
     padding: 10px;
@@ -184,6 +185,28 @@
 
 .container__img:not(:last-child) {
     margin-right: 15px;
+}
+
+
+.article_for_avatar {
+    width: fit-content;
+    padding: 1.25rem 1.5rem;
+}
+
+.container_form_avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form_avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn_edit-img {
+    margin-top: 20px;
 }
 
 
@@ -235,3 +258,4 @@
     font-size: 14px;
     color: red;
 }
+
