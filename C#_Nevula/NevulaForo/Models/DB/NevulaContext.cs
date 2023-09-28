@@ -132,6 +132,7 @@ public partial class NevulaContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("name");
             entity.Property(e => e.Password)
+                .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("password");
             entity.Property(e => e.Surname)

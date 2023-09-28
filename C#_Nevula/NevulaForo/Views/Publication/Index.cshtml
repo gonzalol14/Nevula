@@ -47,8 +47,10 @@
     </div>
 
     <div class="container__feedback">
-        <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-        <a class="feedback__comments" asp-route-IdPublication="@Model.oPublication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @Model.oPublication.Comments.Count</a>
+        <div>
+            <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
+            <a class="feedback__comments" asp-route-IdPublication="@Model.oPublication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @Model.oPublication.Comments.Count</a>
+        </div>
     </div>
 
 </article>

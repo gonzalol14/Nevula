@@ -13,8 +13,8 @@ namespace NevulaForo.Models.ViewModels
         public string Title { get; set; } = null!;
 
         [Required(ErrorMessage = "Debe ingresar una descripción")]
-        [MinLength(30, ErrorMessage = "La descripción debe tener entre 30 y 1750 caracteres")]
-        [MaxLength(1750, ErrorMessage = "La descripción debe tener entre 30 y 1750 caracteres")]
+        [MinLength(30, ErrorMessage = "El contenido del post debe tener entre 30 y 1750 caracteres")]
+        [MaxLength(1750, ErrorMessage = "El contenido del post tener entre 30 y 1750 caracteres")]
         public string Description { get; set; } = null!;
 
     }
