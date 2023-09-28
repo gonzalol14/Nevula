@@ -136,6 +136,10 @@ header {
     background: #1b2b3b !important;
 }
 
+.container__profile {
+    color: #FFF;
+}
+
 @media (max-width: 1140px) {
     .container__profile {
         display: none;

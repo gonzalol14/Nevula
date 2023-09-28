@@ -7,7 +7,7 @@
 @{
     string? connectionId = HttpContextAccessor?.HttpContext?.Connection.Id;
     var Claims = HttpContextAccessor.HttpContext.User.Claims;
-    string? IdUser = Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault();
+    int IdUser = Convert.ToInt32(Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
 
     ViewData["Title"] = Model.oUser.Username;
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -39,7 +39,7 @@
             }
         </div>
 
-        @if (IdUser == Model.oUser.Id.ToString())
+        @if (IdUser == Model.oUser.Id)
         {
             <div class="container__change-profile">
                 <a asp-controller="Account" asp-action="Edit" asp-route-typeEdit="General">
@@ -125,7 +125,7 @@
                 <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @publication.Comments.Count</a>
             </div>
 
-            @if(Model.oUser.Id == publication.IdUser)
+            @if (Model.oUser.Id == IdUser)
             {
                 <div>
                     <a class="post__edit" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Edit"><i class="bi bi-pencil-square"></i> </a>
