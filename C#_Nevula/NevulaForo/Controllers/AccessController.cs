@@ -28,29 +28,28 @@ namespace NevulaForo.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(User model, string policyAndConditions)
+        public async Task<IActionResult> Register(User model)
         {
-            if (policyAndConditions != null)
+            if (!ModelState.IsValid)
             {
-                if (!ModelState.IsValid)
-                {
-                    return View(model);
-                }
-                model.Password = Utilities.EncryptPassword(model.Password);
-
-                User user_created = await _userService.SaveUser(model);
-
-                UserRole user_role_created = new UserRole();
-                user_role_created.IdUser = user_created.Id;
-                user_role_created.IdRole = 1;
-                user_role_created = await _userService.SaveUserRole(user_role_created);
-
-                if (user_created.Id > 0 && user_role_created.Id > 0) return RedirectToAction("Login", "Access");
+                return View(model);
             }
 
-            ViewData["Message"] = "Error al crear el usuario";
-            return View();
-            
+            model.Password = Utilities.EncryptPassword(model.Password);
+
+            User user_created = await _userService.SaveUser(model);
+
+            UserRole user_role_created = new UserRole();
+            user_role_created.IdUser = user_created.Id;
+            user_role_created.IdRole = 1;
+            user_role_created = await _userService.SaveUserRole(user_role_created);
+
+            if (user_created.Id > 0 && user_role_created.Id > 0) return RedirectToAction("Login", "Access");
+            else
+            {
+                ViewData["Message"] = "Error al intentar crear usuario";
+                return View(model);
+            }
         }
 
         [HttpGet]
@@ -76,7 +75,7 @@ namespace NevulaForo.Controllers
             {
                 if (email == null || password == null)
                 {
-                    throw new ArgumentNullException("Debe ingresar un email y una contraseña");
+                    throw new InvalidOperationException("Debe ingresar un email y una contraseña");
                 }
 
                 User user_found = await _userService.GetUser(email, Utilities.EncryptPassword(password));
@@ -93,6 +92,7 @@ namespace NevulaForo.Controllers
                     };
 
                     ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
                     AuthenticationProperties properties = new AuthenticationProperties()
                     {
                         AllowRefresh = true
@@ -118,7 +118,7 @@ namespace NevulaForo.Controllers
             } catch (Exception ex)
             {
                 //NullReferation
-                ViewData["Message"] = ex.Message;
+                ViewData["Message"] = ex.Message.ToString();
                 return View();
             }
         }

@@ -1,4 +1,4 @@
-﻿@model NevulaForo.Models.DB.Publication;
+﻿@model NevulaForo.Models.ViewModels.CreatePublicationVM;
 @{
     ViewData["Title"] = "Editar publicación";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,24 +11,27 @@
 
 <article class="main__containers-community">
     <form asp-controller="Publication" asp-action="Edit" method="POST">
+
+        <div asp-validation-summary="ModelOnly"></div>
+
         <input type="hidden" asp-for="@Model.Id" name="Id">
         <div class="container__title">
             <a href="javascript:history.back()" class="button_back"><i class="bi bi-arrow-left-short"></i></a>
             <div id="title_page">
-                <h2>Creá una publicación</h2>
+                <h2>Editá tu publicación</h2>
             </div>
         </div>
 
         <div class="container__input-title">
             <h3>Título</h3>
-            <textarea class="post_textarea" name="Title" asp-for="Title" value="@Model.Title" id="" placeholder="Introduce un título" maxlength="250"></textarea>
-            <div class="msj_error"></div>
+            <textarea class="post_textarea" name="Title" asp-for="Title"  id="" placeholder="Introduce un título" maxlength="250"></textarea>
+            <span asp-validation-for="Title"></span>
         </div>
 
         <div class="container__input-content">
             <h3>Contenido</h3>
-            <textarea class="post_textarea" name="Description" asp-for="Description" value="@Model.Description" id="" placeholder="Introduce texto" maxlength="1750"></textarea>
-            <div class="msj_error"></div>
+            <textarea class="post_textarea" name="Description" asp-for="Description"  id="" placeholder="Introduce texto" maxlength="1750"></textarea>
+            <span asp-validation-for="Description"></span>
         </div>
 
         <div class="container__inputs-finally">

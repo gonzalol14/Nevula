@@ -17,7 +17,7 @@
         <div class="container__info">
             <div class="container__profile-pic">
                 <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">
-                    <img src="~/images/foto_perfil.jpg" alt="">
+                    <img src="~/images/profiles/default.jpg" alt="">
                 </a>
             </div>
 
@@ -51,7 +51,6 @@
         <div class="container__feedback">
             <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
             <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @publication.Comments.Count</a>
-            <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
         </div>
 
     </article>

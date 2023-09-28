@@ -45,6 +45,10 @@ h3 {
         font-weight: 600;
     }
 
+.container__input-title {
+    margin-bottom: 20px;
+}
+
 .container__input-title textarea {
     min-height: 0;
     max-height: 110px;

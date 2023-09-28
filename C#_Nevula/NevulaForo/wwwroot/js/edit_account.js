@@ -1,10 +1,22 @@
-var typeEdit = document.title.split(" ")[0]
+var typeEdit = document.title.split(" ")[1]
 console.log(typeEdit)
 
-if (typeEdit == "General") {
+if (typeEdit == "perfil") {
     $(`.btn_edit-general`).addClass("active");
-} else if (typeEdit == "Avatar") {
+
+} else if (typeEdit == "avatar") {
     $(`.btn_edit-avatar`).addClass("active");
-} else if (typeEdit == "Password") {
+
+    var avatar_input = document.getElementById("avatar_input")
+
+    document.getElementById("change_img").addEventListener("click", () => {
+        avatar_input.click()
+    })
+
+    avatar_input.addEventListener("change", () => {
+        document.getElementById("form_avatar").submit()
+    })
+
+} else if (typeEdit == "contraseña") {
     $(`.btn_edit-pass`).addClass("active");
 }

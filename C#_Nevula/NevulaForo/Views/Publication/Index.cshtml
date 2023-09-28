@@ -1,6 +1,6 @@
 ﻿@model NevulaForo.Models.ViewModels.PublicationDedicatedVM
 @{
-    ViewData["Title"] = "Publicación";
+    ViewData["Title"] = Model.oPublication.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
     
 }
@@ -12,11 +12,10 @@
 
 <!-- Publicacion -->
 <article class="main__containers-community">
-
     <div class="container__info">
         <div class="container__profile-pic">
             <a asp-area="" asp-controller="Account" asp-action="Index">
-                <img src="~/images/foto_perfil.jpg" alt="">
+                <img src="~/images/profiles/default.jpg" alt="">
             </a>
         </div>
 
@@ -50,7 +49,6 @@
     <div class="container__feedback">
         <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
         <a class="feedback__comments" asp-route-IdPublication="@Model.oPublication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @Model.oPublication.Comments.Count</a>
-        <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
     </div>
 
 </article>
@@ -61,7 +59,7 @@
     <form asp-controller="Comment" asp-action="Create" method="POST" class="form__post-comment">
         <input type="hidden" asp-for="@Model.oPublication.Id" name="IdPublication">
         <div class="container__profile-pic" id="form_comment-pic">
-            <img src="~/images/foto_perfil.jpg" alt="">
+            <img src="~/images/profiles/default.jpg" alt="">
         </div>
         <div class="container__profile-text">
             <p>Responder desde <span class="span_username">@ViewData["username"]</span></p>
@@ -92,7 +90,7 @@
             <div class="container__info">
                 <div class="comment__profile-pic">
                     <a asp-area="" asp-controller="Account" asp-action="Index">
-                        <img src="~/images/foto_perfil.jpg" alt="">
+                        <img src="~/images/profiles/default.jpg" alt="">
                     </a>
                 </div>
 

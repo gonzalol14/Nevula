@@ -10,8 +10,7 @@ public partial class NevulaContext : DbContext
     {
     }
 
-    public NevulaContext(DbContextOptions<NevulaContext> options)
-        : base(options)
+    public NevulaContext(DbContextOptions<NevulaContext> options) : base(options)
     {
     }
 
@@ -43,7 +42,7 @@ public partial class NevulaContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK_Comments");
 
-            entity.ToTable("comment");
+            entity.ToTable("Comment");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CreatedAt)
@@ -74,7 +73,7 @@ public partial class NevulaContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK_Publications");
 
-            entity.ToTable("publication");
+            entity.ToTable("Publication");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CreatedAt)
@@ -102,7 +101,7 @@ public partial class NevulaContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK_roles");
 
-            entity.ToTable("role");
+            entity.ToTable("Role");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Role1)
@@ -115,7 +114,7 @@ public partial class NevulaContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK_Users");
 
-            entity.ToTable("user");
+            entity.ToTable("User");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CreatedAt)

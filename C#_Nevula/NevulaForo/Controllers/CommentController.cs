@@ -17,7 +17,6 @@ namespace NevulaForo.Controllers
             _DBContext = dbContext;
         }
 
-        //API
 
         [HttpPost, Authorize]
         public async Task<IActionResult> Create(CreateCommentVM viewmodel)
@@ -54,7 +53,7 @@ namespace NevulaForo.Controllers
             }
 
             //404
-            return RedirectToAction("Community", "Home");
+            return NotFound();
 
         }
 
@@ -81,7 +80,7 @@ namespace NevulaForo.Controllers
             }
 
             //404
-            return RedirectToAction("Community", "Home");
+            return NotFound();
         }
     }
 }

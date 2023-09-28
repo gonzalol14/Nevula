@@ -73,7 +73,7 @@ a {
 header {
     background-color: #1b2b3b;
     width: 100%;
-    height: 3.2rem;
+    height: 4rem;
     position: sticky;
     top: 0;
     display: flex;
@@ -100,7 +100,7 @@ header {
         display: flex;
         align-items: center;
         background: transparent;
-        height: 3.2rem;
+        height: 4rem;
         padding: 10px 15px;
         color: #FFF;
         font-size: 15px;
@@ -155,7 +155,7 @@ header {
         position: absolute;
         flex-direction: column;
         background: #1b2b3b;
-        top: 3.2rem;
+        top: 4rem;
     }
 
         .container__list-buttons.activo {
@@ -205,8 +205,13 @@ header {
 .btn-profile {
     background-color: transparent;
     color: #FFF;
-    font-size: 23px;
-    padding: 10px 15px;
+    /*font-size: 23px;
+    padding: 10px 15px;*/
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-radius: 50%;
 }
 
     .btn-profile:hover {
@@ -217,6 +222,12 @@ header {
         opacity: 1;
     }
 
+.btn-profile_img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
 .container__download {
     height: 100%;
@@ -291,7 +302,7 @@ textarea {
     display: none;
     justify-content: center;
     flex-direction: column;
-    top: 51px;
+    top: 4rem;
     min-width: 150px;
 }
 
@@ -382,3 +393,26 @@ textarea {
     .container__search-bar button:hover {
         background: #FF990B;
     }
+
+
+
+/* Estilos validacion 
+.msj_error {
+    font-size: 14px;
+    color: red;
+}
+
+.input_error {
+    border-color: red !important;
+}
+
+ En .Net, si validas con DataAnnotations ya se le asigna por default al input y al span de mensaje de error las siguientes clase respectivamente  */
+
+
+.field-validation-error {
+    font-size: 14px;
+    color: red;
+}
+.input-validation-error {
+    border-color: red !important;
+}

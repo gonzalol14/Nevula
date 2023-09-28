@@ -9,7 +9,7 @@
     var Claims = HttpContextAccessor.HttpContext.User.Claims;
     string? IdUser = Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault();
 
-    ViewData["Title"] = "Perfil";
+    ViewData["Title"] = Model.oUser.Username;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -20,22 +20,24 @@
 
 <article class="container__perfil">
     <div class="container_info">
-        <div class="container__profile-picture">
-            <img src="~/images/foto_perfil.jpg" alt="">
-        </div>
-        <div class="container_name">
-            <span>@Model.oUser.Username</span>
-        </div>
-
-        @if(Model.oUser.UserRoles.First().IdRole == 2)
-        {
-            <!-- Esto depende si esta o no verificado -->
-            <div class="container__verify" id="container__verify-1">
-                <span class="verify">VERIFICADO</span>
-                <span class="small-verify">V</span>
-                <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+        <div class="container_info-data">
+            <div class="container__profile-picture">
+                <img src="~/images/profiles/default.jpg" alt="">
             </div>
-        }
+            <div class="container_name">
+                <span>@Model.oUser.Username</span>
+            </div>
+
+            @if(Model.oUser.UserRoles.First().IdRole == 2)
+            {
+                <!-- Esto depende si esta o no verificado -->
+                <div class="container__verify" id="container__verify-1">
+                    <span class="verify">VERIFICADO</span>
+                    <span class="small-verify">V</span>
+                    <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+                </div>
+            }
+        </div>
 
         @if (IdUser == Model.oUser.Id.ToString())
         {
@@ -48,9 +50,16 @@
     </div>
 
     <div class="container__description">
-        <span>
-            Soy desarrollador en el juego de linea B y administrador de esta pagina.
-        </span>
+
+        @if (Model.oUser.Description != null) 
+        { 
+            <span>@Model.oUser.Description</span>
+
+        } else 
+        {
+            <span>Aún no hay descripción</span>
+        }
+
     </div>
 
     <!-- depende si es otra cuenta se tiene que mostrar seguir o cambiar perfil -->
@@ -79,7 +88,7 @@
         <div class="container__info">
             <div class="container__profile-pic">
                 <a asp-route-IdUser="@Model.oUser.Id" asp-controller="Account" asp-action="Index">
-                    <img src="~/images/foto_perfil.jpg" alt="">
+                    <img src="~/images/profiles/default.jpg" alt="">
                 </a>
             </div>
 
@@ -113,7 +122,6 @@
         <div class="container__feedback">
             <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
             <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @publication.Comments.Count</a>
-            <a href="#" class="feedback__share"><i class="bi bi-share"></i></a>
         </div>
 
     </article>

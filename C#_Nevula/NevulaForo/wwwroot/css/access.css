@@ -38,7 +38,7 @@ body {
 }
 
 .container__title {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
     .container__title p {
@@ -216,7 +216,7 @@ body {
     }
 
 .terms-conditions {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
 }
 
@@ -271,12 +271,6 @@ body {
     font-size: 15px;
 }
 
-
-.msj_error {
-    font-size: 14px;
-    color: red;
-}
-
-.input_error {
-    border-color: red !important;
+.msj_error_login {
+    text-align: center;
 }

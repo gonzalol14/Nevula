@@ -1,23 +1,35 @@
-﻿
+﻿@model NevulaForo.Models.ViewModels.AvatarVM
 @{
-    ViewData["Title"] = "Avatar";
+    ViewData["Title"] = "Cambiar avatar";
     Layout = "~/Views/Account/Edit/_Layout.cshtml";
+
+    ViewData["Container_Avatar"] = "article_for_avatar";
 }
 
-<section class="container__section">
+<section class="container__section  container_form_avatar">
     <h2 class="title__edit">Cambiar avatar</h2>
-    <form asp-controller="Account" asp-action="EditAvatar" method="POST">
+    <form enctype="multipart/form-data" asp-controller="Account" asp-action="EditAvatar" method="POST" id="form_avatar">
+        @Html.AntiForgeryToken()
+        
+        <div asp-validation-summary="ModelOnly"></div>
+
         <div class="container__imgs-avatar">
             <div class="container__img">
-                <img src="~/images/foto_perfil.jpg" alt="" width="150px">
+                <img src="~/images/profiles/default.jpg" alt="" width="150px">
             </div>
             <div class="container__img">
-                <img src="~/images/foto_perfil.jpg" alt="" width="64px">
+                <img src="~/images/profiles/default.jpg" alt="" width="64px">
             </div>
             <div class="container__img">
-                <img src="~/images/foto_perfil.jpg" alt="" width="32px">
+                <img src="~/images/profiles/default.jpg" alt="" width="32px">
             </div>
         </div>
+        <div>
+            <button type="button" id="change_img" class="btn_edit-img">Cambiar imagen</button>
+            <input type="file" id="avatar_input" name="Avatar" asp-for="Avatar" hidden accept="image/jpeg,image/png,image/gif,image/webp">
+        </div>
+
+        <span asp-validation-for="Avatar" class="msj_error_avatar"></span>
     </form>
 </section>
 

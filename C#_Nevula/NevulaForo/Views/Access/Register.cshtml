@@ -23,21 +23,23 @@
             @if (ViewData["Message"] != null)
             {
                 <div class="form-group">
-                    <p class="msj_error">@ViewData["Message"]</p>
+                    <p class="field-validation-error">@ViewData["Message"]</p>
                 </div>
             }
+
+            <div asp-validation-summary="ModelOnly"></div>
 
             <div class="container__full-name">
                 <div class="form-group container__name">
                     <label for="name" class="input-title">Nombre</label>
                     <input type="text" name="name" class="" asp-for="Name">
-                    <div class="msj_error"></div>
+                    <span asp-validation-for="Name"></span>
                 </div>
 
                 <div class="form-group container__surname">
                     <label for="surname" class="input-title">Apellido</label>
                     <input type="text" name="surname" class="" asp-for="Surname">
-                    <div class="msj_error"></div>
+                    <span asp-validation-for="Surname"></span>
                 </div>
             </div>
 
@@ -45,36 +47,37 @@
             <div class="form-group">
                 <label for="username" class="input-title">Nombre de usuario</label>
                 <input type="text" name="username" class="" asp-for="Username">
-                <div class="msj_error"></div>
+                <span asp-validation-for="Username"></span>
             </div>
 
             <div class="form-group">
                 <label for="email" class="input-title">Dirección de correo</label>
-                <input type="email" name="email" class="" asp-for="Email">
-                <div class="msj_error"></div>
+                <input type="text" name="email" class="" asp-for="Email">
+                <span asp-validation-for="Email"></span>
             </div>
 
 
             <div class="form-group">
                 <label for="password" class="input-title">Contraseña</label>
                 <div class="container__password">
-                    <input class="pass " id="password" type="password" name="password" asp-for="Password">
+                    <input class="pass " id="password" type="password" name="Password" asp-for="Password">
                     <button type="button" class="btn-view-password toggle-password" toggle="#password">
                         <span class="icon"><i class="bi bi-eye-fill"></i></span>
                     </button>
-                    <div class="msj_error"></div>
                 </div>
+                <span asp-validation-for="Password"></span>
             </div>
 
-
             <div class="form-group">
+                <span class="terms-conditions">Al hacer click en 'Registrarse' aceptas nuestros <a class="links" href="#terminosycondiciones">términos y condiciones</a></span>
+            </div>
+            <!--<div class="form-group">
                 <label class="label__remember">
                     <span class="terms-conditions">Tengo 13 años o más y estoy de acuerdo con los <a class="links" href="#terminosycondiciones">términos y condiciones</a></span>
                     <input type="checkbox" id="policyAndConditions" name="policyAndConditions" value="accepted">
                     <span class="checkmark"></span>
                 </label>
-
-            </div>
+            </div>-->
 
             <div class="form-group">
                 <button type="submit" class="" id="register-submit">Registrarse</button>
@@ -98,9 +101,6 @@
 
 
     </div>
-
-    <!-- VALIDACIONES -->
-    @Html.ValidationSummary()
 </div>
 
 @section Scripts {
