@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NevulaForo.Models.DB;
 
@@ -11,9 +12,11 @@ using NevulaForo.Models.DB;
 namespace NevulaForo.Migrations
 {
     [DbContext(typeof(NevulaContext))]
-    partial class NevulaContextModelSnapshot : ModelSnapshot
+    [Migration("20230930033700_ColumnaUnicaEmailyUsername")]
+    partial class ColumnaUnicaEmailyUsername
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
