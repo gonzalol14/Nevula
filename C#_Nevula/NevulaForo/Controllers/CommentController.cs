@@ -18,15 +18,14 @@ namespace NevulaForo.Controllers
         }
 
 
-        [HttpPost, Authorize]
+        [HttpPost]
         public async Task<IActionResult> Create(CreateCommentVM viewmodel)
         {
             Publication publication = _DBContext.Publications.Where(p => p.DeletedAt == null && p.Id == viewmodel.IdPublication).ToList().First();
 
             if (publication != null) 
             {
-                ClaimsPrincipal claimUser = HttpContext.User;
-                viewmodel.IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+                viewmodel.IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
                 if (!ModelState.IsValid)
                 {
@@ -62,13 +61,12 @@ namespace NevulaForo.Controllers
             return View();
         }*/
 
-        [HttpGet, Authorize]
+        [HttpGet]
         public async Task<IActionResult> Delete(int IdComment)
         {
-            ClaimsPrincipal claimUser = HttpContext.User;
-            int idUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
-            Comment comment = _DBContext.Comments.FirstOrDefault(p => p.Id == IdComment && p.IdUser == idUser && p.DeletedAt == null);
+            Comment comment = _DBContext.Comments.FirstOrDefault(p => p.Id == IdComment && p.IdUser == IdUser && p.DeletedAt == null);
             if (comment != null)
             {
                 comment.DeletedAt = DateTime.Now;

@@ -37,14 +37,9 @@ namespace NevulaForo.Controllers
 
             model.Password = Utilities.EncryptPassword(model.Password);
 
-            User user_created = await _userService.SaveUser(model);
+            User user_created = await _userService.SaveUserAndRole(model, 1);
 
-            UserRole user_role_created = new UserRole();
-            user_role_created.IdUser = user_created.Id;
-            user_role_created.IdRole = 1;
-            user_role_created = await _userService.SaveUserRole(user_role_created);
-
-            if (user_created.Id > 0 && user_role_created.Id > 0) return RedirectToAction("Login", "Access");
+            if (user_created.Id > 0) return RedirectToAction("Login", "Access");
             else
             {
                 ViewData["Message"] = "Error al intentar crear usuario";

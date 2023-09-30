@@ -28,9 +28,7 @@ namespace NevulaForo.Controllers
                 string username = "";
                 if (claimUser.Identity.IsAuthenticated)
                 {
-                    username = claimUser.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier)
-                    .Select(c => c.Value).SingleOrDefault();
-
+                    username = claimUser.FindFirstValue(ClaimTypes.NameIdentifier);
                 }
                 ViewData["username"] = username;
             }

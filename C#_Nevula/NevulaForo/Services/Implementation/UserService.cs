@@ -21,18 +21,21 @@ namespace NevulaForo.Services.Implementation
             return user_found;
         }
 
-        public async Task<User> SaveUser(User model)
+        public async Task<User> SaveUserAndRole(User userModel, int RoleId)
         {
-            _dbContext.Add(model);
+            _dbContext.Add(userModel);
             await _dbContext.SaveChangesAsync();
-            return model;
-        }
 
-        public async Task<UserRole> SaveUserRole(UserRole model)
-        {
-            _dbContext.Add(model);
+            UserRole role = new UserRole()
+            {
+                IdUser = userModel.Id,
+                IdRole = RoleId
+            };
+
+            _dbContext.Add(role);
             await _dbContext.SaveChangesAsync();
-            return model;
+
+            return userModel;
         }
     }
 }

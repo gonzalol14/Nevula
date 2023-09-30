@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\images\\logo_empresa_jotelson.png"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\4\\profile_pic.jpg"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaForo\\wwwroot\\images\\profiles\\default.jpg",
       "PackagePath": "staticwebassets\\images\\profiles\\default.jpg"
     },

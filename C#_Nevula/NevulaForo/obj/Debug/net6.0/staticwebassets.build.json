@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l3z8X3iWsISkd5RUNUJeB0TrT8syUYJsHEPpMko6PY0=",
+  "Hash": "VgEn54SBVBkvVuN3D5ZQiw1iVYTDhTSjyL1ZE5mtnOU=",
   "Source": "NevulaForo",
   "BasePath": "_content/NevulaForo",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo_empresa_jotelson.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.jpg",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "images/profiles/4/profile_pic.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\4\\profile_pic.jpg"
     },
     {
       "Identity": "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaForo\\wwwroot\\images\\profiles\\default.jpg",

@@ -29,12 +29,6 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public IActionResult Index(int IdUser)
         {
-            ClaimsPrincipal claimUser = HttpContext.User;
-            if (IdUser == 0 && claimUser.Identity.IsAuthenticated) 
-            {
-                IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
-            }
-
             try
             {
                 UserProfileVM oUserProfile = new UserProfileVM()
@@ -62,15 +56,17 @@ namespace NevulaForo.Controllers
 
                 User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
 
-                GeneralEditUserVM viewmodel = new GeneralEditUserVM();
-                viewmodel.Id = IdUser;
-                viewmodel.Email = user.Email;
-                viewmodel.Surname = user.Surname;
-                viewmodel.Username = user.Username;
-                viewmodel.Name = user.Name;
-                viewmodel.Description = user.Description;
-
+                GeneralEditUserVM viewmodel = new GeneralEditUserVM()
+                {
+                    Id = IdUser,
+                    Email = user.Email,
+                    Surname = user.Surname,
+                    Username = user.Username,
+                    Name = user.Name,
+                    Description = user.Description
+                };
                 return View($"~/Views/Account/Edit/{type}.cshtml", viewmodel);
+
             } else if (type == "Password")
             {
                 ChangePasswordVM viewmodelVacio = new ChangePasswordVM();
@@ -80,13 +76,15 @@ namespace NevulaForo.Controllers
             return View($"~/Views/Account/Edit/{type}.cshtml");
         }
 
+
+
         [HttpPost]
         public async Task<IActionResult> EditGeneral(GeneralEditUserVM viewmodel)
         {
             if(ModelState.IsValid)
             {
                 ClaimsPrincipal claimUser = HttpContext.User;
-                viewmodel.Id = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+                viewmodel.Id = Convert.ToInt32(claimUser.FindFirstValue("Id")); 
 
 
                 User model = _DBContext.Users.Where(u => u.Id == viewmodel.Id && u.DeletedAt == null).FirstOrDefault();
@@ -141,45 +139,32 @@ namespace NevulaForo.Controllers
             return View($"~/Views/Account/Edit/General.cshtml", viewmodel);
         }
 
+
+
         [HttpPost]
         public async Task<IActionResult> EditPassword(ChangePasswordVM viewmodel)
         {
-
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
-                ClaimsPrincipal claimUser = HttpContext.User;
-                int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+                int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
-                try
+                User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
+
+                if (user != null)
                 {
+                    user.Password = Utilities.EncryptPassword(viewmodel.newPass);
+                    user.UpdatedAt = DateTime.Now;
 
-                    User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
+                    _DBContext.Update(user);
+                    await _DBContext.SaveChangesAsync();
 
-                    if (user != null && user.Password == Utilities.EncryptPassword(viewmodel.currentPass))
-                    {
-                        user.Password = Utilities.EncryptPassword(viewmodel.newPass);
-                        user.UpdatedAt = DateTime.Now;
-
-                        _DBContext.Update(user);
-                        await _DBContext.SaveChangesAsync();
-
-                        ViewData["Message"] = "Se actualizo la contraseña";
-                        return View($"~/Views/Account/Edit/Password.cshtml", viewmodel);
-
-                    }
-                    else
-                    {
-                        throw new Exception("La contraseña no es correcta");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ViewData["MessageErrorPass"] = ex.Message;
+                    ViewData["Message"] = "Se actualizo la contraseña";
                     return View($"~/Views/Account/Edit/Password.cshtml", viewmodel);
+
                 }
             }
-
             return View($"~/Views/Account/Edit/Password.cshtml", viewmodel);
+
         }
 
 
@@ -187,14 +172,12 @@ namespace NevulaForo.Controllers
         [HttpPost]
         public async Task<IActionResult> EditAvatar([FromForm] AvatarVM model)
         {
-            // FALTAN AGREGAR VALIDACIONES
             if (!ModelState.IsValid)
             {
                 return View($"~/Views/Account/Edit/Avatar.cshtml", model);
             }
 
-            ClaimsPrincipal claimUser = HttpContext.User;
-            int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
             string ruta = Path.Combine(_hostingEnvironment.WebRootPath, $"images/profiles/{IdUser}");
             if (Directory.Exists(ruta))

@@ -17,6 +17,6 @@ if (typeEdit == "perfil") {
         document.getElementById("form_avatar").submit()
     })
 
-} else if (typeEdit == "contraseña") {
+} else {
     $(`.btn_edit-pass`).addClass("active");
 }

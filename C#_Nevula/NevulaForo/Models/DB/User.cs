@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using NevulaForo.Validations;
 
 namespace NevulaForo.Models.DB;
 
@@ -20,10 +21,12 @@ public partial class User
     [Required(ErrorMessage = "Debe ingresar un nombre de usuario")]
     [MinLength(3, ErrorMessage = "El nombre de usuario debe tener entre 3 y 30 caracteres")]
     [MaxLength(30, ErrorMessage = "El nombre de usuario debe tener entre 3 y 30 caracteres")]
+    [UniqueUsername]
     public string Username { get; set; } = null!;
 
     [Required(ErrorMessage = "Debe ingresar un correo electrónico")]
     [EmailAddress(ErrorMessage = "Ingrese un correo electrónico válido")]
+    [UniqueEmail]
     public string Email { get; set; } = null!;
 
     [Required(ErrorMessage = "Debe ingresar una contraseña")]

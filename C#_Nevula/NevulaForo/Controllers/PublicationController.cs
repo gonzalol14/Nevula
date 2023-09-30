@@ -62,8 +62,7 @@ namespace NevulaForo.Controllers
         [HttpPost, Authorize]
         public async Task<IActionResult> Create(CreatePublicationVM viewmodel)
         {
-            ClaimsPrincipal claimUser = HttpContext.User;
-            int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
             if (!ModelState.IsValid)
             {
@@ -96,8 +95,7 @@ namespace NevulaForo.Controllers
         {
             try
             {
-                ClaimsPrincipal claimUser = HttpContext.User;
-                int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+                int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
                 Publication modelPublication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == IdUser);
                 
@@ -127,8 +125,7 @@ namespace NevulaForo.Controllers
         [HttpPost, Authorize]
         public async Task<IActionResult> Edit(CreatePublicationVM viewmodel)
         {
-            ClaimsPrincipal claimUser = HttpContext.User;
-            int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
             Publication model = _DBContext.Publications.Where(p => p.Id == viewmodel.Id && p.IdUser == IdUser && p.DeletedAt == null).ToList().First();
 
@@ -158,10 +155,9 @@ namespace NevulaForo.Controllers
         [HttpGet, Authorize]
         public async Task<IActionResult> Delete(int IdPublication)
         {
-            ClaimsPrincipal claimUser = HttpContext.User;
-            int idUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
-            Publication publication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == idUser && p.DeletedAt == null);
+            Publication publication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == IdUser && p.DeletedAt == null);
             if (publication != null)
             {
                 publication.DeletedAt = DateTime.Now;

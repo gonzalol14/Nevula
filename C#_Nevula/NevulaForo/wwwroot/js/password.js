@@ -22,6 +22,8 @@ if (input_password.classList.contains("input-validation-error")) {
     input_password.parentElement.classList.add("input-validation-error")
 }
 
-if (input_new_password.classList.contains("input-validation-error")) {
-    input_new_password.parentElement.classList.add("input-validation-error")
+if (input_new_password != null) {
+    if (input_new_password.classList.contains("input-validation-error")) {
+        input_new_password.parentElement.classList.add("input-validation-error")
+    }
 }
