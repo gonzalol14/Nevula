@@ -207,6 +207,25 @@
     margin-top: 20px;
 }
 
+.container__img img{
+    object-fit: cover;
+}
+
+#profile_pic_150 {
+    width: 150px;
+    height: 150px;
+}
+
+#profile_pic_64 {
+    width: 64px;
+    height: 64px;
+}
+
+#profile_pic_32 {
+    width: 32px;
+    height: 32px;
+}
+
 .field-validation-error.msj_error_avatar {
     margin-top: 20px;
 }

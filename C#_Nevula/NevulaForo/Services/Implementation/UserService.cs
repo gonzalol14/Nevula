@@ -7,10 +7,12 @@ namespace NevulaForo.Services.Implementation
     public class UserService : IUserService
     {
         private readonly NevulaContext _dbContext;
+        private IWebHostEnvironment _hostingEnvironment;
 
-        public UserService(NevulaContext dbContext)
+        public UserService(NevulaContext dbContext, IWebHostEnvironment hostingEnvironment)
         {
             _dbContext = dbContext;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         public async Task<User> GetUser(string email, string password)
@@ -36,6 +38,36 @@ namespace NevulaForo.Services.Implementation
             await _dbContext.SaveChangesAsync();
 
             return userModel;
+        }
+
+
+        private readonly string _defaultProfileImagePath = "/images/profiles/default.jpg";
+
+        public string GetUserProfileImagePath(int IdUser, bool renewImg = false)
+        {
+            string userFolderPath = Path.Combine(_hostingEnvironment.WebRootPath, $"images/profiles/{IdUser}");
+
+            foreach (var extension in new[] { ".jpg", ".png", ".webp", ".gif" })
+            {
+                string imagePath = Path.Combine(userFolderPath, $"profile_pic{extension}");
+                if (File.Exists(imagePath))
+                { 
+                    // Usuario tiene una foto de perfil personalizada con la extensión encontrada.
+                    if (renewImg)
+                    {
+                        /* Le agrego un parametro de consulta unico (el tiempo actual), para asegurar que el navegador lo tome como una nueva version
+                         * de la imagen cuando se cambie el parametro (sirve para ver el cambio automaticamente en la pag. EditAvatar)
+                         */
+                        return $"/images/profiles/{IdUser}/profile_pic{extension}" + "?t=" + DateTime.Now.Ticks;
+                    } else
+                    {
+                        return $"/images/profiles/{IdUser}/profile_pic{extension}";
+                    }
+                }
+            }
+
+            // Usuario no tiene una foto de perfil personalizada, devuelve la por defecto
+            return _defaultProfileImagePath;
         }
     }
 }

@@ -8,14 +8,14 @@ namespace NevulaForo.Models.ViewModels
     public class ChangePasswordVM //: IValidatableObject
     {
 
-        [Required(ErrorMessage = "Debe ingresar la contraseña actual")]
+        [Required(ErrorMessage = "Debe ingresar la contraseña actual.")]
         [CurrentPasswordMatch(ErrorMessage = "La contraseña actual no es correcta.")]
         public string currentPass { get; set; } = null!;
 
 
-        [Required(ErrorMessage = "Debe ingresar una nueva contraseña")]
-        [MinLength(3, ErrorMessage = "Debe ingresar una combinación con al menos 3 caracteres")]
-        [MaxLength(50, ErrorMessage = "Debe ingresar una combinación con hasta 50 caracteres")]
+        [Required(ErrorMessage = "Debe ingresar una nueva contraseña.")]
+        [MinLength(3, ErrorMessage = "Debe ingresar una combinación con al menos 3 caracteres.")]
+        [MaxLength(50, ErrorMessage = "Debe ingresar una combinación con hasta 50 caracteres.")]
         public string newPass { get; set; } = null!;
 
 

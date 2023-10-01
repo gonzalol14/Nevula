@@ -10,6 +10,7 @@ using System.Security.Claims;
 
 
 using Microsoft.AspNetCore.Http;
+using NevulaForo.Services.Contract;
 
 namespace NevulaForo.Controllers
 {
@@ -19,11 +20,13 @@ namespace NevulaForo.Controllers
 
         private readonly NevulaContext _DBContext;
         private IWebHostEnvironment _hostingEnvironment;
+        private readonly IUserService _userService;
 
-        public AccountController(NevulaContext dbContext, IWebHostEnvironment hostingEnvironment)
+        public AccountController(NevulaContext dbContext, IWebHostEnvironment hostingEnvironment, IUserService userService)
         {
             _DBContext = dbContext;
             _hostingEnvironment = hostingEnvironment;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -37,6 +40,9 @@ namespace NevulaForo.Controllers
                     oPublications = _DBContext.Publications.Where(p => p.DeletedAt == null && p.IdUser == IdUser).OrderByDescending(p => p.CreatedAt).ToList()
                 };
 
+                string profilePicPath = _userService.GetUserProfileImagePath(IdUser);
+                ViewBag.ProfilePicPath = profilePicPath;
+
                 return View(oUserProfile);
             } catch (InvalidOperationException ex)
             {
@@ -49,10 +55,10 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public IActionResult Edit(string type = "General")
         {
-            if(type == "General")
+            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
+
+            if (type == "General")
             {
-                ClaimsPrincipal claimUser = HttpContext.User;
-                int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
 
                 User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
 
@@ -71,6 +77,11 @@ namespace NevulaForo.Controllers
             {
                 ChangePasswordVM viewmodelVacio = new ChangePasswordVM();
                 return View($"~/Views/Account/Edit/{type}.cshtml", viewmodelVacio);
+
+            } else
+            {
+                string profilePicPath = _userService.GetUserProfileImagePath(IdUser);
+                ViewBag.ProfilePicPath = profilePicPath;
             }
 
             return View($"~/Views/Account/Edit/{type}.cshtml");
@@ -172,27 +183,30 @@ namespace NevulaForo.Controllers
         [HttpPost]
         public async Task<IActionResult> EditAvatar([FromForm] AvatarVM model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View($"~/Views/Account/Edit/Avatar.cshtml", model);
-            }
-
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
+            bool renewImg = false;
 
-            string ruta = Path.Combine(_hostingEnvironment.WebRootPath, $"images/profiles/{IdUser}");
-            if (Directory.Exists(ruta))
+            if (ModelState.IsValid)
             {
-                Directory.Delete(ruta, true);
-            }
-            Directory.CreateDirectory(ruta);
+                string ruta = Path.Combine(_hostingEnvironment.WebRootPath, $"images/profiles/{IdUser}");
+                if (Directory.Exists(ruta))
+                {
+                    Directory.Delete(ruta, true);
+                }
+                Directory.CreateDirectory(ruta);
 
-            string extension = model.Avatar.FileName.Split('.')[1];
-            string filePath = Path.Combine(ruta, $"profile_pic.{extension}");
+                string extension = model.Avatar.FileName.Split('.')[1];
+                string filePath = Path.Combine(ruta, $"profile_pic.{extension}");
 
-            using (Stream fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                await model.Avatar.CopyToAsync(fileStream);
+                using (Stream fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.Avatar.CopyToAsync(fileStream);
+                }
+                renewImg = true;
             }
+
+            string profilePicPath = _userService.GetUserProfileImagePath(IdUser, renewImg);
+            ViewBag.ProfilePicPath = profilePicPath;
 
             return View($"~/Views/Account/Edit/Avatar.cshtml");
         }

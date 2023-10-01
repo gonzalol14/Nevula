@@ -1,8 +1,13 @@
 ﻿@model NevulaForo.Models.ViewModels.PublicationDedicatedVM
+
+@using NevulaForo.Services.Implementation;
+@inject UserService UserService;
 @{
     ViewData["Title"] = Model.oPublication.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
     
+    var userIdClaim = User.FindFirst("Id");
+    int IdUser = Convert.ToInt32(userIdClaim?.Value);
 }
 
 @section Styles {
@@ -14,13 +19,13 @@
 <article class="main__containers-community">
     <div class="container__info">
         <div class="container__profile-pic">
-            <a asp-area="" asp-controller="Account" asp-action="Index">
-                <img src="~/images/profiles/default.jpg" alt="">
+            <a asp-route-IdUser="@Model.oPublication.IdUser" asp-controller="Account" asp-action="Index">
+                <img src="@UserService.GetUserProfileImagePath(Model.oPublication.IdUser)" alt="">
             </a>
         </div>
 
         <div class="container__username">
-            <a asp-area="" asp-controller="Account" asp-action="Index">@Model.oPublication.IdUserNavigation.Username</a>
+            <a asp-route-IdUser="@Model.oPublication.IdUser" asp-controller="Account" asp-action="Index">@Model.oPublication.IdUserNavigation.Username</a>
         </div>
 
         @if(Model.oPublication.IdUserNavigation.UserRoles.First().IdRole == 2)
@@ -61,12 +66,11 @@
     <form asp-controller="Comment" asp-action="Create" method="POST" class="form__post-comment">
         <input type="hidden" asp-for="@Model.oPublication.Id" name="IdPublication">
         <div class="container__profile-pic" id="form_comment-pic">
-            <img src="~/images/profiles/default.jpg" alt="">
+            <img src="@UserService.GetUserProfileImagePath(IdUser)" alt="Tu foto de perfil">
         </div>
         <div class="container__profile-text">
             <p>Responder desde <span class="span_username">@ViewData["username"]</span></p>
         </div>
-
         <div class="container__inputs-form">
             <div class="container__input-content">
                 <textarea class="post_textarea" name="Description" id="" placeholder="Escribe una respuesta" maxlength="1750"></textarea>
@@ -91,13 +95,13 @@
         <div class="container__comment">
             <div class="container__info">
                 <div class="comment__profile-pic">
-                    <a asp-area="" asp-controller="Account" asp-action="Index">
-                        <img src="~/images/profiles/default.jpg" alt="">
+                    <a asp-route-IdUser="@comment.IdUser" asp-controller="Account" asp-action="Index">
+                        <img src="@UserService.GetUserProfileImagePath(comment.IdUser)" alt="">
                     </a>
                 </div>
 
                 <div class="container__username">
-                    <a asp-area="" asp-controller="Account" asp-action="Index">@comment.IdUserNavigation.Username</a>
+                    <a asp-route-IdUser="@comment.IdUser" asp-controller="Account" asp-action="Index">@comment.IdUserNavigation.Username</a>
                 </div>
 
                 @if(comment.IdUserNavigation.UserRoles.First().IdRole == 2)

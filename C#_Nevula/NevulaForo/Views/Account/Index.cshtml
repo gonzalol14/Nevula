@@ -22,7 +22,7 @@
     <div class="container_info">
         <div class="container_info-data">
             <div class="container__profile-picture">
-                <img src="~/images/profiles/default.jpg" alt="">
+                <img src="@ViewBag.ProfilePicPath" alt="">
             </div>
             <div class="container_name">
                 <span>@Model.oUser.Username</span>
@@ -88,7 +88,7 @@
         <div class="container__info">
             <div class="container__profile-pic">
                 <a asp-route-IdUser="@Model.oUser.Id" asp-controller="Account" asp-action="Index">
-                    <img src="~/images/profiles/default.jpg" alt="">
+                    <img src="@ViewBag.ProfilePicPath" alt="">
                 </a>
             </div>
 

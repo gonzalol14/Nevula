@@ -22,6 +22,8 @@ builder.Services.AddDbContext<NevulaContext>(options =>
 // Servicios
 builder.Services.AddScoped<IUserService, UserService>();
 
+builder.Services.AddScoped<UserService>();
+
 /* COOKIES */
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

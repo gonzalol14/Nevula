@@ -1,4 +1,6 @@
 ﻿@model List<NevulaForo.Models.DB.Publication>
+@using NevulaForo.Services.Implementation;
+@inject UserService UserService;
 @{
     ViewData["Title"] = "Foro";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,7 +19,7 @@
         <div class="container__info">
             <div class="container__profile-pic">
                 <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">
-                    <img src="~/images/profiles/default.jpg" alt="">
+                    <img src="@UserService.GetUserProfileImagePath(publication.IdUser)" alt="">
                 </a>
             </div>
 
