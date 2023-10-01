@@ -146,11 +146,12 @@
 .form-submit {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .btn_edit-submit,
 .btn_edit-reset,
+.btn_edit-delete,
 .btn_edit-img {
     border: none;
     border-radius: 0.25rem;
@@ -173,6 +174,13 @@
 
     .btn_edit-reset:hover {
         background-color: #929292;
+    }
+
+.btn_edit-delete {
+    background: #E30000;
+}
+    .btn_edit-delete:hover {
+        background-color: #F30000;
     }
 
 .container__imgs-avatar {
@@ -225,6 +233,19 @@
     width: 32px;
     height: 32px;
 }
+
+#edit_avatar-delete {
+
+    padding: 10px 13px;
+    margin-left: 5px;
+    color: #E30000;
+    border-radius: 50%;
+}
+    #edit_avatar-delete:hover {
+        transition: 200ms;
+        color: red;
+        background: #ECECEC;
+    }
 
 .field-validation-error.msj_error_avatar {
     margin-top: 20px;

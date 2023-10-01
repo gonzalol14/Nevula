@@ -211,7 +211,21 @@ namespace NevulaForo.Controllers
             return View($"~/Views/Account/Edit/Avatar.cshtml");
         }
 
+        public IActionResult DeleteAvatar()
+        {
+            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
+            string ruta = Path.Combine(_hostingEnvironment.WebRootPath, $"images/profiles/{IdUser}");
+            if (Directory.Exists(ruta))
+            {
+                Directory.Delete(ruta, true);
+            }
+
+            string profilePicPath = _userService.GetUserProfileImagePath(IdUser);
+            ViewBag.ProfilePicPath = profilePicPath;
+
+            return View($"~/Views/Account/Edit/Avatar.cshtml");
+        }
 
         public async Task<IActionResult> Delete()
         {

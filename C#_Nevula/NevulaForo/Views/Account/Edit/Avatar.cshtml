@@ -25,8 +25,9 @@
             </div>
         </div>
         <div>
-            <button type="button" id="change_img" class="btn_edit-img">Cambiar imagen</button>
+            <button type="button" id="change_img" class="btn_edit-img">Cambiar avatar</button>
             <input type="file" id="avatar_input" name="Avatar" asp-for="Avatar" hidden accept="image/jpeg,image/png,image/gif,image/webp">
+            <a asp-controller="Account" asp-action="DeleteAvatar" id="edit_avatar-delete"><i class="bi bi-trash3"></i></a>
         </div>
 
         <span asp-validation-for="Avatar" class="msj_error_avatar"></span>

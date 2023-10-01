@@ -45,8 +45,13 @@
         </div>
 
         <div class="form-submit">
-            <button type="reset" class="btn_edit-reset" id="edit_general-reset">Descartar</button>
-            <button type="submit" class="btn_edit-submit" id="edit_general-submit">Guardar cambios</button>
+            <div>
+                <a asp-controller="Account" asp-action="Delete" class="btn_edit-delete" id="edit_general-delete">Eliminar cuenta</a>
+            </div>
+            <div>
+                <button type="reset" class="btn_edit-reset" id="edit_general-reset">Descartar</button>
+                <button type="submit" class="btn_edit-submit" id="edit_general-submit">Guardar cambios</button>
+            </div>
         </div>
     </form>
 
