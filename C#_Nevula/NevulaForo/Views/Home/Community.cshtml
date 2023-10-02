@@ -1,4 +1,6 @@
 ﻿@model List<NevulaForo.Models.DB.Publication>
+
+@using NevulaForo.Resources;
 @using NevulaForo.Services.Implementation;
 @inject UserService UserService;
 @{
@@ -40,7 +42,7 @@
             <span class="separator__info">·</span>
 
             <div class="container__date">
-                <span>@publication.CreatedAt.ToShortDateString()</span>
+                <span>@Utilities.StylizeDate(publication.CreatedAt)</span>
             </div>
         </div>
 

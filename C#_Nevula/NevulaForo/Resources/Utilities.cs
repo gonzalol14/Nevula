@@ -26,5 +26,39 @@ namespace NevulaForo.Resources
                 return sb.ToString();
             }
         }
+
+        public static string StylizeDate(DateTime fecha)
+        {
+            TimeSpan diferencia = DateTime.Now - fecha;
+
+            if (diferencia.TotalDays > 7)
+            {
+                if (fecha.Year != DateTime.Now.Year)
+                {
+                    return fecha.ToString("dd MMM yyyy");
+                }
+                else
+                {
+                    return fecha.ToString("dd MMM");
+                }
+            }
+            else if (diferencia.TotalHours > 24)
+            {
+                return $"hace {(int)diferencia.TotalDays}d";
+            }
+            else if (diferencia.TotalMinutes > 60)
+            {
+                return $"hace {(int)diferencia.TotalHours}h";
+            }
+            else if (diferencia.TotalSeconds > 60)
+            {
+                return $"hace {(int)diferencia.TotalMinutes}m";
+            }
+            else
+            {
+                //return "Hace un instante";
+                return $"hace {(int)diferencia.TotalSeconds}s";
+            }
+        }
     }
 }

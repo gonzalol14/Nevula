@@ -1,5 +1,6 @@
 ﻿@model NevulaForo.Models.ViewModels.PublicationDedicatedVM
 
+@using NevulaForo.Resources;
 @using NevulaForo.Services.Implementation;
 @inject UserService UserService;
 @{
@@ -41,7 +42,7 @@
         <span class="separator__info">·</span>
 
         <div class="container__date">
-            <span>@Model.oPublication.CreatedAt.ToShortDateString()</span>
+            <span>@Utilities.StylizeDate(Model.oPublication.CreatedAt)</span>
         </div>
     </div>
 
@@ -117,7 +118,7 @@
                 <span class="separator__info">·</span>
 
                 <div class="container__date">
-                    <span>@comment.CreatedAt.ToShortDateString()</span>
+                    <span>@Utilities.StylizeDate(comment.CreatedAt)</span>
                 </div>
             </div>
 

@@ -1,13 +1,9 @@
 ﻿@model NevulaForo.Models.ViewModels.UserProfileVM
 
-@using System.Security.Claims
-@using Microsoft.AspNetCore.Http;
-@inject IHttpContextAccessor HttpContextAccessor;
-
+@using NevulaForo.Resources;
 @{
-    string? connectionId = HttpContextAccessor?.HttpContext?.Connection.Id;
-    var Claims = HttpContextAccessor.HttpContext.User.Claims;
-    int IdUser = Convert.ToInt32(Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+    var userIdClaim = User.FindFirst("Id");
+    int IdUser = Convert.ToInt32(userIdClaim?.Value);
 
     ViewData["Title"] = Model.oUser.Username;
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -109,7 +105,7 @@
             <span class="separator__info">·</span>
 
             <div class="container__date">
-                <span>@publication.CreatedAt.ToShortDateString()</span>
+                <span>@Utilities.StylizeDate(publication.CreatedAt)</span>
             </div>
         </div>
 

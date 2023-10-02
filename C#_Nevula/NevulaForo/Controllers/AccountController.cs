@@ -242,8 +242,8 @@ namespace NevulaForo.Controllers
                 await _DBContext.SaveChangesAsync();
             }
 
-            //Error no existe la cuenta o ya esta eliminada
-            return RedirectToAction("Logout", "Access");
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Access");
         }
 
     }
