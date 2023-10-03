@@ -21,10 +21,21 @@ namespace NevulaForo.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateCommentVM viewmodel)
         {
-            Publication publication = _DBContext.Publications.Where(p => p.DeletedAt == null && p.Id == viewmodel.IdPublication).ToList().First();
+            Publication publication = _DBContext.Publications.Where(p => p.DeletedAt == null && p.Id == viewmodel.IdPublication).FirstOrDefault();
 
             if (publication != null) 
             {
+                if(viewmodel.IdFatherComment != null)
+                {
+                    Comment fatherComment = _DBContext.Comments.Where(c => c.DeletedAt == null && c.Id == viewmodel.IdFatherComment).FirstOrDefault();
+
+                    if (fatherComment == null)
+                    {
+                        // Error no existe el comentario padre
+                        return NotFound();
+                    }
+                }
+                
                 viewmodel.IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
                 if (!ModelState.IsValid)
@@ -38,17 +49,17 @@ namespace NevulaForo.Controllers
                 {
                     IdUser = viewmodel.IdUser,
                     IdPublication = viewmodel.IdPublication,
+                    IdFatherComment = viewmodel.IdFatherComment,
                     Description = viewmodel.Description,
                     CreatedAt = DateTime.Now,
-                    DeletedAt = null,
-                    IdUserNavigation = user
+                    DeletedAt = null
                 };
 
                 _DBContext.Add(model);
                 await _DBContext.SaveChangesAsync();
 
-
                 return RedirectToAction("Index", "Publication", new { IdPublication = viewmodel.IdPublication });
+
             }
 
             //404

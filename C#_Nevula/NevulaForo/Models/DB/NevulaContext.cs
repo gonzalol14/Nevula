@@ -57,6 +57,7 @@ public partial class NevulaContext : DbContext
                 .HasColumnName("description");
             entity.Property(e => e.IdPublication).HasColumnName("id_publication");
             entity.Property(e => e.IdUser).HasColumnName("id_user");
+            entity.Property(e => e.IdFatherComment).HasColumnName("id_father_comment");
 
             entity.HasOne(d => d.IdPublicationNavigation).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.IdPublication)
@@ -67,6 +68,11 @@ public partial class NevulaContext : DbContext
                 .HasForeignKey(d => d.IdUser)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_comments_users");
+
+            entity.HasOne(c => c.IdFatherCommentNavigation)
+                .WithMany()
+                .HasForeignKey(c => c.IdFatherComment)
+                .OnDelete(DeleteBehavior.NoAction);
         });
 
         modelBuilder.Entity<Publication>(entity =>

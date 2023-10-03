@@ -3,7 +3,6 @@
 using NevulaForo.Models.DB;
 using NevulaForo.Resources;
 using NevulaForo.Services.Contract;
-//using NevulaForo.Services.Implementation;
 
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;

@@ -6,7 +6,7 @@
     int IdUser = Convert.ToInt32(userIdClaim?.Value);
 
     var usernameClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
-    string Username = usernameClaim?.Value;
+    string? Username = usernameClaim?.Value;
 }
 
 <!DOCTYPE html>
@@ -22,10 +22,10 @@
 </head>
 <body>
     <!-- HEADER ORIGINAL -->
-    <header>
+    <header id="header">
         <div class="container__left">
             <div class="container__logo">
-                <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/Logo_Nevula2.png" alt="Logo Nevula" width="65px"></a>
+                <a asp-controller="Home" asp-action="Index"><img src="~/images/Logo_Nevula2.png" alt="Logo Nevula" width="65px"></a>
             </div>
 
             <div>
@@ -35,21 +35,21 @@
             <ul class="container__list-buttons">
                 
                 <li class="container__btn-home">
-                    <a asp-area="" asp-controller="Home" asp-action="Index">INICIO</a>
+                    <a asp-controller="Home" asp-action="Index">INICIO</a>
                 </li>
                 <li>
-                    <a asp-area="" asp-controller="Home" asp-action="News">NOVEDADES</a>
+                    <a asp-controller="Home" asp-action="News">NOVEDADES</a>
                 </li>
                 <li class="container_dropdown" id="container_dropdown-community">
-                    <a asp-area="" asp-controller="Home" asp-action="Community">COMUNIDAD</a>
+                    <a asp-controller="Home" asp-action="Community">COMUNIDAD</a>
                     <ul class="container__dropdown--header dropdown dropdown-community">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Community">FORO</a></li>
-                        <li><a asp-area="" asp-controller="Publication" asp-action="Create">CREAR PUBLICACIÓN</a></li>
+                        <li><a asp-controller="Home" asp-action="Community">FORO</a></li>
+                        <li><a asp-controller="Publication" asp-action="Create">CREAR PUBLICACIÓN</a></li>
                     </ul>
 
                 </li>
                 <li>
-                    <a asp-area="" asp-controller="Home" asp-action="Help">AYUDA</a>
+                    <a asp-controller="Home" asp-action="Help">AYUDA</a>
                 </li>
                 
                 <!-- Boton perfil responsive -->

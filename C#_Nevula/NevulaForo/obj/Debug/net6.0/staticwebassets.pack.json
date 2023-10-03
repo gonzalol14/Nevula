@@ -85,6 +85,10 @@
       "PackagePath": "staticwebassets\\js\\password.js"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaForo\\wwwroot\\js\\publication.js",
+      "PackagePath": "staticwebassets\\js\\publication.js"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\C#_Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

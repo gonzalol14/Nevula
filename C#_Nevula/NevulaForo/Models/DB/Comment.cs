@@ -12,6 +12,8 @@ public partial class Comment
 
     public int IdUser { get; set; }
 
+    public int? IdFatherComment { get; set; }
+
     [Required(ErrorMessage = "Debe ingresar una descripción.")]
     [MaxLength(300, ErrorMessage = "La descripción debe tener hasta 300 caracteres.")]
     public string Description { get; set; } = null!;
@@ -23,4 +25,6 @@ public partial class Comment
     public virtual Publication IdPublicationNavigation { get; set; } = null!;
 
     public virtual User IdUserNavigation { get; set; } = null!;
+
+    public virtual Comment IdFatherCommentNavigation { get; set; }
 }

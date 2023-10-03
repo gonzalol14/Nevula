@@ -27,37 +27,37 @@ namespace NevulaForo.Resources
             }
         }
 
-        public static string StylizeDate(DateTime fecha)
+        public static string StylizeDate(DateTime date)
         {
-            TimeSpan diferencia = DateTime.Now - fecha;
+            TimeSpan difference = DateTime.Now - date;
 
-            if (diferencia.TotalDays > 7)
+            if (difference.TotalDays > 7)
             {
-                if (fecha.Year != DateTime.Now.Year)
+                if (date.Year != DateTime.Now.Year)
                 {
-                    return fecha.ToString("dd MMM yyyy");
+                    return date.ToString("dd MMM yyyy");
                 }
                 else
                 {
-                    return fecha.ToString("dd MMM");
+                    return date.ToString("dd MMM");
                 }
             }
-            else if (diferencia.TotalHours > 24)
+            else if (difference.TotalHours > 24)
             {
-                return $"hace {(int)diferencia.TotalDays}d";
+                return $"hace {(int)difference.TotalDays}d";
             }
-            else if (diferencia.TotalMinutes > 60)
+            else if (difference.TotalMinutes > 60)
             {
-                return $"hace {(int)diferencia.TotalHours}h";
+                return $"hace {(int)difference.TotalHours}h";
             }
-            else if (diferencia.TotalSeconds > 60)
+            else if (difference.TotalSeconds > 60)
             {
-                return $"hace {(int)diferencia.TotalMinutes}m";
+                return $"hace {(int)difference.TotalMinutes}m";
             }
             else
             {
                 //return "Hace un instante";
-                return $"hace {(int)diferencia.TotalSeconds}s";
+                return $"hace {(int)difference.TotalSeconds}s";
             }
         }
     }

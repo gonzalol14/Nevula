@@ -27,14 +27,24 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public IActionResult Index(int IdPublication)
         {
-            try
+            PublicationDedicatedVM oPublicationDedicated = new PublicationDedicatedVM()
             {
-                PublicationDedicatedVM oPublicationDedicated = new PublicationDedicatedVM()
-                {
-                    oPublication = _DBContext.Publications.Include(u => u.IdUserNavigation).ThenInclude(u => u.UserRoles).Where(p => p.DeletedAt == null && p.Id == IdPublication).ToList().First(),
-                    oComments = _DBContext.Comments.Include(u => u.IdUserNavigation).ThenInclude(u => u.UserRoles).Where(c => c.DeletedAt == null && c.IdPublication == IdPublication).OrderByDescending(c => c.CreatedAt).ToList()
-                };
+                oPublication = _DBContext.Publications
+                                .Include(u => u.IdUserNavigation)
+                                    .ThenInclude(u => u.UserRoles)
+                                .Where(p => p.DeletedAt == null && p.Id == IdPublication)
+                                .FirstOrDefault(),
+                oComments = _DBContext.Comments
+                                .Include(u => u.IdUserNavigation)
+                                    .ThenInclude(u => u.UserRoles)
+                                .Include(c => c.IdFatherCommentNavigation)
+                                .Where(c => c.DeletedAt == null && c.IdPublication == IdPublication)
+                                .OrderByDescending(c => c.CreatedAt)
+                                .ToList()
+            };
 
+            if (oPublicationDedicated.oPublication != null)
+            {
                 ClaimsPrincipal claimUser = HttpContext.User;
                 string username = "";
 
@@ -46,11 +56,13 @@ namespace NevulaForo.Controllers
                 ViewData["username"] = username;
 
                 return View(oPublicationDedicated);
-            } catch(InvalidOperationException ex)
+
+            } else
             {
                 //404
                 return NotFound();
             }
+
         }
 
         [Authorize]
