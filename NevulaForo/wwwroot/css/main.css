@@ -1,0 +1,422 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(150, 150, 150);
+    border-radius: 0.25rem;
+}
+
+    body::-webkit-scrollbar-thumb:hover {
+        background: rgb(172, 172, 172);
+    }
+
+
+button {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 1320px;
+    margin: auto;
+}
+
+@media (max-width: 1400px) {
+    .container {
+        width: 1140px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        width: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 540px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+    }
+}
+
+/**** HEADER ******/
+
+header {
+    background-color: #1b2b3b;
+    width: 100%;
+    height: 4rem;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9999999999;
+}
+
+.container__left {
+    display: flex;
+    align-items: center;
+}
+
+.container__logo img {
+    margin: 3px 15px 0 7px;
+}
+
+.container__list-buttons {
+    display: flex;
+    list-style: none;
+}
+
+    .container__list-buttons > li > a {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        height: 4rem;
+        padding: 10px 15px;
+        color: #FFF;
+        font-size: 15px;
+        font-weight: 600;
+        border-top: 3.5px solid transparent;
+        border-bottom: 3.5px solid transparent;
+        transition: 200ms;
+    }
+
+        .container__list-buttons > li > a:hover {
+            border-bottom-color: #ffa01b;
+            background: #263B50;
+        }
+
+.list-menu-profile {
+    display: none;
+}
+
+.list_menu {
+    display: none;
+    background: transparent;
+    color: #FFF;
+    font-size: 24px;
+}
+
+.btn_dropdown-active {
+    border-bottom: 3.5px solid #ffa01b !important;
+    background: rgb(31, 56, 79) !important;
+}
+
+.btn_dropdown-disabled {
+    border-bottom: 1px solid grey !important;
+    background: #1b2b3b !important;
+}
+
+.container__profile {
+    color: #FFF;
+}
+
+@media (max-width: 1140px) {
+    .container__profile {
+        display: none;
+    }
+
+    .list_menu {
+        display: block;
+    }
+
+    .container__list-buttons {
+        display: block;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        transition: all .5s ease;
+        max-width: 420px;
+        position: absolute;
+        flex-direction: column;
+        background: #1b2b3b;
+        top: 4rem;
+    }
+
+        .container__list-buttons.activo {
+            left: 0%;
+        }
+
+    .list-menu-profile {
+        display: block;
+    }
+
+    .container__btn-home {
+        border-top: 1px solid grey;
+    }
+
+    .container__list-buttons.activo > li > a {
+        display: flex;
+        border-bottom: 1px solid grey;
+    }
+
+        .container__list-buttons.activo > li > a:hover {
+            border-bottom: 3.5px solid #ffa01b;
+        }
+}
+
+
+@media (max-width: 350px) {
+    .container__download {
+        margin-left: 0px !important;
+    }
+
+        .container__download button {
+            padding: 15px !important;
+        }
+
+    .container__logo img {
+        margin-right: 7px;
+    }
+}
+
+
+.container__right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.btn-profile {
+    background-color: transparent;
+    color: #FFF;
+    /*font-size: 23px;
+    padding: 10px 15px;*/
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-radius: 50%;
+}
+
+    .btn-profile:hover {
+        opacity: 0.7;
+    }
+
+    .btn-profile i:hover {
+        opacity: 1;
+    }
+
+.btn-profile_img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.container__download {
+    height: 100%;
+    margin-left: 20px;
+}
+
+.btn-download {
+    height: 100%;
+    padding: 0 30px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFF;
+    letter-spacing: 3px;
+    background-color: #FFA425;
+    transition: 200ms;
+    text-align: center;
+}
+
+    .btn-download:hover {
+        background-color: #FF990B;
+        box-shadow: 0 0 10px #FF990B, 0 0 40px #FF990B, 0 0 80px #FF990B;
+    }
+
+/**** HEADER ******/
+
+textarea {
+    width: 100%;
+    overflow-x: hidden !important;
+    overflow-wrap: break-word;
+    border: 1px solid #D5D5D5;
+    border-radius: 0.25rem;
+    padding: 11px;
+    font-size: 15px;
+    height: 46px;
+}
+
+    textarea:hover {
+        outline: none;
+    }
+
+    textarea:focus {
+        outline: none;
+        border-color: #B7B7B7;
+    }
+
+/**** COMUNIDAD *****/
+
+.main__containers-community {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    /*border-radius: 0.5rem;*/
+    border: 1px solid #D5D5D5;
+    background: #FFF;
+    /*box-shadow: var(--shadow-elevation-medium);*/
+}
+
+@media (max-width: 576px) {
+    .main__containers-community {
+        border: none;
+    }
+}
+
+.container__dropdown--header {
+    background-color: #1b2b3b;
+    color: #FFF;
+    position: absolute;
+    list-style: none;
+    border-radius: 0 0 .5rem .5rem;
+    overflow: hidden;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    top: 4rem;
+    min-width: 150px;
+}
+
+    .container__dropdown--header > li > a {
+        display: flex;
+        align-items: center;
+        height: 2.8rem;
+        padding: 10px 15px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+        .container__dropdown--header > li > a:hover {
+            background: rgb(31, 56, 79);
+        }
+
+@media (max-width: 1140px) {
+    .container__dropdown--header {
+        top: 0;
+        width: 100%;
+        position: relative;
+        background: rgb(31, 56, 79);
+    }
+
+        .container__dropdown--header > li > a:hover {
+            background: #263B50;
+        }
+}
+
+
+/********* BARRA DE BUSQUEDA *************/
+
+.list-menu-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+}
+
+.container__search-bar {
+    position: relative;
+}
+
+    .container__search-bar input {
+        padding: 7px 35px 7px 10px;
+        border-radius: 1.25rem;
+        border: none;
+        outline: none;
+        background: #ECECEC;
+        width: 500px;
+        font-size: 13px;
+    }
+
+@media (max-width: 1260px) {
+    .container__search-bar input {
+        width: 375px;
+    }
+}
+
+@media (max-width: 405px) {
+    .container__search-bar input {
+        width: 300px;
+    }
+}
+
+@media (max-width: 335px) {
+    .container__search-bar input {
+        width: 260px;
+    }
+}
+
+.container__search-bar button {
+    background: #FFA425;
+    padding: 7px;
+    position: absolute;
+    border: none;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0 1.25rem 1.25rem 0;
+    width: 50px;
+    color: #FFF;
+    z-index: 999;
+    text-align: center;
+}
+
+    .container__search-bar button:hover {
+        background: #FF990B;
+    }
+
+
+
+/* Estilos validacion 
+.msj_error {
+    font-size: 14px;
+    color: red;
+}
+
+.input_error {
+    border-color: red !important;
+}
+
+ En .Net, si validas con DataAnnotations ya se le asigna por default al input y al span de mensaje de error las siguientes clase respectivamente  */
+
+
+.field-validation-error {
+    font-size: 14px;
+    color: red;
+}
+.input-validation-error {
+    border-color: red !important;
+}
