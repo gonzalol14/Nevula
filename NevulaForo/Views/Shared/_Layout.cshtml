@@ -74,6 +74,7 @@
                 <li class="list-menu-search">
                     <form asp-controller="Publication" asp-action="Search" method="GET" class="container__search-bar">
                         <input type="search" name="search" placeholder="Buscar..." value="@ViewData["SearchQuery"]">
+                        <input type="hidden" name="for" id="input_search-for" value="posts">
                         <button type="submit">
                             <i class="bi bi-search"></i>
                         </button>

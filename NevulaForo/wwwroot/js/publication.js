@@ -8,7 +8,8 @@ function handleCommentLinkClick(event) {
     const commentElement = document.getElementById(commentId);
     if (commentElement) {
         // Agregar clase para iniciar la animación
-        commentElement.classList.add("pulsating");
+        commentElement.classList.remove("highlighted-none");
+        commentElement.classList.add("highlighted");
 
         // Scroll hacia la posición del comentario
         commentElement.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -24,7 +25,8 @@ function handleCommentLinkClick(event) {
 
         // Después de 2 segundos, quitar la clase para detener la animación
         setTimeout(() => {
-            commentElement.classList.remove("pulsating");
+            commentElement.classList.remove("highlighted");
+            commentElement.classList.add("highlighted-none");
         }, 1000);
     }
 

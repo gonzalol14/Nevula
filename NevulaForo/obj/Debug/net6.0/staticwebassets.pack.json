@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\css\\publication.css"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\search.css",
+      "PackagePath": "staticwebassets\\css\\search.css"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -87,6 +91,10 @@
     {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\publication.js",
       "PackagePath": "staticwebassets\\js\\publication.js"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\search.js",
+      "PackagePath": "staticwebassets\\js\\search.js"
     },
     {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\LICENSE",

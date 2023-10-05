@@ -51,7 +51,7 @@
     font-size: 16px;
 }
 
-    .container__posts a {
+    .container__posts .posts {
         font-weight: 500;
         font-size: 1rem;
         margin: 0 0 0 0.5rem;
@@ -85,6 +85,7 @@
 
 .container__description {
     margin: 0.5rem 0 0.5rem 0;
+    word-break: break-word;
 }
 
 .container__interaction {
