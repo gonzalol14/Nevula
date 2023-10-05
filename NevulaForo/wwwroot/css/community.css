@@ -67,6 +67,7 @@ body {
 .container__username {
     font-weight: 700;
     margin-left: .5rem;
+    word-break: break-word;
 }
 
     .container__username a:hover {

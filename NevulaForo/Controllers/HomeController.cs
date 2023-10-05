@@ -38,7 +38,23 @@ namespace NevulaForo.Controllers
 
         public IActionResult Community()
         {
-            List<Publication> lstPosts = _DBContext.Publications.Include(u => u.IdUserNavigation).ThenInclude(u => u.UserRoles).Include(c => c.Comments).Where(p => p.DeletedAt == null).OrderByDescending(p => p.CreatedAt).ToList();
+            List<Publication> lstPosts = _DBContext.Publications
+                                            .Include(u => u.IdUserNavigation)
+                                                .ThenInclude(u => u.UserRoles)
+                                            .Include(c => c.Comments)
+                                            .Where(p => p.DeletedAt == null && p.IdUserNavigation.DeletedAt == null)
+                                            .Select(p => new Publication
+                                            {
+                                                Id = p.Id,
+                                                IdUser = p.IdUser,
+                                                Title = p.Title,
+                                                Description = p.Description,
+                                                CreatedAt = p.CreatedAt,
+                                                Comments = p.Comments.Where(comment => comment.IdUserNavigation.DeletedAt == null).ToList(),
+                                                IdUserNavigation = p.IdUserNavigation
+                                            })
+                                            .OrderByDescending(p => p.CreatedAt)
+                                            .ToList();
             return View(lstPosts);
 
         }

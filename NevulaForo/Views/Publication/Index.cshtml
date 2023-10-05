@@ -128,8 +128,14 @@
                 @if(comment.IdFatherComment != null)
                 {
                     <div class="container__content-cited">
-                        <p class="title--cited">Comentario de <a class="username_quoted" href="#comment_@comment.IdFatherCommentNavigation.Id">@@@comment.IdFatherCommentNavigation.IdUserNavigation.Username</a></p>
-                        <p class="content--cited">@comment.IdFatherCommentNavigation.Description</p>
+                        @if(comment.IdFatherCommentNavigation.DeletedAt == null)
+                        {
+                            <p class="title--cited">Comentario de <a class="username_quoted" href="#comment_@comment.IdFatherCommentNavigation.Id">@@@comment.IdFatherCommentNavigation.IdUserNavigation.Username</a></p>
+                            <p class="content--cited">@comment.IdFatherCommentNavigation.Description</p>
+                        } else
+                        {
+                            <p class="content--cited" style="font-weight: 600;">¡Lo sentimos! El comentario citado fue eliminado :(</p>
+                        }
                     </div>
                 }
                 <div class="container__content-post">

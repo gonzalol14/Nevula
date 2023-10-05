@@ -15,7 +15,7 @@ public partial class Publication
     [MaxLength(250, ErrorMessage = "El título debe tener entre 5 y 250 caracteres.")]
     public string Title { get; set; } = null!;
 
-    [Required(ErrorMessage = "Debe ingresar una descripción.")]
+    [Required(ErrorMessage = "Debe ingresar un contenido.")]
     [MinLength(30, ErrorMessage = "El contenido del post debe tener entre 30 y 1750 caracteres.")]
     [MaxLength(1750, ErrorMessage = "El contenido del post debe tener entre 30 y 1750 caracteres.")]
     public string Description { get; set; } = null!;

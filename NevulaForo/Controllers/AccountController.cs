@@ -32,19 +32,35 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public IActionResult Index(int IdUser)
         {
-            try
+            UserProfileVM oUserProfile = new UserProfileVM()
             {
-                UserProfileVM oUserProfile = new UserProfileVM()
-                {
-                    oUser = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.DeletedAt == null && u.Id == IdUser).ToList().First(),
-                    oPublications = _DBContext.Publications.Where(p => p.DeletedAt == null && p.IdUser == IdUser).OrderByDescending(p => p.CreatedAt).ToList()
-                };
+                oUser = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.DeletedAt == null && u.Id == IdUser).ToList().FirstOrDefault(),
+                oPublications = _DBContext.Publications
+                                        .Include(u => u.IdUserNavigation)
+                                            .ThenInclude(u => u.UserRoles)
+                                        .Include(c => c.Comments)
+                                        .Where(p => p.DeletedAt == null && p.IdUser == IdUser)
+                                        .Select(p => new Publication
+                                        {
+                                            Id = p.Id,
+                                            IdUser = p.IdUser,
+                                            Title = p.Title,
+                                            Description = p.Description,
+                                            CreatedAt = p.CreatedAt,
+                                            Comments = p.Comments.Where(comment => comment.IdUserNavigation.DeletedAt == null).ToList(),
+                                            IdUserNavigation = p.IdUserNavigation
+                                        })
+                                        .OrderByDescending(p => p.CreatedAt)
+                                        .ToList()
+            };
 
+            if(oUserProfile.oUser != null)
+            {
                 string profilePicPath = _userService.GetUserProfileImagePath(IdUser);
                 ViewBag.ProfilePicPath = profilePicPath;
 
                 return View(oUserProfile);
-            } catch (InvalidOperationException ex)
+            } else
             {
                 //404
                 return NotFound();

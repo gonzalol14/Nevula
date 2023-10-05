@@ -1,0 +1,80 @@
+﻿@model NevulaForo.Models.ViewModels.SearchVM
+
+@using NevulaForo.Resources;
+@using NevulaForo.Services.Implementation;
+@inject UserService UserService;
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/community.css" asp-append-version="true" />
+}
+
+@if(Model.For == "posts")
+{
+    @if (Model.Publications != null && Model.Publications.Count > 0)
+    {
+        @foreach (var publication in Model.Publications)
+        {
+
+            <article class="main__containers-community">
+
+                <div class="container__info">
+                    <div class="container__profile-pic">
+                        <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">
+                            <img src="@UserService.GetUserProfileImagePath(publication.IdUser)" alt="">
+                        </a>
+                    </div>
+
+                    <div class="container__username">
+                        <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">@publication.IdUserNavigation.Username</a>
+                    </div>
+
+                    @if (publication.IdUserNavigation.UserRoles.First().IdRole == 2)
+                    {
+                        <!-- Esto depende si esta o no verificado -->
+                        <div class="container__verify" id="container__verify-1">
+                            <span class="verify">VERIFICADO</span>
+                            <span class="small-verify">V</span>
+                            <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+                        </div>
+                    }
+
+                    <span class="separator__info">·</span>
+
+                    <div class="container__date">
+                        <span>@Utilities.StylizeDate(publication.CreatedAt)</span>
+                    </div>
+                </div>
+
+                <div class="container__content-post">
+                    <h2 class="title--post">@publication.Title</h2>
+                    <p class="content--post">@publication.Description</p>
+                    <div class="container__imgs"></div>
+                </div>
+
+                <div class="container__feedback">
+                    <div>
+                        <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
+                        <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @publication.Comments.Count</a>
+                    </div>
+                </div>
+
+            </article>
+        }
+    } else
+    {
+        <p>No se encontraron resultados.</p>
+    }
+
+} else if(Model.For == "account")
+{
+        //Diseñar modelos para los usuarios
+}
+
+@section Scripts {
+    <script src="~/js/community.js" asp-append-version="true"></script>
+}
+

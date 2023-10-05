@@ -9,7 +9,8 @@ using System.Security.Claims;
 using System.Linq;
 using NevulaForo.Services.Contract;
 using System;
-
+using System.Text.RegularExpressions;
+using NevulaForo.Resources;
 
 namespace NevulaForo.Controllers
 {
@@ -38,7 +39,7 @@ namespace NevulaForo.Controllers
                                 .Include(u => u.IdUserNavigation)
                                     .ThenInclude(u => u.UserRoles)
                                 .Include(c => c.IdFatherCommentNavigation)
-                                .Where(c => c.DeletedAt == null && c.IdPublication == IdPublication)
+                                .Where(c => c.DeletedAt == null && c.IdPublication == IdPublication && c.IdUserNavigation.DeletedAt == null)
                                 .OrderByDescending(c => c.CreatedAt)
                                 .ToList()
             };
@@ -88,7 +89,7 @@ namespace NevulaForo.Controllers
             {
                 IdUser = IdUser,
                 Title = viewmodel.Title,
-                Description = viewmodel.Description,
+                Description = Utilities.ReduceLineBreaks(viewmodel.Description),
                 CreatedAt = DateTime.Now,
                 DeletedAt = null,
                 IdUserNavigation = user
@@ -177,12 +178,54 @@ namespace NevulaForo.Controllers
                 _DBContext.Update(publication);
                 await _DBContext.SaveChangesAsync();
 
-                return RedirectToAction("Index", "Account");
+                return RedirectToAction("Index", "Account", new { IdUser = IdUser } );
             }
 
             //404
             return NotFound();
         }
+
+
+        [HttpGet]
+        public IActionResult Search(SearchVM viewmodel)
+        {
+            SearchVM searchResultVM = new SearchVM();
+            searchResultVM.Search = viewmodel.Search;
+
+            if (viewmodel.For == "posts")
+            {
+                searchResultVM.Publications = _DBContext.Publications
+                                                .Include(u => u.IdUserNavigation)
+                                                    .ThenInclude(u => u.UserRoles)
+                                                .Include(c => c.Comments)
+                                                .Where(p => p.DeletedAt == null && p.IdUserNavigation.DeletedAt == null && EF.Functions.Like(p.Title, $"%{viewmodel.Search}%"))
+                                                .Select(p => new Publication
+                                                {
+                                                    Id = p.Id,
+                                                    IdUser = p.IdUser,
+                                                    Title = p.Title,
+                                                    Description = p.Description,
+                                                    CreatedAt = p.CreatedAt,
+                                                    Comments = p.Comments.Where(comment => comment.IdUserNavigation.DeletedAt == null).ToList(),
+                                                    IdUserNavigation = p.IdUserNavigation
+                                                })
+                                                .OrderByDescending(p => p.CreatedAt)
+                                                .ToList();
+                searchResultVM.For = "posts";
+            } else
+            {
+                searchResultVM.Users = _DBContext.Users
+                                        .Include(u => u.UserRoles)
+                                        .Where(u => u.DeletedAt == null && EF.Functions.Like(u.Username, $"%{viewmodel.Search}%"))
+                                        .ToList();
+                searchResultVM.For = "accounts";
+            }
+            
+
+            ViewData["SearchQuery"] = viewmodel.Search;
+            return View(searchResultVM);
+        }
+
         //Falta like, dislike. Analizar si crear otro controller para comentarios o hacerlo en este.
     }
 }

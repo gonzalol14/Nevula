@@ -7,6 +7,7 @@
 
     var usernameClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
     string? Username = usernameClaim?.Value;
+
 }
 
 <!DOCTYPE html>
@@ -71,12 +72,12 @@
                 </li>
 
                 <li class="list-menu-search">
-                    <div class="container__search-bar">
-                        <input type="search" placeholder="Buscar...">
+                    <form asp-controller="Publication" asp-action="Search" method="GET" class="container__search-bar">
+                        <input type="search" name="search" placeholder="Buscar..." value="@ViewData["SearchQuery"]">
                         <button type="submit">
                             <i class="bi bi-search"></i>
                         </button>
-                    </div>
+                    </form>
                 </li>
                 
             </ul>

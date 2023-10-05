@@ -39,7 +39,8 @@
         {
             <div class="container__change-profile">
                 <a asp-controller="Account" asp-action="Edit" asp-route-typeEdit="General">
-                <span>EDITAR PERFIL</span>
+                    <i class="bi bi-gear"></i>
+                    <span>EDITAR PERFIL</span>
                 </a>
             </div>
         }
@@ -58,20 +59,19 @@
 
     </div>
 
-    <!-- depende si es otra cuenta se tiene que mostrar seguir o cambiar perfil -->
     <div class="container__interaction">
         <div class="container__posts">
             <span id="posts-id=1"> @Model.oPublications.Count </span>
             <a href="#" class="posts"> publicaciones </a>
         </div>
-        <div class="container__followers">
+        <!--<div class="container__followers">
             <span id="posts-id=1"> 5M </span>
             <a href="#" class="posts"> seguidores </a>
         </div>
         <div class="container__following">
             <span id="posts-id=1"> 6 </span>
             <a href="#" class="posts"> seguidos </a>
-        </div>
+        </div>-->
     </div>
 </article>
 
