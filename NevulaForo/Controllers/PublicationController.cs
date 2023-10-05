@@ -30,6 +30,7 @@ namespace NevulaForo.Controllers
         {
             PublicationDedicatedVM oPublicationDedicated = new PublicationDedicatedVM()
             {
+                // No verifico que el Comments (del oPublication) traiga los comentarios validos (sin eliminar ni usuario creador eliminado), ya que para todo lo relacionado a comentarios uso el oComments
                 oPublication = _DBContext.Publications
                                 .Include(u => u.IdUserNavigation)
                                     .ThenInclude(u => u.UserRoles)
@@ -206,7 +207,7 @@ namespace NevulaForo.Controllers
                                                     Title = p.Title,
                                                     Description = p.Description,
                                                     CreatedAt = p.CreatedAt,
-                                                    Comments = p.Comments.Where(comment => comment.IdUserNavigation.DeletedAt == null).ToList(),
+                                                    Comments = p.Comments.Where(comment => comment.DeletedAt == null && comment.IdUserNavigation.DeletedAt == null).ToList(),
                                                     IdUserNavigation = p.IdUserNavigation
                                                 })
                                                 .OrderByDescending(p => p.CreatedAt)

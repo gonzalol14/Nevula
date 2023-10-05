@@ -55,7 +55,7 @@
     <div class="container__feedback">
         <div>
             <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-            <a class="feedback__comments" asp-route-IdPublication="@Model.oPublication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @Model.oPublication.Comments.Count</a>
+            <a class="feedback__comments" asp-route-IdPublication="@Model.oPublication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @Model.oComments.Count</a>
         </div>
     </div>
 
@@ -151,6 +151,13 @@
                     <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
                     <a href="#" class="feedback__aswer-comments" id="answer_comment_@comment.Id" data-comment-id="@comment.Id" data-comment-username="@comment.IdUserNavigation.Username">Responder</a>
                 </div>
+
+                @if (comment.IdUser == IdUser)
+                {
+                    <div>
+                        <a class="post__delete" asp-route-IdComment="@comment.Id" asp-controller="Comment" asp-action="Delete"><i class="bi bi-trash3"></i> </a>
+                    </div>
+                }
             </div>
 
         </div>

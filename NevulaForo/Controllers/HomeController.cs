@@ -50,7 +50,7 @@ namespace NevulaForo.Controllers
                                                 Title = p.Title,
                                                 Description = p.Description,
                                                 CreatedAt = p.CreatedAt,
-                                                Comments = p.Comments.Where(comment => comment.IdUserNavigation.DeletedAt == null).ToList(),
+                                                Comments = p.Comments.Where(comment => comment.DeletedAt == null && comment.IdUserNavigation.DeletedAt == null).ToList(),
                                                 IdUserNavigation = p.IdUserNavigation
                                             })
                                             .OrderByDescending(p => p.CreatedAt)
