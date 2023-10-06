@@ -117,40 +117,16 @@
 }
 
 .highlighted {
-    background: #F3F3F3;
-    border-left: 3px solid orange;
-    transition: 100ms ease-out;
+    background: #F6F6F6;
+    border-left: 3px solid #FFA425;
+    transition: 100ms;
 }
 
 .highlighted-none {
     background: #FFF;
-    border-left: 0px solid orange;
-    transition: 100ms ease-out;
+    border-left: 0px solid #FFA425;
+    transition: 100ms;
 }
-
-/*
-.pulsating {
-    transform-origin: center;
-    animation: pulsate 1000ms infinite;
-}
-
-@keyframes pulsate {
-    0% {
-        background: #F3F3F3;
-        border-left: 1px solid orange;
-    }
-
-    50% {
-        background: #F3F3F3;
-        border-left: 2px solid orange;
-    }
-
-    100% {
-        background: #F3F3F3;
-        border-left: 3px solid orange;
-    }
-}
-*/
 
 .container_form-comment.active_answer {
     margin-top: 0;
