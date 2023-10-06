@@ -83,6 +83,11 @@
     font-size: 18px;
 }
 
+.container__name-surname {
+    word-break: break-word;
+    font-weight: 600;
+}
+
 .container__description {
     margin: 0.5rem 0 0.5rem 0;
     word-break: break-word;

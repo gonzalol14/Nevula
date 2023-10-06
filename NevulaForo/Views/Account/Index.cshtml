@@ -46,15 +46,22 @@
         }
     </div>
 
+    @if (Model.oUser.Name != null || Model.oUser.Surname != null)
+    {
+        <div class="container__name-surname">
+            <p>@Model.oUser.Name @Model.oUser.Surname</p>
+        </div>
+    }
+
     <div class="container__description">
 
         @if (Model.oUser.Description != null) 
         { 
-            <span>@Model.oUser.Description</span>
+            <p>@Model.oUser.Description</p>
 
         } else 
         {
-            <span>Aún no hay descripción</span>
+            <p>Aún no hay descripción</p>
         }
 
     </div>
