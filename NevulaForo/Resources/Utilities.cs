@@ -63,12 +63,18 @@ namespace NevulaForo.Resources
 
         public static string ReduceLineBreaks(string text)
         {
-            //Eliminar saltos de lineas al principio y al final
-            text = Regex.Replace(text, @"^\s*[\r\n]+", "");
-            text = Regex.Replace(text, @"[\r\n]+\s*$", "");
+            if(text != null)
+            {
+                //Eliminar saltos de lineas al principio y al final
+                text = Regex.Replace(text, @"^\s*[\r\n]+", "");
+                text = Regex.Replace(text, @"[\r\n]+\s*$", "");
 
-            // Utiliza una expresión regular para reemplazar más de 2 \r\n o \r o \n por solo dos
-            return Regex.Replace(text, @"(\r\n|\r|\n)\1+", "$1$1");
+                // Utiliza una expresión regular para reemplazar más de 2 \r\n o \r o \n por solo dos
+                return Regex.Replace(text, @"(\r\n|\r|\n)\1+", "$1$1");
+            } else
+            {
+                return text;
+            }
         }
     }
 }

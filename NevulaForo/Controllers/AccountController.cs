@@ -124,7 +124,7 @@ namespace NevulaForo.Controllers
                         model.Surname = viewmodel.Surname;
                         model.Username = viewmodel.Username;
                         model.Email = viewmodel.Email;
-                        model.Description = viewmodel.Description;
+                        model.Description = Utilities.ReduceLineBreaks(viewmodel.Description);
 
                         _DBContext.Update(model);
                         await _DBContext.SaveChangesAsync();

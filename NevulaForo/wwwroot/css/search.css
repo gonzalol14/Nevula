@@ -46,3 +46,12 @@
 .container_info {
     margin-bottom: 0;
 }
+
+.search__not-results {
+    margin: 1rem;
+    font-weight: 500;
+}
+
+.search__not-results span{
+    font-weight: 600;
+}

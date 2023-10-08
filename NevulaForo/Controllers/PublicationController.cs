@@ -190,12 +190,10 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public IActionResult Search(SearchVM viewmodel)
         {
-            SearchVM searchResultVM = new SearchVM();
-            searchResultVM.Search = viewmodel.Search;
 
             if (viewmodel.For == "posts")
             {
-                searchResultVM.Publications = _DBContext.Publications
+                viewmodel.Publications = _DBContext.Publications
                                                 .Include(u => u.IdUserNavigation)
                                                     .ThenInclude(u => u.UserRoles)
                                                 .Include(c => c.Comments)
@@ -212,10 +210,9 @@ namespace NevulaForo.Controllers
                                                 })
                                                 .OrderByDescending(p => p.CreatedAt)
                                                 .ToList();
-                searchResultVM.For = "posts";
             } else
             {
-                searchResultVM.Users = _DBContext.Users
+                viewmodel.Users = _DBContext.Users
                                         .Include(u => u.UserRoles)
                                         .Where(u => u.DeletedAt == null && EF.Functions.Like(u.Username, $"%{viewmodel.Search}%"))
                                         .Select(u => new User
@@ -230,12 +227,11 @@ namespace NevulaForo.Controllers
                                             UserRoles = u.UserRoles
                                         })
                                         .ToList();
-                searchResultVM.For = "accounts";
             }
             
 
             ViewData["SearchQuery"] = viewmodel.Search;
-            return View(searchResultVM);
+            return View(viewmodel);
         }
 
         //Falta like, dislike. Analizar si crear otro controller para comentarios o hacerlo en este.

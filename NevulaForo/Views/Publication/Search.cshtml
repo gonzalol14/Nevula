@@ -31,10 +31,9 @@
     </ul>
 </aside>
 
-
-@if (Model.For == "posts")
+@if ((Model.Users != null && Model.Users.Count > 0) || (Model.Publications != null && Model.Publications.Count > 0))
 {
-    @if (Model.Publications != null && Model.Publications.Count > 0)
+    @if (Model.For == "posts")
     {
         <div>
             @foreach (var publication in Model.Publications)
@@ -87,15 +86,7 @@
         </div>
 
     }
-    else
-    {
-        <p>No se encontraron resultados.</p>
-    }
-
-}
-else if (Model.For == "accounts")
-{
-    @if (Model.Users != null && Model.Users.Count > 0)
+    else if (Model.For == "accounts")
     {
         <div>
             @foreach (var account in Model.Users)
@@ -127,11 +118,10 @@ else if (Model.For == "accounts")
             }
         </div>
     }
-    else
-    {
-        <p>No se encontraron resultados.</p>
-    }
 
+} else
+{
+    <p class="search__not-results">No se encontraron resultados para la busqueda "<span>@Model.Search</span>".</p>
 }
 
 @section Scripts {
