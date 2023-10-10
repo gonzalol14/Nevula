@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0XEF2YXRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/xampp/htdocs/Nevula/NevulaForo/Views/Account/Edit/Disable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0XERpc2FibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/xampp/htdocs/Nevula/NevulaForo/Views/Account/Edit/General.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0XEdlbmVyYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

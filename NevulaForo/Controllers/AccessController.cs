@@ -76,6 +76,13 @@ namespace NevulaForo.Controllers
 
                 if(user_found != null)
                 {
+                    if(user_found.DeletedAt != null)
+                    {
+                        //Si el DeletedAt no es null, significa que la cuenta fue desactivada hace menos de 30 (se verifica en el GetUser) y la esta queriendo reactivar
+                        user_found.DeletedAt = null;
+                        await _userService.UpdateUser(user_found);
+                    }
+
                     List<Claim> claims = new List<Claim>()
                     {
                         new Claim("Id", user_found.Id.ToString()),

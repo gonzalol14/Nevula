@@ -54,8 +54,10 @@
 
         <div class="container__feedback">
             <div>
-                <a href="#" class="feedback__like"><i class="bi bi-heart"></i> 19</a>
-                <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index"><i class="bi bi-chat"></i> @publication.Comments.Count</a>
+                <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index">
+                    <i class="bi bi-chat"></i>
+                    <span>@publication.Comments.Count @((@publication.Comments.Count == 1) ? "Comentario" : "Comentarios")</span>
+                </a>
             </div>
         </div>
 

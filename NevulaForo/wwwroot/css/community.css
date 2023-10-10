@@ -175,18 +175,29 @@ body {
         display: flex;
         align-items: center;
     }
-        .container__feedback div a {
-            display: flex;
-            align-items: center;
-            margin-right: 1.5rem;
-            font-size: 14px;
-            font-weight: 600;
-        }
 
-            .container__feedback div a i {
-                margin-right: .4rem;
-                font-size: 1.2rem;
-            }
+.feedback__comments{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #878A8C;
+    padding: 5px;
+}
+    .feedback__comments:hover:not(p) {
+        text-decoration: underline;
+    }
+
+.feedback__comments i {
+    margin-right: .4rem;
+    font-size: 1.2rem;
+}
+
+.feedback__comments span {
+
+    font-size: 13px;
+}
+
 
 .post__delete {
     color: red;

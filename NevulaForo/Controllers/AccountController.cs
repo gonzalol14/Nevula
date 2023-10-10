@@ -94,7 +94,7 @@ namespace NevulaForo.Controllers
                 ChangePasswordVM viewmodelVacio = new ChangePasswordVM();
                 return View($"~/Views/Account/Edit/{type}.cshtml", viewmodelVacio);
 
-            } else
+            } else if (type == "Avatar")
             {
                 string profilePicPath = _userService.GetUserProfileImagePath(IdUser);
                 ViewBag.ProfilePicPath = profilePicPath;
@@ -243,7 +243,7 @@ namespace NevulaForo.Controllers
             return View($"~/Views/Account/Edit/Avatar.cshtml");
         }
 
-        public async Task<IActionResult> Delete()
+        public async Task<IActionResult> Disable()
         {
             ClaimsPrincipal claimUser = HttpContext.User;
             int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());

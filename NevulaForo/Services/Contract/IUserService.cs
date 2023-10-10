@@ -9,6 +9,8 @@ namespace NevulaForo.Services.Contract
 
         Task<User> SaveUserAndRole(User model, int RoleId);
 
+        Task<User> UpdateUser(User userModel);
+
         string GetUserProfileImagePath(int IdUser, bool renewImg = false);
 
     }

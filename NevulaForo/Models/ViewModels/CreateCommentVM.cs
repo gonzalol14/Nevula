@@ -11,7 +11,7 @@ namespace NevulaForo.Models.ViewModels
 
         public int IdUser { get; set; }
 
-        [ValidFatherComment(ErrorMessage = "El comentario citado no es válido.")]
+        [ValidFatherComment]
         public int? IdFatherComment { get; set; }
 
         [Required(ErrorMessage = "Debe ingresar una descripción.")]

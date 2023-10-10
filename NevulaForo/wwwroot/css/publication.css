@@ -104,13 +104,17 @@
     margin-bottom: 5px;
 }
 
-.feedback__like {
-    font-size: 12px !important;
-}
-
 .feedback__aswer-comments {
-    font-size: 13px !important;
+    /* Posible */
+    color: #878A8C;
+
+
+    font-weight: 600;
+    font-size: 13px;
 }
+    .feedback__aswer-comments:hover {
+        text-decoration: underline;
+    }
 
 .user-cited {
     font-weight: 700;

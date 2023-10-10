@@ -17,7 +17,7 @@ namespace NevulaForo.Services.Implementation
 
         public async Task<User> GetUser(string email, string password)
         {
-            User user_found = await _dbContext.Users.Include(u => u.UserRoles).Where(u => u.Email == email && u.Password == password && u.DeletedAt == null)
+            User user_found = await _dbContext.Users.Include(u => u.UserRoles).Where(u => u.Email == email && u.Password == password && (u.DeletedAt == null || u.DeletedAt > DateTime.Now.AddDays(-30)))
                 .FirstOrDefaultAsync();
 
             return user_found;
@@ -35,6 +35,14 @@ namespace NevulaForo.Services.Implementation
             };
 
             _dbContext.Add(role);
+            await _dbContext.SaveChangesAsync();
+
+            return userModel;
+        }
+
+        public async Task<User> UpdateUser(User userModel)
+        {
+            _dbContext.Update(userModel);
             await _dbContext.SaveChangesAsync();
 
             return userModel;

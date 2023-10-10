@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Desactivar cuenta";
+    Layout = "~/Views/Account/Edit/_Layout.cshtml";
+}
+
+<section class="container__section">
+    <h2 class="title__edit">Desactivar cuenta</h2>
+    <p class="content__disable-account">Estás por iniciar el proceso de desactivación de tu cuenta. Tu nombre visible, tu @@nombre de usuario, tu perfil público, tus publicationes y tus comentarios ya no se podrán ver en Nevula.</p>
+    <h3 class="subtitle__disable-account">Qué más debes saber</h3>
+    <ul class="list__disable-account">
+        <li class="item__disable-account">Si tu cuenta de Nevula se desactivó por error o accidentalmente, tienes un plazo de 30 días para restaurarla después de su desactivación (simplemente logueese nuevamente).</li>
+        <li class="item__disable-account">Es posible que parte de la información de la cuenta siga disponible en los motores de búsqueda como Google o Bing.</li>
+        <li class="item__disable-account">Si solo quieres cambiar tu @@usuario, no es necesario que desactives tu cuenta; cámbialo en tu <a asp-controller="Account" asp-action="Edit" asp-route-type="General">configuración</a>.</li>
+        <li class="item__disable-account">Para usar tu @@nombre de usuario o tu dirección de correo electrónico con otra cuenta de Nevula, <a asp-controller="Account" asp-action="Edit" asp-route-type="General">cámbialos</a> antes de desactivar esta cuenta.</li>
+    </ul>
+    <a asp-controller="Account" asp-action="Disable" class="btn_disable">Desactivar</a>
+</section>
+

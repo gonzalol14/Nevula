@@ -10,6 +10,7 @@
 
 <div class="container__edit">
     <aside class="aside__menu-edit main__containers-community">
+        <button class="arrow-button" id="left-arrow">&lt;</button>
         <ul class="submenu__edit-profile ">
             <li>
                 <a class="btn_edit-general type-edit " asp-area="" asp-controller="Account" asp-action="Edit" asp-route-type="General">GENERAL</a>
@@ -20,7 +21,11 @@
             <li>
                 <a class="btn_edit-pass type-edit " asp-area="" asp-controller="Account" asp-action="Edit" asp-route-type="Password">CONTRASEÑA</a>
             </li>
+            <li>
+                <a class="btn_edit-disable type-edit " asp-area="" asp-controller="Account" asp-action="Edit" asp-route-type="Disable">DESACTIVAR CUENTA</a>
+            </li>
         </ul>
+        <button class="arrow-button" id="right-arrow">&gt;</button>
     </aside>
     <article class="article__edit main__containers-community @ViewData["Container_Avatar"]">
         @RenderBody()
