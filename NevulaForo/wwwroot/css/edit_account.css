@@ -268,10 +268,16 @@
     position: absolute;
     top: 17px;
     border-radius: 50%;
-    padding: 5px 10px;
-    background: black;
     color: white;
+    padding: 3.5px 6px;
+    font-size: 15px;
+
+    backdrop-filter: blur(4px);
+    background: rgba(15, 20, 25, 0.75);
 }
+    .arrow-button:hover {
+        background: rgba(39, 44, 48, 0.75);
+    }
 
 #left-arrow {
     display: none;

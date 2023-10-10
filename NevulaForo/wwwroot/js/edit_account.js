@@ -38,7 +38,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     submenu.classList.add('no-scrollbar');
 } else {
     // El usuario está en una computadora
-
     if (window.innerWidth < 530) {
         // Manejar eventos de clic para los botones de flecha
         leftArrow.addEventListener('click', () => {
