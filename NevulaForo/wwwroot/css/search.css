@@ -55,3 +55,25 @@
 .search__not-results span{
     font-weight: 600;
 }
+
+
+@media (max-width: 550px){
+    .container_info {
+        justify-content: center;
+    }
+
+    .container_info-data {
+        flex-direction: column;
+    }
+}
+@media (max-width: 350px) {
+    .container_name {
+        flex-direction: column;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .container__verify {
+        margin: 0;
+    }
+}
