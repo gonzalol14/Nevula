@@ -11,6 +11,7 @@ using NevulaForo.Services.Contract;
 using System;
 using System.Text.RegularExpressions;
 using NevulaForo.Resources;
+using System.Security.Policy;
 
 namespace NevulaForo.Controllers
 {
@@ -193,7 +194,18 @@ namespace NevulaForo.Controllers
                 _DBContext.Update(publication);
                 await _DBContext.SaveChangesAsync();
 
-                return Json(new { success = true });
+                var referer = Request.Headers["Referer"].ToString();
+                Uri uri = new Uri(referer);
+                string refererAbsolutePath = uri.AbsolutePath;
+
+                if (refererAbsolutePath == "/Publication/Index")
+                {
+                    return Json(new { success = true, redirectUrl = $"/Account/Index?IdUser={IdUser}" });
+                } else
+                {
+                    return Json(new { success = true });
+                }
+
             }
 
             return Json(new { success = false, error = "Error al intentar eliminar la publicacion" });

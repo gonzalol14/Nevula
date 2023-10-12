@@ -182,7 +182,6 @@ body {
     font-size: 14px;
     font-weight: 600;
     color: #878A8C;
-    padding: 5px;
 }
     .feedback__comments:hover:not(p) {
         text-decoration: underline;
