@@ -71,14 +71,6 @@
             <span id="posts-id=1"> @Model.oPublications.Count </span>
             <a href="#" class="posts"> publicaciones </a>
         </div>
-        <!--<div class="container__followers">
-            <span id="posts-id=1"> 5M </span>
-            <a href="#" class="posts"> seguidores </a>
-        </div>
-        <div class="container__following">
-            <span id="posts-id=1"> 6 </span>
-            <a href="#" class="posts"> seguidos </a>
-        </div>-->
     </div>
 </article>
 
@@ -134,7 +126,7 @@
             {
                 <div>
                     <a class="post__edit" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Edit"><i class="bi bi-pencil-square"></i> </a>
-                    <a class="post__delete" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Delete"><i class="bi bi-trash3"></i> </a>
+                    <button type="button" class="post__delete" id="delete_post-@publication.Id"><i class="bi bi-trash3"></i> </button>
                 </div>
             }
         </div>
@@ -144,4 +136,5 @@
 
 @section Scripts {
     <script src="~/js/community.js" asp-append-version="true"></script>
+    <script src="~/js/api/delete_post.js" asp-append-version="true"></script>
 }

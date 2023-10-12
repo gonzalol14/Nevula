@@ -10,11 +10,11 @@
 }
 
 <article class="main__containers-community">
-    <form asp-controller="Publication" asp-action="Edit" method="POST">
+    <form method="POST" id="formEditPost">
 
         <div asp-validation-summary="ModelOnly"></div>
 
-        <input type="hidden" asp-for="@Model.Id" name="Id">
+        <input type="hidden" asp-for="@Model.Id" name="Id" id="id">
         <div class="container__title">
             <a href="javascript:history.back()" class="button_back"><i class="bi bi-arrow-left-short"></i></a>
             <div id="title_page">
@@ -24,13 +24,13 @@
 
         <div class="container__input-title">
             <h3>Título</h3>
-            <textarea class="post_textarea" name="Title" asp-for="Title"  id="" placeholder="Introduce un título" maxlength="250"></textarea>
+            <textarea class="post_textarea" name="Title" asp-for="Title"  id="title" placeholder="Introduce un título" maxlength="250"></textarea>
             <span asp-validation-for="Title"></span>
         </div>
 
         <div class="container__input-content">
             <h3>Contenido</h3>
-            <textarea class="post_textarea" name="Description" asp-for="Description"  id="" placeholder="Introduce texto" maxlength="1750"></textarea>
+            <textarea class="post_textarea" name="Description" asp-for="Description"  id="description" placeholder="Introduce texto" maxlength="1750"></textarea>
             <span asp-validation-for="Description"></span>
         </div>
 
@@ -42,3 +42,6 @@
 
 </article>
 
+@section Scripts {
+    <script src="~/js/api/edit_post.js" asp-append-version="true"></script>
+}

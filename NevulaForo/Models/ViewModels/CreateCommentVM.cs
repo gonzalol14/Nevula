@@ -14,8 +14,8 @@ namespace NevulaForo.Models.ViewModels
         [ValidFatherComment]
         public int? IdFatherComment { get; set; }
 
-        [Required(ErrorMessage = "Debe ingresar una descripción.")]
-        [MaxLength(300, ErrorMessage = "La descripción debe tener hasta 300 caracteres.")]
+        [Required(ErrorMessage = "Debe ingresar un comentario.")]
+        [MaxLength(300, ErrorMessage = "El comentario debe tener hasta 300 caracteres.")]
         public string Description { get; set; } = null!;
     }
 }

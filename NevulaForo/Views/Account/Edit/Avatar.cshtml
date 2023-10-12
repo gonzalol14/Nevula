@@ -8,29 +8,32 @@
 
 <section class="container__section  container_form_avatar">
     <h2 class="title__edit">Cambiar avatar</h2>
-    <form enctype="multipart/form-data" asp-controller="Account" asp-action="EditAvatar" method="POST" id="form_avatar">
+    <form enctype="multipart/form-data" method="POST" id="formEditAvatar">
         @Html.AntiForgeryToken()
         
         <div asp-validation-summary="ModelOnly"></div>
 
         <div class="container__imgs-avatar">
             <div class="container__img">
-                <img src="@ViewBag.ProfilePicPath" alt="Foto de perfil 150px" id="profile_pic_150" width="150px">
+                <img src="@ViewBag.ProfilePicPath" alt="Foto de perfil 150px" id="profile_pic_150" class="profile_pic-edit-avatar" width="150px">
             </div>
             <div class="container__img">
-                <img src="@ViewBag.ProfilePicPath" alt="Foto de perfil 64px" id="profile_pic_64" width="64px">
+                <img src="@ViewBag.ProfilePicPath" alt="Foto de perfil 64px" id="profile_pic_64" class="profile_pic-edit-avatar" width="64px">
             </div>
             <div class="container__img">
-                <img src="@ViewBag.ProfilePicPath" alt="Foto de perfil 32px" id="profile_pic_32" width="32px">
+                <img src="@ViewBag.ProfilePicPath" alt="Foto de perfil 32px" id="profile_pic_32" class="profile_pic-edit-avatar" width="32px">
             </div>
         </div>
         <div>
             <button type="button" id="change_img" class="btn_edit-img">Cambiar avatar</button>
-            <input type="file" id="avatar_input" name="Avatar" asp-for="Avatar" hidden accept="image/jpeg,image/png,image/gif,image/webp">
-            <a asp-controller="Account" asp-action="DeleteAvatar" id="edit_avatar-delete"><i class="bi bi-trash3"></i></a>
+            <input type="file" id="avatar" name="Avatar" asp-for="Avatar" hidden accept="image/jpeg,image/png,image/gif,image/webp">
+            <button type="button" id="edit_avatar-delete"><i class="bi bi-trash3"></i></button>
         </div>
 
         <span asp-validation-for="Avatar" class="msj_error_avatar"></span>
     </form>
 </section>
 
+@section Scripts {
+    <script src="~/js/api/edit_account_avatar.js" asp-append-version="true"></script>
+}

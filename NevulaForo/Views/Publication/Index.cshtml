@@ -66,25 +66,30 @@
 
 <!-- Formulario para publicar comentarios -->
 <article class="main__containers-community container_form-comment">
-    <form asp-controller="Comment" asp-action="Create" method="POST" id="form__post-comment">
-        <input type="hidden" asp-for="@Model.oPublication.Id" name="IdPublication">
+    <form method="POST" id="formCreateComment">
+        @Html.AntiForgeryToken()
 
-        <input type="hidden" value="" name="IdFatherComment">
+        <input type="hidden" asp-for="@Model.oPublication.Id" name="IdPublication" id="IdPublication">
+
+        <input type="hidden" value="" name="IdFatherComment" id="IdFatherComment">
+
         <div class="container__profile-pic" id="form_comment-pic">
             <img src="@UserService.GetUserProfileImagePath(IdUser)" alt="Tu foto de perfil">
         </div>
+
         <div class="container__profile-text">
             <p>Responder desde <span class="span_username">@ViewData["username"]</span></p>
         </div>
+
         <div class="container__inputs-form">
             <div class="container__input-content">
                 <textarea class="post_textarea" name="Description" id="Description" placeholder="Escribe una respuesta" maxlength="1750"></textarea>
+                <span data-valmsg-for="Description"></span>
             </div>
 
             <div class="container__inputs-finally">
                 <button class="button_submit" type="submit">Publicar</button>
             </div>
-
         </div>
     </form>
 </article>
@@ -93,7 +98,7 @@
 
 <!-- Comentarios -->
 <article class="main__containers-community" id="container__comments">
-    <h3 class="title_answer">Respuestas</h3>
+    <h3 class="title_answer" id="title_answer">Respuestas</h3>
 
     @foreach (var comment in Model.oComments)
     {
@@ -141,7 +146,7 @@
                     </div>
                 }
                 <div class="container__content-post">
-                    <p class="">@comment.Description</p>
+                    <p class="" id="comment_description-@comment.Id">@comment.Description</p>
                     <div class="container__imgs"></div>
                 </div>
             </div>
@@ -156,7 +161,7 @@
                 @if (comment.IdUser == IdUser)
                 {
                     <div>
-                        <a class="post__delete" asp-route-IdComment="@comment.Id" asp-controller="Comment" asp-action="Delete"><i class="bi bi-trash3"></i> </a>
+                        <button type="button" class="comment__delete" id="delete_comment-@comment.Id" ><i class="bi bi-trash3"></i> </button>
                     </div>
                 }
             </div>
@@ -170,5 +175,6 @@
 @section Scripts {
     <script src="~/js/community.js" asp-append-version="true"></script>
     <script src="~/js/publication.js" asp-append-version="true"></script>
+    <script src="~/js/api/comments.js" asp-append-version="true"></script>
 }
 

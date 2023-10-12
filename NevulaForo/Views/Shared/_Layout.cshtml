@@ -90,7 +90,7 @@
                 <div class="container__profile container_dropdown" id="container_dropdown-profile2">
                 
                     <a class="btn-profile" asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">
-                        <img src="@UserService.GetUserProfileImagePath(IdUser)" alt="Foto de Perfil" class="btn-profile_img">
+                        <img src="@UserService.GetUserProfileImagePath(IdUser)" alt="Foto de Perfil" class="btn-profile_img" id="header__profile-pic">
                     </a>
                     <ul class="container__dropdown--header dropdown dropdown-profile2">
                         <li><a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">VER PERFIL</a></li>
@@ -117,6 +117,7 @@
     
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="~/js/main.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

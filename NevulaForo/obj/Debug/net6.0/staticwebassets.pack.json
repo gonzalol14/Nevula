@@ -57,16 +57,48 @@
       "PackagePath": "staticwebassets\\images\\Logo_Nevula2.png"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.jpg",
-      "PackagePath": "staticwebassets\\images\\profiles\\4\\profile_pic.jpg"
-    },
-    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\5\\profile_pic.jpg",
       "PackagePath": "staticwebassets\\images\\profiles\\5\\profile_pic.jpg"
     },
     {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\default.jpg",
       "PackagePath": "staticwebassets\\images\\profiles\\default.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\comments.js",
+      "PackagePath": "staticwebassets\\js\\api\\comments.js"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\create_post.js",
+      "PackagePath": "staticwebassets\\js\\api\\create_post.js"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\delete_post.js",
+      "PackagePath": "staticwebassets\\js\\api\\delete_post.js"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_avatar.js",
+      "PackagePath": "staticwebassets\\js\\api\\edit_account_avatar.js"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_general.js",
+      "PackagePath": "staticwebassets\\js\\api\\edit_account_general.js"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_password.js",
+      "PackagePath": "staticwebassets\\js\\api\\edit_account_password.js"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_post.js",
+      "PackagePath": "staticwebassets\\js\\api\\edit_post.js"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\login.js",
+      "PackagePath": "staticwebassets\\js\\api\\login.js"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\register.js",
+      "PackagePath": "staticwebassets\\js\\api\\register.js"
     },
     {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\community.js",

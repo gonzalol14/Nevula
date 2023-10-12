@@ -6,16 +6,6 @@ if (typeEdit == "perfil") {
 } else if (typeEdit == "avatar") {
     $(`.btn_edit-avatar`).addClass("active");
 
-    var avatar_input = document.getElementById("avatar_input")
-
-    document.getElementById("change_img").addEventListener("click", () => {
-        avatar_input.click()
-    })
-
-    avatar_input.addEventListener("change", () => {
-        document.getElementById("form_avatar").submit()
-    })
-
 } else if (typeEdit == "cuenta"){
     $(`.btn_edit-disable`).addClass("active");
 } else {

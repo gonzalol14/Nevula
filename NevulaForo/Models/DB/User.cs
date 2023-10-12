@@ -30,8 +30,8 @@ public partial class User
     public string Email { get; set; } = null!;
 
     [Required(ErrorMessage = "Debe ingresar una contraseña.")]
-    [MinLength(3, ErrorMessage = "Debe ingresar una combinación con al menos 3 caracteres.")]
-    [MaxLength(50, ErrorMessage = "Debe ingresar una combinación con hasta 50 caracteres.")]
+    [MinLength(3, ErrorMessage = "Debe ingresar una combinación de entre 3 y 50 caracteres.")]
+    [MaxLength(50, ErrorMessage = "Debe ingresar una combinación de entre 3 y 50 caracteres.")]
     public string Password { get; set; } = null!;
 
     [MaxLength(250, ErrorMessage = "La descripción debe tener hasta 250 caracteres.")]

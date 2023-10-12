@@ -106,128 +106,157 @@ namespace NevulaForo.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> EditGeneral(GeneralEditUserVM viewmodel)
+        public async Task<JsonResult> EditGeneral([FromBody] GeneralEditUserVM viewmodel)
         {
-            if(ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                ClaimsPrincipal claimUser = HttpContext.User;
-                viewmodel.Id = Convert.ToInt32(claimUser.FindFirstValue("Id")); 
+                var errors = ModelState.Where(x => x.Value.Errors.Any())
+                               .ToDictionary(
+                                   kvp => kvp.Key,
+                                   kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToList()
+                               );
 
-
-                User model = _DBContext.Users.Where(u => u.Id == viewmodel.Id && u.DeletedAt == null).FirstOrDefault();
-
-                if(model != null)
-                {
-                    if(viewmodel.Name != model.Name || viewmodel.Surname != model.Surname || viewmodel.Username != model.Username || viewmodel.Email != model.Email || viewmodel.Description != model.Description)
-                    {
-                        model.Name = viewmodel.Name;
-                        model.Surname = viewmodel.Surname;
-                        model.Username = viewmodel.Username;
-                        model.Email = viewmodel.Email;
-                        model.Description = Utilities.ReduceLineBreaks(viewmodel.Description);
-
-                        _DBContext.Update(model);
-                        await _DBContext.SaveChangesAsync();
-
-                        //Traigo los Claims que se deben/pueden actualizar
-                        var usernameClaim = claimUser.FindFirst(ClaimTypes.NameIdentifier);
-                        var emailClaim = claimUser.FindFirst(ClaimTypes.Email);
-
-                        //Creo nuevos Claims con los nuevos valores ingresados
-                        Claim newUsernameClaim = new Claim(usernameClaim.Type, model.Username);
-                        Claim newEmailClaim = new Claim(emailClaim.Type, model.Email);
-
-                        //Elimino los Claims viejos y creo los Claims nuevos
-                        var identity = claimUser.Identity as ClaimsIdentity;
-                        identity.RemoveClaim(usernameClaim);
-                        identity.RemoveClaim(emailClaim);
-                        identity.AddClaim(newUsernameClaim);
-                        identity.AddClaim(newEmailClaim);
-
-                        //Creo un nuevo ClaimsPrincipal
-                        ClaimsPrincipal newClaimsPrincipal = new ClaimsPrincipal(identity);
-
-                        //Consigo las propiedades de autentificacion, principalmente para saber la fecha de expiracion de las credenciales
-                        var authProperties = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-                        AuthenticationProperties properties = authProperties.Properties;
-
-
-                        // Actualizo el ClaimsPrincipal en la sesión
-                        await HttpContext.SignInAsync(
-                            CookieAuthenticationDefaults.AuthenticationScheme,
-                            newClaimsPrincipal,
-                            properties);
-
-                    }
-                }
+                return Json(new { success = false, errors = errors });
 
             }
-            
-            return View($"~/Views/Account/Edit/General.cshtml", viewmodel);
-        }
+
+            ClaimsPrincipal claimUser = HttpContext.User;
+            viewmodel.Id = Convert.ToInt32(claimUser.FindFirstValue("Id")); 
 
 
+            User model = _DBContext.Users.Where(u => u.Id == viewmodel.Id && u.DeletedAt == null).FirstOrDefault();
 
-        [HttpPost]
-        public async Task<IActionResult> EditPassword(ChangePasswordVM viewmodel)
-        {
-            if(ModelState.IsValid)
+            if(model != null)
             {
-                int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
-
-                User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
-
-                if (user != null)
+                if(viewmodel.Name != model.Name || viewmodel.Surname != model.Surname || viewmodel.Username != model.Username || viewmodel.Email != model.Email || viewmodel.Description != model.Description)
                 {
-                    user.Password = Utilities.EncryptPassword(viewmodel.newPass);
-                    user.UpdatedAt = DateTime.Now;
+                    model.Name = viewmodel.Name;
+                    model.Surname = viewmodel.Surname;
+                    model.Username = viewmodel.Username;
+                    model.Email = viewmodel.Email;
+                    model.Description = Utilities.ReduceLineBreaks(viewmodel.Description);
 
-                    _DBContext.Update(user);
+                    _DBContext.Update(model);
                     await _DBContext.SaveChangesAsync();
 
-                    ViewData["Message"] = "Se actualizo la contraseña";
-                    return View($"~/Views/Account/Edit/Password.cshtml", viewmodel);
+                    //Traigo los Claims que se deben/pueden actualizar
+                    var usernameClaim = claimUser.FindFirst(ClaimTypes.NameIdentifier);
+                    var emailClaim = claimUser.FindFirst(ClaimTypes.Email);
 
+                    //Creo nuevos Claims con los nuevos valores ingresados
+                    Claim newUsernameClaim = new Claim(usernameClaim.Type, model.Username);
+                    Claim newEmailClaim = new Claim(emailClaim.Type, model.Email);
+
+                    //Elimino los Claims viejos y creo los Claims nuevos
+                    var identity = claimUser.Identity as ClaimsIdentity;
+                    identity.RemoveClaim(usernameClaim);
+                    identity.RemoveClaim(emailClaim);
+                    identity.AddClaim(newUsernameClaim);
+                    identity.AddClaim(newEmailClaim);
+
+                    //Creo un nuevo ClaimsPrincipal
+                    ClaimsPrincipal newClaimsPrincipal = new ClaimsPrincipal(identity);
+
+                    //Consigo las propiedades de autentificacion, principalmente para saber la fecha de expiracion de las credenciales
+                    var authProperties = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                    AuthenticationProperties properties = authProperties.Properties;
+
+
+                    // Actualizo el ClaimsPrincipal en la sesión
+                    await HttpContext.SignInAsync(
+                        CookieAuthenticationDefaults.AuthenticationScheme,
+                        newClaimsPrincipal,
+                        properties);
                 }
+
+                return Json(new { success = true });
+            } else
+            {
+                return Json(new { success = false, redirectUrl = "/Access/Logout" });
+
             }
-            return View($"~/Views/Account/Edit/Password.cshtml", viewmodel);
 
         }
 
 
 
         [HttpPost]
-        public async Task<IActionResult> EditAvatar([FromForm] AvatarVM model)
+        public async Task<IActionResult> EditPassword([FromBody] ChangePasswordVM viewmodel)
         {
-            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
-            bool renewImg = false;
-
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                string ruta = Path.Combine(_hostingEnvironment.WebRootPath, $"images/profiles/{IdUser}");
-                if (Directory.Exists(ruta))
-                {
-                    Directory.Delete(ruta, true);
-                }
-                Directory.CreateDirectory(ruta);
+                var errors = ModelState.Where(x => x.Value.Errors.Any())
+                               .ToDictionary(
+                                   kvp => kvp.Key,
+                                   kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToList()
+                               );
 
-                string extension = model.Avatar.FileName.Split('.')[1];
-                string filePath = Path.Combine(ruta, $"profile_pic.{extension}");
+                return Json(new { success = false, errors = errors });
+            }
+            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
-                using (Stream fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await model.Avatar.CopyToAsync(fileStream);
-                }
-                renewImg = true;
+            User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
+
+            if (user != null)
+            {
+                user.Password = Utilities.EncryptPassword(viewmodel.newPass);
+                user.UpdatedAt = DateTime.Now;
+
+                _DBContext.Update(user);
+                await _DBContext.SaveChangesAsync();
+
+                return Json(new { success = true });
+
+            } else
+            {
+                return Json(new { success = false, redirectUrl = "/Access/Logout" });
             }
 
-            string profilePicPath = _userService.GetUserProfileImagePath(IdUser, renewImg);
-            ViewBag.ProfilePicPath = profilePicPath;
-
-            return View($"~/Views/Account/Edit/Avatar.cshtml");
         }
 
-        public IActionResult DeleteAvatar()
+
+
+        [HttpPost]
+        public async Task<JsonResult> EditAvatarApi([FromForm] AvatarVM model)
+        {
+            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Where(x => x.Value.Errors.Any())
+                                   .ToDictionary(
+                                       kvp => kvp.Key,
+                                       kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToList()
+                                   );
+
+                return Json(new { success = false, errors = errors });
+            }
+
+            string ruta = Path.Combine(_hostingEnvironment.WebRootPath, $"images/profiles/{IdUser}");
+            if (Directory.Exists(ruta))
+            {
+                Directory.Delete(ruta, true);
+            }
+            Directory.CreateDirectory(ruta);
+
+            string extension = model.Avatar.FileName.Split('.')[1];
+            string filePath = Path.Combine(ruta, $"profile_pic.{extension}");
+
+            using (Stream fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await model.Avatar.CopyToAsync(fileStream);
+            }
+            
+            string pathProfilePicPath = _userService.GetUserProfileImagePath(IdUser, true);
+            //ViewBag.ProfilePicPath = profilePicPath;
+
+            return Json(new { success = true, pathProfilePic = pathProfilePicPath });
+            //return View($"~/Views/Account/Edit/Avatar.cshtml");
+        }
+
+
+        [HttpGet]
+        public IActionResult DeleteAvatarApi()
         {
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
@@ -237,11 +266,11 @@ namespace NevulaForo.Controllers
                 Directory.Delete(ruta, true);
             }
 
-            string profilePicPath = _userService.GetUserProfileImagePath(IdUser);
-            ViewBag.ProfilePicPath = profilePicPath;
-
-            return View($"~/Views/Account/Edit/Avatar.cshtml");
+            return Json(new { success = true, pathProfilePic = "/images/profiles/default.jpg" });
         }
+
+
+
 
         public async Task<IActionResult> Disable()
         {

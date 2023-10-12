@@ -10,7 +10,7 @@
 }
 
 <article class="main__containers-community">
-    <form asp-controller="Publication" asp-action="Create" method="POST">
+    <form method="POST" id="formCreatePost">
 
         <div asp-validation-summary="ModelOnly"></div>
 
@@ -23,13 +23,13 @@
 
         <div class="container__input-title">
             <h3>Título</h3>
-            <textarea class="post_textarea" name="Title" asp-for="Title" id="" placeholder="Introduce un título" maxlength="250"></textarea>
+            <textarea class="post_textarea" name="Title" asp-for="Title" id="title" placeholder="Introduce un título" maxlength="250"></textarea>
             <span asp-validation-for="Title"></span>
         </div>
 
         <div class="container__input-content">
             <h3>Contenido</h3>
-            <textarea class="post_textarea" name="Description" asp-for="Description" id="" placeholder="Introduce texto" maxlength="1750"></textarea>
+            <textarea class="post_textarea" name="Description" asp-for="Description" id="description" placeholder="Introduce texto" maxlength="1750"></textarea>
             <span asp-validation-for ="Description"></span>
         </div>
 
@@ -41,3 +41,7 @@
 
 </article>
 
+
+@section Scripts {
+    <script src="~/js/api/create_post.js" asp-append-version="true"></script>
+}

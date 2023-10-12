@@ -74,13 +74,20 @@ namespace NevulaForo.Controllers
         }
 
         [HttpPost, Authorize]
-        public async Task<IActionResult> Create(CreatePublicationVM viewmodel)
+        public async Task<JsonResult> CreateApi([FromBody] CreatePublicationVM viewmodel)
         {
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
             if (!ModelState.IsValid)
             {
-                return View(viewmodel);
+                var errors = ModelState.Where(x => x.Value.Errors.Any())
+                               .ToDictionary(
+                                   kvp => kvp.Key,
+                                   kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToList()
+                               );
+
+                return Json(new { success = false, errors = errors });
+                //return View(viewmodel);
             }
 
 
@@ -100,7 +107,7 @@ namespace NevulaForo.Controllers
             _DBContext.Add(model);
             await _DBContext.SaveChangesAsync();
 
-            return RedirectToAction("Community", "Home");
+            return Json(new { success = true, redirectUrl = $"/Account/Index?IdUser={IdUser}" }); 
         }
 
 
@@ -137,7 +144,7 @@ namespace NevulaForo.Controllers
         }
 
         [HttpPost, Authorize]
-        public async Task<IActionResult> Edit(CreatePublicationVM viewmodel)
+        public async Task<JsonResult> EditApi([FromBody] CreatePublicationVM viewmodel)
         {
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
@@ -148,7 +155,14 @@ namespace NevulaForo.Controllers
 
                 if (!ModelState.IsValid)
                 {
-                    return View(viewmodel);
+                    var errors = ModelState.Where(x => x.Value.Errors.Any())
+                               .ToDictionary(
+                                   kvp => kvp.Key,
+                                   kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToList()
+                               );
+
+                    return Json(new { success = false, errors = errors });
+                    //return View(viewmodel);
                 }
 
                 User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == IdUser).ToList().First();
@@ -159,15 +173,15 @@ namespace NevulaForo.Controllers
                 _DBContext.Update(model);
                 await _DBContext.SaveChangesAsync();
 
-                return RedirectToAction("Community", "Home");
+                return Json(new { success = true, redirectUrl = $"/Publication/Index?IdPublication={model.Id}" });
             }
 
             //404
-            return NotFound();
+            return Json(new { success = false, errors = new List<string> { "Error al intentar editar publicación" } });
         }
 
         [HttpGet, Authorize]
-        public async Task<IActionResult> Delete(int IdPublication)
+        public async Task<JsonResult> DeleteApi(int IdPublication)
         {
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
@@ -179,11 +193,10 @@ namespace NevulaForo.Controllers
                 _DBContext.Update(publication);
                 await _DBContext.SaveChangesAsync();
 
-                return RedirectToAction("Index", "Account", new { IdUser = IdUser } );
+                return Json(new { success = true });
             }
 
-            //404
-            return NotFound();
+            return Json(new { success = false, error = "Error al intentar eliminar la publicacion" });
         }
 
 

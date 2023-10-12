@@ -7,7 +7,7 @@
     font-size: 15px;
 }*/
 
-#form__post-comment {
+#formCreateComment {
     display: flex;
     align-items: center;
 }
@@ -16,6 +16,7 @@
     width: 100%;
     margin: 0 1rem;
     display: flex;
+    flex-direction: column;
 }
 
 .post_textarea {

@@ -8,6 +8,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
+using NevulaForo.Models.ViewModels;
 
 namespace NevulaForo.Controllers
 {
@@ -23,26 +24,40 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            ClaimsPrincipal claimUser = HttpContext.User;
+            if (claimUser.Identity != null)
+            {
+                if (claimUser.Identity.IsAuthenticated)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(User model)
+        public async Task<JsonResult> RegisterApi([FromBody] User model)
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                var errors = ModelState.Where(x => x.Value.Errors.Any())
+                               .ToDictionary(
+                                   kvp => kvp.Key,
+                                   kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToList()
+                               );
+
+                return Json(new { success = false, errors = errors });
             }
 
             model.Password = Utilities.EncryptPassword(model.Password);
 
             User user_created = await _userService.SaveUserAndRole(model, 1);
 
-            if (user_created.Id > 0) return RedirectToAction("Login", "Access");
+            if (user_created.Id > 0) return Json(new { success = true, redirectUrl = "/Access/Login" });
             else
             {
-                ViewData["Message"] = "Error al intentar crear usuario";
-                return View(model);
+                return Json(new { success = false, errorGeneral = "Error al intentar crear usuario" });
             }
         }
 
@@ -62,17 +77,16 @@ namespace NevulaForo.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(string email, string password, string remember)
+        public async Task<JsonResult> LoginApi([FromBody] LoginVM viewmodel)
         {
-
             try
             {
-                if (email == null || password == null)
+                if (viewmodel.Email == null || viewmodel.Password == null)
                 {
-                    throw new InvalidOperationException("Debe ingresar un email y una contraseña");
+                    throw new InvalidOperationException("Debe ingresar un email y una contraseña.");
                 }
 
-                User user_found = await _userService.GetUser(email, Utilities.EncryptPassword(password));
+                User user_found = await _userService.GetUser(viewmodel.Email, Utilities.EncryptPassword(viewmodel.Password));
 
                 if(user_found != null)
                 {
@@ -99,7 +113,7 @@ namespace NevulaForo.Controllers
                         AllowRefresh = true
                     };
 
-                    if (remember != null)
+                    if (viewmodel.Remember == true)
                     {
                         properties.IsPersistent = true;
                         properties.ExpiresUtc = DateTime.Now.AddDays(20);   
@@ -110,7 +124,8 @@ namespace NevulaForo.Controllers
                         new ClaimsPrincipal(claimsIdentity),
                         properties);
 
-                    return RedirectToAction("Index", "Home");
+                    return Json(new { success = true, redirectUrl = "/Home/Index" });
+
                 } else
                 {
                     throw new InvalidOperationException("El correo y/o la contraseña es incorrecta. Compruebalo");
@@ -118,9 +133,7 @@ namespace NevulaForo.Controllers
 
             } catch (Exception ex)
             {
-                //NullReferation
-                ViewData["Message"] = ex.Message.ToString();
-                return View();
+                return Json(new { success = false, errorMessage = ex.Message });
             }
         }
 

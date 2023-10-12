@@ -199,6 +199,14 @@ body {
 }
 
 
-.post__delete {
+.post__delete,
+.comment__delete {
     color: red;
+    padding: 0;
+    background: inherit;
+    font-size: 16px;
+}
+
+.post__delete {
+    margin-left: 15px;
 }

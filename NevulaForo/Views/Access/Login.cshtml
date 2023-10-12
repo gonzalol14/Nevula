@@ -18,18 +18,15 @@
             <p>Inicia sesión en Nevula</p>
         </div>
 
-        <form asp-controller="Access" asp-action="Login" method="POST" class="login__form" id="form">
+        <form method="POST" class="login__form" id="formLogin">
             
-            @if (ViewData["Message"] != null)
-            {
-                <div class="form-group">
-                    <p class="field-validation-error" id="msj_error_login">@ViewData["Message"]</p>
-                </div>
-            }
+            <div class="form-group" style="display: none;">
+                <p class="" id="msj_error_login"></p>
+            </div>
 
             <div class="form-group">
                 <label for="email" class="input-title">Dirección de correo</label>
-                <input type="email" name="email">
+                <input type="email" name="email" id="email">
             </div>
 
             <div class="form-group">
@@ -82,4 +79,5 @@
 
 @section Scripts {
     <script src="~/js/password.js" asp-append-version="true"></script>
+    <script src="~/js/api/login.js" asp-append-version="true"></script>
 }

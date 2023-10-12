@@ -18,7 +18,7 @@
             <p>Crea una cuenta en Nevula</p>
         </div>
 
-        <form asp-controller="Access" asp-action="Register" method="POST" class="register__form" id="form">
+        <form method="POST" class="register__form" id="formRegister">
 
             @if (ViewData["Message"] != null)
             {
@@ -32,13 +32,13 @@
             <div class="container__full-name">
                 <div class="form-group container__name">
                     <label for="name" class="input-title">Nombre</label>
-                    <input type="text" name="name" class="" asp-for="Name">
+                    <input type="text" name="Name" id="name" asp-for="Name">
                     <span asp-validation-for="Name"></span>
                 </div>
 
                 <div class="form-group container__surname">
                     <label for="surname" class="input-title">Apellido</label>
-                    <input type="text" name="surname" class="" asp-for="Surname">
+                    <input type="text" name="Surname" id="surname" asp-for="Surname">
                     <span asp-validation-for="Surname"></span>
                 </div>
             </div>
@@ -46,13 +46,13 @@
 
             <div class="form-group">
                 <label for="username" class="input-title">Nombre de usuario</label>
-                <input type="text" name="username" class="" asp-for="Username">
+                <input type="text" name="Username" id="username" asp-for="Username">
                 <span asp-validation-for="Username"></span>
             </div>
 
             <div class="form-group">
                 <label for="email" class="input-title">Dirección de correo</label>
-                <input type="text" name="email" class="" asp-for="Email">
+                <input type="text" name="Email" id="email" asp-for="Email">
                 <span asp-validation-for="Email"></span>
             </div>
 
@@ -71,13 +71,6 @@
             <div class="form-group">
                 <span class="terms-conditions">Al hacer click en 'Registrarse' aceptas nuestros <a class="links" href="#terminosycondiciones">términos y condiciones</a></span>
             </div>
-            <!--<div class="form-group">
-                <label class="label__remember">
-                    <span class="terms-conditions">Tengo 13 años o más y estoy de acuerdo con los <a class="links" href="#terminosycondiciones">términos y condiciones</a></span>
-                    <input type="checkbox" id="policyAndConditions" name="policyAndConditions" value="accepted">
-                    <span class="checkmark"></span>
-                </label>
-            </div>-->
 
             <div class="form-group">
                 <button type="submit" class="" id="register-submit">Registrarse</button>
@@ -105,5 +98,6 @@
 
 @section Scripts {
     <script src="~/js/password.js" asp-append-version="true"></script>
+    <script src="~/js/api/register.js" asp-append-version="true"></script>
 }
 

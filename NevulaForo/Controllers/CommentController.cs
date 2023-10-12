@@ -1,9 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using NevulaForo.Models.DB;
 using NevulaForo.Models.ViewModels;
 using System.Security.Claims;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+using NevulaForo.Resources;
+using NevulaForo.Services.Implementation;
 
 namespace NevulaForo.Controllers
 {
@@ -19,7 +24,7 @@ namespace NevulaForo.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateCommentVM viewmodel)
+        public async Task<JsonResult> CreateApi([FromBody] CreateCommentVM viewmodel)
         {
             Publication publication = _DBContext.Publications.Where(p => p.DeletedAt == null && p.Id == viewmodel.IdPublication).FirstOrDefault();
 
@@ -29,7 +34,13 @@ namespace NevulaForo.Controllers
 
                 if (!ModelState.IsValid)
                 {
-                    return RedirectToAction("Index", "Publication", new { IdPublication = viewmodel.IdPublication });
+                    var errors = ModelState.Where(x => x.Value.Errors.Any())
+                               .ToDictionary(
+                                   kvp => kvp.Key,
+                                   kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToList()
+                               );
+
+                    return Json(new { success = false, errors = errors });
                 }
 
                 User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == viewmodel.IdUser).ToList().First();
@@ -47,12 +58,18 @@ namespace NevulaForo.Controllers
                 _DBContext.Add(model);
                 await _DBContext.SaveChangesAsync();
 
-                return RedirectToAction("Index", "Publication", new { IdPublication = viewmodel.IdPublication });
+
+                return Json(new { success = true, 
+                    /*comment = model, 
+                    username = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier), 
+                    userIdRole = HttpContext.User.FindFirstValue(ClaimTypes.Role), 
+                    stylizeDate = Utilities.StylizeDate(model.CreatedAt)*/ }, 
+                                new JsonSerializerOptions { ReferenceHandler = ReferenceHandler.Preserve });
 
             }
 
-            //404
-            return NotFound();
+            string[] errorGeneral = { "Error al intentar crear el comentario" };
+            return Json(new { success = false, errors = new { errorGeneral = errorGeneral } });
 
         }
 
@@ -62,7 +79,7 @@ namespace NevulaForo.Controllers
         }*/
 
         [HttpGet]
-        public async Task<IActionResult> Delete(int IdComment)
+        public async Task<JsonResult> DeleteApi(int IdComment)
         {
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
@@ -74,11 +91,10 @@ namespace NevulaForo.Controllers
                 _DBContext.Update(comment);
                 await _DBContext.SaveChangesAsync();
 
-                return RedirectToAction("Index", "Publication", new { IdPublication = comment.IdPublication });
+                return Json(new { success = true });
             }
 
-            //404
-            return NotFound();
+            return Json(new { success = false, error = "Error al intentar eliminar el comentario"  });
         }
     }
 }
