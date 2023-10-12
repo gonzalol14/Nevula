@@ -160,6 +160,15 @@
         width: 60px;
     }
 
+    .container_name {
+        font-size: 16px;
+        margin-left: .25rem;
+    }
+
+    .container__verify {
+        margin-left: .25rem;
+    }
+
     .container__following {
         font-size: 13.5px !important;
         flex-direction: column !important;

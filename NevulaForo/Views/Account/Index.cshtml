@@ -91,16 +91,6 @@
                 <a asp-route-IdUser="@Model.oUser.Id" asp-controller="Account" asp-action="Index">@Model.oUser.Username</a>
             </div>
 
-            @if(Model.oUser.UserRoles.First().IdRole == 2)
-            {
-                <!-- Esto depende si esta o no verificado -->
-                <div class="container__verify" id="container__verify-1">
-                    <span class="verify">VERIFICADO</span>
-                    <span class="small-verify">V</span>
-                    <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
-                </div>
-            }
-
             <span class="separator__info">·</span>
 
             <div class="container__date">

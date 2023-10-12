@@ -76,4 +76,8 @@
     .container__verify {
         margin: 0;
     }
+
+    .container__username {
+        margin: 0 0.25rem;
+    }
 }
