@@ -81,6 +81,17 @@ deleteComments.forEach((deleteComment) => {
                 console.log(response.data)
                 if (response.data.success) {
                     console.log("Comentario eliminado correctamente")
+                    const spanCantComments = document.getElementById('span_cant-comments')
+
+                    let cantComments = spanCantComments.innerText.split(" ")[0]
+                    cantComments = (parseInt(cantComments) - 1 > 0) ? parseInt(cantComments) - 1 : 0
+
+                    if (cantComments != 1) {
+                        spanCantComments.innerText = `${cantComments} Comentarios`
+                    } else {
+                        spanCantComments.innerText = `${cantComments} Comentario`
+                    }
+
                     deleteComment.parentElement.parentElement.parentElement.remove()
                 } 
             })
