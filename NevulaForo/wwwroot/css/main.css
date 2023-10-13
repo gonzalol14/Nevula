@@ -420,3 +420,42 @@ textarea {
 .input-validation-error {
     border-color: red !important;
 }
+
+.alert_msj {
+    width: fit-content;
+    background: #FFA425;
+    color: #FFF;
+    padding: 7px 12px;
+    border-radius: 1.5rem;
+    font-size: 15px;
+    font-weight: 600;
+    position: fixed;
+    top: 4.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    animation: shake 0.25s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

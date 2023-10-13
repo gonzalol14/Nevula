@@ -34,7 +34,8 @@ avatar_input.addEventListener("change", () => {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    console.log('Datos actualizados correctamente')
+                    alertMsj('Avatar actualizado con éxito')
+
                     const imagenes = document.querySelectorAll('.profile_pic-edit-avatar')
 
                     imagenes.forEach((imagen) => {
@@ -44,10 +45,6 @@ avatar_input.addEventListener("change", () => {
                     document.getElementById('header__profile-pic').src = response.data.pathProfilePic
 
                 } else {
-                    if (response.data.redirectUrl != null) {
-                        window.location.href = response.data.redirectUrl
-                    }
-
                     Object.keys(response.data.errors).forEach(fieldName => {
                         const errorMessage = response.data.errors[fieldName].join('\n');
                         const input = document.querySelector(`[name="${fieldName}"]`);
@@ -58,26 +55,11 @@ avatar_input.addEventListener("change", () => {
                 }
             })
             .catch(error => {
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
                 console.log("Error atrapado:", error);
             });
     }
 })
-
-const failValidation = (input, msj) => {
-    const element = document.querySelector(`[data-valmsg-for="${input.getAttribute('name')}"]`)
-    element.classList.remove("field-validation-valid");
-    element.classList.add("field-validation-error");
-
-    element.innerText = msj;
-};
-const successValidation = (input) => {
-    const element = document.querySelector(`[data-valmsg-for="${input.getAttribute('name')}"]`)
-    element.classList.remove("field-validation-error");
-    element.classList.add("field-validation-valid");
-
-    element.innerText = null;
-};
-
 
 const deleteAvatar = document.getElementById('edit_avatar-delete')
 
@@ -87,7 +69,7 @@ deleteAvatar.addEventListener('click', (event) => {
             // Manejar la respuesta exitosa aquí
             console.log(response.data)
             if (response.data.success) {
-                console.log("Avatar eliminado correctamente")
+                alertMsj('Avatar eliminado con éxito')
 
                 const imagenes = document.querySelectorAll('.profile_pic-edit-avatar')
 
@@ -99,6 +81,7 @@ deleteAvatar.addEventListener('click', (event) => {
             }
         })
         .catch(error => {
+            alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
             console.log("Error atrapado:", error);
         });
 })

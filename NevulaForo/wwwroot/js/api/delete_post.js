@@ -12,11 +12,14 @@ if (pathSegments == 'Publication/Index') {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    console.log("Publicación eliminada correctamente")
-                    window.location.href = response.data.redirectUrl
+                    alertMsj('Publicación eliminada con éxito', 300)
+                    setTimeout(() => {
+                        window.location.href = response.data.redirectUrl;
+                    }, 300)
                 }
             })
             .catch(error => {
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
                 console.log("Error atrapado:", error);
             });
     });
@@ -33,11 +36,12 @@ if (pathSegments == 'Publication/Index') {
                     // Manejar la respuesta exitosa aquí
                     console.log(response.data)
                     if (response.data.success) {
-                        console.log("Publicación eliminada correctamente")
+                        alertMsj('Publicación eliminada con éxito')
                         deletePost.parentElement.parentElement.parentElement.remove()
                     }
                 })
                 .catch(error => {
+                    alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
                     console.log("Error atrapado:", error);
                 });
         })

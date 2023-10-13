@@ -10,10 +10,10 @@ formLogin.addEventListener('submit', (event) => {
     var validForm = 0;
 
     if (!email.value.trim() || !password.value.trim()) {
-        failValidation('Debe ingresar un correo electrónico y una contraseña.')
+        failValidation2('Debe ingresar un correo electrónico y una contraseña.')
 
     } else {
-        successValidation()
+        successValidation2()
         validForm++
     }
 
@@ -26,22 +26,24 @@ formLogin.addEventListener('submit', (event) => {
             .then(response => {
                 // Manejar la respuesta exitosa aquí
                 if (response.data.success) {
-                    window.location.href = '/Home/Index'; // Redirigir a la página de inicio si es necesario
+                    alertMsj('Sesión iniciada con éxito', 300)
+                    setTimeout(() => {
+                        window.location.href = response.data.redirectUrl;
+                    }, 300)
                 } else {
-                    failValidation(response.data.errorMessage);
+                    failValidation2(response.data.errorMessage);
                 }
             })
             .catch(error => {
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
                 console.log("Error atrapado:", error);
-                failValidation("Error desconocido");
             });
 
     }
     
 })
 
-
-const failValidation = (msj) => {
+const failValidation2 = (msj) => {
     error_msj.classList.remove("field-validation-valid");
     error_msj.classList.add("field-validation-error");
 
@@ -49,7 +51,7 @@ const failValidation = (msj) => {
 
     error_msj.innerText = msj;
 };
-const successValidation = () => {
+const successValidation2 = () => {
     error_msj.classList.remove("field-validation-error");
     error_msj.classList.add("field-validation-valid");
 

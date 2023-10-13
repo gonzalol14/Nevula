@@ -14,7 +14,6 @@
 
         <div asp-validation-summary="ModelOnly"></div>
 
-        <input type="hidden" asp-for="@Model.Id" name="Id" id="id">
         <div class="container__title">
             <a href="javascript:history.back()" class="button_back"><i class="bi bi-arrow-left-short"></i></a>
             <div id="title_page">
@@ -36,7 +35,7 @@
 
         <div class="container__inputs-finally">
             <button class="button_reset" type="reset">Descartar</button>
-            <button class="button_submit" type="submit">Confirmar</button>
+            <button class="button_submit" type="submit" id="submit_edit-post" disabled>Confirmar</button>
         </div>
     </form>
 

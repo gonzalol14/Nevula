@@ -9,6 +9,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using NevulaForo.Resources;
 using NevulaForo.Services.Implementation;
+using System.Web;
 
 namespace NevulaForo.Controllers
 {
@@ -26,64 +27,69 @@ namespace NevulaForo.Controllers
         [HttpPost]
         public async Task<JsonResult> CreateApi([FromBody] CreateCommentVM viewmodel)
         {
-            Publication publication = _DBContext.Publications.Where(p => p.DeletedAt == null && p.Id == viewmodel.IdPublication).FirstOrDefault();
+            string[] errorGeneral = { "Error al intentar crear el comentario" };
 
-            if (publication != null) 
-            {                
-                viewmodel.IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
+            viewmodel.IdPublication = Utilities.valueParameterId(new Uri(Request.Headers["Referer"].ToString()), "IdPublication");
 
-                if (!ModelState.IsValid)
-                {
-                    var errors = ModelState.Where(x => x.Value.Errors.Any())
-                               .ToDictionary(
-                                   kvp => kvp.Key,
-                                   kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToList()
-                               );
-
-                    return Json(new { success = false, errors = errors });
-                }
-
-                User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == viewmodel.IdUser).ToList().First();
-
-                Comment model = new Comment()
-                {
-                    IdUser = viewmodel.IdUser,
-                    IdPublication = viewmodel.IdPublication,
-                    IdFatherComment = viewmodel.IdFatherComment,
-                    Description = viewmodel.Description,
-                    CreatedAt = DateTime.Now,
-                    DeletedAt = null
-                };
-
-                _DBContext.Add(model);
-                await _DBContext.SaveChangesAsync();
-
-
-                return Json(new { success = true, 
-                    /*comment = model, 
-                    username = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier), 
-                    userIdRole = HttpContext.User.FindFirstValue(ClaimTypes.Role), 
-                    stylizeDate = Utilities.StylizeDate(model.CreatedAt)*/ }, 
-                                new JsonSerializerOptions { ReferenceHandler = ReferenceHandler.Preserve });
-
+            if(viewmodel.IdPublication == 0)
+            {
+                return Json(new { success = false, errors = new { errorGeneral = errorGeneral } });
             }
 
-            string[] errorGeneral = { "Error al intentar crear el comentario" };
-            return Json(new { success = false, errors = new { errorGeneral = errorGeneral } });
+            Publication? publication = _DBContext.Publications.Where(p => p.DeletedAt == null && p.Id == viewmodel.IdPublication).FirstOrDefault();
 
+            if (publication == null)
+            {
+                //La publicación no existe
+                return Json(new { success = false, errors = new { errorGeneral = errorGeneral } });
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Where(x => x.Value.Errors.Any())
+                            .ToDictionary(
+                                kvp => kvp.Key,
+                                kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToList()
+                            );
+
+                return Json(new { success = false, errors = errors });
+            }
+
+            viewmodel.IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
+            User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == viewmodel.IdUser).ToList().First();
+
+            Comment model = new Comment()
+            {
+                IdUser = viewmodel.IdUser,
+                IdPublication = viewmodel.IdPublication,
+                IdFatherComment = viewmodel.IdFatherComment,
+                Description = viewmodel.Description,
+                CreatedAt = DateTime.Now,
+                DeletedAt = null
+            };
+
+            _DBContext.Add(model);
+            await _DBContext.SaveChangesAsync();
+
+            return Json(new { success = true });
+
+            /*return Json(new
+            {
+                success = true,
+                comment = model, 
+                username = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier), 
+                userIdRole = HttpContext.User.FindFirstValue(ClaimTypes.Role), 
+                stylizeDate = Utilities.StylizeDate(model.CreatedAt) }, 
+                            new JsonSerializerOptions { ReferenceHandler = ReferenceHandler.Preserve });*/
         }
-
-        /*public IActionResult Edit()
-        {
-            return View();
-        }*/
 
         [HttpGet]
         public async Task<JsonResult> DeleteApi(int IdComment)
         {
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
-            Comment comment = _DBContext.Comments.FirstOrDefault(p => p.Id == IdComment && p.IdUser == IdUser && p.DeletedAt == null);
+            Comment? comment = _DBContext.Comments.FirstOrDefault(p => p.Id == IdComment && p.IdUser == IdUser && p.DeletedAt == null);
+            
             if (comment != null)
             {
                 comment.DeletedAt = DateTime.Now;

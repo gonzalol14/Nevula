@@ -106,7 +106,7 @@ namespace NevulaForo.Controllers
 
 
         [HttpPost]
-        public async Task<JsonResult> EditGeneral([FromBody] GeneralEditUserVM viewmodel)
+        public async Task<JsonResult> EditGeneralApi([FromBody] GeneralEditUserVM viewmodel)
         {
             if (!ModelState.IsValid)
             {
@@ -181,7 +181,7 @@ namespace NevulaForo.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> EditPassword([FromBody] ChangePasswordVM viewmodel)
+        public async Task<IActionResult> EditPasswordApi([FromBody] ChangePasswordVM viewmodel)
         {
             if (!ModelState.IsValid)
             {
@@ -248,10 +248,8 @@ namespace NevulaForo.Controllers
             }
             
             string pathProfilePicPath = _userService.GetUserProfileImagePath(IdUser, true);
-            //ViewBag.ProfilePicPath = profilePicPath;
 
             return Json(new { success = true, pathProfilePic = pathProfilePicPath });
-            //return View($"~/Views/Account/Edit/Avatar.cshtml");
         }
 
 

@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Query.Internal;
+﻿using Azure.Core;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
 
 namespace NevulaForo.Resources
 {
@@ -74,6 +76,25 @@ namespace NevulaForo.Resources
             } else
             {
                 return text;
+            }
+        }
+
+
+        public static int valueParameterId(Uri uri, string nameParameter)
+        {
+            //Uri uri = new Uri(Request.Headers["Referer"].ToString());
+            string? valueParameter = HttpUtility.ParseQueryString(uri.Query).Get(nameParameter);
+
+            string[] errorGeneral = { "Error al intentar crear el comentario" };
+
+            if (valueParameter == null || !int.TryParse(valueParameter, out int tempIdPublication))
+            {
+                //El parametro es nulo o no es entero
+                return 0;
+            }
+            else
+            {
+                return tempIdPublication;
             }
         }
     }

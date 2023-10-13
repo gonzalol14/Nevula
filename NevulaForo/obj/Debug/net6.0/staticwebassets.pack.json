@@ -57,6 +57,14 @@
       "PackagePath": "staticwebassets\\images\\Logo_Nevula2.png"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1015\\profile_pic.webp",
+      "PackagePath": "staticwebassets\\images\\profiles\\1015\\profile_pic.webp"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\4\\profile_pic.jpg"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\5\\profile_pic.jpg",
       "PackagePath": "staticwebassets\\images\\profiles\\5\\profile_pic.jpg"
     },
@@ -107,6 +115,10 @@
     {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\edit_account.js",
       "PackagePath": "staticwebassets\\js\\edit_account.js"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\functions.js",
+      "PackagePath": "staticwebassets\\js\\functions.js"
     },
     {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\help.js",

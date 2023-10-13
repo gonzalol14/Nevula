@@ -1,5 +1,25 @@
 ﻿const formEditPost = document.getElementById('formEditPost')
 
+const submitButton = document.getElementById('submit_edit-post');
+const originalFormValues = {};
+formEditPost.querySelectorAll('input, textarea').forEach(input => {
+    originalFormValues[input.name] = input.value;
+});
+
+formEditPost.addEventListener('input', function () {
+    let formChanged = false;
+
+    // Verifica si algún valor ha cambiado
+    formEditPost.querySelectorAll('input, textarea').forEach(element => {
+        if (originalFormValues[element.name] !== element.value) {
+            formChanged = true;
+        }
+    });
+
+    // Habilita/deshabilita el botón de envío según si el formulario ha cambiado
+    submitButton.disabled = !formChanged;
+});
+
 formEditPost.addEventListener('submit', (event) => {
     event.preventDefault()
 
@@ -9,6 +29,7 @@ formEditPost.addEventListener('submit', (event) => {
 
     var validForm = 0;
 
+    //TITULO
     if (!title.value.trim()) {
         failValidation(title, 'Debe ingresar un título.')
 
@@ -20,6 +41,7 @@ formEditPost.addEventListener('submit', (event) => {
         validForm++
     }
 
+    //CONTENIDO
     if (!content.value.trim()) {
         failValidation(content, 'Debe ingresar una descripción.')
 
@@ -31,7 +53,12 @@ formEditPost.addEventListener('submit', (event) => {
         validForm++
     }
 
-    if (validForm == 2) {
+    //CAMBIOS
+    if (originalFormValues["Title"] != title.value || originalFormValues["Description"] != content.value) {
+        validForm++
+    }
+
+    if (validForm == 3) {
         const titleValue = title.value.trim() || null
         const contentValue = content.value.trim() || null
         const idPublicationValue = idPublication.value.trim() || null
@@ -41,11 +68,13 @@ formEditPost.addEventListener('submit', (event) => {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    window.location.href = response.data.redirectUrl; // Redirigir a su perfil
+                    alertMsj('Publicacion actualizada correctamente', 300)
+                    setTimeout(() => {
+                        window.location.href = response.data.redirectUrl;
+                    }, 300)
                 } else {
                     Object.keys(response.data.errors).forEach(fieldName => {
                         const errorMessage = response.data.errors[fieldName].join('\n');
-                        console.log(`${fieldName}: ${errorMessage}`);
                         const input = document.querySelector(`[name="${fieldName}"]`);
                         if (input) {
                             failValidation(input, errorMessage)
@@ -54,28 +83,9 @@ formEditPost.addEventListener('submit', (event) => {
                 }
             })
             .catch(error => {
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
                 console.log("Error atrapado:", error);
             });
     }
 
 })
-
-
-const failValidation = (input, msj) => {
-    const element = document.querySelector(`[data-valmsg-for="${input.getAttribute('name')}"]`);
-    element.classList.remove("field-validation-valid");
-    element.classList.add("field-validation-error");
-
-    input.classList.add('input-validation-error')
-
-    element.innerText = msj;
-};
-const successValidation = (input) => {
-    const element = document.querySelector(`[data-valmsg-for="${input.getAttribute('name')}"]`);
-    element.classList.remove("field-validation-error");
-    element.classList.add("field-validation-valid");
-
-    input.classList.remove('input-validation-error')
-
-    element.innerText = null;
-};

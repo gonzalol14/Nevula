@@ -77,8 +77,6 @@
     <form method="POST" id="formCreateComment">
         @Html.AntiForgeryToken()
 
-        <input type="hidden" asp-for="@Model.oPublication.Id" name="IdPublication" id="IdPublication">
-
         <input type="hidden" value="" name="IdFatherComment" id="IdFatherComment">
 
         <div class="container__profile-pic" id="form_comment-pic">
@@ -184,6 +182,10 @@
     <script src="~/js/community.js" asp-append-version="true"></script>
     <script src="~/js/publication.js" asp-append-version="true"></script>
     <script src="~/js/api/comments.js" asp-append-version="true"></script>
-    <script src="~/js/api/delete_post.js" asp-append-version="true"></script>
+
+    @if (Model.oPublication.IdUser == IdUser)
+    {
+        <script src="~/js/api/delete_post.js" asp-append-version="true"></script>
+    }
 }
 

@@ -39,11 +39,13 @@ formCreatePost.addEventListener('submit', (event) => {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    window.location.href = response.data.redirectUrl; // Redirigir a su perfil
+                    alertMsj('Publicación creada con éxito', 300)
+                    setTimeout(() => {
+                        window.location.href = response.data.redirectUrl;
+                    }, 300)
                 } else {
                     Object.keys(response.data.errors).forEach(fieldName => {
                         const errorMessage = response.data.errors[fieldName].join('\n');
-                        console.log(`${fieldName}: ${errorMessage}`);
                         const input = document.querySelector(`[name="${fieldName}"]`);
                         if (input) {
                             failValidation(input, errorMessage)
@@ -52,28 +54,9 @@ formCreatePost.addEventListener('submit', (event) => {
                 }
             })
             .catch(error => {
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
                 console.log("Error atrapado:", error);
             });
     }
 
 })
-
-
-const failValidation = (input, msj) => {
-    const element = document.querySelector(`[data-valmsg-for="${input.getAttribute('name')}"]`);
-    element.classList.remove("field-validation-valid");
-    element.classList.add("field-validation-error");
-
-    input.classList.add('input-validation-error')
-
-    element.innerText = msj;
-};
-const successValidation = (input) => {
-    const element = document.querySelector(`[data-valmsg-for="${input.getAttribute('name')}"]`);
-    element.classList.remove("field-validation-error");
-    element.classList.add("field-validation-valid");
-
-    input.classList.remove('input-validation-error')
-
-    element.innerText = null;
-};

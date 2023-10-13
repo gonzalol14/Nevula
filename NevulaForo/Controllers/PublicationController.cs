@@ -88,7 +88,6 @@ namespace NevulaForo.Controllers
                                );
 
                 return Json(new { success = false, errors = errors });
-                //return View(viewmodel);
             }
 
 
@@ -147,11 +146,17 @@ namespace NevulaForo.Controllers
         [HttpPost, Authorize]
         public async Task<JsonResult> EditApi([FromBody] CreatePublicationVM viewmodel)
         {
-            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
+            viewmodel.Id = Utilities.valueParameterId(new Uri(Request.Headers["Referer"].ToString()), "IdPublication");
 
+            if(viewmodel.Id == 0)
+            {
+                return Json(new { success = false, errors = new List<string> { "Error al intentar editar la publicación" } });
+            }
+
+            int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
             Publication model = _DBContext.Publications.Where(p => p.Id == viewmodel.Id && p.IdUser == IdUser && p.DeletedAt == null).ToList().First();
 
-            if (model != null)
+            if (model != null && (viewmodel.Title != model.Title || viewmodel.Description != model.Description))
             {
 
                 if (!ModelState.IsValid)
@@ -163,7 +168,6 @@ namespace NevulaForo.Controllers
                                );
 
                     return Json(new { success = false, errors = errors });
-                    //return View(viewmodel);
                 }
 
                 User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == IdUser).ToList().First();
@@ -178,7 +182,7 @@ namespace NevulaForo.Controllers
             }
 
             //404
-            return Json(new { success = false, errors = new List<string> { "Error al intentar editar publicación" } });
+            return Json(new { success = false, errors = new List<string> { "Error al intentar editar la publicación" } });
         }
 
         [HttpGet, Authorize]
@@ -259,6 +263,5 @@ namespace NevulaForo.Controllers
             return View(viewmodel);
         }
 
-        //Falta like, dislike. Analizar si crear otro controller para comentarios o hacerlo en este.
     }
 }

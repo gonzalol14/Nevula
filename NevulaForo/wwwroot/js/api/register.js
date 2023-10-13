@@ -78,11 +78,13 @@ formRegister.addEventListener('submit', (event) => {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    window.location.href = response.data.redirectUrl; // Redirigir a la página de iniciar sesion
+                    alertMsj('Cuenta creada con éxito', 300)
+                    setTimeout(() => {
+                        window.location.href = response.data.redirectUrl;
+                    }, 300)
                 } else {
                     Object.keys(response.data.errors).forEach(fieldName => {
                         const errorMessage = response.data.errors[fieldName].join('\n');
-                        console.log(`${fieldName}: ${errorMessage}`);
                         const input = document.querySelector(`[name="${fieldName}"]`);
                         if (input) {
                             failValidation((fieldName == 'Password') ? input.parentElement : input, errorMessage, fieldName)
@@ -91,32 +93,9 @@ formRegister.addEventListener('submit', (event) => {
                 }
             })
             .catch(error => {
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
                 console.log("Error atrapado:", error);
             });
     }
 
 })
-
-
-const failValidation = (input, msj, passwordFather = null) => { 
-    const element = document.querySelector(`[data-valmsg-for="${input.getAttribute('name')}"]`) || document.querySelector(`[data-valmsg-for="${passwordFather}"]`);
-    element.classList.remove("field-validation-valid");
-    element.classList.add("field-validation-error");
-
-    input.classList.add('input-validation-error')
-
-    element.innerText = msj;
-};
-const successValidation = (input, passwordFather = null) => {
-    const element = document.querySelector(`[data-valmsg-for="${input.getAttribute('name')}"]`) || document.querySelector(`[data-valmsg-for="${passwordFather}"]`);
-    element.classList.remove("field-validation-error");
-    element.classList.add("field-validation-valid");
-
-    input.classList.remove('input-validation-error')
-
-    element.innerText = null;
-};
-
-const emailValidation = (email) => {
-    return /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,3}$/i.test(email);
-}
