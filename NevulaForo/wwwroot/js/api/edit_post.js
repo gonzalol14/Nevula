@@ -25,7 +25,7 @@ formEditPost.addEventListener('submit', (event) => {
 
     const title = document.getElementById('title');
     const content = document.getElementById('description');
-    const idPublication = document.getElementById('id');
+    //const idPublication = document.getElementById('id');
 
     var validForm = 0;
 
@@ -61,9 +61,9 @@ formEditPost.addEventListener('submit', (event) => {
     if (validForm == 3) {
         const titleValue = title.value.trim() || null
         const contentValue = content.value.trim() || null
-        const idPublicationValue = idPublication.value.trim() || null
+        //const idPublicationValue = idPublication.value.trim() || null
 
-        axios.post('/Publication/EditApi', { Title: titleValue, Description: contentValue, Id: idPublicationValue })
+        axios.post('/Publication/EditApi', { Title: titleValue, Description: contentValue })
             .then(response => {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)

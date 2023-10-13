@@ -1,4 +1,4 @@
-﻿* {
+﻿#formLogin {
     color: #D6D7D9;
 }
 
@@ -255,6 +255,7 @@ body {
 
 
 .btn-view-password {
+    color: #D6D7D9;
     position: relative;
     right: 6px;
     cursor: pointer;

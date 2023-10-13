@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+button:disabled{
+    cursor: not-allowed;
+}
+
 body::-webkit-scrollbar {
     width: 7px;
 }
