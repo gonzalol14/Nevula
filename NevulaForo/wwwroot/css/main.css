@@ -404,20 +404,7 @@ textarea {
     }
 
 
-
-/* Estilos validacion 
-.msj_error {
-    font-size: 14px;
-    color: red;
-}
-
-.input_error {
-    border-color: red !important;
-}
-
- En .Net, si validas con DataAnnotations ya se le asigna por default al input y al span de mensaje de error las siguientes clase respectivamente  */
-
-
+/* En .Net, si validas con DataAnnotations ya se le asigna por default al input y al span de mensaje de error las siguientes clase respectivamente  */
 .field-validation-error {
     font-size: 14px;
     color: red;
@@ -441,6 +428,14 @@ textarea {
     margin: auto;
 
     animation: shake 0.25s;
+}
+
+.msj_success {
+    background: #009F20;
+}
+
+.msj_error {
+    background: #D00000;
 }
 
 @keyframes shake {

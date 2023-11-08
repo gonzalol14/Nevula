@@ -22,8 +22,8 @@ const emailValidation = (email) => {
     return /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,3}$/i.test(email);
 }
 
-const alertMsj = (msj, time = 1000) => {
-    const alertMsjHTML = `<div class="alert_msj">
+const alertMsj = (msj, type, time = 1000) => {
+    const alertMsjHTML = `<div class="alert_msj msj_${type}">
                             <span>${msj}</span>
                         </div>`
     document.getElementById('header').insertAdjacentHTML('afterend', alertMsjHTML);

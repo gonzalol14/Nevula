@@ -7,9 +7,6 @@ using NevulaForo.Models.DB;
 using NevulaForo.Models.ViewModels;
 using NevulaForo.Resources;
 using System.Security.Claims;
-
-
-using Microsoft.AspNetCore.Http;
 using NevulaForo.Services.Contract;
 
 namespace NevulaForo.Controllers
@@ -124,7 +121,7 @@ namespace NevulaForo.Controllers
             viewmodel.Id = Convert.ToInt32(claimUser.FindFirstValue("Id")); 
 
 
-            User model = _DBContext.Users.Where(u => u.Id == viewmodel.Id && u.DeletedAt == null).FirstOrDefault();
+            User? model = _DBContext.Users.Where(u => u.Id == viewmodel.Id && u.DeletedAt == null).FirstOrDefault();
 
             if(model != null)
             {
@@ -195,7 +192,7 @@ namespace NevulaForo.Controllers
             }
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
-            User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
+            User? user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
 
             if (user != null)
             {
@@ -275,7 +272,7 @@ namespace NevulaForo.Controllers
             ClaimsPrincipal claimUser = HttpContext.User;
             int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
 
-            User user = _DBContext.Users.SingleOrDefault(u => u.Id == IdUser && u.DeletedAt == null);
+            User? user = _DBContext.Users.SingleOrDefault(u => u.Id == IdUser && u.DeletedAt == null);
 
             if (user != null)
             {
@@ -283,6 +280,13 @@ namespace NevulaForo.Controllers
 
                 _DBContext.Update(user);
                 await _DBContext.SaveChangesAsync();
+
+                // Elimino foto de perfil (si es que tiene)
+                string ruta = Path.Combine(_hostingEnvironment.WebRootPath, $"images/profiles/{IdUser}");
+                if (Directory.Exists(ruta))
+                {
+                    Directory.Delete(ruta, true);
+                }
             }
 
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

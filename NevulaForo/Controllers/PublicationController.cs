@@ -118,7 +118,7 @@ namespace NevulaForo.Controllers
             {
                 int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
-                Publication modelPublication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == IdUser);
+                Publication? modelPublication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == IdUser);
                 
                 if (modelPublication != null)
                 {
@@ -154,7 +154,7 @@ namespace NevulaForo.Controllers
             }
 
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
-            Publication model = _DBContext.Publications.Where(p => p.Id == viewmodel.Id && p.IdUser == IdUser && p.DeletedAt == null).ToList().First();
+            Publication? model = _DBContext.Publications.Where(p => p.Id == viewmodel.Id && p.IdUser == IdUser && p.DeletedAt == null).ToList().FirstOrDefault();
 
             if (model != null && (viewmodel.Title != model.Title || viewmodel.Description != model.Description))
             {
@@ -190,7 +190,8 @@ namespace NevulaForo.Controllers
         {
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
-            Publication publication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == IdUser && p.DeletedAt == null);
+            Publication? publication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == IdUser && p.DeletedAt == null);
+
             if (publication != null)
             {
                 publication.DeletedAt = DateTime.Now;

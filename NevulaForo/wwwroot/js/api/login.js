@@ -26,7 +26,7 @@ formLogin.addEventListener('submit', (event) => {
             .then(response => {
                 // Manejar la respuesta exitosa aquí
                 if (response.data.success) {
-                    alertMsj('Sesión iniciada con éxito', 300)
+                    alertMsj('Sesión iniciada con éxito', 'success', 300)
                     setTimeout(() => {
                         window.location.href = response.data.redirectUrl;
                     }, 300)
@@ -35,7 +35,7 @@ formLogin.addEventListener('submit', (event) => {
                 }
             })
             .catch(error => {
-                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde', 'error')
                 console.log("Error atrapado:", error);
             });
 

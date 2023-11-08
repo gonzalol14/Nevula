@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\css\\help.css"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\main.css",
       "PackagePath": "staticwebassets\\css\\main.css"
     },
@@ -57,8 +61,20 @@
       "PackagePath": "staticwebassets\\images\\Logo_Nevula2.png"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal.png",
+      "PackagePath": "staticwebassets\\images\\imagen_temporal.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal3.png",
+      "PackagePath": "staticwebassets\\images\\imagen_temporal3.png"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1015\\profile_pic.webp",
       "PackagePath": "staticwebassets\\images\\profiles\\1015\\profile_pic.webp"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1016\\profile_pic.webp",
+      "PackagePath": "staticwebassets\\images\\profiles\\1016\\profile_pic.webp"
     },
     {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.jpg",

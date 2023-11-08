@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bD6WzR6x4ThyK540uh++AnSV/ZdwwLpKqQtAVo8Eq7c=",
+  "Hash": "EHcU3mq7eC79rgucBaf1ON8b2wN0W81YCyvUkiCBBPA=",
   "Source": "NevulaForo",
   "BasePath": "_content/NevulaForo",
   "Mode": "Default",
@@ -153,6 +153,23 @@
       "OriginalItemSpec": "wwwroot\\css\\help.css"
     },
     {
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\home.css",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "css/home.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\home.css"
+    },
+    {
       "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\main.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
@@ -221,6 +238,40 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal.png",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "images/imagen_temporal.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\imagen_temporal.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal3.png",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "images/imagen_temporal3.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\imagen_temporal3.png"
+    },
+    {
       "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_LineaB.png",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
@@ -287,6 +338,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\profiles\\1015\\profile_pic.webp"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1016\\profile_pic.webp",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "images/profiles/1016/profile_pic.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\1016\\profile_pic.webp"
     },
     {
       "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.jpg",

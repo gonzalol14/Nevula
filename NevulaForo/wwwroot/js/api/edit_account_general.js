@@ -101,7 +101,7 @@ formEditGeneral.addEventListener('submit', (event) => {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    alertMsj('Perfil actualizado correctamente')
+                    alertMsj('Perfil actualizado correctamente', 'success')
 
                     submitButton.disabled = true
                     //Actualizo los originalFormValues porque el usuario cambio sus datos fue actualizado
@@ -124,7 +124,7 @@ formEditGeneral.addEventListener('submit', (event) => {
                 }
             })
             .catch(error => {
-                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde', 'error')
                 console.log("Error atrapado:", error);
             });
     }

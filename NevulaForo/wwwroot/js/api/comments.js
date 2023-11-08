@@ -30,7 +30,7 @@ formCreateComment.addEventListener('submit', (event) => {
                 // Manejar la respuesta exitosa aquí
                 if (response.data.success) {
                     //Data totalmente dinamico en publication.js, falta que se actualicen los eventListener, pero paja
-                    alertMsj('Comentario publicado con éxito', 300)
+                    alertMsj('Comentario publicado con éxito', 'success', 300)
                     setTimeout(() => {
                         location.reload();
                     }, 300)
@@ -40,7 +40,7 @@ formCreateComment.addEventListener('submit', (event) => {
                         const errorMessage = response.data.errors[fieldName].join('\n');
 
                         if (fieldName == 'errorGeneral') {
-                            alertMsj(errorMessage)
+                            alertMsj(errorMessage, 'error')
                         } else {
                             failValidation(comment, errorMessage)
                         }
@@ -49,7 +49,7 @@ formCreateComment.addEventListener('submit', (event) => {
                 }
             })
             .catch(error => {
-                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde', 'error')
                 console.log("Error atrapado:", error);
             });
     }
@@ -68,7 +68,7 @@ deleteComments.forEach((deleteComment) => {
                 if (response.data.success) {
                     deleteComment.parentElement.parentElement.parentElement.remove()
 
-                    alertMsj('Comentario eliminado con éxito')
+                    alertMsj('Comentario eliminado con éxito', 'success')
 
                     const spanCantComments = document.getElementById('span_cant-comments')
 
@@ -80,10 +80,12 @@ deleteComments.forEach((deleteComment) => {
                     } else {
                         spanCantComments.innerText = `${cantComments} Comentario`
                     }
-                } 
+                } else {
+                    alertMsj(response.data.error, 'error', 1500)
+                }
             })
             .catch(error => {
-                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde', 'error')
                 console.log("Error atrapado:", error);
             });
     })

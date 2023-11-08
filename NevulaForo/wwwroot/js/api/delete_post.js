@@ -12,14 +12,16 @@ if (pathSegments == 'Publication/Index') {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    alertMsj('Publicación eliminada con éxito', 300)
+                    alertMsj('Publicación eliminada con éxito', 'success', 300)
                     setTimeout(() => {
                         window.location.href = response.data.redirectUrl;
                     }, 300)
+                } else {
+                    alertMsj(response.data.error, 'error', 1500)
                 }
             })
             .catch(error => {
-                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde', 'error')
                 console.log("Error atrapado:", error);
             });
     });
@@ -36,12 +38,14 @@ if (pathSegments == 'Publication/Index') {
                     // Manejar la respuesta exitosa aquí
                     console.log(response.data)
                     if (response.data.success) {
-                        alertMsj('Publicación eliminada con éxito')
+                        alertMsj('Publicación eliminada con éxito', 'success')
                         deletePost.parentElement.parentElement.parentElement.remove()
+                    } else {
+                        alertMsj(response.data.error, 'error', 1500)
                     }
                 })
                 .catch(error => {
-                    alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
+                    alertMsj('Ocurrió un error inesperado. Intentelo más tarde', 'error')
                     console.log("Error atrapado:", error);
                 });
         })

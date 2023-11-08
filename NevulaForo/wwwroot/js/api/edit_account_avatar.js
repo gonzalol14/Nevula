@@ -39,7 +39,7 @@ avatar_input.addEventListener("change", () => {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    alertMsj('Avatar actualizado con éxito')
+                    alertMsj('Avatar actualizado con éxito', 'success')
 
                     const imagenes = document.querySelectorAll('.profile_pic-edit-avatar')
 
@@ -61,7 +61,7 @@ avatar_input.addEventListener("change", () => {
                 }
             })
             .catch(error => {
-                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde', 'error')
                 console.log("Error atrapado:", error);
             });
     }
@@ -75,7 +75,7 @@ deleteAvatar.addEventListener('click', (event) => {
             // Manejar la respuesta exitosa aquí
             console.log(response.data)
             if (response.data.success) {
-                alertMsj('Avatar eliminado con éxito')
+                alertMsj('Avatar eliminado con éxito', 'success')
 
                 const imagenes = document.querySelectorAll('.profile_pic-edit-avatar')
 
@@ -88,7 +88,7 @@ deleteAvatar.addEventListener('click', (event) => {
             }
         })
         .catch(error => {
-            alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
+            alertMsj('Ocurrió un error inesperado. Intentelo más tarde', 'error')
             console.log("Error atrapado:", error);
         });
 })

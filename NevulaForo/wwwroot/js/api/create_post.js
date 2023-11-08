@@ -39,7 +39,7 @@ formCreatePost.addEventListener('submit', (event) => {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    alertMsj('Publicación creada con éxito', 300)
+                    alertMsj('Publicación creada con éxito', 'success', 300)
                     setTimeout(() => {
                         window.location.href = response.data.redirectUrl;
                     }, 300)
@@ -54,7 +54,7 @@ formCreatePost.addEventListener('submit', (event) => {
                 }
             })
             .catch(error => {
-                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde', 'error')
                 console.log("Error atrapado:", error);
             });
     }

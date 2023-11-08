@@ -155,14 +155,14 @@
     border-bottom:none;
 }
 
-    .quoted_comment_alert p {
-        font-size: 14px;
-    }
+.quoted_comment_alert p {
+    font-size: 14px;
+}
 
-    .quoted_comment_alert button {
-        border-radius: 50%;
-        padding: 2.5px 5px;
-    }
+.quoted_comment_alert button {
+    border-radius: 50%;
+    padding: 2.5px 5px;
+}    
 
 #username_quoted_comment {
     font-weight: 600;

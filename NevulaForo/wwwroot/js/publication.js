@@ -70,6 +70,12 @@ function handleReplyLinkClick(event) {
 
                 $(commentForm.parentNode).before(alert)
 
+                setTimeout(function () {
+                    const quotedCommentAlert = document.getElementById("quoted_comment_alert");
+                    quotedCommentAlert.style.maxHeight = 100 + "px";
+                    quotedCommentAlert.classList.add("active");
+                }, 0);
+
                 document.getElementById("Description").focus()
 
                 const buttonCloseAlert = document.getElementById('close_quoted_alert')
@@ -80,9 +86,6 @@ function handleReplyLinkClick(event) {
             }
         }
     }
-
-    // Otros pasos que puedas necesitar realizar al hacer clic en "Responder"
-
     // Evitar que el enlace lleve a otra página
     event.preventDefault();
 }

@@ -38,7 +38,7 @@ formEditGeneral.addEventListener('submit', (event) => {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    alertMsj('Contraseña actualizada correctamente')
+                    alertMsj('Contraseña actualizada correctamente', 'success')
                 } else {
                     if (response.data.redirectUrl != null) {
                         window.location.href = response.data.redirectUrl
@@ -54,7 +54,7 @@ formEditGeneral.addEventListener('submit', (event) => {
                 }
             })
             .catch(error => {
-                alertMsj('Ocurrió un error inesperado. Intentelo más tarde')
+                alertMsj('Ocurrió un error inesperado. Intentelo más tarde', 'error')
                 console.log("Error atrapado:", error);
             });
     }
