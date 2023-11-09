@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\account.css"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\users.css",
+      "PackagePath": "staticwebassets\\css\\admin\\users.css"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\community.css",
       "PackagePath": "staticwebassets\\css\\community.css"
     },

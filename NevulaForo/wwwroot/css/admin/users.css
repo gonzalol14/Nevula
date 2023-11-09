@@ -1,0 +1,44 @@
+﻿.container__users {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.container__perfil {
+    width: 300px;
+    margin-top: 0;
+}
+
+.container_info {
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.container_info-data {
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container__profile-picture img {
+    width: 125px;
+    height: 125px;
+    border-radius: 1.25rem;
+}
+
+.container_name {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+.container_name a:hover {
+    text-decoration: underline;
+}
+
+.text-username {
+    color: grey;
+    font-size: 16px;
+}

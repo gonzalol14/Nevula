@@ -54,16 +54,7 @@
     }
 
     <div class="container__description">
-
-        @if (Model.oUser.Description != null) 
-        { 
-            <p>@Model.oUser.Description</p>
-
-        } else 
-        {
-            <p>Aún no hay descripción</p>
-        }
-
+        <p>@((Model.oUser.Description != null) ? Model.oUser.Description : "Aún no hay descripción")</p>
     </div>
 
     <div class="container__interaction">

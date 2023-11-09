@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fo3xg/OLLqz3PepB6oNWEY7SRMNGd/g/nganDxhKmCk=",
+  "Hash": "w7SlEvT6gXuunlVCYamZpAOcGGOrCjQGJkQHDroj5m8=",
   "Source": "NevulaForo",
   "BasePath": "_content/NevulaForo",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\account.css"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\users.css",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "css/admin/users.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin\\users.css"
     },
     {
       "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\community.css",
