@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EHcU3mq7eC79rgucBaf1ON8b2wN0W81YCyvUkiCBBPA=",
+  "Hash": "fo3xg/OLLqz3PepB6oNWEY7SRMNGd/g/nganDxhKmCk=",
   "Source": "NevulaForo",
   "BasePath": "_content/NevulaForo",
   "Mode": "Default",
@@ -355,6 +355,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\profiles\\1016\\profile_pic.webp"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\3\\profile_pic.png",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "images/profiles/3/profile_pic.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\3\\profile_pic.png"
     },
     {
       "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.jpg",

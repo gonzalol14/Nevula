@@ -77,6 +77,10 @@
       "PackagePath": "staticwebassets\\images\\profiles\\1016\\profile_pic.webp"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\3\\profile_pic.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\3\\profile_pic.png"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.jpg",
       "PackagePath": "staticwebassets\\images\\profiles\\4\\profile_pic.jpg"
     },

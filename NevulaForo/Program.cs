@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +43,12 @@ builder.Services.AddControllersWithViews(options =>
             Location = ResponseCacheLocation.None
         });
 });
-/* /COOKIES */
+/* FIN COOKIES */
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("PolicyAdministrator", pol => pol.RequireClaim(ClaimTypes.Role, new string[] { "3" }));
+});
 
 builder.Services.AddHttpContextAccessor();
 

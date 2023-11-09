@@ -5,13 +5,16 @@
     var userIdClaim = User.FindFirst("Id");
     int IdUser = Convert.ToInt32(userIdClaim?.Value);
 
+    var userIdRole = User.FindFirst(System.Security.Claims.ClaimTypes.Role);
+    int IdRoleUser = Convert.ToInt32(userIdRole?.Value);
+
     var usernameClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
     string? Username = usernameClaim?.Value;
 
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,7 +64,10 @@
                         <ul class="container__dropdown--header dropdown dropdown-profile1">
                             <li><a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">VER PERFIL</a></li>
                             <li><a asp-controller="Account" asp-action="Edit" asp-route-type="General">EDITAR PERFIL</a></li>
-
+                            @if (IdRoleUser == 3)
+                            {
+                                <li><a asp-controller="Admin" asp-action="Users">ADMINISTRACIÓN</a></li>
+                            }
                             <li><a asp-controller="Access" asp-action="Logout">CERRAR SESIÓN</a></li>
                         </ul>
                     }
@@ -95,7 +101,10 @@
                     <ul class="container__dropdown--header dropdown dropdown-profile2">
                         <li><a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">VER PERFIL</a></li>
                         <li><a asp-controller="Account" asp-action="Edit" asp-route-type="General" >EDITAR PERFIL</a></li>
-
+                        @if (IdRoleUser == 3)
+                        {
+                            <li><a asp-controller="Admin" asp-action="Users">ADMINISTRACIÓN</a></li>
+                        }
                         <li><a asp-controller="Access" asp-action="Logout">CERRAR SESIÓN</a></li>
                     </ul>
                 
