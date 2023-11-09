@@ -25,7 +25,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddScoped<UserService>();
 
-/* COOKIES */
+// Cookies
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -43,12 +43,14 @@ builder.Services.AddControllersWithViews(options =>
             Location = ResponseCacheLocation.None
         });
 });
-/* FIN COOKIES */
+// Fin de cookies
 
+// Policies
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("PolicyAdministrator", pol => pol.RequireClaim(ClaimTypes.Role, new string[] { "3" }));
 });
+//Fin de policies
 
 builder.Services.AddHttpContextAccessor();
 
