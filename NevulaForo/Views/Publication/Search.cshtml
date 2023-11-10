@@ -16,18 +16,8 @@
     <link rel="stylesheet" href="~/css/search.css" asp-append-version="true" />
 }
 
-<!--
-<aside class="aside__menu-searches main__containers-community">
-    <ul class="submenu__searches">
-        <li class="submenu__searches-item">
-            <a class="btn_search-posts " asp-controller="Publication" asp-action="Search" asp-route-search="@Model.Search" asp-route-for="posts">PUBLICACIONES</a>
-        </li>
-        <li class="submenu__searches-item">
-            <a class="btn_search-accounts " asp-controller="Publication" asp-action="Search" asp-route-search="@Model.Search" asp-route-for="accounts">CUENTAS</a>
-        </li>
-    </ul>
-</aside>
--->
+<!--ASIDE EN LAYOUT ("~/Views/Shared/_Layout.cshtml")-->
+
 @if ((Model.Users != null && Model.Users.Count > 0) || (Model.Publications != null && Model.Publications.Count > 0))
 {
     @if (Model.For == "posts")

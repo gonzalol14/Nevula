@@ -30,6 +30,12 @@
     position: relative;
 }
 
+.article__admin.publications {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .submenu__admin {
     display: flex;
     justify-content: space-around;
@@ -90,6 +96,19 @@
 
     .submenu__admin.no-scrollbar::-webkit-scrollbar {
         display: none;
+    }
+
+.btn-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5.5px;
+    border-radius: 50%;
+    background: #F0F0F0;
+    color: red;
+}
+    .btn-delete:hover {
+        background: #EAEAEA;
     }
 
 @media (max-width: 576px) {

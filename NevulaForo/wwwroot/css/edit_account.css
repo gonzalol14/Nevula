@@ -293,6 +293,9 @@
         color: red;
         background: #ECECEC;
     }
+#edit_avatar-delete i {
+    font-size: 15px;
+}
 
 .field-validation-error.msj_error_avatar {
     margin-top: 20px;

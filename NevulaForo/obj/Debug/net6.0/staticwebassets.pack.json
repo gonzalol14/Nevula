@@ -109,6 +109,10 @@
       "PackagePath": "staticwebassets\\js\\admin\\main.js"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\users.js",
+      "PackagePath": "staticwebassets\\js\\admin\\users.js"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\comments.js",
       "PackagePath": "staticwebassets\\js\\api\\comments.js"
     },

@@ -1,9 +1,78 @@
-﻿
+﻿@model List<NevulaForo.Models.DB.Publication>
+
+@using NevulaForo.Resources;
+@using NevulaForo.Services.Implementation;
+@inject UserService UserService;
 @{
     ViewData["Title"] = "Administración publicaciones";
     ViewData["Type"] = "publications";
     Layout = "~/Views/Admin/_Layout.cshtml";
 }
 
-<h1>Publications</h1>
+@foreach (var publication in Model)
+{
 
+    <article class="main__containers-community" id="publication_@publication.Id">
+        <div class="container__info">
+            <div class="container__profile-pic">
+                <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">
+                    <img src="@UserService.GetUserProfileImagePath(publication.IdUser)" alt="">
+                </a>
+            </div>
+
+            <div class="container__username">
+                <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">@publication.IdUserNavigation.Username</a>
+            </div>
+
+            @if (publication.IdUserNavigation.UserRoles.First().IdRole == 2)
+            {
+                <!-- Esto depende si esta o no verificado -->
+                <div class="container__verify" id="container__verify-1">
+                    <span class="verify">VERIFICADO</span>
+                    <span class="small-verify">V</span>
+                    <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+                </div>
+            }
+
+            <span class="separator__info">·</span>
+
+            <div class="container__date">
+                <span>@Utilities.StylizeDate(publication.CreatedAt)</span>
+            </div>
+        </div>
+
+        <div class="container__content-post">
+            <h2 class="title--post">@publication.Title</h2>
+            <p class="content--post">@publication.Description</p>
+            <div class="container__imgs"></div>
+        </div>
+
+        <div class="container__feedback">
+            <div>
+                <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index">
+                    <i class="bi bi-chat"></i>
+                    <span>@publication.Comments.Count @((@publication.Comments.Count == 1) ? "Comentario" : "Comentarios")</span>
+                </a>
+            </div>
+
+            <div>
+                <button type="button" class="btn_manage btn-delete" id="btn_account_delete-@publication.Id">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M4 7l16 0"></path>
+                        <path d="M10 11l0 6"></path>
+                        <path d="M14 11l0 6"></path>
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </article>
+}
+
+
+@section Scripts {
+    <script src="~/js/community.js" asp-append-version="true"></script>
+}

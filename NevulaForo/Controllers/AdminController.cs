@@ -24,7 +24,7 @@ namespace NevulaForo.Controllers
             ClaimsPrincipal claimUser = HttpContext.User;
             int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
 
-            List<User> accounts = _DBContext.Users
+            List<User> lstaccounts = _DBContext.Users
                                     .Include(u => u.UserRoles)
                                     .Where(u => u.DeletedAt == null && u.Id != IdUser)
                                     .Select(u => new User
@@ -39,11 +39,32 @@ namespace NevulaForo.Controllers
                                         UserRoles = u.UserRoles
                                     })
                                     .ToList();
-            return View(accounts);
+
+            return View(lstaccounts);
         }
         public IActionResult Publications()
         {
-            return View();
+            ClaimsPrincipal claimUser = HttpContext.User;
+            int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+
+            List<Publication> lstPosts = _DBContext.Publications
+                                            .Include(u => u.IdUserNavigation)
+                                                .ThenInclude(u => u.UserRoles)
+                                            .Include(c => c.Comments)
+                                            .Where(p => p.DeletedAt == null && p.IdUser != IdUser && p.IdUserNavigation.DeletedAt == null )
+                                            .Select(p => new Publication
+                                            {
+                                                Id = p.Id,
+                                                IdUser = p.IdUser,
+                                                Title = p.Title,
+                                                Description = p.Description,
+                                                CreatedAt = p.CreatedAt,
+                                                Comments = p.Comments.Where(comment => comment.DeletedAt == null && comment.IdUserNavigation.DeletedAt == null).ToList(),
+                                                IdUserNavigation = p.IdUserNavigation
+                                            })
+                                            .OrderByDescending(p => p.CreatedAt)
+                                            .ToList();
+            return View(lstPosts);
         }
 
         public IActionResult Comments()
