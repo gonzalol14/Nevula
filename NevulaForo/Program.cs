@@ -48,7 +48,7 @@ builder.Services.AddControllersWithViews(options =>
 // Policies
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("PolicyAdministrator", pol => pol.RequireClaim(ClaimTypes.Role, new string[] { "3" }));
+    options.AddPolicy("PolicyAdministrator", pol => pol.RequireClaim(ClaimTypes.Role, new string[] { "3", "4" }));
 });
 //Fin de policies
 

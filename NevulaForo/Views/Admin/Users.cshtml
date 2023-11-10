@@ -4,6 +4,9 @@
 @using NevulaForo.Services.Implementation;
 @inject UserService UserService;
 @{
+    var userIdRole = User.FindFirst(System.Security.Claims.ClaimTypes.Role);
+    int IdRoleUser = Convert.ToInt32(userIdRole?.Value);
+
     ViewData["Title"] = "Administración usuarios";
     ViewData["Type"] = "users";
     Layout = "~/Views/Admin/_Layout.cshtml";
@@ -14,42 +17,50 @@
 <div class="container__users">
     @foreach (var account in Model)
     {
-        <article class="container__perfil" id="account_@account.Id">
-            <div class="container_info">
-                <div class="container_info-data">
-                    <div class="container__profile-picture">
-                        <img src="@UserService.GetUserProfileImagePath(account.Id)" alt="Foto de perfil de usuario">
-                    </div>
-                    <div class="container_name">
-                        <a asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@account.Name @account.Surname</a>
-                        <span class="separator__info">·</span>
-                        <a class="text-username" asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@@@account.Username</a>
-                    </div>
-                    <div class="container_description">
-                        <p class="">@((account.Description != null) ? account.Description : "Aún no hay descripción")</p>
-                    </div>
+        @if (account.UserRoles.First().IdRole != 4)
+        {
+            <article class="container__perfil" id="account_@account.Id">
+                <div class="container_info">
+                    <div class="container_info-data">
+                        <div class="container__profile-picture">
+                            <img src="@UserService.GetUserProfileImagePath(account.Id)" alt="Foto de perfil de usuario">
+                        </div>
+                        <div class="container_name">
+                            <a asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@account.Name @account.Surname</a>
+                            <span class="separator__info">·</span>
+                            <a class="text-username" asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@@@account.Username</a>
+                        </div>
+                        <div class="container_description">
+                            <p class="">@((account.Description != null) ? account.Description : "Aún no hay descripción")</p>
+                        </div>
 
-                    <div class="container__manage">
-                        <button type="button" class="btn_manage btn-verify @((account.UserRoles.First().IdRole == 2) ? "verified" : null)" id="btn_account_verify-@account.Id">V</button>
-                        <button type="button" class="btn_manage btn-administrator @((account.UserRoles.First().IdRole == 3) ? "administrator" : null)" id="btn_account_admin-@account.Id">A</button>
-                        <button type="button" class="btn_manage btn-delete" id="btn_account_delete-@account.Id">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M4 7l16 0"></path>
-                                <path d="M10 11l0 6"></path>
-                                <path d="M14 11l0 6"></path>
-                                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                            </svg>
-                        </button>
+                        <div class="container__manage">
+                            <button type="button" class="btn_manage btn-verify @((account.UserRoles.First().IdRole == 2) ? "verified" : null)" id="btn_account_verify-@account.Id">V</button>
+                            <button type="button" class="btn_manage btn-administrator @((account.UserRoles.First().IdRole == 3) ? "administrator" : null)" id="btn_account_admin-@account.Id" @((account.UserRoles.First().IdRole == 3 && IdRoleUser != 4) ? "disabled" : null)>A</button>
+                            <button type="button" class="btn_manage btn-delete" id="btn_account_delete-@account.Id">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M4 7l16 0"></path>
+                                    <path d="M10 11l0 6"></path>
+                                    <path d="M14 11l0 6"></path>
+                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        }
     }
 </div>
 
 
 @section Scripts {
     <script src="~/js/community.js" asp-append-version="true"></script>
+    <script src="~/js/admin/users.js" asp-append-version="true"></script>
+    @if(IdRoleUser == 4)
+    {
+        <script src="~/js/admin/superadmin_users.js" asp-append-version="true"></script>
+    }
 }

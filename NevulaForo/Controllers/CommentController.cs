@@ -29,9 +29,9 @@ namespace NevulaForo.Controllers
         {
             string[] errorGeneral = { "Error al intentar crear el comentario" };
 
-            viewmodel.IdPublication = Utilities.valueParameterId(new Uri(Request.Headers["Referer"].ToString()), "IdPublication");
+            int paramIdPublication = Utilities.valueParameterId(new Uri(Request.Headers["Referer"].ToString()), "IdPublication");
 
-            if(viewmodel.IdPublication == 0)
+            if(viewmodel.IdPublication == 0 && viewmodel.IdPublication != paramIdPublication)
             {
                 return Json(new { success = false, errors = new { errorGeneral = errorGeneral } });
             }

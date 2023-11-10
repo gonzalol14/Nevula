@@ -430,6 +430,7 @@ textarea {
     left: 0;
     right: 0;
     margin: auto;
+    z-index: 150;
 
     animation: shake 0.25s;
 }

@@ -4,7 +4,7 @@ formCreateComment.addEventListener('submit', (event) => {
     event.preventDefault()
 
     const comment = document.getElementById('Description');
-    //const idPublication = document.getElementById('IdPublication');
+    const idPublication = document.getElementById('IdPublication');
     const idFatherComment = document.getElementById('IdFatherComment');
 
     var validForm = 0;
@@ -22,10 +22,10 @@ formCreateComment.addEventListener('submit', (event) => {
 
     if (validForm == 1) {
         const commentValue = comment.value.trim() || null
-        //const idPublicationValue = idPublication.value || null
+        const idPublicationValue = idPublication.value || null
         const idFatherCommentValue = idFatherComment.value || null
 
-        axios.post('/Comment/CreateApi', { Description: commentValue, IdFatherComment: idFatherCommentValue })
+        axios.post('/Comment/CreateApi', { Description: commentValue, IdPublication: idPublicationValue,IdFatherComment: idFatherCommentValue })
             .then(response => {
                 // Manejar la respuesta exitosa aquí
                 if (response.data.success) {

@@ -64,7 +64,7 @@
                         <ul class="container__dropdown--header dropdown dropdown-profile1">
                             <li><a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">VER PERFIL</a></li>
                             <li><a asp-controller="Account" asp-action="Edit" asp-route-type="General">EDITAR PERFIL</a></li>
-                            @if (IdRoleUser == 3)
+                            @if (IdRoleUser > 2)
                             {
                                 <li><a asp-controller="Admin" asp-action="Users">ADMINISTRACIÓN</a></li>
                             }
@@ -101,7 +101,7 @@
                     <ul class="container__dropdown--header dropdown dropdown-profile2">
                         <li><a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">VER PERFIL</a></li>
                         <li><a asp-controller="Account" asp-action="Edit" asp-route-type="General" >EDITAR PERFIL</a></li>
-                        @if (IdRoleUser == 3)
+                        @if (IdRoleUser > 2)
                         {
                             <li><a asp-controller="Admin" asp-action="Users">ADMINISTRACIÓN</a></li>
                         }

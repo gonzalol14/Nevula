@@ -31,7 +31,7 @@ namespace NevulaForo.Controllers
         {
             UserProfileVM oUserProfile = new UserProfileVM()
             {
-                oUser = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.DeletedAt == null && u.Id == IdUser).ToList().FirstOrDefault(),
+                oUser = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.DeletedAt == null && u.Id == IdUser).FirstOrDefault(),
                 oPublications = _DBContext.Publications
                                         .Include(u => u.IdUserNavigation)
                                             .ThenInclude(u => u.UserRoles)

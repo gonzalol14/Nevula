@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NevulaForo.Models.DB;
 using System.Security.Claims;
+using System.Xml.Linq;
 
 namespace NevulaForo.Controllers
 {
@@ -74,11 +75,112 @@ namespace NevulaForo.Controllers
 
 
         //Acciones
-        [HttpPost]
-        //Deben enviar mails al usuario al que se le borra su cuenta, su publicacion o su comentario
-        public IActionResult DeleteUser()
+        [HttpGet]
+        public async Task<JsonResult> VerifyUser(int IdUser, bool isVerified)
         {
-            return View();
+            ClaimsPrincipal claimUser = HttpContext.User;
+            int IdRoleUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault());
+
+            UserRole? userRole = _DBContext.UserRoles.FirstOrDefault(ur => ur.IdUser == IdUser);
+            if(userRole != null) 
+            {
+                if (userRole.IdRole == 4)
+                {
+                    return Json(new { success = false, error = "No es posible modificar roles de super-admins" });
+                }
+                if(userRole.IdRole == 3 && IdRoleUser != 4)
+                {
+                    return Json(new { success = false, error = "Solo los super-admins pueden cambiar el rol admin" });
+                }
+
+                if (isVerified)
+                {
+                    //Sacar el verificado
+                    userRole.IdRole = 1;
+                    userRole.ModifiedAt = DateTime.Now;
+                } else
+                {
+                    //Agregar el verificado
+                    userRole.IdRole = 2;
+                    userRole.ModifiedAt = DateTime.Now;
+                }
+                _DBContext.Update(userRole);
+                await _DBContext.SaveChangesAsync();
+
+                return Json(new { success = true });
+            }
+
+            return Json(new { success = false, error = "Error al intentar cambiar el verificado" });
+        }
+        [HttpGet]
+        public async Task<JsonResult> AdminUser(int IdUser, bool isAdmin)
+        {
+            ClaimsPrincipal claimUser = HttpContext.User;
+            int IdRoleUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault());
+
+            UserRole? userRole = _DBContext.UserRoles.FirstOrDefault(ur => ur.IdUser == IdUser);
+            if (userRole != null)
+            {
+                if (userRole.IdRole == 4)
+                {
+                    return Json(new { success = false, error = "No es posible modificar roles de super-admins" });
+                }
+                if (userRole.IdRole == 3 && IdRoleUser != 4)
+                {
+                    return Json(new { success = false, error = "Solo los super-admins pueden cambiar el rol admin" });
+                }
+
+                if (isAdmin)
+                {
+                    //Eliminar el rol admin
+                    userRole.IdRole = 1;
+                    userRole.ModifiedAt = DateTime.Now;
+                } else
+                {
+                    //Agregar el rol admin
+                    userRole.IdRole = 3;
+                    userRole.ModifiedAt = DateTime.Now;
+                }
+
+                _DBContext.Update(userRole);
+                await _DBContext.SaveChangesAsync();
+
+                return Json(new { success = true });
+            }
+
+            return Json(new { success = false, error = "Error al intentar cambiar el rol de admin" });
+        }
+
+
+        [HttpGet]
+        //Deben enviar mails al usuario al que se le borra su cuenta, su publicacion o su comentario
+        public async Task<JsonResult> DeleteUser(int IdUser)
+        {
+            ClaimsPrincipal claimUser = HttpContext.User;
+            int IdRoleUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault());
+
+            User? user = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.DeletedAt == null && u.Id == IdUser).FirstOrDefault();
+
+            if (user != null)
+            {
+                if (user.UserRoles.First().IdRole == 4)
+                {
+                    return Json(new { success = false, error = "No es posible eliminar un super-admin" });
+                }
+                if (user.UserRoles.First().IdRole == 3 && IdRoleUser != 4)
+                {
+                    return Json(new { success = false, error = "Solo los super-admins pueden eliminar usuarios admins" });
+                }
+
+                user.DeletedAt = DateTime.Now.AddDays(-31);
+
+                _DBContext.Update(user);
+                await _DBContext.SaveChangesAsync();
+
+                return Json(new { success = true });
+            }
+
+            return Json(new { success = false, error = "Error al intentar eliminar usuario" });
         } 
 
         [HttpPost]
