@@ -158,6 +158,7 @@ body {
 
 .title--post {
     margin-bottom: .5rem;
+    word-break: break-word;
 }
 
 .content--post {

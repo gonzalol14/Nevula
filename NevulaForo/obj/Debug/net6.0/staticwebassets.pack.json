@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\css\\account.css"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\main.css",
+      "PackagePath": "staticwebassets\\css\\admin\\main.css"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\publications.css",
+      "PackagePath": "staticwebassets\\css\\admin\\publications.css"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\users.css",
       "PackagePath": "staticwebassets\\css\\admin\\users.css"
     },
@@ -95,6 +103,10 @@
     {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\default.jpg",
       "PackagePath": "staticwebassets\\images\\profiles\\default.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\main.js",
+      "PackagePath": "staticwebassets\\js\\admin\\main.js"
     },
     {
       "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\comments.js",

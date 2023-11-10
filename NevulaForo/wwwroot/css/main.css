@@ -158,7 +158,7 @@ header {
         display: block;
         left: -100%;
         width: 100%;
-        height: 100vh;
+        height: calc(100vh - 4rem);
         transition: all .5s ease;
         max-width: 420px;
         position: absolute;
@@ -327,6 +327,10 @@ textarea {
         .container__dropdown--header > li > a:hover {
             background: rgb(31, 56, 79);
         }
+
+    #container_dropdown-profile2 .dropdown-profile2 {
+        right: 138px;
+    }
 
 @media (max-width: 1140px) {
     .container__dropdown--header {

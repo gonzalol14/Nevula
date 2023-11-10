@@ -4,15 +4,12 @@
 @using NevulaForo.Services.Implementation;
 @inject UserService UserService;
 @{
-    ViewData["Title"] = "Users";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Administración usuarios";
+    ViewData["Type"] = "users";
+    Layout = "~/Views/Admin/_Layout.cshtml";
 }
 
-@section Styles {
-    <link rel="stylesheet" href="~/css/community.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/admin/users.css" asp-append-version="true" />
-}
+
 
 <div class="container__users">
     @foreach (var account in Model)
@@ -24,7 +21,7 @@
                         <img src="@UserService.GetUserProfileImagePath(account.Id)" alt="Foto de perfil de usuario">
                     </div>
                     <div class="container_name">
-                        <a asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">Juan Perez</a>
+                        <a asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@account.Name @account.Surname</a>
                         <span class="separator__info">·</span>
                         <a class="text-username" asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@@@account.Username</a>
                     </div>
@@ -41,5 +38,4 @@
 
 @section Scripts {
     <script src="~/js/community.js" asp-append-version="true"></script>
-    <script src="~/js/search.js" asp-append-version="true"></script>
 }

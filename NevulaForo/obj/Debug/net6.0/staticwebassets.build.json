@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w7SlEvT6gXuunlVCYamZpAOcGGOrCjQGJkQHDroj5m8=",
+  "Hash": "z6Ow37JkSJmL2dK7JTAjxvt0V3t152T5Qrljm+TZ9Q4=",
   "Source": "NevulaForo",
   "BasePath": "_content/NevulaForo",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\account.css"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\main.css",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "css/admin/main.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin\\main.css"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\publications.css",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "css/admin/publications.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin\\publications.css"
     },
     {
       "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\users.css",
@@ -440,6 +474,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\profiles\\default.jpg"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\main.js",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "js/admin/main.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\admin\\main.js"
     },
     {
       "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\comments.js",

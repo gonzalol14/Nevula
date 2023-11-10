@@ -4,13 +4,9 @@
 @using NevulaForo.Services.Implementation;
 @inject UserService UserService;
 @{
-    if (Model.For == "posts")
-    {
-        ViewData["Title"] = "Buscar publicaciones";
-    } else
-    {
-        ViewData["Title"] = "Buscar cuentas";
-    }
+
+    ViewData["Title"] = (Model.For == "posts") ? "Buscar publicaciones" : "Buscar cuentas";
+    ViewData["Section"] = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -20,6 +16,7 @@
     <link rel="stylesheet" href="~/css/search.css" asp-append-version="true" />
 }
 
+<!--
 <aside class="aside__menu-searches main__containers-community">
     <ul class="submenu__searches">
         <li class="submenu__searches-item">
@@ -30,7 +27,7 @@
         </li>
     </ul>
 </aside>
-
+-->
 @if ((Model.Users != null && Model.Users.Count > 0) || (Model.Publications != null && Model.Publications.Count > 0))
 {
     @if (Model.For == "posts")

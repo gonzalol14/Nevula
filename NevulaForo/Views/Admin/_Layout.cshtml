@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Section"] = "Admin";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/community.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/admin/main.css" asp-append-version="true" />
+    @if (ViewData["Type"].ToString() == "users")
+    {
+        <link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/admin/users.css" asp-append-version="true" />
+    }
+}
+
+<article class="article__admin ">
+    @RenderBody()
+</article>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/main.js" asp-append-version="true"></script>
+<script src="~/js/admin/main.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+

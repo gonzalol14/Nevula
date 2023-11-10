@@ -1,15 +1,15 @@
 ﻿.container__users {
     display: grid;
     grid-template-columns: repeat(auto-fill, 300px);
-    justify-content: center;
     justify-items: center;
-    align-items: center;
+    align-items: stretch;
     gap: 20px;
-    margin-top: 20px;
 }
 
 .container__perfil {
     width: 300px;
+    align-items: center;
+    justify-content: center;
     margin-top: 0;
 }
 
@@ -31,8 +31,12 @@
 
 .container_name {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    gap: 7px;
     margin-left: 0;
+    word-break: initial;
 }
 .container_name a:hover {
     text-decoration: underline;
@@ -41,4 +45,28 @@
 .text-username {
     color: grey;
     font-size: 16px;
+}
+
+.separator__info{
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .article__admin {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 576px) {
+    .container__users {
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, 100%);
+        justify-content: center;
+    }
+
+    .container__perfil {
+        width: 100%;
+        border: none;
+    }
 }

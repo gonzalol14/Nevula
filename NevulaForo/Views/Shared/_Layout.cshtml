@@ -119,6 +119,43 @@
         </div>
     </header>
 
+    @if (ViewData["Section"] != null)
+    {
+        @if (ViewData["Section"].ToString() == "Search")
+        {
+            <aside class="aside__menu-searches main__containers-community">
+                <ul class="submenu__searches">
+                    <li class="submenu__searches-item">
+                        <a class="btn_search-posts " asp-controller="Publication" asp-action="Search" asp-route-search="@Model.Search" asp-route-for="posts">PUBLICACIONES</a>
+                    </li>
+                    <li class="submenu__searches-item">
+                        <a class="btn_search-accounts " asp-controller="Publication" asp-action="Search" asp-route-search="@Model.Search" asp-route-for="accounts">CUENTAS</a>
+                    </li>
+                </ul>
+            </aside>
+        }
+        else
+        {
+            <aside class="aside__menu-admin main__containers-community">
+                <button class="arrow-button" id="left-arrow"><i class="bi bi-arrow-left-short"></i></button>
+                <ul class="submenu__admin ">
+                    <li>
+                        <a class="btn_admin-users type-admin " asp-area="" asp-controller="Admin" asp-action="Users">USUARIOS</a>
+                    </li>
+                    <li>
+                        <a class="btn_admin-publications type-admin " asp-area="" asp-controller="Admin" asp-action="Publications">PUBLICACIONES</a>
+                    </li>
+                    <li>
+                        <a class="btn_admin-comments type-admin " asp-area="" asp-controller="Admin" asp-action="Comments">COMENTARIOS</a>
+                    </li>
+                </ul>
+                <button class="arrow-button" id="right-arrow"><i class="bi bi-arrow-right-short"></i></button>
+            </aside>
+        }
+
+    }
+
+
     <!-- CONTENIDO PRINCIPAL -->
     <main class="container" role="main">
         @RenderBody()

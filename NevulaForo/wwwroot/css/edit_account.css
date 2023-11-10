@@ -1,4 +1,8 @@
 ﻿/************ Editar cuenta *********************/
+.main__containers-community {
+    width: 100%;
+    margin-top: 0;
+}
 
 .title__edit {
     margin-bottom: 20px;
@@ -6,11 +10,15 @@
 
 .container__edit {
     display: flex;
+    margin-top: 1.25rem;
+    gap: 1.25rem;
 }
 
 .aside__menu-edit {
-    width: 200px;
-    margin-right: 1.2rem;
+    max-width: 200px;
+    position: sticky;
+    top: 4rem;
+    z-index: 100;
     padding: 0; /* 1.25rem 0 */
 
     overflow: hidden;
@@ -49,6 +57,40 @@
     .submenu__edit-profile a:hover {
         color: black;
         border-left: 3px solid #FFA425;
+    }
+
+.arrow-button {
+    display: none;
+    position: absolute;
+    top: 17px;
+    border-radius: 50%;
+    color: white;
+    padding: 3.5px 6px;
+    font-size: 15px;
+    backdrop-filter: blur(4px);
+    background: rgba(15, 20, 25, 0.75);
+}
+
+    .arrow-button:hover {
+        background: rgba(39, 44, 48, 0.75);
+    }
+
+#left-arrow {
+    display: none;
+    left: 5px;
+}
+
+#right-arrow {
+    right: 5px;
+}
+
+
+.submenu__edit-profile.no-scrollbar {
+    overflow-y: scroll;
+}
+
+    .submenu__edit-profile.no-scrollbar::-webkit-scrollbar {
+        display: none;
     }
 
 .form-group {
@@ -256,46 +298,6 @@
     margin-top: 20px;
 }
 
-
-
-
-.aside__menu-edit {
-    position: relative;
-}
-
-.arrow-button {
-    display: none;
-    position: absolute;
-    top: 17px;
-    border-radius: 50%;
-    color: white;
-    padding: 3.5px 6px;
-    font-size: 15px;
-
-    backdrop-filter: blur(4px);
-    background: rgba(15, 20, 25, 0.75);
-}
-    .arrow-button:hover {
-        background: rgba(39, 44, 48, 0.75);
-    }
-
-#left-arrow {
-    display: none;
-    left: 5px;
-}
-
-#right-arrow {
-    right: 5px;
-}
-
-
-.submenu__edit-profile.no-scrollbar {
-    overflow-y: scroll;
-}
-    .submenu__edit-profile.no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-
 .btn_disable {
     display: flex;
     justify-content: center;
@@ -338,13 +340,19 @@
 
 /**** RESPONSIVE ***/
 @media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
     .container__edit {
         flex-direction: column;
+        align-items: center;
+        margin-top: 0;
     }
 
     .aside__menu-edit {
+        max-width: none;
         width: 100%;
-        margin-right: 1.2rem;
         padding: 0;
     }
 
@@ -371,12 +379,6 @@
 
     .article__edit {
         width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    .aside__menu-edit {
-        margin-right: 0;
     }
 }
 
