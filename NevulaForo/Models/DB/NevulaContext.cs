@@ -133,6 +133,9 @@ public partial class NevulaContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("email");
+            entity.Property(e => e.IsBanned)
+                .HasColumnType("bit")
+                .HasColumnName("is_banned");
             entity.Property(e => e.Name)
                 .HasMaxLength(30)
                 .IsUnicode(false)

@@ -1,419 +1,403 @@
 {
   "Files": [
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NevulaForo.bundle.scp.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NevulaForo.bundle.scp.css",
       "PackagePath": "staticwebassets\\NevulaForo.bundle.scp.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\access.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\access.css",
       "PackagePath": "staticwebassets\\css\\access.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\account.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\account.css",
       "PackagePath": "staticwebassets\\css\\account.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\main.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\main.css",
       "PackagePath": "staticwebassets\\css\\admin\\main.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\publications.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\publications.css",
       "PackagePath": "staticwebassets\\css\\admin\\publications.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\users.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\users.css",
       "PackagePath": "staticwebassets\\css\\admin\\users.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\community.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\community.css",
       "PackagePath": "staticwebassets\\css\\community.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\create_publication.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\create_publication.css",
       "PackagePath": "staticwebassets\\css\\create_publication.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\edit_account.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\edit_account.css",
       "PackagePath": "staticwebassets\\css\\edit_account.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\help.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\help.css",
       "PackagePath": "staticwebassets\\css\\help.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\home.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\main.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\main.css",
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\publication.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\publication.css",
       "PackagePath": "staticwebassets\\css\\publication.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\search.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\search.css",
       "PackagePath": "staticwebassets\\css\\search.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_LineaB.png",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_LineaB.png",
       "PackagePath": "staticwebassets\\images\\Logo_LineaB.png"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_Nevula.png",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_Nevula.png",
       "PackagePath": "staticwebassets\\images\\Logo_Nevula.png"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_Nevula2.png",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_Nevula2.png",
       "PackagePath": "staticwebassets\\images\\Logo_Nevula2.png"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal.png",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal.png",
       "PackagePath": "staticwebassets\\images\\imagen_temporal.png"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal3.png",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal3.png",
       "PackagePath": "staticwebassets\\images\\imagen_temporal3.png"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1002\\profile_pic.png",
-      "PackagePath": "staticwebassets\\images\\profiles\\1002\\profile_pic.png"
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1\\profile_pic.webp",
+      "PackagePath": "staticwebassets\\images\\profiles\\1\\profile_pic.webp"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1015\\profile_pic.webp",
-      "PackagePath": "staticwebassets\\images\\profiles\\1015\\profile_pic.webp"
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.webp",
+      "PackagePath": "staticwebassets\\images\\profiles\\4\\profile_pic.webp"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1016\\profile_pic.webp",
-      "PackagePath": "staticwebassets\\images\\profiles\\1016\\profile_pic.webp"
-    },
-    {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\3\\profile_pic.png",
-      "PackagePath": "staticwebassets\\images\\profiles\\3\\profile_pic.png"
-    },
-    {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.jpg",
-      "PackagePath": "staticwebassets\\images\\profiles\\4\\profile_pic.jpg"
-    },
-    {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\5\\profile_pic.jpg",
-      "PackagePath": "staticwebassets\\images\\profiles\\5\\profile_pic.jpg"
-    },
-    {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\default.jpg",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\default.jpg",
       "PackagePath": "staticwebassets\\images\\profiles\\default.jpg"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\main.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\main.js",
       "PackagePath": "staticwebassets\\js\\admin\\main.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\superadmin_users.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\superadmin_users.js",
       "PackagePath": "staticwebassets\\js\\admin\\superadmin_users.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\users.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\users.js",
       "PackagePath": "staticwebassets\\js\\admin\\users.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\comments.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\comments.js",
       "PackagePath": "staticwebassets\\js\\api\\comments.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\create_post.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\create_post.js",
       "PackagePath": "staticwebassets\\js\\api\\create_post.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\delete_post.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\delete_post.js",
       "PackagePath": "staticwebassets\\js\\api\\delete_post.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_avatar.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_avatar.js",
       "PackagePath": "staticwebassets\\js\\api\\edit_account_avatar.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_general.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_general.js",
       "PackagePath": "staticwebassets\\js\\api\\edit_account_general.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_password.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_password.js",
       "PackagePath": "staticwebassets\\js\\api\\edit_account_password.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_post.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_post.js",
       "PackagePath": "staticwebassets\\js\\api\\edit_post.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\login.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\login.js",
       "PackagePath": "staticwebassets\\js\\api\\login.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\register.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\register.js",
       "PackagePath": "staticwebassets\\js\\api\\register.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\community.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\community.js",
       "PackagePath": "staticwebassets\\js\\community.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\edit_account.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\edit_account.js",
       "PackagePath": "staticwebassets\\js\\edit_account.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\functions.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\functions.js",
       "PackagePath": "staticwebassets\\js\\functions.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\help.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\help.js",
       "PackagePath": "staticwebassets\\js\\help.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\main.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\password.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\password.js",
       "PackagePath": "staticwebassets\\js\\password.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\publication.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\publication.js",
       "PackagePath": "staticwebassets\\js\\publication.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\search.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\search.js",
       "PackagePath": "staticwebassets\\js\\search.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

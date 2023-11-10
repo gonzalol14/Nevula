@@ -57,9 +57,13 @@ btnsDeleteAccount.forEach(btn => {
                 // Manejar la respuesta exitosa aquí
                 console.log(response.data)
                 if (response.data.success) {
-                    alertMsj('Usuario eliminado con éxito', 'success', 300)
+                    alertMsj(response.data.msj, 'success', 300)
                     //Cambiar estilos
-                    btn.parentNode.parentNode.parentNode.parentNode.remove()
+                    if (response.data.isBanned) {
+                        btn.classList.add('banned')
+                    } else {
+                        btn.classList.remove('banned')
+                    }
                 } else {
                     alertMsj(response.data.error, 'error', 1500)
                 }

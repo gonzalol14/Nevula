@@ -35,13 +35,13 @@ namespace NevulaForo.Controllers
                 oPublication = _DBContext.Publications
                                 .Include(u => u.IdUserNavigation)
                                     .ThenInclude(u => u.UserRoles)
-                                .Where(p => p.DeletedAt == null && p.Id == IdPublication)
+                                .Where(p => p.Id == IdPublication && p.DeletedAt == null && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null)
                                 .FirstOrDefault(),
                 oComments = _DBContext.Comments
                                 .Include(u => u.IdUserNavigation)
                                     .ThenInclude(u => u.UserRoles)
                                 .Include(c => c.IdFatherCommentNavigation)
-                                .Where(c => c.DeletedAt == null && c.IdPublication == IdPublication && c.IdUserNavigation.DeletedAt == null)
+                                .Where(c => c.DeletedAt == null && c.IdPublication == IdPublication && c.IdUserNavigation.DeletedAt == null && c.IdUserNavigation.IsBanned == null)
                                 .OrderByDescending(c => c.CreatedAt)
                                 .ToList()
             };
@@ -91,7 +91,7 @@ namespace NevulaForo.Controllers
             }
 
 
-            User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == IdUser).ToList().First();
+            User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null && u.IsBanned == null).ToList().First();
 
             Publication model = new Publication()
             {
@@ -170,7 +170,7 @@ namespace NevulaForo.Controllers
                     return Json(new { success = false, errors = errors });
                 }
 
-                User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == IdUser).ToList().First();
+                User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null && u.IsBanned == null).ToList().First();
 
                 model.Title = viewmodel.Title;
                 model.Description = viewmodel.Description;
@@ -227,7 +227,7 @@ namespace NevulaForo.Controllers
                                                 .Include(u => u.IdUserNavigation)
                                                     .ThenInclude(u => u.UserRoles)
                                                 .Include(c => c.Comments)
-                                                .Where(p => p.DeletedAt == null && p.IdUserNavigation.DeletedAt == null && EF.Functions.Like(p.Title, $"%{viewmodel.Search}%"))
+                                                .Where(p => p.DeletedAt == null && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null && EF.Functions.Like(p.Title, $"%{viewmodel.Search}%"))
                                                 .Select(p => new Publication
                                                 {
                                                     Id = p.Id,
@@ -235,7 +235,7 @@ namespace NevulaForo.Controllers
                                                     Title = p.Title,
                                                     Description = p.Description,
                                                     CreatedAt = p.CreatedAt,
-                                                    Comments = p.Comments.Where(comment => comment.DeletedAt == null && comment.IdUserNavigation.DeletedAt == null).ToList(),
+                                                    Comments = p.Comments.Where(comment => comment.DeletedAt == null && comment.IdUserNavigation.DeletedAt == null && comment.IdUserNavigation.IsBanned == null).ToList(),
                                                     IdUserNavigation = p.IdUserNavigation
                                                 })
                                                 .OrderByDescending(p => p.CreatedAt)
@@ -244,7 +244,7 @@ namespace NevulaForo.Controllers
             {
                 viewmodel.Users = _DBContext.Users
                                         .Include(u => u.UserRoles)
-                                        .Where(u => u.DeletedAt == null && EF.Functions.Like(u.Username, $"%{viewmodel.Search}%"))
+                                        .Where(u => u.DeletedAt == null && u.IsBanned == null && EF.Functions.Like(u.Username, $"%{viewmodel.Search}%"))
                                         .Select(u => new User
                                         {
                                             Id = u.Id,
@@ -253,7 +253,7 @@ namespace NevulaForo.Controllers
                                             Username = u.Username,
                                             Description = u.Description,
                                             CreatedAt = u.CreatedAt,
-                                            Publications = u.Publications.Where(post => post.DeletedAt == null && post.IdUserNavigation.DeletedAt == null).ToList(),
+                                            Publications = u.Publications.Where(post => post.DeletedAt == null && post.IdUserNavigation.DeletedAt == null && post.IdUserNavigation.IsBanned == null).ToList(),
                                             UserRoles = u.UserRoles
                                         })
                                         .ToList();

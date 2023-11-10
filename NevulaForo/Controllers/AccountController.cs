@@ -31,7 +31,7 @@ namespace NevulaForo.Controllers
         {
             UserProfileVM oUserProfile = new UserProfileVM()
             {
-                oUser = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.DeletedAt == null && u.Id == IdUser).FirstOrDefault(),
+                oUser = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.Id == IdUser && u.DeletedAt == null && u.IsBanned == null).FirstOrDefault(),
                 oPublications = _DBContext.Publications
                                         .Include(u => u.IdUserNavigation)
                                             .ThenInclude(u => u.UserRoles)
@@ -73,7 +73,7 @@ namespace NevulaForo.Controllers
             if (type == "General")
             {
 
-                User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
+                User user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null && u.IsBanned == null).FirstOrDefault();
 
                 GeneralEditUserVM viewmodel = new GeneralEditUserVM()
                 {
@@ -121,7 +121,7 @@ namespace NevulaForo.Controllers
             viewmodel.Id = Convert.ToInt32(claimUser.FindFirstValue("Id")); 
 
 
-            User? model = _DBContext.Users.Where(u => u.Id == viewmodel.Id && u.DeletedAt == null).FirstOrDefault();
+            User? model = _DBContext.Users.Where(u => u.Id == viewmodel.Id && u.DeletedAt == null && u.IsBanned == null).FirstOrDefault();
 
             if(model != null)
             {
@@ -192,7 +192,7 @@ namespace NevulaForo.Controllers
             }
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
-            User? user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
+            User? user = _DBContext.Users.Where(u => u.Id == IdUser && u.DeletedAt == null && u.IsBanned == null).FirstOrDefault();
 
             if (user != null)
             {
@@ -272,7 +272,7 @@ namespace NevulaForo.Controllers
             ClaimsPrincipal claimUser = HttpContext.User;
             int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
 
-            User? user = _DBContext.Users.SingleOrDefault(u => u.Id == IdUser && u.DeletedAt == null);
+            User? user = _DBContext.Users.SingleOrDefault(u => u.Id == IdUser && u.DeletedAt == null && u.IsBanned == null);
 
             if (user != null)
             {

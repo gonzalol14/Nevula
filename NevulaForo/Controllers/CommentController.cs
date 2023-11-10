@@ -56,7 +56,7 @@ namespace NevulaForo.Controllers
             }
 
             viewmodel.IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
-            User user = _DBContext.Users.Where(u => u.DeletedAt == null && u.Id == viewmodel.IdUser).ToList().First();
+            User user = _DBContext.Users.Where(u => u.Id == viewmodel.IdUser && u.DeletedAt == null && u.IsBanned == null).ToList().First();
 
             Comment model = new Comment()
             {

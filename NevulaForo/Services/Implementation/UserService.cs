@@ -17,7 +17,7 @@ namespace NevulaForo.Services.Implementation
 
         public async Task<User> GetUser(string email, string password)
         {
-            User user_found = await _dbContext.Users.Include(u => u.UserRoles).Where(u => u.Email == email && u.Password == password && (u.DeletedAt == null || u.DeletedAt > DateTime.Now.AddDays(-30)))
+            User user_found = await _dbContext.Users.Include(u => u.UserRoles).Where(u => u.Email == email && u.Password == password && (u.DeletedAt == null || u.DeletedAt > DateTime.Now.AddDays(-30)) && u.IsBanned == null)
                 .FirstOrDefaultAsync();
 
             return user_found;

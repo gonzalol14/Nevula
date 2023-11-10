@@ -87,8 +87,11 @@
                                 <img src="@UserService.GetUserProfileImagePath(account.Id)" alt="">
                             </div>
                             <div class="container_name">
-                                <a asp-controller="Account" asp-action="Index" asp-route-IdUser="@account.Id">@account.Name @account.Surname</a>
-                                <span class="separator__info">·</span>
+                                @if (account.Name != null || account.Surname != null)
+                                {
+                                    <a asp-controller="Account" asp-action="Index" asp-route-IdUser="@account.Id">@account.Name @account.Surname</a>
+                                    <span class="separator__info">·</span>
+                                }
                                 <a asp-controller="Account" asp-action="Index" asp-route-IdUser="@account.Id" class="text-username">@@@account.Username</a>
                             </div>
 

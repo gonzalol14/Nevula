@@ -126,3 +126,11 @@
             cursor: not-allowed;
             opacity: 0.7;
         }
+
+.banned {
+    background: red;
+    color: #FFF;
+}
+    .banned:hover {
+        background: #CB0000;
+    }

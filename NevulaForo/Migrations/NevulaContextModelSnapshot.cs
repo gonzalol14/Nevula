@@ -162,6 +162,10 @@ namespace NevulaForo.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("email");
 
+                    b.Property<string>("IsBanned")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_banned");
+
                     b.Property<string>("Name")
                         .HasMaxLength(30)
                         .IsUnicode(false)

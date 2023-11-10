@@ -27,7 +27,7 @@ namespace NevulaForo.Controllers
 
             List<User> lstaccounts = _DBContext.Users
                                     .Include(u => u.UserRoles)
-                                    .Where(u => u.DeletedAt == null && u.Id != IdUser)
+                                    .Where(u => u.Id != IdUser && u.DeletedAt == null)
                                     .Select(u => new User
                                     {
                                         Id = u.Id,
@@ -36,7 +36,7 @@ namespace NevulaForo.Controllers
                                         Username = u.Username,
                                         Description = u.Description,
                                         CreatedAt = u.CreatedAt,
-                                        Publications = u.Publications.Where(post => post.DeletedAt == null && post.IdUserNavigation.DeletedAt == null).ToList(),
+                                        IsBanned = u.IsBanned,
                                         UserRoles = u.UserRoles
                                     })
                                     .ToList();
@@ -52,7 +52,7 @@ namespace NevulaForo.Controllers
                                             .Include(u => u.IdUserNavigation)
                                                 .ThenInclude(u => u.UserRoles)
                                             .Include(c => c.Comments)
-                                            .Where(p => p.DeletedAt == null && p.IdUser != IdUser && p.IdUserNavigation.DeletedAt == null )
+                                            .Where(p => p.DeletedAt == null && p.IdUser != IdUser && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null)
                                             .Select(p => new Publication
                                             {
                                                 Id = p.Id,
@@ -81,7 +81,7 @@ namespace NevulaForo.Controllers
             ClaimsPrincipal claimUser = HttpContext.User;
             int IdRoleUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault());
 
-            UserRole? userRole = _DBContext.UserRoles.FirstOrDefault(ur => ur.IdUser == IdUser);
+            UserRole? userRole = _DBContext.UserRoles.Include(ur => ur.IdUserNavigation).FirstOrDefault(ur => ur.IdUser == IdUser && ur.IdUserNavigation.DeletedAt == null && ur.IdUserNavigation.IsBanned == null);
             if(userRole != null) 
             {
                 if (userRole.IdRole == 4)
@@ -110,7 +110,7 @@ namespace NevulaForo.Controllers
                 return Json(new { success = true });
             }
 
-            return Json(new { success = false, error = "Error al intentar cambiar el verificado" });
+            return Json(new { success = false, error = "No se pudo encontrar el usuario (debe encontrarse desbaneado)" });
         }
         [HttpGet]
         public async Task<JsonResult> AdminUser(int IdUser, bool isAdmin)
@@ -118,7 +118,7 @@ namespace NevulaForo.Controllers
             ClaimsPrincipal claimUser = HttpContext.User;
             int IdRoleUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault());
 
-            UserRole? userRole = _DBContext.UserRoles.FirstOrDefault(ur => ur.IdUser == IdUser);
+            UserRole? userRole = _DBContext.UserRoles.Include(ur => ur.IdUserNavigation).FirstOrDefault(ur => ur.IdUser == IdUser && ur.IdUserNavigation.DeletedAt == null && ur.IdUserNavigation.IsBanned == null);
             if (userRole != null)
             {
                 if (userRole.IdRole == 4)
@@ -148,7 +148,7 @@ namespace NevulaForo.Controllers
                 return Json(new { success = true });
             }
 
-            return Json(new { success = false, error = "Error al intentar cambiar el rol de admin" });
+            return Json(new { success = false, error = "No se pudo encontrar el usuario (debe encontrarse desbaneado)" });
         }
 
 
@@ -159,7 +159,7 @@ namespace NevulaForo.Controllers
             ClaimsPrincipal claimUser = HttpContext.User;
             int IdRoleUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault());
 
-            User? user = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.DeletedAt == null && u.Id == IdUser).FirstOrDefault();
+            User? user = _DBContext.Users.Include(u => u.UserRoles).Where(u => u.Id == IdUser && u.DeletedAt == null).FirstOrDefault();
 
             if (user != null)
             {
@@ -172,12 +172,24 @@ namespace NevulaForo.Controllers
                     return Json(new { success = false, error = "Solo los super-admins pueden eliminar usuarios admins" });
                 }
 
-                user.DeletedAt = DateTime.Now.AddDays(-31);
+                string msj;
+                bool isBanned;
+                if(user.IsBanned == null)
+                {
+                    user.IsBanned = true;
+                    msj = "Se baneo el usuario con exito";
+                    isBanned = true;
+                } else
+                {
+                    user.IsBanned = null;
+                    msj = "Se desbaneo el usuario con exito";
+                    isBanned = false;
+                }
 
                 _DBContext.Update(user);
                 await _DBContext.SaveChangesAsync();
 
-                return Json(new { success = true });
+                return Json(new { success = true, msj = msj, isBanned = isBanned });
             }
 
             return Json(new { success = false, error = "Error al intentar eliminar usuario" });

@@ -43,6 +43,8 @@ public partial class User
 
     public DateTime? DeletedAt { get; set; }
 
+    public bool? IsBanned { get; set; }
+
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
     public virtual ICollection<Publication> Publications { get; set; } = new List<Publication>();

@@ -42,7 +42,7 @@ namespace NevulaForo.Controllers
                                             .Include(u => u.IdUserNavigation)
                                                 .ThenInclude(u => u.UserRoles)
                                             .Include(c => c.Comments)
-                                            .Where(p => p.DeletedAt == null && p.IdUserNavigation.DeletedAt == null)
+                                            .Where(p => p.DeletedAt == null && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null)
                                             .Select(p => new Publication
                                             {
                                                 Id = p.Id,
