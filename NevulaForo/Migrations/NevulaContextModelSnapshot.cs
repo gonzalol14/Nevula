@@ -98,6 +98,10 @@ namespace NevulaForo.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id_user");
 
+                    b.Property<bool?>("IsBanned")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_banned");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(250)
@@ -162,7 +166,7 @@ namespace NevulaForo.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("email");
 
-                    b.Property<string>("IsBanned")
+                    b.Property<bool?>("IsBanned")
                         .HasColumnType("bit")
                         .HasColumnName("is_banned");
 

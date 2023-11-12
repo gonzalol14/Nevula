@@ -97,5 +97,11 @@ namespace NevulaForo.Resources
                 return tempIdPublication;
             }
         }
+
+
+        public static void SendEmail(String receiver, String subject, String message)
+        {
+
+        }
     }
 }

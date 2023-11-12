@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using NevulaForo.Models.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,8 +23,9 @@ builder.Services.AddDbContext<NevulaContext>(options =>
 
 // Servicios
 builder.Services.AddScoped<IUserService, UserService>();
-
 builder.Services.AddScoped<UserService>();
+
+builder.Services.AddScoped<IEmailSenderService, EmailSenderService>();
 
 // Cookies
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

@@ -97,6 +97,10 @@
       "PackagePath": "staticwebassets\\js\\admin\\main.js"
     },
     {
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\publications.js",
+      "PackagePath": "staticwebassets\\js\\admin\\publications.js"
+    },
+    {
       "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\superadmin_users.js",
       "PackagePath": "staticwebassets\\js\\admin\\superadmin_users.js"
     },

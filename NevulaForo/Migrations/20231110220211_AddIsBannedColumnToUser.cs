@@ -23,7 +23,7 @@ namespace NevulaForo.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "isBanned",
+                name: "is_banned",
                 table: "User");
 
         }

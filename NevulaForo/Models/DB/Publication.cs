@@ -22,7 +22,9 @@ public partial class Publication
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-    public DateTime? DeletedAt { get; set; }
+    public DateTime? DeletedAt { get; set; } 
+
+    public bool? IsBanned { get; set; }
 
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 

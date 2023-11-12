@@ -35,7 +35,7 @@ namespace NevulaForo.Controllers
                 oPublication = _DBContext.Publications
                                 .Include(u => u.IdUserNavigation)
                                     .ThenInclude(u => u.UserRoles)
-                                .Where(p => p.Id == IdPublication && p.DeletedAt == null && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null)
+                                .Where(p => p.Id == IdPublication && p.DeletedAt == null && p.IsBanned == null && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null)
                                 .FirstOrDefault(),
                 oComments = _DBContext.Comments
                                 .Include(u => u.IdUserNavigation)
@@ -154,7 +154,7 @@ namespace NevulaForo.Controllers
             }
 
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
-            Publication? model = _DBContext.Publications.Where(p => p.Id == viewmodel.Id && p.IdUser == IdUser && p.DeletedAt == null).ToList().FirstOrDefault();
+            Publication? model = _DBContext.Publications.Where(p => p.Id == viewmodel.Id && p.IdUser == IdUser && p.DeletedAt == null && p.IsBanned == null).ToList().FirstOrDefault();
 
             if (model != null && (viewmodel.Title != model.Title || viewmodel.Description != model.Description))
             {
@@ -190,7 +190,7 @@ namespace NevulaForo.Controllers
         {
             int IdUser = Convert.ToInt32(HttpContext.User.FindFirstValue("Id"));
 
-            Publication? publication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == IdUser && p.DeletedAt == null);
+            Publication? publication = _DBContext.Publications.FirstOrDefault(p => p.Id == IdPublication && p.IdUser == IdUser && p.DeletedAt == null && p.IsBanned == null);
 
             if (publication != null)
             {
@@ -227,7 +227,7 @@ namespace NevulaForo.Controllers
                                                 .Include(u => u.IdUserNavigation)
                                                     .ThenInclude(u => u.UserRoles)
                                                 .Include(c => c.Comments)
-                                                .Where(p => p.DeletedAt == null && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null && EF.Functions.Like(p.Title, $"%{viewmodel.Search}%"))
+                                                .Where(p => p.DeletedAt == null && p.IsBanned == null && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null && EF.Functions.Like(p.Title, $"%{viewmodel.Search}%"))
                                                 .Select(p => new Publication
                                                 {
                                                     Id = p.Id,

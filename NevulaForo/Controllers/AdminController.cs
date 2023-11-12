@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NevulaForo.Models.DB;
+using NevulaForo.Models.ViewModels;
+using NevulaForo.Services.Contract;
 using System.Security.Claims;
 using System.Xml.Linq;
 
@@ -13,10 +15,12 @@ namespace NevulaForo.Controllers
     public class AdminController : Controller
     {
         private readonly NevulaContext _DBContext;
+        private readonly IEmailSenderService _emailSenderService;
 
-        public AdminController(NevulaContext dbContext)
+        public AdminController(NevulaContext dbContext, IEmailSenderService emailService)
         {
             _DBContext = dbContext;
+            _emailSenderService = emailService;
         }
 
         //PAGINAS
@@ -52,7 +56,7 @@ namespace NevulaForo.Controllers
                                             .Include(u => u.IdUserNavigation)
                                                 .ThenInclude(u => u.UserRoles)
                                             .Include(c => c.Comments)
-                                            .Where(p => p.DeletedAt == null && p.IdUser != IdUser && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null)
+                                            .Where(p => p.DeletedAt == null && p.IsBanned == null && p.IdUser != IdUser && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null)
                                             .Select(p => new Publication
                                             {
                                                 Id = p.Id,
@@ -93,6 +97,7 @@ namespace NevulaForo.Controllers
                     return Json(new { success = false, error = "Solo los super-admins pueden cambiar el rol admin" });
                 }
 
+                MailRequestVM mail = new MailRequestVM() { Email = userRole.IdUserNavigation.Email };
                 if (isVerified)
                 {
                     //Sacar el verificado
@@ -103,7 +108,12 @@ namespace NevulaForo.Controllers
                     //Agregar el verificado
                     userRole.IdRole = 2;
                     userRole.ModifiedAt = DateTime.Now;
+
+                    mail.Subject = "¡Su cuenta de Nevula ha sido verificada!";
+                    mail.Body = $"Desde el día de hoy su cuenta de Nevula <b>@{userRole.IdUserNavigation.Username}</b> se encuentra verificada para los demás usuarios. <br> Equipo de Nevula";
                 }
+
+                await _emailSenderService.SendEmailAsync(mail);
                 _DBContext.Update(userRole);
                 await _DBContext.SaveChangesAsync();
 
@@ -173,32 +183,63 @@ namespace NevulaForo.Controllers
                 }
 
                 string msj;
-                bool isBanned;
+                MailRequestVM mail = new MailRequestVM() { Email = user.Email };
                 if(user.IsBanned == null)
                 {
                     user.IsBanned = true;
-                    msj = "Se baneo el usuario con exito";
-                    isBanned = true;
+                    msj = "Se baneo el usuario con éxito";
+
+                    mail.Subject = "Su cuenta de Nevula ha sido baneada";
+                    mail.Body = "Hemos baneado su cuenta de Nevula ya que infringe las normas de la comunidad, por lo que, ya no podra utilizarla hasta nuevo aviso. <br> Equipo de Nevula";
+
                 } else
                 {
                     user.IsBanned = null;
-                    msj = "Se desbaneo el usuario con exito";
-                    isBanned = false;
+                    msj = "Se desbaneo el usuario con éxito";
+
+                    mail.Subject = "¡Su cuenta de Nevula ha sido desbaneada!";
+                    mail.Body = "El día de hoy hemos decidido desbanear su cuenta de Nevula, por lo que, la podra usar nuevamente sin problemas y seguira teniendo sus publicaciones y comentarios realizados en la comunidad. <br> Equipo de Nevula";
                 }
+                
+                await _emailSenderService.SendEmailAsync(mail);
 
                 _DBContext.Update(user);
                 await _DBContext.SaveChangesAsync();
 
-                return Json(new { success = true, msj = msj, isBanned = isBanned });
+                return Json(new { success = true, msj = msj, isBanned = user.IsBanned });
             }
 
             return Json(new { success = false, error = "Error al intentar eliminar usuario" });
         } 
 
-        [HttpPost]
-        public IActionResult DeletePublication()
+        [HttpGet]
+        public async Task<JsonResult> DeletePublication(int IdPublication)
         {
-            return View();
+            Publication? post = _DBContext.Publications.Include(p => p.IdUserNavigation).Where(p => p.Id == IdPublication && p.DeletedAt == null).FirstOrDefault();
+            if (post != null)
+            {
+                if (post.IsBanned != null)
+                {
+                    return Json(new { success = false, error = "La publicación ya se encuentra baneada" });
+
+                } else
+                {
+                    post.IsBanned = true;
+
+                    MailRequestVM mail = new MailRequestVM() { Email = post.IdUserNavigation.Email };
+                    mail.Subject = "Se ha baneado una de tus publicaciones";
+                    mail.Body = $"Hemos decidido banear la publicación '{post.Title}' ya que infringe con nuestras normas de comunidad, por ende, los usuarios de Nuevula ya no la veran en la pagina. Tenga cuidado ya que podriamos banear su cuenta si sigue desacatando las normas. <br> Equipo de Nevula";
+                    await _emailSenderService.SendEmailAsync(mail);
+
+                    _DBContext.Update(post);
+                    await _DBContext.SaveChangesAsync();
+
+                    return Json(new { success = true });
+                }
+
+            }
+
+            return Json(new { success = false, error = "Error al intentar eliminar publicación" });
         }
 
         [HttpPost]
