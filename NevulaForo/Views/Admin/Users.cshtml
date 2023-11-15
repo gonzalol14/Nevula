@@ -17,7 +17,7 @@
 <div class="container__users">
     @foreach (var account in Model)
     {
-        @if (account.UserRoles.First().IdRole != 4)
+        @if (account.UserRoles.First().IdRole < 3 || IdRoleUser == 4)
         {
             <article class="container__perfil" id="account_@account.Id">
                 <div class="container_info">
@@ -31,7 +31,7 @@
                                 <a asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@account.Name @account.Surname</a>
                                 <span class="separator__info">·</span>
                             }
-                            <a class="text-username" asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@@@account.Username</a>
+                            <a class="text-username" id="username_@account.Id" asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@@@account.Username</a>
                         </div>
                         <div class="container_description">
                             <p class="">@((account.Description != null) ? account.Description : "Aún no hay descripción")</p>
@@ -39,7 +39,11 @@
 
                         <div class="container__manage">
                             <button type="button" class="btn_manage btn-verify @((account.UserRoles.First().IdRole == 2) ? "verified" : null)" id="btn_account_verify-@account.Id">V</button>
-                            <button type="button" class="btn_manage btn-administrator @((account.UserRoles.First().IdRole == 3) ? "administrator" : null)" id="btn_account_admin-@account.Id" @((account.UserRoles.First().IdRole == 3 && IdRoleUser != 4) ? "disabled" : null)>A</button>
+                            @if (IdRoleUser == 4)
+                            {
+                                <button type="button" class="btn_manage btn-administrator @((account.UserRoles.First().IdRole == 3) ? "administrator" : null)" id="btn_account_admin-@account.Id">A</button>
+                                <button type="button" class="btn_manage btn-super-administrator @((account.UserRoles.First().IdRole == 4) ? "super-administrator" : null)" id="btn_account_super_admin-@account.Id">SA</button>
+                            }
                             <button type="button" class="btn_manage btn-delete @((account.IsBanned != null) ? "banned" : null)" id="btn_account_delete-@account.Id">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-forbid" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

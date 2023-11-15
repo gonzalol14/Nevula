@@ -90,7 +90,7 @@ namespace NevulaForo.Controllers
             {
                 if (userRole.IdRole == 4)
                 {
-                    return Json(new { success = false, error = "No es posible modificar roles de super-admins" });
+                    return Json(new { success = false, error = "No es posible cambiar indirectamente un super-admins" });
                 }
                 if(userRole.IdRole == 3 && IdRoleUser != 4)
                 {
@@ -123,29 +123,29 @@ namespace NevulaForo.Controllers
             return Json(new { success = false, error = "No se pudo encontrar el usuario (debe encontrarse desbaneado)" });
         }
         [HttpGet]
-        public async Task<JsonResult> AdminUser(int IdUser, bool isAdmin)
+        public async Task<JsonResult> AdminUser(int IdUser)
         {
             ClaimsPrincipal claimUser = HttpContext.User;
             int IdRoleUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault());
+            if (IdRoleUser != 4)
+            {
+                return Json(new { success = false, error = "Solo los super-admins pueden dar/sacar el rol admin" });
+            }
 
             UserRole? userRole = _DBContext.UserRoles.Include(ur => ur.IdUserNavigation).FirstOrDefault(ur => ur.IdUser == IdUser && ur.IdUserNavigation.DeletedAt == null && ur.IdUserNavigation.IsBanned == null);
             if (userRole != null)
             {
-                if (userRole.IdRole == 4)
+                if (userRole.IdRole == 4 || IdRoleUser != 4)
                 {
-                    return Json(new { success = false, error = "No es posible modificar roles de super-admins" });
-                }
-                if (userRole.IdRole == 3 && IdRoleUser != 4)
-                {
-                    return Json(new { success = false, error = "Solo los super-admins pueden cambiar el rol admin" });
+                    return Json(new { success = false, error = "No es posible cambiar indirectamente un super-admins" });
                 }
 
-                if (isAdmin)
+                if (userRole.IdRole == 3)
                 {
                     //Eliminar el rol admin
                     userRole.IdRole = 1;
                     userRole.ModifiedAt = DateTime.Now;
-                } else
+                } else if(userRole.IdRole < 3) 
                 {
                     //Agregar el rol admin
                     userRole.IdRole = 3;
@@ -160,7 +160,40 @@ namespace NevulaForo.Controllers
 
             return Json(new { success = false, error = "No se pudo encontrar el usuario (debe encontrarse desbaneado)" });
         }
+        [HttpGet]
+        public async Task<JsonResult> SuperAdminUser(int IdUser)
+        {
+            ClaimsPrincipal claimUser = HttpContext.User;
+            int IdRoleUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault());
+            if (IdRoleUser != 4)
+            {
+                return Json(new { success = false, error = "Solo los super-admins pueden dar/sacar el rol admin" });
+            }
 
+            UserRole? userRole = _DBContext.UserRoles.Include(ur => ur.IdUserNavigation).FirstOrDefault(ur => ur.IdUser == IdUser && ur.IdUserNavigation.DeletedAt == null && ur.IdUserNavigation.IsBanned == null);
+            if (userRole != null)
+            {
+                if (userRole.IdRole == 4)
+                {
+                    //Eliminar el rol admin
+                    userRole.IdRole = 1;
+                    userRole.ModifiedAt = DateTime.Now;
+                }
+                else if (userRole.IdRole < 4)
+                {
+                    //Agregar el rol admin
+                    userRole.IdRole = 4;
+                    userRole.ModifiedAt = DateTime.Now;
+                }
+
+                _DBContext.Update(userRole);
+                await _DBContext.SaveChangesAsync();
+
+                return Json(new { success = true });
+            }
+
+            return Json(new { success = false, error = "No se pudo encontrar el usuario (debe encontrarse desbaneado)" });
+        }
 
         [HttpGet]
         //Deben enviar mails al usuario al que se le borra su cuenta, su publicacion o su comentario
@@ -238,14 +271,13 @@ namespace NevulaForo.Controllers
                 }
 
             }
-
             return Json(new { success = false, error = "Error al intentar eliminar publicación" });
         }
 
-        [HttpPost]
-        public IActionResult DeleteComment()
+        [HttpGet]
+        public async Task<JsonResult> DeleteComment(int IdComment)
         {
-            return View();
+            return Json(new { success = false, error = "Error al intentar eliminar comentario" });
         }
     }
 }

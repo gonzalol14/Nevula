@@ -99,6 +99,10 @@
 .btn_manage:hover {
     background: #EAEAEA;
 }
+.btn_manage:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
 
 .btn-verify {
     color: #09a814;
@@ -122,10 +126,17 @@
         background-color: red;
         border: 2px solid red;
     }
-        .btn-administrator.administrator:disabled {
-            cursor: not-allowed;
-            opacity: 0.7;
-        }
+
+.btn-super-administrator {
+    color: #001796;
+    background-color: #FFF;
+    border: 2px solid #001796;
+}
+    .btn-super-administrator.super-administrator {
+        color: #FFF;
+        background-color: #001796;
+        border: 2px solid #001796;
+    }
 
 .banned {
     background: red;

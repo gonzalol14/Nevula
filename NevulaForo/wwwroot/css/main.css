@@ -464,3 +464,70 @@ textarea {
         transform: translateX(0);
     }
 }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+/* Estilos del contenido del modal */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px; /* ajusta el ancho máximo según tus necesidades */
+    text-align: center;
+}
+
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
+    .modal-info h3,
+    .modal-info p {
+        text-align: start;
+    }
+
+.modal-btns {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+}
+
+/* Estilos para los botones del modal */
+.modal-btn {
+    display: block;
+    padding: 7px 15px;
+    cursor: pointer;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 1.25rem;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+    .modal-btn.cancel {
+        background-color: #95a5a6;
+    }
+    .modal-btn.confirm {
+        background-color: #e60000;
+    }
