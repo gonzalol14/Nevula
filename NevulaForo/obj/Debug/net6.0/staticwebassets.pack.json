@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\css\\edit_account.css"
     },
     {
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\errors.css",
+      "PackagePath": "staticwebassets\\css\\errors.css"
+    },
+    {
       "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\help.css",
       "PackagePath": "staticwebassets\\css\\help.css"
     },
@@ -159,6 +163,10 @@
     {
       "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\help.js",
       "PackagePath": "staticwebassets\\js\\help.js"
+    },
+    {
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\home.js",
+      "PackagePath": "staticwebassets\\js\\home.js"
     },
     {
       "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\main.js",

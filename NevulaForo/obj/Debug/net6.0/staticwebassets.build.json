@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t+q1LlQtGhMZBeEaaew4CXezwORdFzTuv8wP2Tq5FLg=",
+  "Hash": "rmb90Cu8S4qaS7kFw78cahZpiqW5l/3f+LmnR4+SCZU=",
   "Source": "NevulaForo",
   "BasePath": "_content/NevulaForo",
   "Mode": "Default",
@@ -185,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\edit_account.css"
+    },
+    {
+      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\errors.css",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "css/errors.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\errors.css"
     },
     {
       "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\help.css",
@@ -712,6 +729,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\help.js"
+    },
+    {
+      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\home.js",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "js/home.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\home.js"
     },
     {
       "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\main.js",
