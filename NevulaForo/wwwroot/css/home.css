@@ -79,7 +79,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 150px;
+    padding: 56px 150px;
 }
 
 .introduction-title {
@@ -97,7 +97,7 @@ h2 {
     align-items: center;
     background: #2A2A2A;
     color: #fff;
-    padding: 40px 150px;
+    padding: 56px 150px;
 }
 
 
@@ -141,7 +141,19 @@ h2 {
 @media(max-width: 875px) {
     .container__steps-play,
     .container__introduction {
-        padding: 40px 70px;
+        padding: 56px 70px;
+    }
+}
+
+@media(max-width: 550px) {
+    .title-principal {
+        font-size: 3.5rem;
+    }
+
+    .container__mains-btn button,
+    .container__mains-btn a {
+        padding: 15px 30px;
+        font-size: 18px;
     }
 }
 
@@ -149,6 +161,15 @@ h2 {
     .container__steps-play,
     .container__introduction {
         padding: 40px 20px;
+    }
+}
+
+@media(max-width: 350px) {
+    .title-principal {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
     }
 }
 
@@ -272,6 +293,11 @@ footer button:hover {
         font-size: 18px;
     }
 }
+
+
+
+
+
 
 
 /**,
