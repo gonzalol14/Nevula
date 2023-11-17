@@ -60,7 +60,10 @@
                 <li class="list-menu-profile container_dropdown" id="container_dropdown-profile1">
                     @if (IdUser != 0)
                     {
-                        <a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">@Username.ToUpper()</a>
+                        <a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">
+                            @Username.ToUpper()
+                            <img src="@UserService.GetUserProfileImagePath(IdUser)" alt="Foto de Perfil" class="btn-profile_img" id="header__profile-pic">
+                        </a>
                         <ul class="container__dropdown--header dropdown dropdown-profile1">
                             <li><a asp-route-IdUser="@IdUser" asp-controller="Account" asp-action="Index">VER PERFIL</a></li>
                             <li><a asp-controller="Account" asp-action="Edit" asp-route-type="General">EDITAR PERFIL</a></li>

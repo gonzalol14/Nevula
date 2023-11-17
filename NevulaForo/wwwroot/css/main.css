@@ -183,10 +183,13 @@ header {
         display: flex;
         border-bottom: 1px solid grey;
     }
-
         .container__list-buttons.activo > li > a:hover {
             border-bottom: 3.5px solid #ffa01b;
         }
+
+    #container_dropdown-profile1 > a {
+        justify-content: space-between;
+    }
 }
 
 
