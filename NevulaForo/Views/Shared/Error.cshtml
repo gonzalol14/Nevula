@@ -9,11 +9,11 @@
 
 <div class="container__data-error">
     <div class="type-error">
-        <p>ERROR 404</p>
+        <p>ERROR @ViewData["StatusCode"]</p>
     </div>
     <div class="container__error-msj">
-        <h1 class="msj-title">¡Ups! Página no encontrada.</h1>
-        <p class="msj-details">Parece que la página que estas buscando no existe.</p>
+        <h1 class="msj-title">@ViewData["TitlePage"]</h1>
+        <p class="msj-details">@ViewData["Details"]</p>
     </div>
     <div class="btn-back">
         <a asp-controller="Home" asp-action="Index">Volver a la página de inicio</a>
@@ -21,9 +21,6 @@
 </div>
 
 <!--
-<br>
-<br>
-<br>
 
 <h1 class="text-danger">Error.</h1>
 <h2 class="text-danger">An error occurred while processing your request.</h2>

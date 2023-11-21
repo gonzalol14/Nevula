@@ -71,18 +71,30 @@ namespace NevulaForo.Controllers
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error(int statusCode)
+        public IActionResult Error(int? statusCode = null)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-
-            if (statusCode == 404)
+            ViewData["StatusCode"] = statusCode;
+            switch (statusCode)
             {
-                return View("Error404");
-            } else
-            {
-                return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+                case 404:
+                    ViewData["TitlePage"] = "¡Ups! Página no encontrada.";
+                    ViewData["Details"] = "Parece que la página que estás buscando no existe.";
+                    break;
+                case 403:
+                    ViewData["TitlePage"] = "¡Acceso prohibido!";
+                    ViewData["Details"] = "Lo sentimos, pero no tienes permisos para acceder a esta página. Si crees que esto es un error, por favor contacta al administrador.";
+                    break;
+                case 500:
+                    ViewData["TitlePage"] = "¡Ups! Algo salió mal en el servidor.";
+                    ViewData["Details"] = "Lo sentimos, pero ha ocurrido un error interno en el servidor. Nuestro equipo técnico está trabajando para solucionarlo.";
+                    break;
+                default:
+                    ViewData["TitlePage"] = "¡Ups! Algo salió mal.";
+                    ViewData["Details"] = "Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde.";
+                    break;
             }
 
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 
         }
     }
