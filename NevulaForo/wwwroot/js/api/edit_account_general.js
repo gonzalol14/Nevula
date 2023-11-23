@@ -116,7 +116,7 @@ formEditGeneral.addEventListener('submit', (event) => {
 
                     Object.keys(response.data.errors).forEach(fieldName => {
                         const errorMessage = response.data.errors[fieldName].join('\n');
-                        const input = document.querySelector(`[newName="${fieldName}"]`);
+                        const input = document.querySelector(`[name="${fieldName}"]`);
                         if (input) {
                             failValidation(input, errorMessage)
                         }
