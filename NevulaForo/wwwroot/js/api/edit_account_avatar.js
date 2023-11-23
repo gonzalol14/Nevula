@@ -1,7 +1,7 @@
 ﻿const formEditAvatar = document.getElementById('formEditAvatar')
 
 const btnDeleteAvatar = document.getElementById('edit_avatar-delete')
-if (document.getElementById('header__profile-pic').src.includes("/images/profiles/default.jpg")) {
+if (document.getElementById('header__profile-pic1').src.includes("/images/profiles/default.jpg") && document.getElementById('header__profile-pic2').src.includes("/images/profiles/default.jpg")) {
     btnDeleteAvatar.disabled = true
 }
 
@@ -47,7 +47,8 @@ avatar_input.addEventListener("change", () => {
                         imagen.src = response.data.pathProfilePic
                     });
 
-                    document.getElementById('header__profile-pic').src = response.data.pathProfilePic
+                    document.getElementById('header__profile-pic1').src = response.data.pathProfilePic
+                    document.getElementById('header__profile-pic2').src = response.data.pathProfilePic
                     btnDeleteAvatar.disabled = false
 
                 } else {
@@ -83,7 +84,8 @@ deleteAvatar.addEventListener('click', (event) => {
                     imagen.src = response.data.pathProfilePic
                 });
 
-                document.getElementById('header__profile-pic').src = response.data.pathProfilePic
+                document.getElementById('header__profile-pic1').src = response.data.pathProfilePic
+                document.getElementById('header__profile-pic2').src = response.data.pathProfilePic
                 btnDeleteAvatar.disabled = true
             }
         })

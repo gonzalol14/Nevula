@@ -93,12 +93,32 @@
       "PackagePath": "staticwebassets\\images\\imagen_temporal3.png"
     },
     {
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\10\\profile_pic.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\10\\profile_pic.png"
+    },
+    {
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\11\\profile_pic.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\11\\profile_pic.jpg"
+    },
+    {
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\13\\profile_pic.webp",
+      "PackagePath": "staticwebassets\\images\\profiles\\13\\profile_pic.webp"
+    },
+    {
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\14\\profile_pic.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\14\\profile_pic.jpg"
+    },
+    {
       "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1\\profile_pic.webp",
       "PackagePath": "staticwebassets\\images\\profiles\\1\\profile_pic.webp"
     },
     {
       "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.webp",
       "PackagePath": "staticwebassets\\images\\profiles\\4\\profile_pic.webp"
+    },
+    {
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\6\\profile_pic.webp",
+      "PackagePath": "staticwebassets\\images\\profiles\\6\\profile_pic.webp"
     },
     {
       "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\default.jpg",
