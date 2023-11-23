@@ -40,6 +40,12 @@ if (pathSegments == 'Publication/Index') {
                     if (response.data.success) {
                         alertMsj('Publicación eliminada con éxito', 'success')
                         deletePost.parentElement.parentElement.parentElement.remove()
+
+                        if (pathSegments == 'Account/Index') {
+                            //Resto en 1 la cantidad de publicaciones del usuario (en caso de ser la pagina de perfil)
+                            let cantPublications = document.getElementById('cant-posts-user')
+                            cantPublications.innerText = parseInt(cantPublications.innerText) - 1
+                        }
                     } else {
                         alertMsj(response.data.error, 'error', 1500)
                     }

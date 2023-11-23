@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VzB9sH7d+bJ4Y5xYXtu1fjvmMEh45cGQ4QFLwyKMW84=",
+  "Hash": "RVY9JfonnnY1QK8ebPIOLVRBIx4ofPry96ScDoBisNw=",
   "Source": "NevulaForo",
   "BasePath": "_content/NevulaForo",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "NevulaForo\\wwwroot",
       "Source": "NevulaForo",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NevulaForo.styles.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NevulaForo.styles.css",
       "SourceId": "NevulaForo",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "NevulaForo.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NevulaForo.styles.css"
+      "OriginalItemSpec": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NevulaForo.styles.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NevulaForo.bundle.scp.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NevulaForo.bundle.scp.css",
       "SourceId": "NevulaForo",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "NevulaForo.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NevulaForo.bundle.scp.css"
+      "OriginalItemSpec": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NevulaForo.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\access.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\access.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/access.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\access.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\account.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\account.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/account.css",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\account.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\comments.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\comments.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/admin/comments.css",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\admin\\comments.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\main.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\main.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/admin/main.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\admin\\main.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\publications.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\publications.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/admin/publications.css",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\admin\\publications.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\users.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\users.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/admin/users.css",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\admin\\users.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\community.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\community.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/community.css",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\community.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\create_publication.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\create_publication.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/create_publication.css",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\create_publication.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\edit_account.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\edit_account.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/edit_account.css",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\edit_account.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\errors.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\errors.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/errors.css",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\errors.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\help.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\help.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/help.css",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\help.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\home.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\home.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/home.css",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\home.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\main.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\main.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/main.css",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\css\\main.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\news.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\news.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/news.css",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\css\\news.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\publication.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\publication.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/publication.css",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\css\\publication.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\search.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\css\\search.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "css/search.css",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\css\\search.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\favicon.ico",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\favicon.ico",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal.png",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal.png",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/imagen_temporal.png",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\images\\imagen_temporal.png"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal3.png",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\imagen_temporal3.png",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/imagen_temporal3.png",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\images\\imagen_temporal3.png"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_LineaB.png",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_LineaB.png",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/Logo_LineaB.png",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Logo_LineaB.png"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_Nevula.png",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_Nevula.png",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/Logo_Nevula.png",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Logo_Nevula.png"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_Nevula2.png",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\Logo_Nevula2.png",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/Logo_Nevula2.png",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Logo_Nevula2.png"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1\\profile_pic.webp",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\1\\profile_pic.webp",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/profiles/1/profile_pic.webp",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\images\\profiles\\1\\profile_pic.webp"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\10\\profile_pic.png",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\10\\profile_pic.png",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/profiles/10/profile_pic.png",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\images\\profiles\\10\\profile_pic.png"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\11\\profile_pic.jpg",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\11\\profile_pic.jpg",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/profiles/11/profile_pic.jpg",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\images\\profiles\\11\\profile_pic.jpg"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\13\\profile_pic.webp",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\13\\profile_pic.webp",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/profiles/13/profile_pic.webp",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\images\\profiles\\13\\profile_pic.webp"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\14\\profile_pic.jpg",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\14\\profile_pic.jpg",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/profiles/14/profile_pic.jpg",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\images\\profiles\\14\\profile_pic.jpg"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.webp",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\4\\profile_pic.webp",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/profiles/4/profile_pic.webp",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\images\\profiles\\4\\profile_pic.webp"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\6\\profile_pic.webp",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\6\\profile_pic.webp",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/profiles/6/profile_pic.webp",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\images\\profiles\\6\\profile_pic.webp"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\default.jpg",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\images\\profiles\\default.jpg",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "images/profiles/default.jpg",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\images\\profiles\\default.jpg"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\comments.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\comments.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/admin/comments.js",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\js\\admin\\comments.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\main.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\main.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/admin/main.js",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\js\\admin\\main.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\publications.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\publications.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/admin/publications.js",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\js\\admin\\publications.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\superadmin_users.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\superadmin_users.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/admin/superadmin_users.js",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\js\\admin\\superadmin_users.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\users.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\users.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/admin/users.js",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\js\\admin\\users.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\comments.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\comments.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/api/comments.js",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\js\\api\\comments.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\create_post.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\create_post.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/api/create_post.js",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\js\\api\\create_post.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\delete_post.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\delete_post.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/api/delete_post.js",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\js\\api\\delete_post.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_avatar.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_avatar.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/api/edit_account_avatar.js",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\js\\api\\edit_account_avatar.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_general.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_general.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/api/edit_account_general.js",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\js\\api\\edit_account_general.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_password.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_account_password.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/api/edit_account_password.js",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\js\\api\\edit_account_password.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_post.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\edit_post.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/api/edit_post.js",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\js\\api\\edit_post.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\login.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\login.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/api/login.js",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\js\\api\\login.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\api\\register.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\api\\register.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/api/register.js",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\js\\api\\register.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\community.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\community.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/community.js",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\js\\community.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\edit_account.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\edit_account.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/edit_account.js",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\js\\edit_account.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\functions.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\functions.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/functions.js",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\js\\functions.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\help.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\help.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/help.js",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\js\\help.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\home.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\home.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/home.js",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\js\\home.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\main.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\main.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/main.js",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\js\\main.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\password.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\password.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/password.js",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\js\\password.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\publication.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\publication.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/publication.js",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\js\\publication.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\search.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\js\\search.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "js/search.js",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\js\\search.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "NevulaForo",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\Nevula\\NevulaForo\\wwwroot\\",
       "BasePath": "_content/NevulaForo",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

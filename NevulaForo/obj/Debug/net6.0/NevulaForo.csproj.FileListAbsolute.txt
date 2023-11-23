@@ -1642,3 +1642,6 @@ C:\Users\23k\Downloads\Nevula\NevulaForo\obj\Debug\net6.0\NevulaForo.MvcApplicat
 C:\Users\23k\Downloads\Nevula\NevulaForo\bin\Debug\net6.0\MailKit.dll
 C:\Users\23k\Downloads\Nevula\NevulaForo\bin\Debug\net6.0\MimeKit.dll
 C:\Users\23k\Downloads\Nevula\NevulaForo\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\xampp\htdocs\Nevula\NevulaForo\bin\Debug\net6.0\MailKit.dll
+C:\xampp\htdocs\Nevula\NevulaForo\bin\Debug\net6.0\MimeKit.dll
+C:\xampp\htdocs\Nevula\NevulaForo\bin\Debug\net6.0\BouncyCastle.Crypto.dll
