@@ -54,6 +54,7 @@
         color: grey;
         min-width: max-content;
         width: 100%;
+        border-bottom: 3px solid transparent;
     }
 
 

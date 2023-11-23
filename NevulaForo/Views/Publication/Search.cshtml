@@ -17,85 +17,39 @@
 }
 
 <!--ASIDE EN LAYOUT ("~/Views/Shared/_Layout.cshtml")-->
+<aside class="aside__menu-searches main__containers-community">
+    <ul class="submenu__searches">
+        <li class="submenu__searches-item">
+            <a class="btn_search-posts " asp-controller="Publication" asp-action="Search" asp-route-search="@Model.Search" asp-route-for="posts">PUBLICACIONES</a>
+        </li>
+        <li class="submenu__searches-item">
+            <a class="btn_search-accounts " asp-controller="Publication" asp-action="Search" asp-route-search="@Model.Search" asp-route-for="accounts">CUENTAS</a>
+        </li>
+    </ul>
+</aside>
 
-@if ((Model.Users != null && Model.Users.Count > 0) || (Model.Publications != null && Model.Publications.Count > 0))
-{
-    @if (Model.For == "posts")
+<main class="container" role="main">
+    @if ((Model.Users != null && Model.Users.Count > 0) || (Model.Publications != null && Model.Publications.Count > 0))
     {
-        <div>
-            @foreach (var publication in Model.Publications)
-            {
-                <article class="main__containers-community">
+        @if (Model.For == "posts")
+        {
+            <div>
+                @foreach (var publication in Model.Publications)
+                {
+                    <article class="main__containers-community">
 
-                    <div class="container__info">
-                        <div class="container__profile-pic">
-                            <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">
-                                <img src="@UserService.GetUserProfileImagePath(publication.IdUser)" alt="">
-                            </a>
-                        </div>
-
-                        <div class="container__username">
-                            <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">@publication.IdUserNavigation.Username</a>
-                        </div>
-
-                        @if (publication.IdUserNavigation.UserRoles.First().IdRole == 2)
-                        {
-                            <!-- Esto depende si esta o no verificado -->
-                            <div class="container__verify" id="container__verify-1">
-                                <span class="verify">VERIFICADO</span>
-                                <span class="small-verify">V</span>
-                                <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
-                            </div>
-                        }
-
-                        <span class="separator__info">·</span>
-
-                        <div class="container__date">
-                            <span>@Utilities.StylizeDate(publication.CreatedAt)</span>
-                        </div>
-                    </div>
-
-                    <div class="container__content-post">
-                        <h2 class="title--post">@publication.Title</h2>
-                        <p class="content--post">@publication.Description</p>
-                        <div class="container__imgs"></div>
-                    </div>
-
-                    <div class="container__feedback">
-                        <div>
-                            <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index">
-                                <i class="bi bi-chat"></i>
-                                <span>@publication.Comments.Count @((@publication.Comments.Count == 1) ? "Comentario" : "Comentarios")</span>
-                            </a>
-                        </div>
-                    </div>
-
-                </article>
-            }
-        </div>
-
-    }
-    else if (Model.For == "accounts")
-    {
-        <div>
-            @foreach (var account in Model.Users)
-            {
-                <article href="#" class="container__perfil">
-                    <div class="container_info">
-                        <div class="container_info-data">
-                            <div class="container__profile-picture">
-                                <img src="@UserService.GetUserProfileImagePath(account.Id)" alt="">
-                            </div>
-                            <div class="container_name">
-                                @if (account.Name != null || account.Surname != null)
-                                {
-                                    <a asp-controller="Account" asp-action="Index" asp-route-IdUser="@account.Id">@account.Name @account.Surname</a>
-                                    <span class="separator__info">·</span>
-                                }
-                                <a asp-controller="Account" asp-action="Index" asp-route-IdUser="@account.Id" class="text-username">@@@account.Username</a>
+                        <div class="container__info">
+                            <div class="container__profile-pic">
+                                <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">
+                                    <img src="@UserService.GetUserProfileImagePath(publication.IdUser)" alt="">
+                                </a>
                             </div>
 
-                            @if (account.UserRoles.First().IdRole == 2)
+                            <div class="container__username">
+                                <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">@publication.IdUserNavigation.Username</a>
+                            </div>
+
+                            @if (publication.IdUserNavigation.UserRoles.First().IdRole == 2)
                             {
                                 <!-- Esto depende si esta o no verificado -->
                                 <div class="container__verify" id="container__verify-1">
@@ -104,17 +58,75 @@
                                     <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
                                 </div>
                             }
-                        </div>
-                    </div>
-                </article>
-            }
-        </div>
-    }
 
-} else
-{
-    <p class="search__not-results">No se encontraron resultados para la busqueda "<span>@Model.Search</span>".</p>
-}
+                            <span class="separator__info">·</span>
+
+                            <div class="container__date">
+                                <span>@Utilities.StylizeDate(publication.CreatedAt)</span>
+                            </div>
+                        </div>
+
+                        <div class="container__content-post">
+                            <h2 class="title--post">@publication.Title</h2>
+                            <p class="content--post">@publication.Description</p>
+                            <div class="container__imgs"></div>
+                        </div>
+
+                        <div class="container__feedback">
+                            <div>
+                                <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index">
+                                    <i class="bi bi-chat"></i>
+                                    <span>@publication.Comments.Count @((@publication.Comments.Count == 1) ? "Comentario" : "Comentarios")</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </article>
+                }
+            </div>
+
+        }
+        else if (Model.For == "accounts")
+        {
+            <div>
+                @foreach (var account in Model.Users)
+                {
+                    <article href="#" class="container__perfil">
+                        <div class="container_info">
+                            <div class="container_info-data">
+                                <div class="container__profile-picture">
+                                    <img src="@UserService.GetUserProfileImagePath(account.Id)" alt="">
+                                </div>
+                                <div class="container_name">
+                                    @if (account.Name != null || account.Surname != null)
+                                    {
+                                        <a asp-controller="Account" asp-action="Index" asp-route-IdUser="@account.Id">@account.Name @account.Surname</a>
+                                        <span class="separator__info">·</span>
+                                    }
+                                    <a asp-controller="Account" asp-action="Index" asp-route-IdUser="@account.Id" class="text-username">@@@account.Username</a>
+                                </div>
+
+                                @if (account.UserRoles.First().IdRole == 2)
+                                {
+                                    <!-- Esto depende si esta o no verificado -->
+                                    <div class="container__verify" id="container__verify-1">
+                                        <span class="verify">VERIFICADO</span>
+                                        <span class="small-verify">V</span>
+                                        <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </article>
+                }
+            </div>
+        }
+
+    } else
+    {
+        <p class="search__not-results">No se encontraron resultados para la busqueda "<span>@Model.Search</span>".</p>
+    }
+</main>
 
 @section Scripts {
     <script src="~/js/community.js" asp-append-version="true"></script>

@@ -10,14 +10,39 @@
     {
         <link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/admin/users.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/errors.css" asp-append-version="true" />
+    }
+    else if (ViewData["Type"].ToString() == "comments")
+    {
+        <link rel="stylesheet" href="~/css/publication.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/admin/comments.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/errors.css" asp-append-version="true" />
     }
 }
 
-<!--ASIDE EN LAYOUT ("~/Views/Shared/_Layout.cshtml")-->
+<aside class="aside__menu-admin main__containers-community">
+    <button class="arrow-button" id="left-arrow"><i class="bi bi-arrow-left-short"></i></button>
+    <ul class="submenu__admin ">
+        <li>
+            <a class="btn_admin-users type-admin " asp-area="" asp-controller="Admin" asp-action="Users">USUARIOS</a>
+        </li>
+        <li>
+            <a class="btn_admin-publications type-admin " asp-area="" asp-controller="Admin" asp-action="Publications">PUBLICACIONES</a>
+        </li>
+        <!--<li>
+            <a class="btn_admin-comments type-admin " asp-area="" asp-controller="Admin" asp-action="Comments">COMENTARIOS</a>
+        </li>-->
+    </ul>
+    <button class="arrow-button" id="right-arrow"><i class="bi bi-arrow-right-short"></i></button>
+</aside>
 
-<article class="article__admin @ViewData["Type"]">
-    @RenderBody()
-</article>
+
+<main class="container" role="main">
+    <article class="article__admin @ViewData["Type"]">
+        @RenderBody()
+    </article>
+</main>
+
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

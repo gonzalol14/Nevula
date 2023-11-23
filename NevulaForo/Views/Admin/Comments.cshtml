@@ -1,9 +1,156 @@
-﻿
+﻿@model NevulaForo.Models.ViewModels.PublicationDedicatedVM?
+
+@using NevulaForo.Resources;
+@using NevulaForo.Services.Implementation;
+@inject UserService UserService;
 @{
-    ViewData["Title"] = "Administración comentarios";
+    ViewData["Title"] = "Administración de comentarios";
     ViewData["Type"] = "comments";
     Layout = "~/Views/Admin/_Layout.cshtml";
+
+    var userIdClaim = User.FindFirst("Id");
+    int IdUser = Convert.ToInt32(userIdClaim?.Value);
 }
 
-<h1>Comments</h1>
+@if(Model != null)
+{
+    <!-- Publicacion -->
+    <article class="main__containers-community">
+        <div class="container__info">
+            <div class="container__profile-pic">
+                <a asp-route-IdUser="@Model.oPublication.IdUser" asp-controller="Admin" asp-action="Users">
+                    <img src="@UserService.GetUserProfileImagePath(Model.oPublication.IdUser)" alt="">
+                </a>
+            </div>
 
+            <div class="container__username">
+                <a asp-route-IdUser="@Model.oPublication.IdUser" asp-controller="Admin" asp-action="Users">@Model.oPublication.IdUserNavigation.Username</a>
+            </div>
+
+            @if (Model.oPublication.IdUserNavigation.UserRoles.First().IdRole == 2)
+            {
+                <!-- Esto depende si esta o no verificado -->
+                <div class="container__verify" id="container__verify-1">
+                    <span class="verify">VERIFICADO</span>
+                    <span class="small-verify">V</span>
+                    <span class="popup-verify" id="popup-verify-1">Esta persona forma parte de Nevula</span>
+                </div>
+            }
+
+            <span class="separator__info">·</span>
+
+            <div class="container__date">
+                <span>@Utilities.StylizeDate(Model.oPublication.CreatedAt)</span>
+            </div>
+        </div>
+
+        <div class="container__content-post">
+            <h2 class="title--post">@Model.oPublication.Title</h2>
+            <p class="content--post">@Model.oPublication.Description</p>
+            <div class="container__imgs"></div>
+        </div>
+
+        <div class="container__feedback">
+
+            @if (Model.oPublication.IdUser == IdUser)
+            {
+                <div>
+                    <a class="post__edit" asp-route-IdPublication="@Model.oPublication.Id" asp-controller="Publication" asp-action="Edit"><i class="bi bi-pencil-square"></i> </a>
+                    <button type="button" class="post__delete" id="delete_post"><i class="bi bi-trash3"></i> </button>
+                </div>
+            }
+        </div>
+
+    </article>
+
+
+    <!-- Comentarios -->
+    <article class="main__containers-community" id="container__comments">
+        <h3 class="title_answer" id="title_answer">Respuestas</h3>
+
+        @foreach (var comment in Model.oComments)
+        {
+            <div class="container__comment" id="comment_@comment.Id">
+                <div class="container__info">
+                    <div class="comment__profile-pic">
+                        <a asp-route-IdUser="@comment.IdUser" asp-controller="Admin" asp-action="Users">
+                            <img src="@UserService.GetUserProfileImagePath(comment.IdUser)" alt="">
+                        </a>
+                    </div>
+
+                    <div class="container__username">
+                        <a asp-route-IdUser="@comment.IdUser" asp-controller="Admin" asp-action="Users">@comment.IdUserNavigation.Username</a>
+                    </div>
+
+                    @if (comment.IdUserNavigation.UserRoles.First().IdRole == 2)
+                    {
+                        <!-- Esto depende si esta o no verificado -->
+                        <div class="container__verify" id="container__verify-2">
+                            <span class="verify">VERIFICADO</span>
+                            <span class="small-verify">V</span>
+                            <span class="popup-verify" id="popup-verify-2">Esta persona forma parte de Nevula</span>
+                        </div>
+                    }
+
+                    <span class="separator__info">·</span>
+
+                    <div class="container__date">
+                        <span>@Utilities.StylizeDate(comment.CreatedAt)</span>
+                    </div>
+
+                    <div class="container__ban-comment">
+                        <button type="button" class="btn_manage btn-delete " id="btn_comment_delete-@comment.Id">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" />
+                                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="container__answer">
+                    @if (comment.IdFatherComment != null)
+                    {
+                        <div class="container__content-cited">
+                            @if (comment.IdFatherCommentNavigation.DeletedAt == null)
+                            {
+                                <p class="title--cited">Comentario de <a class="username_quoted" href="#comment_@comment.IdFatherCommentNavigation.Id">@@@comment.IdFatherCommentNavigation.IdUserNavigation.Username</a></p>
+                                <p class="content--cited">@comment.IdFatherCommentNavigation.Description</p>
+                            }
+                            else
+                            {
+                                <p class="content--cited" style="font-weight: 600;">¡Lo sentimos! El comentario citado fue eliminado :(</p>
+                            }
+                        </div>
+                    }
+                    <div class="container__content-post">
+                        <p class="content--post" id="comment_description-@comment.Id">@comment.Description</p>
+                        <div class="container__imgs"></div>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </article>
+
+} else
+{
+    <div class="container__data-error">
+        <div class="type-error">
+            <p>ERROR 404</p>
+        </div>
+        <div class="container__error-msj">
+            <h1 class="msj-title">¡Ups! Publicación no encontrada.</h1>
+            <p class="msj-details">Parece que la publicación que estás buscando no existe.</p>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    <script src="~/js/community.js" asp-append-version="true"></script>
+    <script src="~/js/publication.js" asp-append-version="true"></script>
+    <script src="~/js/admin/comments.js" asp-append-version="true"></script>
+}

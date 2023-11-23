@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rmb90Cu8S4qaS7kFw78cahZpiqW5l/3f+LmnR4+SCZU=",
+  "Hash": "QJcmeWZSobHCH07NhorfYor+dVQTr7MeTIY9vMhvlso=",
   "Source": "NevulaForo",
   "BasePath": "_content/NevulaForo",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\account.css"
+    },
+    {
+      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\comments.css",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "css/admin/comments.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin\\comments.css"
     },
     {
       "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\admin\\main.css",
@@ -440,6 +457,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\profiles\\default.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\comments.js",
+      "SourceId": "NevulaForo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\",
+      "BasePath": "_content/NevulaForo",
+      "RelativePath": "js/admin/comments.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\admin\\comments.js"
     },
     {
       "Identity": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\js\\admin\\main.js",

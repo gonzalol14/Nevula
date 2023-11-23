@@ -15,13 +15,13 @@
     <article class="main__containers-community" id="publication_@publication.Id">
         <div class="container__info">
             <div class="container__profile-pic">
-                <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">
+                <a asp-route-IdUser="@publication.IdUser" asp-controller="Admin" asp-action="Users">
                     <img src="@UserService.GetUserProfileImagePath(publication.IdUser)" alt="">
                 </a>
             </div>
 
             <div class="container__username">
-                <a asp-route-IdUser="@publication.IdUser" asp-controller="Account" asp-action="Index">@publication.IdUserNavigation.Username</a>
+                <a asp-route-IdUser="@publication.IdUser" asp-controller="Admin" asp-action="Users">@publication.IdUserNavigation.Username</a>
             </div>
 
             @if (publication.IdUserNavigation.UserRoles.First().IdRole == 2)
@@ -49,14 +49,17 @@
 
         <div class="container__feedback">
             <div>
-                <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Publication" asp-action="Index">
-                    <i class="bi bi-chat"></i>
-                    <span>@publication.Comments.Count @((publication.Comments.Count == 1) ? "Comentario" : "Comentarios")</span>
-                </a>
+                @if (@publication.Comments.Count > 0)
+                {
+                    <a class="feedback__comments" asp-route-IdPublication="@publication.Id" asp-controller="Admin" asp-action="Comments">
+                        <i class="bi bi-chat"></i>
+                        <span>Ver @publication.Comments.Count @((publication.Comments.Count == 1) ? "Comentario" : "Comentarios") en modo Admin</span>
+                    </a>
+                }
             </div>
 
             <div>
-                <button type="button" class="btn_manage btn-delete  @((publication.IsBanned != null) ? "banned" : null)" id="btn_account_delete-@publication.Id">
+                <button type="button" class="btn_manage btn-delete  @((publication.IsBanned != null) ? "banned" : null)" id="btn_publication_delete-@publication.Id">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-forbid" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>

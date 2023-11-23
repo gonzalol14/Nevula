@@ -13,51 +13,65 @@
 }
 
 
-
-<div class="container__users">
-    @foreach (var account in Model)
-    {
-        @if (account.UserRoles.First().IdRole < 3 || IdRoleUser == 4)
+@if(Model.Count > 0)
+{
+    <div class="container__users" style="@((Model.Count == 1) ? "width: max-content; margin: auto;" : null)">
+        @foreach (var account in Model)
         {
-            <article class="container__perfil" id="account_@account.Id">
-                <div class="container_info">
-                    <div class="container_info-data">
-                        <div class="container__profile-picture">
-                            <img src="@UserService.GetUserProfileImagePath(account.Id)" alt="Foto de perfil de usuario">
-                        </div>
-                        <div class="container_name">
-                            @if (account.Name != null || account.Surname != null)
-                            {
-                                <a asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@account.Name @account.Surname</a>
-                                <span class="separator__info">·</span>
-                            }
-                            <a class="text-username" id="username_@account.Id" asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@@@account.Username</a>
-                        </div>
-                        <div class="container_description">
-                            <p class="">@((account.Description != null) ? account.Description : "Aún no hay descripción")</p>
-                        </div>
+            @if (account.UserRoles.First().IdRole < 3 || IdRoleUser == 4)
+            {
+                <article class="container__perfil" id="account_@account.Id">
+                    <div class="container_info">
+                        <div class="container_info-data">
+                            <div class="container__profile-picture">
+                                <img src="@UserService.GetUserProfileImagePath(account.Id)" alt="Foto de perfil de usuario">
+                            </div>
+                            <div class="container_name">
+                                @if (account.Name != null || account.Surname != null)
+                                {
+                                    <a asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@account.Name @account.Surname</a>
+                                    <span class="separator__info">·</span>
+                                }
+                                <a class="text-username" id="username_@account.Id" asp-route-IdUser="@account.Id" asp-controller="Account" asp-action="Index">@@@account.Username</a>
+                            </div>
+                            <div class="container_description">
+                                <p class="">@((account.Description != null) ? account.Description : "Aún no hay descripción")</p>
+                            </div>
 
-                        <div class="container__manage">
-                            <button type="button" class="btn_manage btn-verify @((account.UserRoles.First().IdRole == 2) ? "verified" : null)" id="btn_account_verify-@account.Id">V</button>
-                            @if (IdRoleUser == 4)
-                            {
-                                <button type="button" class="btn_manage btn-administrator @((account.UserRoles.First().IdRole == 3) ? "administrator" : null)" id="btn_account_admin-@account.Id">A</button>
-                                <button type="button" class="btn_manage btn-super-administrator @((account.UserRoles.First().IdRole == 4) ? "super-administrator" : null)" id="btn_account_super_admin-@account.Id">SA</button>
-                            }
-                            <button type="button" class="btn_manage btn-delete @((account.IsBanned != null) ? "banned" : null)" id="btn_account_delete-@account.Id">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-forbid" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-                                    <path d="M9 9l6 6"></path>
-                                </svg>
-                            </button>
+                            <div class="container__manage">
+                                <button type="button" class="btn_manage btn-verify @((account.UserRoles.First().IdRole == 2) ? "verified" : null)" id="btn_account_verify-@account.Id">V</button>
+                                @if (IdRoleUser == 4)
+                                {
+                                    <button type="button" class="btn_manage btn-administrator @((account.UserRoles.First().IdRole == 3) ? "administrator" : null)" id="btn_account_admin-@account.Id">A</button>
+                                    <button type="button" class="btn_manage btn-super-administrator @((account.UserRoles.First().IdRole == 4) ? "super-administrator" : null)" id="btn_account_super_admin-@account.Id">SA</button>
+                                }
+                                <button type="button" class="btn_manage btn-delete @((account.IsBanned != null) ? "banned" : null)" id="btn_account_delete-@account.Id">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-forbid" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                                        <path d="M9 9l6 6"></path>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            }
         }
-    }
-</div>
+    </div>
+
+} else
+{
+    <div class="container__data-error">
+        <div class="type-error">
+            <p>ERROR 404</p>
+        </div>
+        <div class="container__error-msj">
+            <h1 class="msj-title">¡Ups! Usuario no encontrado.</h1>
+            <p class="msj-details">Parece que el usuario que estás buscando no existe.</p>
+        </div>
+    </div>
+}
 
 
 @section Scripts {

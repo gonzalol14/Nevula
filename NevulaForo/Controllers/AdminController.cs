@@ -24,26 +24,48 @@ namespace NevulaForo.Controllers
         }
 
         //PAGINAS
-        public IActionResult Users()
+        public IActionResult Users(int? IdUser)
         {
             ClaimsPrincipal claimUser = HttpContext.User;
-            int IdUser = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
+            int IdUserAdmin = Convert.ToInt32(claimUser.Claims.Where(c => c.Type == "Id").Select(c => c.Value).SingleOrDefault());
 
-            List<User> lstaccounts = _DBContext.Users
-                                    .Include(u => u.UserRoles)
-                                    .Where(u => u.Id != IdUser && u.DeletedAt == null)
-                                    .Select(u => new User
-                                    {
-                                        Id = u.Id,
-                                        Name = u.Name,
-                                        Surname = u.Surname,
-                                        Username = u.Username,
-                                        Description = u.Description,
-                                        CreatedAt = u.CreatedAt,
-                                        IsBanned = u.IsBanned,
-                                        UserRoles = u.UserRoles
-                                    })
-                                    .ToList();
+            List<User> lstaccounts = new List<User>();
+            if (IdUser == null || IdUser == 0)
+            {
+                lstaccounts = _DBContext.Users
+                                        .Include(u => u.UserRoles)
+                                        .Where(u => u.Id != IdUserAdmin && u.DeletedAt == null)
+                                        .Select(u => new User
+                                        {
+                                            Id = u.Id,
+                                            Name = u.Name,
+                                            Surname = u.Surname,
+                                            Username = u.Username,
+                                            Description = u.Description,
+                                            CreatedAt = u.CreatedAt,
+                                            IsBanned = u.IsBanned,
+                                            UserRoles = u.UserRoles
+                                        })
+                                        .ToList();
+
+            } else
+            {
+                lstaccounts = _DBContext.Users
+                                        .Include(u => u.UserRoles)
+                                        .Where(u => u.Id == IdUser && u.DeletedAt == null)
+                                        .Select(u => new User
+                                        {
+                                            Id = u.Id,
+                                            Name = u.Name,
+                                            Surname = u.Surname,
+                                            Username = u.Username,
+                                            Description = u.Description,
+                                            CreatedAt = u.CreatedAt,
+                                            IsBanned = u.IsBanned,
+                                            UserRoles = u.UserRoles
+                                        })
+                                        .ToList();
+            }
 
             return View(lstaccounts);
         }
@@ -72,9 +94,34 @@ namespace NevulaForo.Controllers
             return View(lstPosts);
         }
 
-        public IActionResult Comments()
+        public IActionResult Comments(int IdPublication)
         {
-            return View();
+            PublicationDedicatedVM oPublicationDedicated = new PublicationDedicatedVM()
+            {
+                // No verifico que el Comments (del oPublication) traiga los comentarios validos (sin eliminar ni usuario creador eliminado), ya que para todo lo relacionado a comentarios uso el oComments
+                oPublication = _DBContext.Publications
+                                .Include(u => u.IdUserNavigation)
+                                    .ThenInclude(u => u.UserRoles)
+                                .Where(p => p.Id == IdPublication && p.DeletedAt == null && p.IsBanned == null && p.IdUserNavigation.DeletedAt == null && p.IdUserNavigation.IsBanned == null)
+                                .FirstOrDefault(),
+                oComments = _DBContext.Comments
+                                .Include(u => u.IdUserNavigation)
+                                    .ThenInclude(u => u.UserRoles)
+                                .Include(c => c.IdFatherCommentNavigation)
+                                .Where(c => c.DeletedAt == null && c.IdPublication == IdPublication && c.IdUserNavigation.DeletedAt == null && c.IdUserNavigation.IsBanned == null)
+                                .OrderByDescending(c => c.CreatedAt)
+                                .ToList()
+            };
+
+            if (oPublicationDedicated.oPublication != null)
+            {
+                return View(oPublicationDedicated);
+            }
+            else
+            {
+                //404 para admins
+                return View();
+            }
         }
 
 
@@ -277,7 +324,19 @@ namespace NevulaForo.Controllers
         [HttpGet]
         public async Task<JsonResult> DeleteComment(int IdComment)
         {
-            return Json(new { success = false, error = "Error al intentar eliminar comentario" });
+            Comment? comment = _DBContext.Comments.FirstOrDefault(p => p.Id == IdComment && p.DeletedAt == null);
+
+            if (comment != null)
+            {
+                comment.DeletedAt = DateTime.Now;
+
+                _DBContext.Update(comment);
+                await _DBContext.SaveChangesAsync();
+
+                return Json(new { success = true });
+            }
+
+            return Json(new { success = false, error = "Error al intentar eliminar el comentario" });
         }
     }
 }
