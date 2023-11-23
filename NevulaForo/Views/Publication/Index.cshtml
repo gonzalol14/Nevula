@@ -104,79 +104,83 @@
 
 
 <!-- Comentarios -->
-<article class="main__containers-community" id="container__comments">
-    <h3 class="title_answer" id="title_answer">Respuestas</h3>
+@if(Model.oComments.Count > 0)
+{
+    <article class="main__containers-community" id="container__comments">
+        <h3 class="title_answer" id="title_answer">Respuestas</h3>
 
-    @foreach (var comment in Model.oComments)
-    {
-        <div class="container__comment" id="comment_@comment.Id">
-            <div class="container__info">
-                <div class="comment__profile-pic">
-                    <a asp-route-IdUser="@comment.IdUser" asp-controller="Account" asp-action="Index">
-                        <img src="@UserService.GetUserProfileImagePath(comment.IdUser)" alt="">
-                    </a>
-                </div>
-
-                <div class="container__username">
-                    <a asp-route-IdUser="@comment.IdUser" asp-controller="Account" asp-action="Index">@comment.IdUserNavigation.Username</a>
-                </div>
-
-                @if(comment.IdUserNavigation.UserRoles.First().IdRole == 2)
-                {
-                    <!-- Esto depende si esta o no verificado -->
-                    <div class="container__verify" id="container__verify-2">
-                        <span class="verify">VERIFICADO</span>
-                        <span class="small-verify">V</span>
-                        <span class="popup-verify" id="popup-verify-2">Esta persona forma parte de Nevula</span>
+        @foreach (var comment in Model.oComments)
+        {
+            <div class="container__comment" id="comment_@comment.Id">
+                <div class="container__info">
+                    <div class="comment__profile-pic">
+                        <a asp-route-IdUser="@comment.IdUser" asp-controller="Account" asp-action="Index">
+                            <img src="@UserService.GetUserProfileImagePath(comment.IdUser)" alt="">
+                        </a>
                     </div>
-                }
 
-                <span class="separator__info">·</span>
-
-                <div class="container__date">
-                    <span>@Utilities.StylizeDate(comment.CreatedAt)</span>
-                </div>
-            </div>
-
-            <div class="container__answer">
-                @if(comment.IdFatherComment != null)
-                {
-                    <div class="container__content-cited">
-                        @if(comment.IdFatherCommentNavigation.DeletedAt == null)
-                        {
-                            <p class="title--cited">Comentario de <a class="username_quoted" href="#comment_@comment.IdFatherCommentNavigation.Id">@@@comment.IdFatherCommentNavigation.IdUserNavigation.Username</a></p>
-                            <p class="content--cited">@comment.IdFatherCommentNavigation.Description</p>
-                        } else
-                        {
-                            <p class="content--cited" style="font-weight: 600;">¡Lo sentimos! El comentario citado fue eliminado :(</p>
-                        }
+                    <div class="container__username">
+                        <a asp-route-IdUser="@comment.IdUser" asp-controller="Account" asp-action="Index">@comment.IdUserNavigation.Username</a>
                     </div>
-                }
-                <div class="container__content-post">
-                    <p class="content--post" id="comment_description-@comment.Id">@comment.Description</p>
-                    <div class="container__imgs"></div>
+
+                    @if(comment.IdUserNavigation.UserRoles.First().IdRole == 2)
+                    {
+                        <!-- Esto depende si esta o no verificado -->
+                        <div class="container__verify" id="container__verify-2">
+                            <span class="verify">VERIFICADO</span>
+                            <span class="small-verify">V</span>
+                            <span class="popup-verify" id="popup-verify-2">Esta persona forma parte de Nevula</span>
+                        </div>
+                    }
+
+                    <span class="separator__info">·</span>
+
+                    <div class="container__date">
+                        <span>@Utilities.StylizeDate(comment.CreatedAt)</span>
+                    </div>
                 </div>
-            </div>
 
-
-
-            <div class="container__feedback">
-                <div>
-                    <a href="#" class="feedback__aswer-comments" id="answer_comment_@comment.Id" data-comment-id="@comment.Id" data-comment-username="@comment.IdUserNavigation.Username">Responder</a>
+                <div class="container__answer">
+                    @if(comment.IdFatherComment != null)
+                    {
+                        <div class="container__content-cited">
+                            @if(comment.IdFatherCommentNavigation.DeletedAt == null)
+                            {
+                                <p class="title--cited">Comentario de <a class="username_quoted" href="#comment_@comment.IdFatherCommentNavigation.Id">@@@comment.IdFatherCommentNavigation.IdUserNavigation.Username</a></p>
+                                <p class="content--cited">@comment.IdFatherCommentNavigation.Description</p>
+                            } else
+                            {
+                                <p class="content--cited" style="font-weight: 600;">¡Lo sentimos! El comentario citado fue eliminado :(</p>
+                            }
+                        </div>
+                    }
+                    <div class="container__content-post">
+                        <p class="content--post" id="comment_description-@comment.Id">@comment.Description</p>
+                        <div class="container__imgs"></div>
+                    </div>
                 </div>
 
-                @if (comment.IdUser == IdUser)
-                {
+
+
+                <div class="container__feedback">
                     <div>
-                        <button type="button" class="comment__delete" id="delete_comment-@comment.Id" ><i class="bi bi-trash3"></i> </button>
+                        <a href="#" class="feedback__aswer-comments" id="answer_comment_@comment.Id" data-comment-id="@comment.Id" data-comment-username="@comment.IdUserNavigation.Username">Responder</a>
                     </div>
-                }
+
+                    @if (comment.IdUser == IdUser)
+                    {
+                        <div>
+                            <button type="button" class="comment__delete" id="delete_comment-@comment.Id" ><i class="bi bi-trash3"></i> </button>
+                        </div>
+                    }
+                </div>
+
             </div>
+        }
 
-        </div>
-    }
+    </article>
 
-</article>
+}
 
 
 @section Scripts {

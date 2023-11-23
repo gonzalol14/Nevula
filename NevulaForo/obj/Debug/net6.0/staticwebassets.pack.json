@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
+      "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\news.css",
+      "PackagePath": "staticwebassets\\css\\news.css"
+    },
+    {
       "Id": "C:\\Users\\23k\\Downloads\\Nevula\\NevulaForo\\wwwroot\\css\\publication.css",
       "PackagePath": "staticwebassets\\css\\publication.css"
     },

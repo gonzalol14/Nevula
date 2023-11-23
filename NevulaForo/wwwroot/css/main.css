@@ -145,7 +145,7 @@ header {
     color: #FFF;
 }
 
-@media (max-width: 1140px) {
+@media (max-width: 1187px) {
     .container__profile {
         display: none;
     }
@@ -372,7 +372,7 @@ textarea {
         font-size: 13px;
     }
 
-@media (max-width: 1260px) {
+@media (max-width: 1312px) {
     .container__search-bar input {
         width: 375px;
     }
