@@ -37,6 +37,8 @@
     gap: 7px;
     margin-left: 0;
     word-break: initial;
+
+    text-align: center;
 }
 .container_name a:hover {
     text-decoration: underline;
