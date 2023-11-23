@@ -2,9 +2,22 @@
     ViewData["Title"] = "Novedades";
 }
 
-<br>
-<div class="text-center">
+@section Styles {
+    <link rel="stylesheet" href="~/css/community.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/news.css" asp-append-version="true" />
+}
 
-    <h1 class="display-4">Las noticias de los últimos parches</h1>
+<div class="container__news">
+    <div class="container__title-news">
+        <h1>Novedades de Nevula</h1>
+        <img src="/images/Logo_Nevula2.png" alt="Logotipo De La Névula" width="90px">
+    </div>
 
+    <div class="container__subtile-news">
+        <h2 class="new-title"><img src="/images/Logo_LineaB.png" alt="Logotipo De La Névula" width="50px"> ¡Lanzamos Linea B al público!</h2>
+        <p class="new-content">
+            En la fecha presente, 24 de noviembre de 2023, nos complace sobremanera informarles que a principios del próximo mes de diciembre, nuestro nuevo juego "Línea B" estará disponible para el público en general.
+            Aguardamos con expectación este evento para compartir los resultados de nuestro arduo trabajo en este proyecto. Expresamos nuestro deseo de que sea de su agrado.</p>
+        <p class="new-saludate">El equipo de Nevula.</p>
+    </div>
 </div>

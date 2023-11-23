@@ -1,0 +1,34 @@
+﻿.container__news {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: .5rem;
+}
+
+.container__title-news {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+.container__subtile-news {
+    padding: 20px;
+    border-top: 1px solid #ececec;
+}
+.new-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.new-content {
+    margin-bottom: 3px;
+}
+
+.new-saludate {
+    font-weight: 500;
+}
